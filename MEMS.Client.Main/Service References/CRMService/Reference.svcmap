@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="cc610c36-608a-461f-900e-694b978ba16b" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:55160/CRMService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="CRMService1.xsd" MetadataType="Schema" ID="8da66c98-c726-41e6-bd33-a2994ffc9b10" SourceId="1" SourceUrl="http://localhost:55160/CRMService.svc?xsd=xsd2" />
+    <MetadataFile FileName="CRMService3.xsd" MetadataType="Schema" ID="f749130b-1064-4646-89a8-c1fe88375156" SourceId="1" SourceUrl="http://localhost:55160/CRMService.svc?xsd=xsd3" />
+    <MetadataFile FileName="CRMService2.xsd" MetadataType="Schema" ID="afc4257e-fa02-4dc0-8834-b403bc2b2ed0" SourceId="1" SourceUrl="http://localhost:55160/CRMService.svc?xsd=xsd0" />
+    <MetadataFile FileName="CRMService.xsd" MetadataType="Schema" ID="74d54c25-51b1-4e48-9fc0-c3ea43a8317f" SourceId="1" SourceUrl="http://localhost:55160/CRMService.svc?xsd=xsd1" />
+    <MetadataFile FileName="CRMService.disco" MetadataType="Disco" ID="6594505b-9220-459f-9859-809592ca3054" SourceId="1" SourceUrl="http://localhost:55160/CRMService.svc?disco" />
+    <MetadataFile FileName="CRMService.wsdl" MetadataType="Wsdl" ID="37959341-48db-42f5-8d9d-48a8ab92927d" SourceId="1" SourceUrl="http://localhost:55160/CRMService.svc?wsdl" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

@@ -1,0 +1,44 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MEMS.Client.Main", "MEMS.Client.Main\MEMS.Client.Main.csproj", "{28F7C352-9520-4151-9C3E-327B9A0B948E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A81538F5-0361-46B4-AAC4-09ACD1D1AC16} = {A81538F5-0361-46B4-AAC4-09ACD1D1AC16}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MEMSservice", "MEMSservice\MEMSservice.csproj", "{A81538F5-0361-46B4-AAC4-09ACD1D1AC16}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MEMS.Client.Common", "MEMS.Client.Common\MEMS.Client.Common.csproj", "{7231A9BF-11F5-4B10-AEE7-3291FE3E326D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MEMS.Client.CRM", "MEMS.Client.CRM\MEMS.Client.CRM.csproj", "{010CD69C-4E94-4DAF-95BF-2C9A80F30E6F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A81538F5-0361-46B4-AAC4-09ACD1D1AC16} = {A81538F5-0361-46B4-AAC4-09ACD1D1AC16}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{28F7C352-9520-4151-9C3E-327B9A0B948E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28F7C352-9520-4151-9C3E-327B9A0B948E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28F7C352-9520-4151-9C3E-327B9A0B948E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28F7C352-9520-4151-9C3E-327B9A0B948E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A81538F5-0361-46B4-AAC4-09ACD1D1AC16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A81538F5-0361-46B4-AAC4-09ACD1D1AC16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A81538F5-0361-46B4-AAC4-09ACD1D1AC16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A81538F5-0361-46B4-AAC4-09ACD1D1AC16}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7231A9BF-11F5-4B10-AEE7-3291FE3E326D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7231A9BF-11F5-4B10-AEE7-3291FE3E326D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7231A9BF-11F5-4B10-AEE7-3291FE3E326D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7231A9BF-11F5-4B10-AEE7-3291FE3E326D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{010CD69C-4E94-4DAF-95BF-2C9A80F30E6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{010CD69C-4E94-4DAF-95BF-2C9A80F30E6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{010CD69C-4E94-4DAF-95BF-2C9A80F30E6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{010CD69C-4E94-4DAF-95BF-2C9A80F30E6F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

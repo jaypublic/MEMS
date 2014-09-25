@@ -1,0 +1,722 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="MEMSModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="MEMSModelStoreContainer">
+          <EntitySet Name="T_Base_companytype" EntityType="MEMSModel.Store.T_Base_companytype" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="T_Base_customertype" EntityType="MEMSModel.Store.T_Base_customertype" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="T_Base_profession" EntityType="MEMSModel.Store.T_Base_profession" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="T_Base_suppliertype" EntityType="MEMSModel.Store.T_Base_suppliertype" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="T_Crafts" EntityType="MEMSModel.Store.T_Crafts" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="T_CraftsPrice" EntityType="MEMSModel.Store.T_CraftsPrice" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="T_Customer" EntityType="MEMSModel.Store.T_Customer" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="T_Customer_address" EntityType="MEMSModel.Store.T_Customer_address" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="T_Customer_contacts" EntityType="MEMSModel.Store.T_Customer_contacts" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="T_FileMgr" EntityType="MEMSModel.Store.T_FileMgr" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="T_Product" EntityType="MEMSModel.Store.T_Product" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="T_ProductbasicPrice" EntityType="MEMSModel.Store.T_ProductbasicPrice" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="T_ProductType" EntityType="MEMSModel.Store.T_ProductType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="T_Suppliers" EntityType="MEMSModel.Store.T_Suppliers" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="T_Suppliers_contacts" EntityType="MEMSModel.Store.T_Suppliers_contacts" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="T_Base_companytype">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="typename" Type="nvarchar" MaxLength="50" />
+          <Property Name="remarks" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="T_Base_customertype">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="typename" Type="nvarchar" MaxLength="50" />
+          <Property Name="remarks" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="T_Base_profession">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="professionname" Type="nvarchar" MaxLength="50" />
+          <Property Name="remarks" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="T_Base_suppliertype">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="typename" Type="nvarchar" MaxLength="50" />
+          <Property Name="remarks" Type="nvarchar" MaxLength="500" />
+        </EntityType>
+        <EntityType Name="T_Crafts">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="pid" Type="int" />
+          <Property Name="processindex" Type="int" />
+          <Property Name="processname" Type="nvarchar" MaxLength="50" />
+          <Property Name="remarks" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="T_CraftsPrice">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="pricebasicid" Type="int" />
+          <Property Name="processid" Type="int" />
+          <Property Name="processprice" Type="decimal" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityType Name="T_Customer">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="customerno" Type="varchar" MaxLength="50" />
+          <Property Name="customername" Type="nvarchar" MaxLength="50" />
+          <Property Name="simplename" Type="nvarchar" MaxLength="50" />
+          <Property Name="country" Type="nvarchar" MaxLength="50" />
+          <Property Name="province" Type="nvarchar" MaxLength="50" />
+          <Property Name="city" Type="nvarchar" MaxLength="50" />
+          <Property Name="companyaddress" Type="nvarchar" MaxLength="100" />
+          <Property Name="phone" Type="varchar" MaxLength="50" />
+          <Property Name="fax" Type="varchar" MaxLength="50" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+          <Property Name="website" Type="varchar" MaxLength="50" />
+          <Property Name="postcode" Type="varchar" MaxLength="50" />
+          <Property Name="source" Type="varchar" MaxLength="50" />
+          <Property Name="customertype" Type="nvarchar" MaxLength="50" />
+          <Property Name="profession" Type="nvarchar" MaxLength="50" />
+          <Property Name="companytype" Type="nvarchar" MaxLength="50" />
+          <Property Name="productinfo" Type="nvarchar" MaxLength="500" />
+          <Property Name="customerdesc" Type="nvarchar" MaxLength="500" />
+          <Property Name="remarks" Type="nvarchar" MaxLength="500" />
+          <Property Name="bank" Type="nvarchar" MaxLength="50" />
+          <Property Name="accountname" Type="nvarchar" MaxLength="50" />
+          <Property Name="accountno" Type="varchar" MaxLength="50" />
+          <Property Name="taxcode" Type="varchar" MaxLength="50" />
+          <Property Name="invoiceaddress" Type="nvarchar" MaxLength="50" />
+          <Property Name="createuid" Type="int" />
+          <Property Name="createtime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="T_Customer_address">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="customerid" Type="int" />
+          <Property Name="addressname" Type="nvarchar" MaxLength="50" />
+          <Property Name="country" Type="nvarchar" MaxLength="50" />
+          <Property Name="city" Type="nvarchar" MaxLength="50" />
+          <Property Name="address" Type="nvarchar" MaxLength="50" />
+          <Property Name="createuid" Type="int" />
+          <Property Name="createtime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="T_Customer_contacts">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="customerid" Type="int" />
+          <Property Name="contactname" Type="nvarchar" MaxLength="50" />
+          <Property Name="sex" Type="varchar" MaxLength="50" />
+          <Property Name="position" Type="nvarchar" MaxLength="50" />
+          <Property Name="cellphone" Type="varchar" MaxLength="50" />
+          <Property Name="telphone" Type="varchar" MaxLength="50" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+          <Property Name="qq" Type="varchar" MaxLength="50" />
+          <Property Name="fax" Type="varchar" MaxLength="50" />
+          <Property Name="remarks" Type="nvarchar" MaxLength="500" />
+          <Property Name="createuid" Type="int" />
+          <Property Name="createtime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="T_FileMgr">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="filename" Type="varchar" MaxLength="50" />
+          <Property Name="filecode" Type="varchar" MaxLength="50" />
+          <Property Name="filepath" Type="varchar" MaxLength="200" />
+          <Property Name="filetype" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="T_Product">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="customerid" Type="int" />
+          <Property Name="protype" Type="int" />
+          <Property Name="procode" Type="varchar" MaxLength="50" />
+          <Property Name="proname" Type="nvarchar" MaxLength="50" />
+          <Property Name="drawingno" Type="varchar" MaxLength="50" />
+          <Property Name="filepath" Type="int" />
+          <Property Name="prounit" Type="varchar" MaxLength="50" />
+          <Property Name="prospecification" Type="varchar" MaxLength="50" />
+          <Property Name="pronetweight" Type="float" />
+          <Property Name="progrossweight" Type="float" />
+        </EntityType>
+        <EntityType Name="T_ProductbasicPrice">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="productid" Type="int" />
+          <Property Name="version" Type="nvarchar" MaxLength="50" />
+          <Property Name="returnmatprice" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="materialprice" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="machineprice" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="manageprice" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="otherprice" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="totalprice" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="pricebasicremark" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="T_ProductType">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="typecode" Type="varchar" MaxLength="50" />
+          <Property Name="typename" Type="varchar" MaxLength="50" />
+          <Property Name="typedesc" Type="varchar" MaxLength="50" />
+          <Property Name="fid" Type="int" />
+        </EntityType>
+        <EntityType Name="T_Suppliers">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="supplierno" Type="varchar" MaxLength="50" />
+          <Property Name="suppliername" Type="nvarchar" MaxLength="50" />
+          <Property Name="simplename" Type="nvarchar" MaxLength="50" />
+          <Property Name="suppliertype" Type="nvarchar" MaxLength="50" />
+          <Property Name="telphone" Type="varchar" MaxLength="50" />
+          <Property Name="fax" Type="varchar" MaxLength="50" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+          <Property Name="website" Type="varchar" MaxLength="50" />
+          <Property Name="postcode" Type="varchar" MaxLength="50" />
+          <Property Name="country" Type="nvarchar" MaxLength="50" />
+          <Property Name="province" Type="nvarchar" MaxLength="50" />
+          <Property Name="city" Type="nvarchar" MaxLength="50" />
+          <Property Name="address" Type="nvarchar" MaxLength="50" />
+          <Property Name="bank" Type="nvarchar" MaxLength="50" />
+          <Property Name="accountname" Type="nvarchar" MaxLength="50" />
+          <Property Name="accountno" Type="varchar" MaxLength="50" />
+          <Property Name="taxcode" Type="varchar" MaxLength="50" />
+          <Property Name="legalperson" Type="nvarchar" MaxLength="50" />
+          <Property Name="businessscope" Type="nvarchar" MaxLength="500" />
+          <Property Name="remarks" Type="nvarchar" MaxLength="500" />
+          <Property Name="createuid" Type="int" />
+          <Property Name="createtime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="T_Suppliers_contacts">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="supplierid" Type="int" />
+          <Property Name="contactname" Type="nvarchar" MaxLength="50" />
+          <Property Name="sex" Type="varchar" MaxLength="50" />
+          <Property Name="position" Type="nvarchar" MaxLength="50" />
+          <Property Name="cellphone" Type="varchar" MaxLength="50" />
+          <Property Name="telphone" Type="varchar" MaxLength="50" />
+          <Property Name="email" Type="varchar" MaxLength="50" />
+          <Property Name="qq" Type="varchar" MaxLength="50" />
+          <Property Name="fax" Type="varchar" MaxLength="50" />
+          <Property Name="remarks" Type="nvarchar" MaxLength="500" />
+          <Property Name="createuid" Type="int" />
+          <Property Name="createtime" Type="datetime" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="MEMSModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+        <EntityContainer Name="MEMSEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="T_Base_companytype" EntityType="MEMSModel.T_Base_companytype" />
+          <EntitySet Name="T_Base_customertype" EntityType="MEMSModel.T_Base_customertype" />
+          <EntitySet Name="T_Base_profession" EntityType="MEMSModel.T_Base_profession" />
+          <EntitySet Name="T_Base_suppliertype" EntityType="MEMSModel.T_Base_suppliertype" />
+          <EntitySet Name="T_Customer" EntityType="MEMSModel.T_Customer" />
+          <EntitySet Name="T_Customer_address" EntityType="MEMSModel.T_Customer_address" />
+          <EntitySet Name="T_Customer_contacts" EntityType="MEMSModel.T_Customer_contacts" />
+          <EntitySet Name="T_Suppliers" EntityType="MEMSModel.T_Suppliers" />
+          <EntitySet Name="T_Suppliers_contacts" EntityType="MEMSModel.T_Suppliers_contacts" />
+          <EntitySet Name="T_Crafts" EntityType="MEMSModel.T_Crafts" />
+          <EntitySet Name="T_CraftsPrice" EntityType="MEMSModel.T_CraftsPrice" />
+          <EntitySet Name="T_Product" EntityType="MEMSModel.T_Product" />
+          <EntitySet Name="T_ProductbasicPrice" EntityType="MEMSModel.T_ProductbasicPrice" />
+          <EntitySet Name="T_FileMgr" EntityType="MEMSModel.T_FileMgr" />
+          <EntitySet Name="T_ProductType" EntityType="MEMSModel.T_ProductType" />
+        </EntityContainer>
+        <EntityType Name="T_Base_companytype">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="typename" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="remarks" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="T_Base_customertype">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="typename" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="remarks" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="T_Base_profession">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="professionname" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="remarks" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="T_Base_suppliertype">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="typename" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="remarks" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="T_Customer">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="customerno" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="customername" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="simplename" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="country" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="province" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="city" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="companyaddress" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="phone" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="fax" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="email" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="website" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="postcode" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="source" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="customertype" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="profession" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="companytype" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="productinfo" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="customerdesc" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="remarks" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="bank" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="accountname" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="accountno" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="taxcode" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="invoiceaddress" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="createuid" Type="Int32" />
+          <Property Name="createtime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="T_Customer_address">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="customerid" Type="Int32" />
+          <Property Name="addressname" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="country" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="city" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="address" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="createuid" Type="Int32" />
+          <Property Name="createtime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="T_Customer_contacts">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="customerid" Type="Int32" />
+          <Property Name="contactname" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="sex" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="position" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="cellphone" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="telphone" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="email" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="qq" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="fax" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="remarks" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="createuid" Type="Int32" />
+          <Property Name="createtime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="T_Suppliers">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="supplierno" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="suppliername" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="suppliertype" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="telphone" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="fax" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="email" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="website" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="postcode" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="country" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="province" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="city" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="address" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="bank" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="accountname" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="accountno" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="taxcode" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="legalperson" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="businessscope" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="remarks" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="createuid" Type="Int32" />
+          <Property Name="createtime" Type="DateTime" Precision="3" />
+          <Property Type="String" Name="simplename" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="T_Suppliers_contacts">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="supplierid" Type="Int32" />
+          <Property Name="contactname" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="sex" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="position" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="cellphone" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="telphone" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="email" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="qq" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="fax" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="remarks" Type="String" MaxLength="500" Unicode="true" FixedLength="false" />
+          <Property Name="createuid" Type="Int32" />
+          <Property Name="createtime" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="T_Crafts">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="pid" />
+          <Property Type="Int32" Name="processindex" />
+          <Property Type="String" Name="processname" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="remarks" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="T_CraftsPrice">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="Int32" Name="pricebasicid" />
+          <Property Type="Int32" Name="processid" />
+          <Property Type="Decimal" Name="processprice" Precision="10" Scale="2" />
+        </EntityType>
+        <EntityType Name="T_Product">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="customerid" />
+          <Property Type="String" Name="procode" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="proname" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="drawingno" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="prounit" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="prospecification" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Double" Name="pronetweight" />
+          <Property Type="Double" Name="progrossweight" />
+          <Property Type="Int32" Name="protype" />
+          <Property Type="Int32" Name="filepath" />
+        </EntityType>
+        <EntityType Name="T_ProductbasicPrice">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="Int32" Name="productid" />
+          <Property Type="String" Name="version" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="returnmatprice" Precision="10" Scale="2" />
+          <Property Type="Decimal" Name="materialprice" Precision="10" Scale="2" />
+          <Property Type="Decimal" Name="machineprice" Precision="10" Scale="2" />
+          <Property Type="Decimal" Name="manageprice" Precision="10" Scale="2" />
+          <Property Type="Decimal" Name="otherprice" Precision="10" Scale="2" />
+          <Property Type="Decimal" Name="totalprice" Precision="10" Scale="2" />
+          <Property Type="String" Name="pricebasicremark" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="T_FileMgr">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="filename" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="filecode" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="filepath" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="filetype" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="T_ProductType">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="typecode" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="typename" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="typedesc" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="fid" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="MEMSModelStoreContainer" CdmEntityContainer="MEMSEntities">
+          <EntitySetMapping Name="T_Base_companytype">
+            <EntityTypeMapping TypeName="MEMSModel.T_Base_companytype">
+              <MappingFragment StoreEntitySet="T_Base_companytype">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="typename" ColumnName="typename" />
+                <ScalarProperty Name="remarks" ColumnName="remarks" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Base_customertype">
+            <EntityTypeMapping TypeName="MEMSModel.T_Base_customertype">
+              <MappingFragment StoreEntitySet="T_Base_customertype">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="typename" ColumnName="typename" />
+                <ScalarProperty Name="remarks" ColumnName="remarks" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Base_profession">
+            <EntityTypeMapping TypeName="MEMSModel.T_Base_profession">
+              <MappingFragment StoreEntitySet="T_Base_profession">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="professionname" ColumnName="professionname" />
+                <ScalarProperty Name="remarks" ColumnName="remarks" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Base_suppliertype">
+            <EntityTypeMapping TypeName="MEMSModel.T_Base_suppliertype">
+              <MappingFragment StoreEntitySet="T_Base_suppliertype">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="typename" ColumnName="typename" />
+                <ScalarProperty Name="remarks" ColumnName="remarks" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Customer">
+            <EntityTypeMapping TypeName="MEMSModel.T_Customer">
+              <MappingFragment StoreEntitySet="T_Customer">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="customerno" ColumnName="customerno" />
+                <ScalarProperty Name="customername" ColumnName="customername" />
+                <ScalarProperty Name="simplename" ColumnName="simplename" />
+                <ScalarProperty Name="country" ColumnName="country" />
+                <ScalarProperty Name="province" ColumnName="province" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="companyaddress" ColumnName="companyaddress" />
+                <ScalarProperty Name="phone" ColumnName="phone" />
+                <ScalarProperty Name="fax" ColumnName="fax" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="website" ColumnName="website" />
+                <ScalarProperty Name="postcode" ColumnName="postcode" />
+                <ScalarProperty Name="source" ColumnName="source" />
+                <ScalarProperty Name="customertype" ColumnName="customertype" />
+                <ScalarProperty Name="profession" ColumnName="profession" />
+                <ScalarProperty Name="companytype" ColumnName="companytype" />
+                <ScalarProperty Name="productinfo" ColumnName="productinfo" />
+                <ScalarProperty Name="customerdesc" ColumnName="customerdesc" />
+                <ScalarProperty Name="remarks" ColumnName="remarks" />
+                <ScalarProperty Name="bank" ColumnName="bank" />
+                <ScalarProperty Name="accountname" ColumnName="accountname" />
+                <ScalarProperty Name="accountno" ColumnName="accountno" />
+                <ScalarProperty Name="taxcode" ColumnName="taxcode" />
+                <ScalarProperty Name="invoiceaddress" ColumnName="invoiceaddress" />
+                <ScalarProperty Name="createuid" ColumnName="createuid" />
+                <ScalarProperty Name="createtime" ColumnName="createtime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Customer_address">
+            <EntityTypeMapping TypeName="MEMSModel.T_Customer_address">
+              <MappingFragment StoreEntitySet="T_Customer_address">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="customerid" ColumnName="customerid" />
+                <ScalarProperty Name="addressname" ColumnName="addressname" />
+                <ScalarProperty Name="country" ColumnName="country" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="createuid" ColumnName="createuid" />
+                <ScalarProperty Name="createtime" ColumnName="createtime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Customer_contacts">
+            <EntityTypeMapping TypeName="MEMSModel.T_Customer_contacts">
+              <MappingFragment StoreEntitySet="T_Customer_contacts">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="customerid" ColumnName="customerid" />
+                <ScalarProperty Name="contactname" ColumnName="contactname" />
+                <ScalarProperty Name="sex" ColumnName="sex" />
+                <ScalarProperty Name="position" ColumnName="position" />
+                <ScalarProperty Name="cellphone" ColumnName="cellphone" />
+                <ScalarProperty Name="telphone" ColumnName="telphone" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="qq" ColumnName="qq" />
+                <ScalarProperty Name="fax" ColumnName="fax" />
+                <ScalarProperty Name="remarks" ColumnName="remarks" />
+                <ScalarProperty Name="createuid" ColumnName="createuid" />
+                <ScalarProperty Name="createtime" ColumnName="createtime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Suppliers">
+            <EntityTypeMapping TypeName="MEMSModel.T_Suppliers">
+              <MappingFragment StoreEntitySet="T_Suppliers">
+                <ScalarProperty Name="simplename" ColumnName="simplename" />
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="supplierno" ColumnName="supplierno" />
+                <ScalarProperty Name="suppliername" ColumnName="suppliername" />
+                <ScalarProperty Name="suppliertype" ColumnName="suppliertype" />
+                <ScalarProperty Name="telphone" ColumnName="telphone" />
+                <ScalarProperty Name="fax" ColumnName="fax" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="website" ColumnName="website" />
+                <ScalarProperty Name="postcode" ColumnName="postcode" />
+                <ScalarProperty Name="country" ColumnName="country" />
+                <ScalarProperty Name="province" ColumnName="province" />
+                <ScalarProperty Name="city" ColumnName="city" />
+                <ScalarProperty Name="address" ColumnName="address" />
+                <ScalarProperty Name="bank" ColumnName="bank" />
+                <ScalarProperty Name="accountname" ColumnName="accountname" />
+                <ScalarProperty Name="accountno" ColumnName="accountno" />
+                <ScalarProperty Name="taxcode" ColumnName="taxcode" />
+                <ScalarProperty Name="legalperson" ColumnName="legalperson" />
+                <ScalarProperty Name="businessscope" ColumnName="businessscope" />
+                <ScalarProperty Name="remarks" ColumnName="remarks" />
+                <ScalarProperty Name="createuid" ColumnName="createuid" />
+                <ScalarProperty Name="createtime" ColumnName="createtime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Suppliers_contacts">
+            <EntityTypeMapping TypeName="MEMSModel.T_Suppliers_contacts">
+              <MappingFragment StoreEntitySet="T_Suppliers_contacts">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="supplierid" ColumnName="supplierid" />
+                <ScalarProperty Name="contactname" ColumnName="contactname" />
+                <ScalarProperty Name="sex" ColumnName="sex" />
+                <ScalarProperty Name="position" ColumnName="position" />
+                <ScalarProperty Name="cellphone" ColumnName="cellphone" />
+                <ScalarProperty Name="telphone" ColumnName="telphone" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="qq" ColumnName="qq" />
+                <ScalarProperty Name="fax" ColumnName="fax" />
+                <ScalarProperty Name="remarks" ColumnName="remarks" />
+                <ScalarProperty Name="createuid" ColumnName="createuid" />
+                <ScalarProperty Name="createtime" ColumnName="createtime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Crafts">
+            <EntityTypeMapping TypeName="MEMSModel.T_Crafts">
+              <MappingFragment StoreEntitySet="T_Crafts">
+                <ScalarProperty Name="remarks" ColumnName="remarks" />
+                <ScalarProperty Name="processname" ColumnName="processname" />
+                <ScalarProperty Name="processindex" ColumnName="processindex" />
+                <ScalarProperty Name="pid" ColumnName="pid" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_CraftsPrice">
+            <EntityTypeMapping TypeName="MEMSModel.T_CraftsPrice">
+              <MappingFragment StoreEntitySet="T_CraftsPrice">
+                <ScalarProperty Name="processprice" ColumnName="processprice" />
+                <ScalarProperty Name="processid" ColumnName="processid" />
+                <ScalarProperty Name="pricebasicid" ColumnName="pricebasicid" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_Product">
+            <EntityTypeMapping TypeName="MEMSModel.T_Product">
+              <MappingFragment StoreEntitySet="T_Product">
+                <ScalarProperty Name="filepath" ColumnName="filepath" />
+                <ScalarProperty Name="protype" ColumnName="protype" />
+                <ScalarProperty Name="progrossweight" ColumnName="progrossweight" />
+                <ScalarProperty Name="pronetweight" ColumnName="pronetweight" />
+                <ScalarProperty Name="prospecification" ColumnName="prospecification" />
+                <ScalarProperty Name="prounit" ColumnName="prounit" />
+                <ScalarProperty Name="drawingno" ColumnName="drawingno" />
+                <ScalarProperty Name="proname" ColumnName="proname" />
+                <ScalarProperty Name="procode" ColumnName="procode" />
+                <ScalarProperty Name="customerid" ColumnName="customerid" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_ProductbasicPrice">
+            <EntityTypeMapping TypeName="MEMSModel.T_ProductbasicPrice">
+              <MappingFragment StoreEntitySet="T_ProductbasicPrice">
+                <ScalarProperty Name="pricebasicremark" ColumnName="pricebasicremark" />
+                <ScalarProperty Name="totalprice" ColumnName="totalprice" />
+                <ScalarProperty Name="otherprice" ColumnName="otherprice" />
+                <ScalarProperty Name="manageprice" ColumnName="manageprice" />
+                <ScalarProperty Name="machineprice" ColumnName="machineprice" />
+                <ScalarProperty Name="materialprice" ColumnName="materialprice" />
+                <ScalarProperty Name="returnmatprice" ColumnName="returnmatprice" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="productid" ColumnName="productid" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_FileMgr">
+            <EntityTypeMapping TypeName="MEMSModel.T_FileMgr">
+              <MappingFragment StoreEntitySet="T_FileMgr">
+                <ScalarProperty Name="filetype" ColumnName="filetype" />
+                <ScalarProperty Name="filepath" ColumnName="filepath" />
+                <ScalarProperty Name="filecode" ColumnName="filecode" />
+                <ScalarProperty Name="filename" ColumnName="filename" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_ProductType">
+            <EntityTypeMapping TypeName="MEMSModel.T_ProductType">
+              <MappingFragment StoreEntitySet="T_ProductType">
+                <ScalarProperty Name="fid" ColumnName="fid" />
+                <ScalarProperty Name="typedesc" ColumnName="typedesc" />
+                <ScalarProperty Name="typename" ColumnName="typename" />
+                <ScalarProperty Name="typecode" ColumnName="typecode" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="无" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

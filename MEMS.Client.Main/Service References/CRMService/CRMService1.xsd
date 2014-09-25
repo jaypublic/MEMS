@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/MEMSservice.DAL" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/MEMSservice.DAL" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="ArrayOfT_Customer">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="T_Customer" nillable="true" type="tns:T_Customer" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfT_Customer" nillable="true" type="tns:ArrayOfT_Customer" />
+  <xs:complexType name="T_Customer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="accountname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="accountno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="bank" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="city" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="companyaddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="companytype" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="country" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="createtime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="createuid" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="customerdesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="customername" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="customerno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="customertype" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fax" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="invoiceaddress" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="phone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="postcode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="productinfo" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="profession" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="province" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="remarks" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="simplename" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="source" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="taxcode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="website" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="T_Customer" nillable="true" type="tns:T_Customer" />
+  <xs:complexType name="ArrayOfT_Base_companytype">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="T_Base_companytype" nillable="true" type="tns:T_Base_companytype" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfT_Base_companytype" nillable="true" type="tns:ArrayOfT_Base_companytype" />
+  <xs:complexType name="T_Base_companytype">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="remarks" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="typename" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="T_Base_companytype" nillable="true" type="tns:T_Base_companytype" />
+  <xs:complexType name="ArrayOfT_Base_customertype">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="T_Base_customertype" nillable="true" type="tns:T_Base_customertype" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfT_Base_customertype" nillable="true" type="tns:ArrayOfT_Base_customertype" />
+  <xs:complexType name="T_Base_customertype">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="remarks" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="typename" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="T_Base_customertype" nillable="true" type="tns:T_Base_customertype" />
+  <xs:complexType name="ArrayOfT_Base_profession">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="T_Base_profession" nillable="true" type="tns:T_Base_profession" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfT_Base_profession" nillable="true" type="tns:ArrayOfT_Base_profession" />
+  <xs:complexType name="T_Base_profession">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="professionname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="remarks" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="T_Base_profession" nillable="true" type="tns:T_Base_profession" />
+  <xs:complexType name="ArrayOfT_Customer_contacts">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="T_Customer_contacts" nillable="true" type="tns:T_Customer_contacts" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfT_Customer_contacts" nillable="true" type="tns:ArrayOfT_Customer_contacts" />
+  <xs:complexType name="T_Customer_contacts">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cellphone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="contactname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="createtime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="createuid" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="customerid" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fax" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="position" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="qq" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="remarks" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="sex" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="telphone" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="T_Customer_contacts" nillable="true" type="tns:T_Customer_contacts" />
+  <xs:complexType name="ArrayOfT_Customer_address">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="T_Customer_address" nillable="true" type="tns:T_Customer_address" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfT_Customer_address" nillable="true" type="tns:ArrayOfT_Customer_address" />
+  <xs:complexType name="T_Customer_address">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="addressname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="city" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="country" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="createtime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="createuid" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="customerid" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="T_Customer_address" nillable="true" type="tns:T_Customer_address" />
+  <xs:complexType name="ArrayOfT_Suppliers">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="T_Suppliers" nillable="true" type="tns:T_Suppliers" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfT_Suppliers" nillable="true" type="tns:ArrayOfT_Suppliers" />
+  <xs:complexType name="T_Suppliers">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="accountname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="accountno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="address" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="bank" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="businessscope" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="city" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="country" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="createtime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="createuid" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fax" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="legalperson" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="postcode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="province" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="remarks" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="simplename" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="suppliername" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="supplierno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="suppliertype" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="taxcode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="telphone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="website" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="T_Suppliers" nillable="true" type="tns:T_Suppliers" />
+  <xs:complexType name="ArrayOfT_Base_suppliertype">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="T_Base_suppliertype" nillable="true" type="tns:T_Base_suppliertype" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfT_Base_suppliertype" nillable="true" type="tns:ArrayOfT_Base_suppliertype" />
+  <xs:complexType name="T_Base_suppliertype">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="remarks" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="typename" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="T_Base_suppliertype" nillable="true" type="tns:T_Base_suppliertype" />
+  <xs:complexType name="ArrayOfT_Suppliers_contacts">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="T_Suppliers_contacts" nillable="true" type="tns:T_Suppliers_contacts" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfT_Suppliers_contacts" nillable="true" type="tns:ArrayOfT_Suppliers_contacts" />
+  <xs:complexType name="T_Suppliers_contacts">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cellphone" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="contactname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="createtime" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="createuid" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="fax" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="position" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="qq" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="remarks" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="sex" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="supplierid" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="telphone" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="T_Suppliers_contacts" nillable="true" type="tns:T_Suppliers_contacts" />
+  <xs:complexType name="ArrayOfProductList">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductList" nillable="true" type="tns:ProductList" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfProductList" nillable="true" type="tns:ArrayOfProductList" />
+  <xs:complexType name="ProductList">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="customerid" type="xs:int" />
+      <xs:element minOccurs="0" name="customername" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="drawingno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="procode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="proname" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ProductList" nillable="true" type="tns:ProductList" />
+  <xs:complexType name="ArrayOfT_ProductType">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="T_ProductType" nillable="true" type="tns:T_ProductType" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfT_ProductType" nillable="true" type="tns:ArrayOfT_ProductType" />
+  <xs:complexType name="T_ProductType">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fid" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="typecode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="typedesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="typename" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="T_ProductType" nillable="true" type="tns:T_ProductType" />
+  <xs:complexType name="T_Product">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="customerid" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="drawingno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="filepath" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="procode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="progrossweight" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="proname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pronetweight" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="prospecification" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="protype" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="prounit" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="T_Product" nillable="true" type="tns:T_Product" />
+  <xs:complexType name="ArrayOfT_Crafts">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="T_Crafts" nillable="true" type="tns:T_Crafts" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfT_Crafts" nillable="true" type="tns:ArrayOfT_Crafts" />
+  <xs:complexType name="T_Crafts">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="pid" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="processindex" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="processname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="remarks" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="T_Crafts" nillable="true" type="tns:T_Crafts" />
+</xs:schema>

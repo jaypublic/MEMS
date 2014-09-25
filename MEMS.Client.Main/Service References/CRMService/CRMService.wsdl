@@ -1,0 +1,743 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="CRMService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:55160/CRMService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://localhost:55160/CRMService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:55160/CRMService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/MEMSservice.DAL" />
+      <xsd:import schemaLocation="http://localhost:55160/CRMService.svc?xsd=xsd3" namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ICRMService_getCustomerList_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCustomerList" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_getCustomerList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCustomerListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_getCustomerListbyP_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCustomerListbyP" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_getCustomerListbyP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCustomerListbyPResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_getCustomerbyid_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCustomerbyid" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_getCustomerbyid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCustomerbyidResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_AddNewCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewCustomer" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_AddNewCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_EditCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditCustomer" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_EditCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_DeleteCustomer_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCustomer" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_DeleteCustomer_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCustomerResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_getCpytypeList_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCpytypeList" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_getCpytypeList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCpytypeListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_getCtmtypeList_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCtmtypeList" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_getCtmtypeList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCtmtypeListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_getProfList_InputMessage">
+    <wsdl:part name="parameters" element="tns:getProfList" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_getProfList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getProfListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_getCustomerContactList_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCustomerContactList" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_getCustomerContactList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCustomerContactListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_getCustomerAddressList_InputMessage">
+    <wsdl:part name="parameters" element="tns:getCustomerAddressList" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_getCustomerAddressList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getCustomerAddressListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_DelCustomerAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelCustomerAddress" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_DelCustomerAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelCustomerAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_DelCustomerContact_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelCustomerContact" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_DelCustomerContact_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelCustomerContactResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_AddCustomerAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddCustomerAddress" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_AddCustomerAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddCustomerAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_AddCustomerContact_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddCustomerContact" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_AddCustomerContact_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddCustomerContactResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_UpdCustomerAddress_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdCustomerAddress" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_UpdCustomerAddress_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdCustomerAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_UpdCustomerContact_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdCustomerContact" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_UpdCustomerContact_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdCustomerContactResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_getAllSupplier_InputMessage">
+    <wsdl:part name="parameters" element="tns:getAllSupplier" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_getAllSupplier_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getAllSupplierResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_getSupplierList_InputMessage">
+    <wsdl:part name="parameters" element="tns:getSupplierList" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_getSupplierList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getSupplierListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_getSupplierbyId_InputMessage">
+    <wsdl:part name="parameters" element="tns:getSupplierbyId" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_getSupplierbyId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getSupplierbyIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_addNewSupplier_InputMessage">
+    <wsdl:part name="parameters" element="tns:addNewSupplier" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_addNewSupplier_OutputMessage">
+    <wsdl:part name="parameters" element="tns:addNewSupplierResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_EditSupplier_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditSupplier" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_EditSupplier_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditSupplierResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_DeleteSupplier_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSupplier" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_DeleteSupplier_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSupplierResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_getSuptypeLst_InputMessage">
+    <wsdl:part name="parameters" element="tns:getSuptypeLst" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_getSuptypeLst_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getSuptypeLstResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_getSupplierContacts_InputMessage">
+    <wsdl:part name="parameters" element="tns:getSupplierContacts" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_getSupplierContacts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getSupplierContactsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_AddSupplierContacts_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddSupplierContacts" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_AddSupplierContacts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddSupplierContactsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_EditSupplierContacts_InputMessage">
+    <wsdl:part name="parameters" element="tns:EditSupplierContacts" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_EditSupplierContacts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:EditSupplierContactsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_DelSupplierContacts_InputMessage">
+    <wsdl:part name="parameters" element="tns:DelSupplierContacts" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_DelSupplierContacts_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DelSupplierContactsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_getProductList_InputMessage">
+    <wsdl:part name="parameters" element="tns:getProductList" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_getProductList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getProductListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_getProductListbycdt_InputMessage">
+    <wsdl:part name="parameters" element="tns:getProductListbycdt" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_getProductListbycdt_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getProductListbycdtResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_getProductTypeList_InputMessage">
+    <wsdl:part name="parameters" element="tns:getProductTypeList" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_getProductTypeList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getProductTypeListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_getProductbyId_InputMessage">
+    <wsdl:part name="parameters" element="tns:getProductbyId" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_getProductbyId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getProductbyIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_AddNewProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewProduct" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_AddNewProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_UpdateProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProduct" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_UpdateProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_getProductCraft_InputMessage">
+    <wsdl:part name="parameters" element="tns:getProductCraft" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_getProductCraft_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getProductCraftResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_AddNewCraft_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewCraft" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_AddNewCraft_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewCraftResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_UpdateCraft_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCraft" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_UpdateCraft_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateCraftResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_DeleteCraft_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCraft" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_DeleteCraft_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteCraftResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ICRMService">
+    <wsdl:operation name="getCustomerList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMService/getCustomerList" message="tns:ICRMService_getCustomerList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMService/getCustomerListResponse" message="tns:ICRMService_getCustomerList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getCustomerListbyP">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMService/getCustomerListbyP" message="tns:ICRMService_getCustomerListbyP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMService/getCustomerListbyPResponse" message="tns:ICRMService_getCustomerListbyP_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getCustomerbyid">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMService/getCustomerbyid" message="tns:ICRMService_getCustomerbyid_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMService/getCustomerbyidResponse" message="tns:ICRMService_getCustomerbyid_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMService/AddNewCustomer" message="tns:ICRMService_AddNewCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMService/AddNewCustomerResponse" message="tns:ICRMService_AddNewCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMService/EditCustomer" message="tns:ICRMService_EditCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMService/EditCustomerResponse" message="tns:ICRMService_EditCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCustomer">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMService/DeleteCustomer" message="tns:ICRMService_DeleteCustomer_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMService/DeleteCustomerResponse" message="tns:ICRMService_DeleteCustomer_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getCpytypeList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMService/getCpytypeList" message="tns:ICRMService_getCpytypeList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMService/getCpytypeListResponse" message="tns:ICRMService_getCpytypeList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getCtmtypeList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMService/getCtmtypeList" message="tns:ICRMService_getCtmtypeList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMService/getCtmtypeListResponse" message="tns:ICRMService_getCtmtypeList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getProfList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMService/getProfList" message="tns:ICRMService_getProfList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMService/getProfListResponse" message="tns:ICRMService_getProfList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getCustomerContactList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMService/getCustomerContactList" message="tns:ICRMService_getCustomerContactList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMService/getCustomerContactListResponse" message="tns:ICRMService_getCustomerContactList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getCustomerAddressList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMService/getCustomerAddressList" message="tns:ICRMService_getCustomerAddressList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMService/getCustomerAddressListResponse" message="tns:ICRMService_getCustomerAddressList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelCustomerAddress">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMService/DelCustomerAddress" message="tns:ICRMService_DelCustomerAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMService/DelCustomerAddressResponse" message="tns:ICRMService_DelCustomerAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelCustomerContact">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMService/DelCustomerContact" message="tns:ICRMService_DelCustomerContact_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMService/DelCustomerContactResponse" message="tns:ICRMService_DelCustomerContact_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCustomerAddress">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMService/AddCustomerAddress" message="tns:ICRMService_AddCustomerAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMService/AddCustomerAddressResponse" message="tns:ICRMService_AddCustomerAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddCustomerContact">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMService/AddCustomerContact" message="tns:ICRMService_AddCustomerContact_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMService/AddCustomerContactResponse" message="tns:ICRMService_AddCustomerContact_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdCustomerAddress">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMService/UpdCustomerAddress" message="tns:ICRMService_UpdCustomerAddress_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMService/UpdCustomerAddressResponse" message="tns:ICRMService_UpdCustomerAddress_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdCustomerContact">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMService/UpdCustomerContact" message="tns:ICRMService_UpdCustomerContact_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMService/UpdCustomerContactResponse" message="tns:ICRMService_UpdCustomerContact_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllSupplier">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMService/getAllSupplier" message="tns:ICRMService_getAllSupplier_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMService/getAllSupplierResponse" message="tns:ICRMService_getAllSupplier_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getSupplierList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMService/getSupplierList" message="tns:ICRMService_getSupplierList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMService/getSupplierListResponse" message="tns:ICRMService_getSupplierList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getSupplierbyId">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMService/getSupplierbyId" message="tns:ICRMService_getSupplierbyId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMService/getSupplierbyIdResponse" message="tns:ICRMService_getSupplierbyId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="addNewSupplier">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMService/addNewSupplier" message="tns:ICRMService_addNewSupplier_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMService/addNewSupplierResponse" message="tns:ICRMService_addNewSupplier_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditSupplier">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMService/EditSupplier" message="tns:ICRMService_EditSupplier_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMService/EditSupplierResponse" message="tns:ICRMService_EditSupplier_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSupplier">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMService/DeleteSupplier" message="tns:ICRMService_DeleteSupplier_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMService/DeleteSupplierResponse" message="tns:ICRMService_DeleteSupplier_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getSuptypeLst">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMService/getSuptypeLst" message="tns:ICRMService_getSuptypeLst_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMService/getSuptypeLstResponse" message="tns:ICRMService_getSuptypeLst_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getSupplierContacts">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMService/getSupplierContacts" message="tns:ICRMService_getSupplierContacts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMService/getSupplierContactsResponse" message="tns:ICRMService_getSupplierContacts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddSupplierContacts">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMService/AddSupplierContacts" message="tns:ICRMService_AddSupplierContacts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMService/AddSupplierContactsResponse" message="tns:ICRMService_AddSupplierContacts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="EditSupplierContacts">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMService/EditSupplierContacts" message="tns:ICRMService_EditSupplierContacts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMService/EditSupplierContactsResponse" message="tns:ICRMService_EditSupplierContacts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DelSupplierContacts">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMService/DelSupplierContacts" message="tns:ICRMService_DelSupplierContacts_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMService/DelSupplierContactsResponse" message="tns:ICRMService_DelSupplierContacts_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getProductList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMService/getProductList" message="tns:ICRMService_getProductList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMService/getProductListResponse" message="tns:ICRMService_getProductList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getProductListbycdt">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMService/getProductListbycdt" message="tns:ICRMService_getProductListbycdt_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMService/getProductListbycdtResponse" message="tns:ICRMService_getProductListbycdt_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getProductTypeList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMService/getProductTypeList" message="tns:ICRMService_getProductTypeList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMService/getProductTypeListResponse" message="tns:ICRMService_getProductTypeList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getProductbyId">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMService/getProductbyId" message="tns:ICRMService_getProductbyId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMService/getProductbyIdResponse" message="tns:ICRMService_getProductbyId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMService/AddNewProduct" message="tns:ICRMService_AddNewProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMService/AddNewProductResponse" message="tns:ICRMService_AddNewProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMService/UpdateProduct" message="tns:ICRMService_UpdateProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMService/UpdateProductResponse" message="tns:ICRMService_UpdateProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getProductCraft">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMService/getProductCraft" message="tns:ICRMService_getProductCraft_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMService/getProductCraftResponse" message="tns:ICRMService_getProductCraft_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewCraft">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMService/AddNewCraft" message="tns:ICRMService_AddNewCraft_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMService/AddNewCraftResponse" message="tns:ICRMService_AddNewCraft_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCraft">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMService/UpdateCraft" message="tns:ICRMService_UpdateCraft_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMService/UpdateCraftResponse" message="tns:ICRMService_UpdateCraft_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCraft">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMService/DeleteCraft" message="tns:ICRMService_DeleteCraft_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMService/DeleteCraftResponse" message="tns:ICRMService_DeleteCraft_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_ICRMService" type="tns:ICRMService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="getCustomerList">
+      <soap:operation soapAction="http://tempuri.org/ICRMService/getCustomerList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCustomerListbyP">
+      <soap:operation soapAction="http://tempuri.org/ICRMService/getCustomerListbyP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCustomerbyid">
+      <soap:operation soapAction="http://tempuri.org/ICRMService/getCustomerbyid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewCustomer">
+      <soap:operation soapAction="http://tempuri.org/ICRMService/AddNewCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditCustomer">
+      <soap:operation soapAction="http://tempuri.org/ICRMService/EditCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCustomer">
+      <soap:operation soapAction="http://tempuri.org/ICRMService/DeleteCustomer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCpytypeList">
+      <soap:operation soapAction="http://tempuri.org/ICRMService/getCpytypeList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCtmtypeList">
+      <soap:operation soapAction="http://tempuri.org/ICRMService/getCtmtypeList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProfList">
+      <soap:operation soapAction="http://tempuri.org/ICRMService/getProfList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCustomerContactList">
+      <soap:operation soapAction="http://tempuri.org/ICRMService/getCustomerContactList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getCustomerAddressList">
+      <soap:operation soapAction="http://tempuri.org/ICRMService/getCustomerAddressList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelCustomerAddress">
+      <soap:operation soapAction="http://tempuri.org/ICRMService/DelCustomerAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelCustomerContact">
+      <soap:operation soapAction="http://tempuri.org/ICRMService/DelCustomerContact" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCustomerAddress">
+      <soap:operation soapAction="http://tempuri.org/ICRMService/AddCustomerAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddCustomerContact">
+      <soap:operation soapAction="http://tempuri.org/ICRMService/AddCustomerContact" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdCustomerAddress">
+      <soap:operation soapAction="http://tempuri.org/ICRMService/UpdCustomerAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdCustomerContact">
+      <soap:operation soapAction="http://tempuri.org/ICRMService/UpdCustomerContact" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getAllSupplier">
+      <soap:operation soapAction="http://tempuri.org/ICRMService/getAllSupplier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSupplierList">
+      <soap:operation soapAction="http://tempuri.org/ICRMService/getSupplierList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSupplierbyId">
+      <soap:operation soapAction="http://tempuri.org/ICRMService/getSupplierbyId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addNewSupplier">
+      <soap:operation soapAction="http://tempuri.org/ICRMService/addNewSupplier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditSupplier">
+      <soap:operation soapAction="http://tempuri.org/ICRMService/EditSupplier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSupplier">
+      <soap:operation soapAction="http://tempuri.org/ICRMService/DeleteSupplier" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSuptypeLst">
+      <soap:operation soapAction="http://tempuri.org/ICRMService/getSuptypeLst" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSupplierContacts">
+      <soap:operation soapAction="http://tempuri.org/ICRMService/getSupplierContacts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddSupplierContacts">
+      <soap:operation soapAction="http://tempuri.org/ICRMService/AddSupplierContacts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="EditSupplierContacts">
+      <soap:operation soapAction="http://tempuri.org/ICRMService/EditSupplierContacts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DelSupplierContacts">
+      <soap:operation soapAction="http://tempuri.org/ICRMService/DelSupplierContacts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProductList">
+      <soap:operation soapAction="http://tempuri.org/ICRMService/getProductList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProductListbycdt">
+      <soap:operation soapAction="http://tempuri.org/ICRMService/getProductListbycdt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProductTypeList">
+      <soap:operation soapAction="http://tempuri.org/ICRMService/getProductTypeList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProductbyId">
+      <soap:operation soapAction="http://tempuri.org/ICRMService/getProductbyId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewProduct">
+      <soap:operation soapAction="http://tempuri.org/ICRMService/AddNewProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProduct">
+      <soap:operation soapAction="http://tempuri.org/ICRMService/UpdateProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProductCraft">
+      <soap:operation soapAction="http://tempuri.org/ICRMService/getProductCraft" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewCraft">
+      <soap:operation soapAction="http://tempuri.org/ICRMService/AddNewCraft" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateCraft">
+      <soap:operation soapAction="http://tempuri.org/ICRMService/UpdateCraft" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteCraft">
+      <soap:operation soapAction="http://tempuri.org/ICRMService/DeleteCraft" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CRMService">
+    <wsdl:port name="BasicHttpBinding_ICRMService" binding="tns:BasicHttpBinding_ICRMService">
+      <soap:address location="http://localhost:55160/CRMService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

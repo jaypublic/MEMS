@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="4bac3c216e8c4660ba9d3ad5b039f61a" Name="关系图1" ZoomLevel="100">
+        <EntityTypeShape EntityType="MEMSModel.T_Base_companytype" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEMSModel.T_Base_customertype" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEMSModel.T_Base_profession" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEMSModel.T_Base_suppliertype" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEMSModel.T_Customer" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEMSModel.T_Customer_address" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEMSModel.T_Customer_contacts" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEMSModel.T_Suppliers" Width="1.5" PointX="6.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEMSModel.T_Suppliers_contacts" Width="1.5" PointX="2.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="MEMSModel.T_Crafts" Width="1.5" PointX="8.75" PointY="0.75" />
+        <EntityTypeShape EntityType="MEMSModel.T_CraftsPrice" Width="1.5" PointX="8.75" PointY="3.75" />
+        <EntityTypeShape EntityType="MEMSModel.T_Product" Width="1.5" PointX="8.75" PointY="6.75" />
+        <EntityTypeShape EntityType="MEMSModel.T_ProductbasicPrice" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="MEMSModel.T_FileMgr" Width="1.5" PointX="10.75" PointY="4.75" />
+        <EntityTypeShape EntityType="MEMSModel.T_ProductType" Width="1.5" PointX="10.75" PointY="7.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
