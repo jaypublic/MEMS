@@ -160,6 +160,7 @@ namespace MEMS.Client.CRM
                 var ds = (List<T_Crafts>)this.gvcraft.DataSource;
                 var newcraft = new T_Crafts();
                 newcraft.pid = m_pid;
+                newcraft.processindex = ds.Count + 1;
                 modifycraftlst.Add(newcraft);
                 ds.Add(newcraft);
                 gvcraft.RefreshData();
@@ -170,6 +171,7 @@ namespace MEMS.Client.CRM
                 List<T_Crafts> craftlst = new List<T_Crafts>();
                 var newcraft = new T_Crafts();
                 newcraft.pid = m_pid;
+                newcraft.processindex = 1;
                 craftlst.Add(newcraft);
                 gccraft.DataSource = craftlst;
             }
@@ -191,7 +193,7 @@ namespace MEMS.Client.CRM
                     }
                     else
                     {
-                        if (XtraMessageBox.Show("是否删除已保存的联系人", "提示", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                        if (XtraMessageBox.Show("是否删除已保存的工序", "提示", MessageBoxButtons.OKCancel) == DialogResult.OK)
                         {
                             T_Crafts crafts = ds.Find(c => c.id == idx);
                             var client = new CRMServiceClient();
@@ -211,14 +213,91 @@ namespace MEMS.Client.CRM
 
         private void btnup_Click(object sender, EventArgs e)
         {
-
+            Updowncraft(movedirection.up);
         }
 
         private void btndown_Click(object sender, EventArgs e)
         {
-
+            Updowncraft(movedirection.down);
         }
 
+        private void Updowncraft(movedirection direction)
+        {
+            int idx = (int)gvcraft.GetFocusedRowCellValue("processindex");
+            var ds = (List<T_Crafts>)gvcraft.DataSource;
+            var craft = ds.Find(c => c.processindex == idx);
+            int pos = craft.processindex.Value;
+            if (direction == movedirection.up)
+            {
+                var craftnext = ds.Find(c => c.processindex == pos - 1);
+                if (craftnext == null)
+                {
+                    craft.processindex = pos;
+                }
+                else
+                {
+                    craft.processindex = pos - 1;
+                    craftnext.processindex = pos;
+                }
+            }
+            else
+            {
+                var craftnext = ds.Find(c => c.processindex == pos + 1);
+                if (craftnext == null)
+                {
+                    craft.processindex = pos;
+                }
+                else
+                {
+                    craft.processindex = pos + 1;
+                    craftnext.processindex = pos;
+                }
+            }
+            ds.Sort(comparecraft);
+            gvcraft.RefreshData();
+            gvcraft.FocusedRowHandle = craft.processindex.Value - 1;
+        }
+        enum movedirection
+        {
+            up,
+            down
+        }
+        private static int comparecraft(T_Crafts up, T_Crafts down)
+        {
+            if (up == null)
+            {
+                if (down == null)
+                {
+                    return 0;
+                }
+                else
+                {
+                    return -1;
+                }
+            }
+            else
+            {
+                if (down == null)
+                {
+                    return 1;
+                }
+                else
+                {
+                    if (up.processindex.Value > down.processindex.Value)
+                    {
+                        return 1;
+                    }
+                    else if (up.processindex.Value == down.processindex.Value)
+                    {
+                        return 0;
+                    }
+                    else// if (up.colpos.Value < down.colpos.Value)
+                    {
+                        return -1;
+                    }
+                }
+            }
+        }
         private void btnfileupload_Click(object sender, EventArgs e)
         {
 
