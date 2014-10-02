@@ -28,3 +28,5 @@ _ReSharper*/
 *.vssscc
 $tf*/
 licenses.licx
+/MEMS.Client.CRM/Properties/licenses.licx
+/MEMS.Client.Main/Properties/licenses.licx

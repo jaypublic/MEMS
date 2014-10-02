@@ -107,7 +107,7 @@ namespace MEMS.Client.CRM
                 {
                     m_product.pronetweight = Convert.ToDouble(txt_nw.Text);
                 }
-                catch (FormatException fe)
+                catch (FormatException)
                 {
                     throw new Exception("净重请输入数字");
                 }
@@ -122,7 +122,7 @@ namespace MEMS.Client.CRM
                 {
                     m_product.progrossweight = Convert.ToDouble(txt_gw.Text);
                 }
-                catch (FormatException fe)
+                catch (FormatException)
                 {
                     throw new Exception("毛重请输入数字");
                 }
@@ -311,7 +311,7 @@ namespace MEMS.Client.CRM
             }
             catch (Exception ex)
             {
-
+                XtraMessageBox.Show(ex.Message);
             }
         }
 
