@@ -17,6 +17,7 @@ namespace MEMS.Client.CRM
         T_Product m_product;
         string m_drawingpath;
         List<T_Crafts> modifycraftlst = new List<T_Crafts>();
+        CRMServiceClient m_client = new CRMServiceClient();
         public ProductinfoForm(frmmodetype type)
         {
             InitializeComponent();
@@ -31,8 +32,7 @@ namespace MEMS.Client.CRM
 
         protected override void FormLoad()
         {
-            CRMServiceClient client = new CRMServiceClient();
-            var customerlst = client.getCustomerList();
+            var customerlst = m_client.getCustomerList();
             foreach (var customer in customerlst)
             {
                 cmb_cst.Properties.Items.Add(customer.customername);
@@ -41,16 +41,16 @@ namespace MEMS.Client.CRM
 
             if (formmode == frmmodetype.edit)
             {
-                m_product = client.getProductbyId(m_pid);
+                m_product = m_client.getProductbyId(m_pid);
                 setData();
-                List<T_Crafts> craftlst = new List<T_Crafts>(client.getProductCraft(m_pid));
+                List<T_Crafts> craftlst = new List<T_Crafts>(m_client.getProductCraft(m_pid));
                 gccraft.DataSource = craftlst;
             }
             else if (formmode == frmmodetype.delete)
             {
-                m_product = client.getProductbyId(m_pid);
+                m_product = m_client.getProductbyId(m_pid);
                 setData();
-                List<T_Crafts> craftlst = new List<T_Crafts>(client.getProductCraft(m_pid));
+                List<T_Crafts> craftlst = new List<T_Crafts>(m_client.getProductCraft(m_pid));
                 gccraft.DataSource = craftlst;
             }
             
@@ -76,19 +76,20 @@ namespace MEMS.Client.CRM
 
         protected override void AddObject()
         {
-            CRMServiceClient client = new CRMServiceClient();
             m_product = new T_Product();
             getData();
-            client.AddNewProduct(m_product);
+            m_client.AddNewProduct(m_product);
+            saveCraft();
             base.AddObject();
         }
         protected override void EditObject()
         {
-            CRMServiceClient client = new CRMServiceClient();
             getData();
-            client.UpdateProduct(m_product);
+            m_client.UpdateProduct(m_product);
+            saveCraft();
             base.EditObject();
         }
+
 
         private void getData()
         {
@@ -177,6 +178,25 @@ namespace MEMS.Client.CRM
             }
         }
 
+        private void saveCraft()
+        {
+            if (gvcraft.DataRowCount > 0)
+            {
+                var ds = (List<T_Crafts>)this.gvcraft.DataSource;
+                foreach (var craft in ds)
+                {
+                    if (craft.id == 0)
+                    {
+                        m_client.AddNewCraft(craft);
+                    }
+                    else
+                    {
+                        m_client.UpdateCraft(craft);
+                    }
+                }
+            }
+        }
+
         private void btndel_Click(object sender, EventArgs e)
         {
             try
@@ -196,8 +216,7 @@ namespace MEMS.Client.CRM
                         if (XtraMessageBox.Show("是否删除已保存的工序", "提示", MessageBoxButtons.OKCancel) == DialogResult.OK)
                         {
                             T_Crafts crafts = ds.Find(c => c.id == idx);
-                            var client = new CRMServiceClient();
-                            client.DeleteCraft(crafts);
+                            m_client.DeleteCraft(crafts);
                             ds.RemoveAt(craftid);
                             gvcraft.RefreshData();
                         }
