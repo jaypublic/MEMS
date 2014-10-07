@@ -257,4 +257,21 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="T_Crafts" nillable="true" type="tns:T_Crafts" />
+  <xs:complexType name="ArrayOfT_ProductDraw">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="T_ProductDraw" nillable="true" type="tns:T_ProductDraw" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfT_ProductDraw" nillable="true" type="tns:ArrayOfT_ProductDraw" />
+  <xs:complexType name="T_ProductDraw">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="drawingno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="filepath" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="isdelete" nillable="true" type="xs:boolean" />
+      <xs:element minOccurs="0" name="pid" type="xs:int" />
+      <xs:element minOccurs="0" name="remark" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="T_ProductDraw" nillable="true" type="tns:T_ProductDraw" />
 </xs:schema>

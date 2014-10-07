@@ -493,4 +493,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="getProductDrawList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="productid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getProductDrawListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q40="http://schemas.datacontract.org/2004/07/MEMSservice.DAL" minOccurs="0" name="getProductDrawListResult" nillable="true" type="q40:ArrayOfT_ProductDraw" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

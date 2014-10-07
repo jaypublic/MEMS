@@ -470,5 +470,17 @@ namespace MEMSservice
                 throw ex;
             }
         }
+        public List<T_ProductDraw> getProductDrawList(int productid)
+        {
+            try
+            {
+                ph = new ProductHelper();
+                return ph.getProductDrawList(productid);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

@@ -110,5 +110,15 @@ namespace MEMSservice.BLL
                 return db.SaveChanges() > 0 ? true : false;
             }
         }
+        public List<T_ProductDraw> getProductDrawList(int pid)
+        {
+            using (MEMSEntities db = new MEMSEntities())
+            {
+                var rst = from d in db.T_ProductDraw
+                          where d.pid == pid
+                          select d;
+                return rst.ToList();
+            }
+        }
     }
 }

@@ -2310,6 +2310,131 @@ namespace MEMS.Client.Main.CRMService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_ProductDraw", Namespace="http://schemas.datacontract.org/2004/07/MEMSservice.DAL")]
+    [System.SerializableAttribute()]
+    public partial class T_ProductDraw : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string drawingnoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string filepathField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<bool> isdeleteField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int pidField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string remarkField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string drawingno {
+            get {
+                return this.drawingnoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.drawingnoField, value) != true)) {
+                    this.drawingnoField = value;
+                    this.RaisePropertyChanged("drawingno");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string filepath {
+            get {
+                return this.filepathField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.filepathField, value) != true)) {
+                    this.filepathField = value;
+                    this.RaisePropertyChanged("filepath");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id {
+            get {
+                return this.idField;
+            }
+            set {
+                if ((this.idField.Equals(value) != true)) {
+                    this.idField = value;
+                    this.RaisePropertyChanged("id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<bool> isdelete {
+            get {
+                return this.isdeleteField;
+            }
+            set {
+                if ((this.isdeleteField.Equals(value) != true)) {
+                    this.isdeleteField = value;
+                    this.RaisePropertyChanged("isdelete");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int pid {
+            get {
+                return this.pidField;
+            }
+            set {
+                if ((this.pidField.Equals(value) != true)) {
+                    this.pidField = value;
+                    this.RaisePropertyChanged("pid");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string remark {
+            get {
+                return this.remarkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.remarkField, value) != true)) {
+                    this.remarkField = value;
+                    this.RaisePropertyChanged("remark");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="CRMService.ICRMService")]
     public interface ICRMService {
@@ -2427,6 +2552,9 @@ namespace MEMS.Client.Main.CRMService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/DeleteCraft", ReplyAction="http://tempuri.org/ICRMService/DeleteCraftResponse")]
         bool DeleteCraft(MEMS.Client.Main.CRMService.T_Crafts craft);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/getProductDrawList", ReplyAction="http://tempuri.org/ICRMService/getProductDrawListResponse")]
+        MEMS.Client.Main.CRMService.T_ProductDraw[] getProductDrawList(int productid);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -2606,6 +2734,10 @@ namespace MEMS.Client.Main.CRMService {
         
         public bool DeleteCraft(MEMS.Client.Main.CRMService.T_Crafts craft) {
             return base.Channel.DeleteCraft(craft);
+        }
+        
+        public MEMS.Client.Main.CRMService.T_ProductDraw[] getProductDrawList(int productid) {
+            return base.Channel.getProductDrawList(productid);
         }
     }
 }
