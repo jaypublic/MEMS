@@ -205,7 +205,6 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="customerid" type="xs:int" />
       <xs:element minOccurs="0" name="customername" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="drawingno" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="id" type="xs:int" />
       <xs:element minOccurs="0" name="procode" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="proname" nillable="true" type="xs:string" />
@@ -231,8 +230,6 @@
   <xs:complexType name="T_Product">
     <xs:sequence>
       <xs:element minOccurs="0" name="customerid" nillable="true" type="xs:int" />
-      <xs:element minOccurs="0" name="drawingno" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="filepath" nillable="true" type="xs:int" />
       <xs:element minOccurs="0" name="id" type="xs:int" />
       <xs:element minOccurs="0" name="procode" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="progrossweight" nillable="true" type="xs:double" />

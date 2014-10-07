@@ -12,16 +12,13 @@ namespace MEMSservice.DAL
     using System;
     using System.Collections.Generic;
     
-    public partial class T_Product
+    public partial class T_ProductDraw
     {
         public int id { get; set; }
-        public Nullable<int> customerid { get; set; }
-        public string procode { get; set; }
-        public string proname { get; set; }
-        public string prounit { get; set; }
-        public string prospecification { get; set; }
-        public Nullable<double> pronetweight { get; set; }
-        public Nullable<double> progrossweight { get; set; }
-        public Nullable<int> protype { get; set; }
+        public int pid { get; set; }
+        public string drawingno { get; set; }
+        public Nullable<int> filepathid { get; set; }
+        public string remark { get; set; }
+        public Nullable<bool> isdelete { get; set; }
     }
 }

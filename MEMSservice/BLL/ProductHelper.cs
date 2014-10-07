@@ -16,11 +16,11 @@ namespace MEMSservice.BLL
                 var rst = from p in db.T_Product
                           join c in db.T_Customer
                           on p.customerid equals c.id
-                          select new ProductList { id = p.id, customerid = p.customerid.Value, procode = p.procode, proname = p.proname, drawingno = p.drawingno, customername = c.customername };
+                          select new ProductList { id = p.id, customerid = p.customerid.Value, procode = p.procode, proname = p.proname, customername = c.customername };
                 return rst.ToList();
             }
         }
-        public List<ProductList> getProductLstbyCdt(string code,string name,string drawingno,int[] cidlst)
+        public List<ProductList> getProductLstbyCdt(string code,string name,int[] cidlst)
         {
             using (MEMSEntities db = new MEMSEntities())
             {
@@ -28,8 +28,7 @@ namespace MEMSservice.BLL
                           join c in db.T_Customer
                           on p.customerid equals c.id
                           where p.procode.Contains(code) &&
-                          p.proname.Contains(name) &&
-                          p.drawingno.Contains(drawingno) &&
+                          p.proname.Contains(name) &&                          
                           cidlst.Contains(p.customerid.Value)
                           select new ProductList
                           {
@@ -37,7 +36,6 @@ namespace MEMSservice.BLL
                               customerid = p.customerid.Value,
                               procode = p.procode,
                               proname = p.proname,
-                              drawingno = p.drawingno,
                               customername = c.customername
                           };
                 return rst.ToList();

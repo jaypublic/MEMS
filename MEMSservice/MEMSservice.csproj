@@ -137,6 +137,9 @@
     <Compile Include="DAL\T_ProductbasicPrice.cs">
       <DependentUpon>MEMSModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAL\T_ProductDraw.cs">
+      <DependentUpon>MEMSModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="DAL\T_ProductType.cs">
       <DependentUpon>MEMSModel.tt</DependentUpon>
     </Compile>

@@ -71,7 +71,7 @@ namespace MEMSservice
         [OperationContract]
         List<ProductList> getProductList();
         [OperationContract]
-        List<ProductList> getProductListbycdt(string pcode, string pname, string drawingno, int[] cid);
+        List<ProductList> getProductListbycdt(string pcode, string pname, int[] cid);
         [OperationContract]
         List<T_ProductType> getProductTypeList();
         [OperationContract]

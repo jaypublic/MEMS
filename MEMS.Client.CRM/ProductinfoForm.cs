@@ -15,7 +15,7 @@ namespace MEMS.Client.CRM
     {
         int m_pid;
         T_Product m_product;
-        string m_drawingpath;
+        List<string> m_drawingpaths = new List<string>();
         List<T_Crafts> modifycraftlst = new List<T_Crafts>();
         CRMServiceClient m_client = new CRMServiceClient();
         public ProductinfoForm(frmmodetype type)
@@ -96,7 +96,6 @@ namespace MEMS.Client.CRM
             m_product.procode = txt_pcode.Text;
             m_product.proname = txt_name.Text;
             m_product.prospecification = txt_spec.Text;
-            m_product.drawingno = "";
             m_product.prounit = txt_unit.Text;
             if (txt_nw.Text == string.Empty)
             {
@@ -136,23 +135,11 @@ namespace MEMS.Client.CRM
             base.DeleteObject();
         }
 
-        private void btn_drawno_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
-        {
-            GetDrawPath();
-        }
+        //private void btn_drawno_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        //{
+        //    GetDrawPath();
+        //}
 
-        private void GetDrawPath()
-        {
-            drawingdiag.FileName = "";
-            drawingdiag.Multiselect = false;
-            drawingdiag.Filter = "所有文件|*.*|PDF文件|*.pdf|图片文件|*.jpg,*.bmp,*.png,*.gif|Office文件|*.doc,*.docx,*.xls,*.xlsx";
-            if (drawingdiag.ShowDialog() == DialogResult.OK)
-            {
-                //btn_drawno.Text = m_product.drawingno = drawingdiag.SafeFileName;
-                m_drawingpath = drawingdiag.FileName;
-
-            }
-        }
 
         private void btnadd_Click(object sender, EventArgs e)
         {
@@ -317,10 +304,32 @@ namespace MEMS.Client.CRM
                 }
             }
         }
+        private void GetDrawPath()
+        {
+            drawingdiag.FileName = "";
+            drawingdiag.Multiselect = false;
+            drawingdiag.Filter = "所有文件|*.*|PDF文件|*.pdf|图片文件|*.jpg;*.bmp;*.png;*.gif|Office文件|*.doc;*.docx;*.xls;*.xlsx";
+            if (drawingdiag.ShowDialog() == DialogResult.OK)
+            {
+                //btn_drawno.Text = m_product.drawingno = drawingdiag.SafeFileName;
+                m_drawingpaths.Add(drawingdiag.FileName);
+
+            }
+        }
         private void btnfileupload_Click(object sender, EventArgs e)
+        {
+            GetDrawPath();
+        }
+
+        private void btnfiledel_Click(object sender, EventArgs e)
         {
 
         }
+
+        private void btnfiledownload_Click(object sender, EventArgs e)
+        {
+
+        }  
 
         private void btn_create_Click(object sender, EventArgs e)
         {

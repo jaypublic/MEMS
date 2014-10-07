@@ -20,7 +20,7 @@ namespace MEMS.Client.CRM
         {
             var procode = txtprocode.Text;
             var proname = txtproname.Text;
-            var drawingno = txtdrawingno.Text;
+
             var customerlst = new List<int>();
             //foreach (CheckedListBoxItem item in checkedComboBoxEdit1.Properties.Items)
             //{
@@ -36,7 +36,7 @@ namespace MEMS.Client.CRM
                 customerlst.Add(Convert.ToInt32(cid));
             }
             CRMServiceClient client = new CRMServiceClient();
-            List<ProductList> plst = new List<ProductList>(client.getProductListbycdt(procode,proname,drawingno,customerlst.ToArray()));
+            List<ProductList> plst = new List<ProductList>(client.getProductListbycdt(procode,proname,customerlst.ToArray()));
             gcproduct.DataSource = plst;
         }
         protected override void AddObject()

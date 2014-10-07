@@ -34,15 +34,12 @@
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txtprocode = new DevExpress.XtraEditors.TextEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtproname = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.txtdrawingno = new DevExpress.XtraEditors.TextEdit();
             this.cmbcustomerlst = new DevExpress.XtraEditors.CheckedComboBoxEdit();
             ((System.ComponentModel.ISupportInitialize)(this.searchgroup)).BeginInit();
             this.searchgroup.SuspendLayout();
@@ -51,15 +48,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvproduct)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtprocode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtproname.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtdrawingno.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbcustomerlst.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // searchgroup
             // 
             this.searchgroup.Controls.Add(this.cmbcustomerlst);
-            this.searchgroup.Controls.Add(this.txtdrawingno);
-            this.searchgroup.Controls.Add(this.labelControl4);
             this.searchgroup.Controls.Add(this.labelControl3);
             this.searchgroup.Controls.Add(this.txtproname);
             this.searchgroup.Controls.Add(this.labelControl2);
@@ -70,11 +64,9 @@
             this.searchgroup.Controls.SetChildIndex(this.labelControl2, 0);
             this.searchgroup.Controls.SetChildIndex(this.txtproname, 0);
             this.searchgroup.Controls.SetChildIndex(this.labelControl3, 0);
-            this.searchgroup.Controls.SetChildIndex(this.labelControl4, 0);
-            this.searchgroup.Controls.SetChildIndex(this.txtdrawingno, 0);
             this.searchgroup.Controls.SetChildIndex(this.cmbcustomerlst, 0);
             // 
-            // ribbonControl1
+            // ribboncontrol
             // 
             this.ribboncontrol.ExpandCollapseItem.Id = 0;
             this.ribboncontrol.Toolbar.ShowCustomizeItem = false;
@@ -98,7 +90,6 @@
             this.gridColumn2,
             this.gridColumn3,
             this.gridColumn4,
-            this.gridColumn5,
             this.gridColumn6});
             this.gvproduct.GridControl = this.gcproduct;
             this.gvproduct.Name = "gvproduct";
@@ -135,21 +126,13 @@
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 1;
             // 
-            // gridColumn5
-            // 
-            this.gridColumn5.Caption = "产品图号";
-            this.gridColumn5.FieldName = "drawingno";
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 2;
-            // 
             // gridColumn6
             // 
             this.gridColumn6.Caption = "所属客户";
             this.gridColumn6.FieldName = "customername";
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 3;
+            this.gridColumn6.VisibleIndex = 2;
             // 
             // labelControl1
             // 
@@ -164,7 +147,7 @@
             this.txtprocode.Location = new System.Drawing.Point(145, 29);
             this.txtprocode.MenuManager = this.ribboncontrol;
             this.txtprocode.Name = "txtprocode";
-            this.txtprocode.Size = new System.Drawing.Size(200, 20);
+            this.txtprocode.Size = new System.Drawing.Size(200, 22);
             this.txtprocode.TabIndex = 2;
             // 
             // labelControl2
@@ -180,7 +163,7 @@
             this.txtproname.Location = new System.Drawing.Point(145, 62);
             this.txtproname.MenuManager = this.ribboncontrol;
             this.txtproname.Name = "txtproname";
-            this.txtproname.Size = new System.Drawing.Size(200, 20);
+            this.txtproname.Size = new System.Drawing.Size(200, 22);
             this.txtproname.TabIndex = 4;
             // 
             // labelControl3
@@ -191,22 +174,6 @@
             this.labelControl3.TabIndex = 5;
             this.labelControl3.Text = "所属客户";
             // 
-            // labelControl4
-            // 
-            this.labelControl4.Location = new System.Drawing.Point(384, 65);
-            this.labelControl4.Name = "labelControl4";
-            this.labelControl4.Size = new System.Drawing.Size(48, 14);
-            this.labelControl4.TabIndex = 7;
-            this.labelControl4.Text = "产品图号";
-            // 
-            // txtdrawingno
-            // 
-            this.txtdrawingno.Location = new System.Drawing.Point(438, 62);
-            this.txtdrawingno.MenuManager = this.ribboncontrol;
-            this.txtdrawingno.Name = "txtdrawingno";
-            this.txtdrawingno.Size = new System.Drawing.Size(200, 20);
-            this.txtdrawingno.TabIndex = 8;
-            // 
             // cmbcustomerlst
             // 
             this.cmbcustomerlst.Location = new System.Drawing.Point(438, 29);
@@ -215,7 +182,7 @@
             this.cmbcustomerlst.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.cmbcustomerlst.Properties.HideSelection = false;
-            this.cmbcustomerlst.Size = new System.Drawing.Size(200, 20);
+            this.cmbcustomerlst.Size = new System.Drawing.Size(200, 22);
             this.cmbcustomerlst.TabIndex = 10;
             // 
             // ProductListForm
@@ -236,7 +203,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gvproduct)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtprocode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtproname.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtdrawingno.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbcustomerlst.Properties)).EndInit();
             this.ResumeLayout(false);
 
@@ -250,10 +216,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
-        private DevExpress.XtraEditors.TextEdit txtdrawingno;
-        private DevExpress.XtraEditors.LabelControl labelControl4;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.TextEdit txtproname;
         private DevExpress.XtraEditors.LabelControl labelControl2;

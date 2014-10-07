@@ -11,7 +11,6 @@ namespace MEMSservice.DAL
         public int customerid { get; set; }
         public string procode { get; set; }
         public string proname { get; set; }
-        public string drawingno { get; set; }
         public string customername { get; set; }
     }
 }

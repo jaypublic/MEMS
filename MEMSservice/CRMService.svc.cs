@@ -372,10 +372,10 @@ namespace MEMSservice
                 throw ex;
             }
         }
-        public List<ProductList> getProductListbycdt(string pcode,string pname,string drawingno,int[] cid)
+        public List<ProductList> getProductListbycdt(string pcode,string pname,int[] cid)
         {
             ph = new ProductHelper();
-            var lst = ph.getProductLstbyCdt(pcode, pname, drawingno, cid);
+            var lst = ph.getProductLstbyCdt(pcode, pname, cid);
             return lst;
         }
         public List<T_ProductType> getProductTypeList()

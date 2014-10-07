@@ -18,6 +18,7 @@
           <EntitySet Name="T_FileMgr" EntityType="MEMSModel.Store.T_FileMgr" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="T_Product" EntityType="MEMSModel.Store.T_Product" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="T_ProductbasicPrice" EntityType="MEMSModel.Store.T_ProductbasicPrice" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="T_ProductDraw" EntityType="MEMSModel.Store.T_ProductDraw" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="T_ProductType" EntityType="MEMSModel.Store.T_ProductType" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="T_Suppliers" EntityType="MEMSModel.Store.T_Suppliers" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="T_Suppliers_contacts" EntityType="MEMSModel.Store.T_Suppliers_contacts" store:Type="Tables" Schema="dbo" />
@@ -155,8 +156,6 @@
           <Property Name="protype" Type="int" />
           <Property Name="procode" Type="varchar" MaxLength="50" />
           <Property Name="proname" Type="nvarchar" MaxLength="50" />
-          <Property Name="drawingno" Type="varchar" MaxLength="50" />
-          <Property Name="filepath" Type="int" />
           <Property Name="prounit" Type="varchar" MaxLength="50" />
           <Property Name="prospecification" Type="varchar" MaxLength="50" />
           <Property Name="pronetweight" Type="float" />
@@ -176,6 +175,17 @@
           <Property Name="otherprice" Type="decimal" Precision="10" Scale="2" />
           <Property Name="totalprice" Type="decimal" Precision="10" Scale="2" />
           <Property Name="pricebasicremark" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="T_ProductDraw">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="pid" Type="int" Nullable="false" />
+          <Property Name="drawingno" Type="varchar" MaxLength="50" />
+          <Property Name="filepathid" Type="int" />
+          <Property Name="remark" Type="nvarchar" MaxLength="50" />
+          <Property Name="isdelete" Type="bit" />
         </EntityType>
         <EntityType Name="T_ProductType">
           <Key>
@@ -253,6 +263,7 @@
           <EntitySet Name="T_ProductbasicPrice" EntityType="MEMSModel.T_ProductbasicPrice" />
           <EntitySet Name="T_FileMgr" EntityType="MEMSModel.T_FileMgr" />
           <EntitySet Name="T_ProductType" EntityType="MEMSModel.T_ProductType" />
+          <EntitySet Name="T_ProductDraw" EntityType="MEMSModel.T_ProductDraw" />
         </EntityContainer>
         <EntityType Name="T_Base_companytype">
           <Key>
@@ -422,13 +433,11 @@
           <Property Type="Int32" Name="customerid" />
           <Property Type="String" Name="procode" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="proname" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Type="String" Name="drawingno" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="prounit" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="prospecification" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="Double" Name="pronetweight" />
           <Property Type="Double" Name="progrossweight" />
           <Property Type="Int32" Name="protype" />
-          <Property Type="Int32" Name="filepath" />
         </EntityType>
         <EntityType Name="T_ProductbasicPrice">
           <Key>
@@ -464,6 +473,17 @@
           <Property Type="String" Name="typename" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="String" Name="typedesc" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="Int32" Name="fid" />
+        </EntityType>
+        <EntityType Name="T_ProductDraw">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="pid" Nullable="false" />
+          <Property Type="String" Name="drawingno" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="filepathid" />
+          <Property Type="String" Name="remark" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Boolean" Name="isdelete" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -645,13 +665,11 @@
           <EntitySetMapping Name="T_Product">
             <EntityTypeMapping TypeName="MEMSModel.T_Product">
               <MappingFragment StoreEntitySet="T_Product">
-                <ScalarProperty Name="filepath" ColumnName="filepath" />
                 <ScalarProperty Name="protype" ColumnName="protype" />
                 <ScalarProperty Name="progrossweight" ColumnName="progrossweight" />
                 <ScalarProperty Name="pronetweight" ColumnName="pronetweight" />
                 <ScalarProperty Name="prospecification" ColumnName="prospecification" />
                 <ScalarProperty Name="prounit" ColumnName="prounit" />
-                <ScalarProperty Name="drawingno" ColumnName="drawingno" />
                 <ScalarProperty Name="proname" ColumnName="proname" />
                 <ScalarProperty Name="procode" ColumnName="procode" />
                 <ScalarProperty Name="customerid" ColumnName="customerid" />
@@ -693,6 +711,18 @@
                 <ScalarProperty Name="typedesc" ColumnName="typedesc" />
                 <ScalarProperty Name="typename" ColumnName="typename" />
                 <ScalarProperty Name="typecode" ColumnName="typecode" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_ProductDraw">
+            <EntityTypeMapping TypeName="MEMSModel.T_ProductDraw">
+              <MappingFragment StoreEntitySet="T_ProductDraw">
+                <ScalarProperty Name="isdelete" ColumnName="isdelete" />
+                <ScalarProperty Name="remark" ColumnName="remark" />
+                <ScalarProperty Name="filepathid" ColumnName="filepathid" />
+                <ScalarProperty Name="drawingno" ColumnName="drawingno" />
+                <ScalarProperty Name="pid" ColumnName="pid" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

@@ -372,7 +372,6 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="pcode" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="pname" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="drawingno" nillable="true" type="xs:string" />
         <xs:element xmlns:q30="http://schemas.microsoft.com/2003/10/Serialization/Arrays" minOccurs="0" name="cid" nillable="true" type="q30:ArrayOfint" />
       </xs:sequence>
     </xs:complexType>
