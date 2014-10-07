@@ -135,12 +135,6 @@ namespace MEMS.Client.CRM
             base.DeleteObject();
         }
 
-        //private void btn_drawno_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
-        //{
-        //    GetDrawPath();
-        //}
-
-
         private void btnadd_Click(object sender, EventArgs e)
         {
             if (gvcraft.DataRowCount > 0)

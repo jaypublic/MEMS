@@ -183,8 +183,8 @@
           <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="pid" Type="int" Nullable="false" />
           <Property Name="drawingno" Type="varchar" MaxLength="50" />
-          <Property Name="filepathid" Type="int" />
-          <Property Name="remark" Type="nvarchar" MaxLength="50" />
+          <Property Name="filepath" Type="varchar" MaxLength="200" />
+          <Property Name="remark" Type="nvarchar" MaxLength="200" />
           <Property Name="isdelete" Type="bit" />
         </EntityType>
         <EntityType Name="T_ProductType">
@@ -481,9 +481,9 @@
           <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="Int32" Name="pid" Nullable="false" />
           <Property Type="String" Name="drawingno" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Type="Int32" Name="filepathid" />
-          <Property Type="String" Name="remark" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="remark" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Type="Boolean" Name="isdelete" />
+          <Property Type="String" Name="filepath" MaxLength="200" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -718,9 +718,9 @@
           <EntitySetMapping Name="T_ProductDraw">
             <EntityTypeMapping TypeName="MEMSModel.T_ProductDraw">
               <MappingFragment StoreEntitySet="T_ProductDraw">
+                <ScalarProperty Name="filepath" ColumnName="filepath" />
                 <ScalarProperty Name="isdelete" ColumnName="isdelete" />
                 <ScalarProperty Name="remark" ColumnName="remark" />
-                <ScalarProperty Name="filepathid" ColumnName="filepathid" />
                 <ScalarProperty Name="drawingno" ColumnName="drawingno" />
                 <ScalarProperty Name="pid" ColumnName="pid" />
                 <ScalarProperty Name="id" ColumnName="id" />

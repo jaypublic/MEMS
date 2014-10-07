@@ -34,7 +34,7 @@
             this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
             this.gcdraw = new DevExpress.XtraGrid.GridControl();
             this.gvdraw = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.gcfid = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gcid = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.btnfiledownload = new DevExpress.XtraEditors.SimpleButton();
@@ -103,6 +103,10 @@
             this.drawingdiag = new System.Windows.Forms.OpenFileDialog();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
@@ -226,17 +230,21 @@
             // gvdraw
             // 
             this.gvdraw.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
-            this.gcfid,
-            this.gridColumn10});
+            this.gcid,
+            this.gridColumn9,
+            this.gridColumn10,
+            this.gridColumn11,
+            this.gridColumn12,
+            this.gridColumn13});
             this.gvdraw.GridControl = this.gcdraw;
             this.gvdraw.Name = "gvdraw";
             this.gvdraw.OptionsView.ShowGroupPanel = false;
             // 
-            // gcfid
+            // gcid
             // 
-            this.gcfid.Caption = "id";
-            this.gcfid.FieldName = "id";
-            this.gcfid.Name = "gcfid";
+            this.gcid.Caption = "id";
+            this.gcid.FieldName = "id";
+            this.gcid.Name = "gcid";
             // 
             // gridColumn10
             // 
@@ -887,6 +895,30 @@
             this.emptySpaceItem2.Text = "emptySpaceItem2";
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
             // 
+            // gridColumn9
+            // 
+            this.gridColumn9.Caption = "pid";
+            this.gridColumn9.FieldName = "pid";
+            this.gridColumn9.Name = "gridColumn9";
+            // 
+            // gridColumn11
+            // 
+            this.gridColumn11.Caption = "filepath";
+            this.gridColumn11.FieldName = "filepath";
+            this.gridColumn11.Name = "gridColumn11";
+            // 
+            // gridColumn12
+            // 
+            this.gridColumn12.Caption = "remark";
+            this.gridColumn12.FieldName = "remark";
+            this.gridColumn12.Name = "gridColumn12";
+            // 
+            // gridColumn13
+            // 
+            this.gridColumn13.Caption = "isdelete";
+            this.gridColumn13.FieldName = "isdelete";
+            this.gridColumn13.Name = "gridColumn13";
+            // 
             // ProductinfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -1037,12 +1069,16 @@
         private DevExpress.XtraEditors.GroupControl groupControl4;
         private DevExpress.XtraGrid.GridControl gcdraw;
         private DevExpress.XtraGrid.Views.Grid.GridView gvdraw;
-        private DevExpress.XtraGrid.Columns.GridColumn gcfid;
+        private DevExpress.XtraGrid.Columns.GridColumn gcid;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
         private DevExpress.XtraEditors.PanelControl panelControl4;
         private DevExpress.XtraEditors.SimpleButton btnfiledownload;
         private DevExpress.XtraEditors.SimpleButton btnfiledel;
         private DevExpress.XtraEditors.SimpleButton btnfileupload;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
 
     }
 }
