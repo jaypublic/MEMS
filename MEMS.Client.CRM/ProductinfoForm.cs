@@ -15,7 +15,7 @@ namespace MEMS.Client.CRM
     {
         int m_pid;
         T_Product m_product;
-        List<string> m_drawingpaths = new List<string>();
+
         List<T_Crafts> modifycraftlst = new List<T_Crafts>();
         CRMServiceClient m_client = new CRMServiceClient();
         public ProductinfoForm(frmmodetype type)
@@ -306,8 +306,21 @@ namespace MEMS.Client.CRM
             if (drawingdiag.ShowDialog() == DialogResult.OK)
             {
                 //btn_drawno.Text = m_product.drawingno = drawingdiag.SafeFileName;
-                m_drawingpaths.Add(drawingdiag.FileName);
-
+                //m_drawingpaths.Add(drawingdiag.FileName);
+                T_ProductDraw pdraw = new T_ProductDraw();
+                pdraw.pid = m_pid;
+                pdraw.drawingno = drawingdiag.SafeFileName;
+                pdraw.remark = drawingdiag.FileName;
+                var ds = (List<T_ProductDraw>)gcdraw.DataSource;
+                if (ds == null)
+                {
+                    gcdraw.DataSource = new List<T_ProductDraw>() { pdraw };
+                }
+                else
+                {
+                    ds.Add(pdraw);
+                    gcdraw.RefreshDataSource();
+                }
             }
         }
         private void btnfileupload_Click(object sender, EventArgs e)

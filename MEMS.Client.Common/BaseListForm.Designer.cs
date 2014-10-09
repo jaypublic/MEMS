@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BaseListForm));
             this.ribboncontrol = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barAdd = new DevExpress.XtraBars.BarButtonItem();
@@ -37,13 +36,13 @@
             this.barClose = new DevExpress.XtraBars.BarButtonItem();
             this.barsearchCheck = new DevExpress.XtraBars.BarCheckItem();
             this.barSearch = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonImageCollectionLarge = new DevExpress.Utils.ImageCollection(this.components);
+            this.ribbonImageCollectionLarge = new DevExpress.Utils.ImageCollection();
             this.ribbonMenu = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.searchgroup = new DevExpress.XtraEditors.GroupControl();
             this.searchButton = new DevExpress.XtraEditors.SimpleButton();
-            this.imageCollection1 = new DevExpress.Utils.ImageCollection(this.components);
+            this.imageCollection1 = new DevExpress.Utils.ImageCollection();
             ((System.ComponentModel.ISupportInitialize)(this.ribboncontrol)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonImageCollectionLarge)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchgroup)).BeginInit();
@@ -65,10 +64,11 @@
             this.ribboncontrol.LargeImages = this.ribbonImageCollectionLarge;
             this.ribboncontrol.Location = new System.Drawing.Point(0, 0);
             this.ribboncontrol.MaxItemId = 8;
-            this.ribboncontrol.MdiMergeStyle = DevExpress.XtraBars.Ribbon.RibbonMdiMergeStyle.Always;
             this.ribboncontrol.Name = "ribboncontrol";
             this.ribboncontrol.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonMenu});
+            this.ribboncontrol.RibbonStyle = DevExpress.XtraBars.Ribbon.RibbonControlStyle.Office2010;
+            this.ribboncontrol.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.ribboncontrol.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
             this.ribboncontrol.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide;
             this.ribboncontrol.ShowToolbarCustomizeItem = false;

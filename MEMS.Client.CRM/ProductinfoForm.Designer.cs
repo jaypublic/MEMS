@@ -35,7 +35,11 @@
             this.gcdraw = new DevExpress.XtraGrid.GridControl();
             this.gvdraw = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gcid = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
             this.btnfiledownload = new DevExpress.XtraEditors.SimpleButton();
             this.btnfiledel = new DevExpress.XtraEditors.SimpleButton();
@@ -103,10 +107,6 @@
             this.drawingdiag = new System.Windows.Forms.OpenFileDialog();
             this.emptySpaceItem1 = new DevExpress.XtraLayout.EmptySpaceItem();
             this.emptySpaceItem2 = new DevExpress.XtraLayout.EmptySpaceItem();
-            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl2)).BeginInit();
             this.panelControl2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
@@ -246,12 +246,37 @@
             this.gcid.FieldName = "id";
             this.gcid.Name = "gcid";
             // 
+            // gridColumn9
+            // 
+            this.gridColumn9.Caption = "pid";
+            this.gridColumn9.FieldName = "pid";
+            this.gridColumn9.Name = "gridColumn9";
+            // 
             // gridColumn10
             // 
             this.gridColumn10.Caption = "图纸名称";
+            this.gridColumn10.FieldName = "drawingno";
             this.gridColumn10.Name = "gridColumn10";
             this.gridColumn10.Visible = true;
             this.gridColumn10.VisibleIndex = 0;
+            // 
+            // gridColumn11
+            // 
+            this.gridColumn11.Caption = "filepath";
+            this.gridColumn11.FieldName = "filepath";
+            this.gridColumn11.Name = "gridColumn11";
+            // 
+            // gridColumn12
+            // 
+            this.gridColumn12.Caption = "remark";
+            this.gridColumn12.FieldName = "remark";
+            this.gridColumn12.Name = "gridColumn12";
+            // 
+            // gridColumn13
+            // 
+            this.gridColumn13.Caption = "isdelete";
+            this.gridColumn13.FieldName = "isdelete";
+            this.gridColumn13.Name = "gridColumn13";
             // 
             // panelControl4
             // 
@@ -894,30 +919,6 @@
             this.emptySpaceItem2.Size = new System.Drawing.Size(819, 10);
             this.emptySpaceItem2.Text = "emptySpaceItem2";
             this.emptySpaceItem2.TextSize = new System.Drawing.Size(0, 0);
-            // 
-            // gridColumn9
-            // 
-            this.gridColumn9.Caption = "pid";
-            this.gridColumn9.FieldName = "pid";
-            this.gridColumn9.Name = "gridColumn9";
-            // 
-            // gridColumn11
-            // 
-            this.gridColumn11.Caption = "filepath";
-            this.gridColumn11.FieldName = "filepath";
-            this.gridColumn11.Name = "gridColumn11";
-            // 
-            // gridColumn12
-            // 
-            this.gridColumn12.Caption = "remark";
-            this.gridColumn12.FieldName = "remark";
-            this.gridColumn12.Name = "gridColumn12";
-            // 
-            // gridColumn13
-            // 
-            this.gridColumn13.Caption = "isdelete";
-            this.gridColumn13.FieldName = "isdelete";
-            this.gridColumn13.Name = "gridColumn13";
             // 
             // ProductinfoForm
             // 
