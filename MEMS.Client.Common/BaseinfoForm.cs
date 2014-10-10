@@ -9,36 +9,12 @@ using DevExpress.XtraEditors;
 
 namespace MEMS.Client.Common
 {
-    public partial class BaseinfoForm : DevExpress.XtraEditors.XtraForm
+    public partial class BaseinfoForm : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         protected frmmodetype formmode;
         public BaseinfoForm()
         {
             InitializeComponent();
-        }
-
-        private void okButton_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                switch (formmode)
-                {
-                    case frmmodetype.add:
-                        AddObject();
-                        break;
-                    case frmmodetype.edit:
-                        EditObject();
-                        break;
-                    case frmmodetype.delete:
-                        DeleteObject();
-                        break;
-                }
-                
-            }
-            catch (Exception ex)
-            {
-                XtraMessageBox.Show(ex.Message);
-            }
         }
 
         protected virtual void DeleteObject()
@@ -54,11 +30,6 @@ namespace MEMS.Client.Common
         protected virtual void AddObject()
         {
             this.DialogResult = DialogResult.OK;
-        }
-
-        private void cancelButton_Click(object sender, EventArgs e)
-        {
-            this.DialogResult = DialogResult.Cancel;
         }
 
         private void BaseinfoForm_Load(object sender, EventArgs e)
@@ -79,15 +50,15 @@ namespace MEMS.Client.Common
             {
                 case frmmodetype.add:
                     this.Text += "—新增";
-                    this.okButton.Text = "添加";
+                    this.okButton.Caption = "添加";
                     break;
                 case frmmodetype.edit:
                     this.Text += "—修改";
-                    this.okButton.Text = "保存";
+                    this.okButton.Caption = "保存";
                     break;
                 case frmmodetype.delete:
                     this.Text += "—删除";
-                    this.okButton.Text = "删除";
+                    this.okButton.Caption = "删除";
                     break;
             }
         }
@@ -104,6 +75,35 @@ namespace MEMS.Client.Common
                     enabletxtbox(txtbox.Controls);
                 }
             }
+        }
+
+        private void okButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            try
+            {
+                switch (formmode)
+                {
+                    case frmmodetype.add:
+                        AddObject();
+                        break;
+                    case frmmodetype.edit:
+                        EditObject();
+                        break;
+                    case frmmodetype.delete:
+                        DeleteObject();
+                        break;
+                }
+
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message);
+            }
+        }
+
+        private void cancelButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            this.DialogResult = DialogResult.Cancel;
         }
     }
 }

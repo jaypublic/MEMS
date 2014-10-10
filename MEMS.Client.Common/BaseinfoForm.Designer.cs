@@ -29,36 +29,15 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BaseinfoForm));
-            this.toppanel = new DevExpress.XtraEditors.PanelControl();
-            this.cancelButton = new DevExpress.XtraEditors.SimpleButton();
             this.ribbonImageCollectionLarge = new DevExpress.Utils.ImageCollection();
-            this.okButton = new DevExpress.XtraEditors.SimpleButton();
-            ((System.ComponentModel.ISupportInitialize)(this.toppanel)).BeginInit();
-            this.toppanel.SuspendLayout();
+            this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
+            this.okButton = new DevExpress.XtraBars.BarButtonItem();
+            this.cancelButton = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonImageCollectionLarge)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // toppanel
-            // 
-            this.toppanel.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.toppanel.Controls.Add(this.okButton);
-            this.toppanel.Controls.Add(this.cancelButton);
-            this.toppanel.Dock = System.Windows.Forms.DockStyle.Top;
-            this.toppanel.Location = new System.Drawing.Point(0, 0);
-            this.toppanel.Name = "toppanel";
-            this.toppanel.Size = new System.Drawing.Size(825, 47);
-            this.toppanel.TabIndex = 0;
-            // 
-            // cancelButton
-            // 
-            this.cancelButton.ImageIndex = 6;
-            this.cancelButton.ImageList = this.ribbonImageCollectionLarge;
-            this.cancelButton.Location = new System.Drawing.Point(108, 5);
-            this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(90, 36);
-            this.cancelButton.TabIndex = 1;
-            this.cancelButton.Text = "取 消";
-            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
             // 
             // ribbonImageCollectionLarge
             // 
@@ -82,38 +61,79 @@
             this.ribbonImageCollectionLarge.Images.SetKeyName(15, "Action_LinkUnlink_Link_32x32.png");
             this.ribbonImageCollectionLarge.Images.SetKeyName(16, "Action_LinkUnlink_Unlink_32x32.png");
             // 
+            // ribbonControl1
+            // 
+            this.ribbonControl1.ExpandCollapseItem.Id = 0;
+            this.ribbonControl1.Items.AddRange(new DevExpress.XtraBars.BarItem[] {
+            this.ribbonControl1.ExpandCollapseItem,
+            this.okButton,
+            this.cancelButton});
+            this.ribbonControl1.LargeImages = this.ribbonImageCollectionLarge;
+            this.ribbonControl1.Location = new System.Drawing.Point(0, 0);
+            this.ribbonControl1.MaxItemId = 3;
+            this.ribbonControl1.Name = "ribbonControl1";
+            this.ribbonControl1.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
+            this.ribbonPage1});
+            this.ribbonControl1.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
+            this.ribbonControl1.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide;
+            this.ribbonControl1.Size = new System.Drawing.Size(825, 125);
+            this.ribbonControl1.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
+            // 
             // okButton
             // 
-            this.okButton.ImageIndex = 4;
-            this.okButton.ImageList = this.ribbonImageCollectionLarge;
-            this.okButton.Location = new System.Drawing.Point(12, 5);
+            this.okButton.Caption = "确定";
+            this.okButton.Id = 1;
+            this.okButton.LargeImageIndex = 4;
             this.okButton.Name = "okButton";
-            this.okButton.Size = new System.Drawing.Size(90, 36);
-            this.okButton.TabIndex = 0;
-            this.okButton.Text = "确 定";
-            this.okButton.Click += new System.EventHandler(this.okButton_Click);
+            this.okButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.okButton_ItemClick);
+            // 
+            // cancelButton
+            // 
+            this.cancelButton.Caption = "取消";
+            this.cancelButton.Id = 2;
+            this.cancelButton.LargeImageIndex = 6;
+            this.cancelButton.Name = "cancelButton";
+            this.cancelButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.cancelButton_ItemClick);
+            // 
+            // ribbonPage1
+            // 
+            this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup1});
+            this.ribbonPage1.Name = "ribbonPage1";
+            this.ribbonPage1.Text = "ribbonPage1";
+            // 
+            // ribbonPageGroup1
+            // 
+            this.ribbonPageGroup1.ItemLinks.Add(this.okButton);
+            this.ribbonPageGroup1.ItemLinks.Add(this.cancelButton);
+            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
+            this.ribbonPageGroup1.ShowCaptionButton = false;
+            this.ribbonPageGroup1.Text = "基本操作";
             // 
             // BaseinfoForm
             // 
+            this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(825, 495);
-            this.Controls.Add(this.toppanel);
+            this.Controls.Add(this.ribbonControl1);
             this.Name = "BaseinfoForm";
+            this.Ribbon = this.ribbonControl1;
             this.Text = "BaseinfoForm";
             this.Load += new System.EventHandler(this.BaseinfoForm_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.toppanel)).EndInit();
-            this.toppanel.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonImageCollectionLarge)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private DevExpress.XtraEditors.PanelControl toppanel;
-        private DevExpress.XtraEditors.SimpleButton cancelButton;
-        private DevExpress.XtraEditors.SimpleButton okButton;
         internal DevExpress.Utils.ImageCollection ribbonImageCollectionLarge;
+        private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
+        private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
+        private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
+        private DevExpress.XtraBars.BarButtonItem okButton;
+        private DevExpress.XtraBars.BarButtonItem cancelButton;
     }
 }
