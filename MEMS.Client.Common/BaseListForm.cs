@@ -9,7 +9,7 @@ using DevExpress.XtraEditors;
 
 namespace MEMS.Client.Common
 {
-    public partial class BaseListForm : DevExpress.XtraEditors.XtraForm
+    public partial class BaseListForm : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         public BaseListForm()
         {
