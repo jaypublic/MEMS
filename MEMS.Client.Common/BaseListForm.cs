@@ -127,16 +127,54 @@ namespace MEMS.Client.Common
             
         }
 
-        private void barSearch_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        private void barbtn1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
             try
             {
-                SearchObject();
+                custom1();
             }
             catch (Exception ex)
             {
                 XtraMessageBox.Show(ex.Message);
             }
+        }
+        protected virtual void custom1()
+        {
+            throw new NotImplementedException("方法未实现");
+        }
+
+        private void barbtn2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            try
+            {
+                custom2();
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message);
+            }
+        }
+
+        protected virtual void custom2()
+        {
+            throw new NotImplementedException("方法未实现");
+        }
+
+        private void barbtn3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            try
+            {
+                custom3();
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message);
+            }
+        }
+
+        protected virtual void custom3()
+        {
+            throw new NotImplementedException("方法未实现");
         }
     }
 }

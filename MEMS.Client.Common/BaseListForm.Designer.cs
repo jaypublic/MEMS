@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BaseListForm));
             this.ribboncontrol = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barAdd = new DevExpress.XtraBars.BarButtonItem();
@@ -35,14 +36,16 @@
             this.barDelete = new DevExpress.XtraBars.BarButtonItem();
             this.barClose = new DevExpress.XtraBars.BarButtonItem();
             this.barsearchCheck = new DevExpress.XtraBars.BarCheckItem();
-            this.barSearch = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonImageCollectionLarge = new DevExpress.Utils.ImageCollection();
+            this.barbtn1 = new DevExpress.XtraBars.BarButtonItem();
+            this.barbtn2 = new DevExpress.XtraBars.BarButtonItem();
+            this.barbtn3 = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonImageCollectionLarge = new DevExpress.Utils.ImageCollection(this.components);
             this.ribbonMenu = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.searchgroup = new DevExpress.XtraEditors.GroupControl();
             this.searchButton = new DevExpress.XtraEditors.SimpleButton();
-            this.imageCollection1 = new DevExpress.Utils.ImageCollection();
+            this.imageCollection1 = new DevExpress.Utils.ImageCollection(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribboncontrol)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonImageCollectionLarge)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchgroup)).BeginInit();
@@ -60,10 +63,12 @@
             this.barDelete,
             this.barClose,
             this.barsearchCheck,
-            this.barSearch});
+            this.barbtn1,
+            this.barbtn2,
+            this.barbtn3});
             this.ribboncontrol.LargeImages = this.ribbonImageCollectionLarge;
             this.ribboncontrol.Location = new System.Drawing.Point(0, 0);
-            this.ribboncontrol.MaxItemId = 8;
+            this.ribboncontrol.MaxItemId = 10;
             this.ribboncontrol.Name = "ribboncontrol";
             this.ribboncontrol.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonMenu});
@@ -116,14 +121,32 @@
             this.barsearchCheck.Name = "barsearchCheck";
             this.barsearchCheck.CheckedChanged += new DevExpress.XtraBars.ItemClickEventHandler(this.barsearchCheck_CheckedChanged);
             // 
-            // barSearch
+            // barbtn1
             // 
-            this.barSearch.Caption = "查询";
-            this.barSearch.Id = 7;
-            this.barSearch.LargeImageIndex = 3;
-            this.barSearch.Name = "barSearch";
-            this.barSearch.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
-            this.barSearch.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barSearch_ItemClick);
+            this.barbtn1.Caption = "自定义";
+            this.barbtn1.Id = 7;
+            this.barbtn1.LargeImageIndex = 0;
+            this.barbtn1.Name = "barbtn1";
+            this.barbtn1.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.barbtn1.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtn1_ItemClick);
+            // 
+            // barbtn2
+            // 
+            this.barbtn2.Caption = "自定义";
+            this.barbtn2.Id = 8;
+            this.barbtn2.LargeImageIndex = 0;
+            this.barbtn2.Name = "barbtn2";
+            this.barbtn2.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.barbtn2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtn2_ItemClick);
+            // 
+            // barbtn3
+            // 
+            this.barbtn3.Caption = "自定义";
+            this.barbtn3.Id = 9;
+            this.barbtn3.LargeImageIndex = 0;
+            this.barbtn3.Name = "barbtn3";
+            this.barbtn3.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.barbtn3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtn3_ItemClick);
             // 
             // ribbonImageCollectionLarge
             // 
@@ -161,7 +184,9 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.barEdit);
             this.ribbonPageGroup1.ItemLinks.Add(this.barDelete);
             this.ribbonPageGroup1.ItemLinks.Add(this.barsearchCheck);
-            this.ribbonPageGroup1.ItemLinks.Add(this.barSearch);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barbtn1);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barbtn2);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barbtn3);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.ShowCaptionButton = false;
             this.ribbonPageGroup1.Text = "基本操作";
@@ -251,6 +276,8 @@
         public DevExpress.XtraBars.Ribbon.RibbonControl ribboncontrol;
         public DevExpress.XtraBars.Ribbon.RibbonPage ribbonMenu;
         internal DevExpress.Utils.ImageCollection imageCollection1;
-        private DevExpress.XtraBars.BarButtonItem barSearch;
+        public DevExpress.XtraBars.BarButtonItem barbtn1;
+        public DevExpress.XtraBars.BarButtonItem barbtn2;
+        public DevExpress.XtraBars.BarButtonItem barbtn3;
     }
 }
