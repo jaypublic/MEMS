@@ -126,6 +126,7 @@
             this.barbtn3.Id = 6;
             this.barbtn3.LargeImageIndex = 0;
             this.barbtn3.Name = "barbtn3";
+            this.barbtn3.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.barbtn3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtn3_ItemClick);
             // 
             // ribbonPage1
