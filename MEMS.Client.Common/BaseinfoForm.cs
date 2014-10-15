@@ -16,17 +16,23 @@ namespace MEMS.Client.Common
         {
             InitializeComponent();
         }
-
+        /// <summary>
+        /// 确定按钮在窗体删除模式下的执行方法
+        /// </summary>
         protected virtual void DeleteObject()
         {
             this.DialogResult = DialogResult.OK;
         }
-
+        /// <summary>
+        /// 确定按钮在窗体修改模式下的执行方法
+        /// </summary>
         protected virtual void EditObject()
         {
             this.DialogResult = DialogResult.OK;
         }
-
+        /// <summary>
+        /// 确定按钮在窗体新建模式下的执行方法
+        /// </summary>
         protected virtual void AddObject()
         {
             this.DialogResult = DialogResult.OK;
@@ -103,7 +109,77 @@ namespace MEMS.Client.Common
 
         private void cancelButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
+            try
+            {
+                cancelBtn();
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message);
+            }
+        }
+        /// <summary>
+        /// 取消按钮的继承执行方法
+        /// </summary>
+        protected virtual void cancelBtn()
+        {
             this.DialogResult = DialogResult.Cancel;
+        }
+
+        private void barbtn1_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            try
+            {
+                custom1();
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message);
+            }
+        }
+        /// <summary>
+        /// 自定义按钮1的继承执行方法
+        /// </summary>
+        protected virtual void custom1()
+        {
+            throw new NotImplementedException();
+        }
+
+        private void barbtn2_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            try
+            {
+                custom2();
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message);
+            }
+        }
+        /// <summary>
+        /// 自定义按钮2的继承执行方法
+        /// </summary>
+        protected virtual void custom2()
+        {
+            throw new NotImplementedException();
+        }
+        private void barbtn3_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            try
+            {
+                custom3();
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message);
+            }
+        }
+        /// <summary>
+        /// 自定义按钮3的继承执行方法
+        /// </summary>
+        protected virtual void custom3()
+        {
+            throw new NotImplementedException();
         }
     }
 }
