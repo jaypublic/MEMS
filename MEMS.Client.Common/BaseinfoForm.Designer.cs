@@ -33,12 +33,12 @@
             this.ribbonControl1 = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.okButton = new DevExpress.XtraBars.BarButtonItem();
             this.cancelButton = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.barbtn1 = new DevExpress.XtraBars.BarButtonItem();
             this.barbtn2 = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.barbtn3 = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonPage1 = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonImageCollectionLarge)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             this.SuspendLayout();
@@ -102,22 +102,6 @@
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.cancelButton_ItemClick);
             // 
-            // ribbonPage1
-            // 
-            this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup1,
-            this.ribbonPageGroup2});
-            this.ribbonPage1.Name = "ribbonPage1";
-            this.ribbonPage1.Text = "ribbonPage1";
-            // 
-            // ribbonPageGroup1
-            // 
-            this.ribbonPageGroup1.ItemLinks.Add(this.okButton);
-            this.ribbonPageGroup1.ItemLinks.Add(this.cancelButton);
-            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
-            this.ribbonPageGroup1.ShowCaptionButton = false;
-            this.ribbonPageGroup1.Text = "基本操作";
-            // 
             // barbtn1
             // 
             this.barbtn1.Caption = "自定义";
@@ -136,6 +120,30 @@
             this.barbtn2.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.barbtn2.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtn2_ItemClick);
             // 
+            // barbtn3
+            // 
+            this.barbtn3.Caption = "自定义";
+            this.barbtn3.Id = 6;
+            this.barbtn3.LargeImageIndex = 0;
+            this.barbtn3.Name = "barbtn3";
+            this.barbtn3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtn3_ItemClick);
+            // 
+            // ribbonPage1
+            // 
+            this.ribbonPage1.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup1,
+            this.ribbonPageGroup2});
+            this.ribbonPage1.Name = "ribbonPage1";
+            this.ribbonPage1.Text = "ribbonPage1";
+            // 
+            // ribbonPageGroup1
+            // 
+            this.ribbonPageGroup1.ItemLinks.Add(this.okButton);
+            this.ribbonPageGroup1.ItemLinks.Add(this.cancelButton);
+            this.ribbonPageGroup1.Name = "ribbonPageGroup1";
+            this.ribbonPageGroup1.ShowCaptionButton = false;
+            this.ribbonPageGroup1.Text = "基本操作";
+            // 
             // ribbonPageGroup2
             // 
             this.ribbonPageGroup2.ItemLinks.Add(this.barbtn1);
@@ -145,14 +153,6 @@
             this.ribbonPageGroup2.ShowCaptionButton = false;
             this.ribbonPageGroup2.Text = "扩展操作";
             this.ribbonPageGroup2.Visible = false;
-            // 
-            // barbtn3
-            // 
-            this.barbtn3.Caption = "自定义";
-            this.barbtn3.Id = 6;
-            this.barbtn3.LargeImageIndex = 0;
-            this.barbtn3.Name = "barbtn3";
-            this.barbtn3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtn3_ItemClick);
             // 
             // BaseinfoForm
             // 
@@ -179,9 +179,9 @@
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.BarButtonItem okButton;
         private DevExpress.XtraBars.BarButtonItem cancelButton;
-        public DevExpress.XtraBars.BarButtonItem barbtn1;
-        public DevExpress.XtraBars.BarButtonItem barbtn2;
         public DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
-        private DevExpress.XtraBars.BarButtonItem barbtn3;
+        protected DevExpress.XtraBars.BarButtonItem barbtn1;
+        protected DevExpress.XtraBars.BarButtonItem barbtn2;
+        protected DevExpress.XtraBars.BarButtonItem barbtn3;
     }
 }
