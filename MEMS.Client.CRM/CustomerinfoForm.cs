@@ -112,6 +112,8 @@ namespace MEMS.Client.CRM
             m_customer.profession = cmb_profession.SelectedText;
             var client = new CRMServiceClient();
             client.EditCustomer(this.m_customer);
+            saveAddress();
+            saveContact();
             base.EditObject();
         }
 
@@ -144,6 +146,8 @@ namespace MEMS.Client.CRM
             newcustomer.profession = cmb_profession.SelectedText;
             var client = new CRMServiceClient();
             client.AddNewCustomer(newcustomer);
+            saveAddress();
+            saveContact();
             base.AddObject();
         }
 
@@ -224,28 +228,21 @@ namespace MEMS.Client.CRM
             }
         }
 
-        private void btn_contactsave_Click(object sender, EventArgs e)
+        private void saveContact()
         {
-            try
+            var client = new CRMServiceClient();
+            foreach (var contact in modifycontactlst)
             {
-                var client = new CRMServiceClient();
-                foreach (var contact in modifycontactlst)
+                if (contact.id == 0)
                 {
-                    if (contact.id == 0)
-                    {
-                        client.AddCustomerContact(contact);
-                    }
-                    else
-                    {
-                        client.UpdCustomerContact(contact);
-                    }
+                    client.AddCustomerContact(contact);
                 }
-                gvcontacts.RefreshData();
+                else
+                {
+                    client.UpdCustomerContact(contact);
+                }
             }
-            catch (Exception ex)
-            {
-                XtraMessageBox.Show(ex.Message);
-            }
+            gvcontacts.RefreshData();
         }
 
         private void gvcontacts_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
@@ -308,28 +305,21 @@ namespace MEMS.Client.CRM
             }
         }
 
-        private void btn_addresssave_Click(object sender, EventArgs e)
+        private void saveAddress()
         {
-            try
+            var webclient = new CRMServiceClient();
+            foreach (var address in modifyaddresslst)
             {
-                var webclient = new CRMServiceClient();
-                foreach (var address in modifyaddresslst)
+                if (address.id == 0)
                 {
-                    if (address.id == 0)
-                    {
-                        webclient.AddCustomerAddress(address);
-                    }
-                    else
-                    {
-                        webclient.UpdCustomerAddress(address);
-                    }
+                    webclient.AddCustomerAddress(address);
                 }
-                gvaddress.RefreshData();
+                else
+                {
+                    webclient.UpdCustomerAddress(address);
+                }
             }
-            catch (Exception ex)
-            {
-                XtraMessageBox.Show(ex.Message);
-            }
+            gvaddress.RefreshData();
         }
 
         private void gvaddress_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)

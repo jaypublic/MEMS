@@ -101,6 +101,7 @@ namespace MEMS.Client.CRM
             newsupplier.suppliertype = cmb_stype.SelectedText;
             var client = new CRMServiceClient();
             client.addNewSupplier(newsupplier);
+            saveContact();
             base.AddObject();
         }
 
@@ -128,6 +129,7 @@ namespace MEMS.Client.CRM
             m_supplier.suppliertype = cmb_stype.SelectedText;
             var client = new CRMServiceClient();
             client.EditSupplier(this.m_supplier);
+            saveContact();
             base.EditObject();
         }
 
@@ -184,28 +186,21 @@ namespace MEMS.Client.CRM
             }
         }
 
-        private void btn_contactsave_Click(object sender, EventArgs e)
+        private void saveContact()
         {
-            try
+            var client = new CRMServiceClient();
+            foreach (var contact in modifycontactlst)
             {
-                var client = new CRMServiceClient();
-                foreach (var contact in modifycontactlst)
+                if (contact.id == 0)
                 {
-                    if (contact.id == 0)
-                    {
-                        client.AddSupplierContacts(contact);
-                    }
-                    else
-                    {
-                        client.EditSupplierContacts(contact);
-                    }
+                    client.AddSupplierContacts(contact);
                 }
-                gvContact.RefreshData();
+                else
+                {
+                    client.EditSupplierContacts(contact);
+                }
             }
-            catch (Exception ex)
-            {
-                XtraMessageBox.Show(ex.Message);
-            }
+            gvContact.RefreshData();
         }
 
         private void gvContact_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
