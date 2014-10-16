@@ -70,6 +70,7 @@ namespace MEMS.Client.CRM
 
         protected override void FormLoad()
         {
+            base.FormLoad();
             CRMServiceClient client = new CRMServiceClient();
             var customerlst = client.getCustomerList();
             //foreach (var customer in customerlst)
@@ -84,6 +85,19 @@ namespace MEMS.Client.CRM
             {
                 item.CheckState = CheckState.Checked;
 
+            }
+            base.barbtn1.Visibility = DevExpress.XtraBars.BarItemVisibility.Always;
+            base.barbtn1.LargeImageIndex = 17;
+            barbtn1.Caption = "产品报价";
+        }
+        protected override void custom1()
+        {
+            if (gvproduct.DataRowCount > 0)
+            {
+                int pid = (int)gvproduct.GetFocusedRowCellValue("id");
+                var frm = new ProductPriceForm(pid);
+                frm.StartPosition = FormStartPosition.CenterParent;
+                refreshFormData(frm);
             }
         }
     }

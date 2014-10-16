@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductListForm));
             this.gcproduct = new DevExpress.XtraGrid.GridControl();
             this.gvproduct = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -41,6 +43,7 @@
             this.txtproname = new DevExpress.XtraEditors.TextEdit();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
             this.cmbcustomerlst = new DevExpress.XtraEditors.CheckedComboBoxEdit();
+            this.ribbonImageCollectionLarge = new DevExpress.Utils.ImageCollection(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.searchgroup)).BeginInit();
             this.searchgroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ribboncontrol)).BeginInit();
@@ -49,6 +52,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtprocode.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtproname.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbcustomerlst.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonImageCollectionLarge)).BeginInit();
             this.SuspendLayout();
             // 
             // searchgroup
@@ -59,6 +63,7 @@
             this.searchgroup.Controls.Add(this.labelControl2);
             this.searchgroup.Controls.Add(this.txtprocode);
             this.searchgroup.Controls.Add(this.labelControl1);
+            this.searchgroup.Location = new System.Drawing.Point(0, 125);
             this.searchgroup.Controls.SetChildIndex(this.labelControl1, 0);
             this.searchgroup.Controls.SetChildIndex(this.txtprocode, 0);
             this.searchgroup.Controls.SetChildIndex(this.labelControl2, 0);
@@ -69,22 +74,33 @@
             // ribboncontrol
             // 
             this.ribboncontrol.ExpandCollapseItem.Id = 0;
+            this.ribboncontrol.LargeImages = this.ribbonImageCollectionLarge;
+            this.ribboncontrol.Size = new System.Drawing.Size(717, 125);
             this.ribboncontrol.Toolbar.ShowCustomizeItem = false;
             // 
             // gcproduct
             // 
             this.gcproduct.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcproduct.Location = new System.Drawing.Point(0, 198);
+            this.gcproduct.Location = new System.Drawing.Point(0, 125);
             this.gcproduct.MainView = this.gvproduct;
             this.gcproduct.MenuManager = this.ribboncontrol;
             this.gcproduct.Name = "gcproduct";
-            this.gcproduct.Size = new System.Drawing.Size(717, 193);
+            this.gcproduct.Size = new System.Drawing.Size(717, 266);
             this.gcproduct.TabIndex = 3;
             this.gcproduct.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gvproduct});
             // 
             // gvproduct
             // 
+            this.gvproduct.AppearancePrint.EvenRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.gvproduct.AppearancePrint.EvenRow.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.gvproduct.AppearancePrint.EvenRow.Options.UseBackColor = true;
+            this.gvproduct.AppearancePrint.OddRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.gvproduct.AppearancePrint.OddRow.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.gvproduct.AppearancePrint.OddRow.Options.UseBackColor = true;
+            this.gvproduct.AppearancePrint.Row.BackColor = System.Drawing.Color.Red;
+            this.gvproduct.AppearancePrint.Row.BackColor2 = System.Drawing.Color.Red;
+            this.gvproduct.AppearancePrint.Row.Options.UseBackColor = true;
             this.gvproduct.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn1,
             this.gridColumn2,
@@ -185,6 +201,29 @@
             this.cmbcustomerlst.Size = new System.Drawing.Size(200, 22);
             this.cmbcustomerlst.TabIndex = 10;
             // 
+            // ribbonImageCollectionLarge
+            // 
+            this.ribbonImageCollectionLarge.ImageSize = new System.Drawing.Size(32, 32);
+            this.ribbonImageCollectionLarge.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("ribbonImageCollectionLarge.ImageStream")));
+            this.ribbonImageCollectionLarge.Images.SetKeyName(0, "Ribbon_New_32x32.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(1, "Ribbon_Open_32x32.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(2, "Ribbon_Close_32x32.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(3, "Ribbon_Find_32x32.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(4, "Ribbon_Save_32x32.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(5, "Ribbon_SaveAs_32x32.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(6, "Ribbon_Exit_32x32.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(7, "Ribbon_Content_32x32.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(8, "Ribbon_Info_32x32.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(9, "BO_MyDetails_32x32.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(10, "Action_Security_ChangePassword_32x32.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(11, "BO_Employee_32x32.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(12, "Action_Delete_32x32.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(13, "Action_Edit_32x32.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(14, "Action_New_32x32.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(15, "Action_LinkUnlink_Link_32x32.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(16, "Action_LinkUnlink_Unlink_32x32.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(17, "BO_Sale_v92_32x32.png");
+            // 
             // ProductListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -204,6 +243,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtprocode.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtproname.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbcustomerlst.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonImageCollectionLarge)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -223,5 +263,6 @@
         private DevExpress.XtraEditors.TextEdit txtprocode;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.XtraEditors.CheckedComboBoxEdit cmbcustomerlst;
+        internal DevExpress.Utils.ImageCollection ribbonImageCollectionLarge;
     }
 }
