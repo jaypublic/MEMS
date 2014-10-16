@@ -175,7 +175,6 @@
         #endregion
 
         internal DevExpress.Utils.ImageCollection ribbonImageCollectionLarge;
-        private DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
         private DevExpress.XtraBars.Ribbon.RibbonPage ribbonPage1;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.BarButtonItem okButton;
@@ -184,5 +183,6 @@
         protected DevExpress.XtraBars.BarButtonItem barbtn1;
         protected DevExpress.XtraBars.BarButtonItem barbtn2;
         protected DevExpress.XtraBars.BarButtonItem barbtn3;
+        public DevExpress.XtraBars.Ribbon.RibbonControl ribbonControl1;
     }
 }

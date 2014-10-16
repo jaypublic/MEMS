@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductPriceForm));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
             this.gridControl2 = new DevExpress.XtraGrid.GridControl();
@@ -58,6 +59,8 @@
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
             this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
+            this.priceImgLarge = new DevExpress.Utils.ImageCollection();
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
@@ -86,7 +89,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.priceImgLarge)).BeginInit();
             this.SuspendLayout();
+            // 
+            // ribbonControl1
+            // 
+            this.ribbonControl1.ExpandCollapseItem.Id = 0;
             // 
             // panelControl1
             // 
@@ -373,6 +381,24 @@
             this.labelControl1.TabIndex = 0;
             this.labelControl1.Text = "报价版本";
             // 
+            // priceImgLarge
+            // 
+            this.priceImgLarge.ImageSize = new System.Drawing.Size(32, 32);
+            this.priceImgLarge.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("priceImgLarge.ImageStream")));
+            this.priceImgLarge.Images.SetKeyName(0, "Ribbon_New_32x32.png");
+            this.priceImgLarge.Images.SetKeyName(1, "Ribbon_Open_32x32.png");
+            this.priceImgLarge.Images.SetKeyName(2, "Ribbon_Close_32x32.png");
+            this.priceImgLarge.Images.SetKeyName(3, "Ribbon_Find_32x32.png");
+            this.priceImgLarge.Images.SetKeyName(4, "Ribbon_Save_32x32.png");
+            this.priceImgLarge.Images.SetKeyName(5, "Ribbon_SaveAs_32x32.png");
+            this.priceImgLarge.Images.SetKeyName(6, "Ribbon_Exit_32x32.png");
+            this.priceImgLarge.Images.SetKeyName(7, "Ribbon_Content_32x32.png");
+            this.priceImgLarge.Images.SetKeyName(8, "Ribbon_Info_32x32.png");
+            this.priceImgLarge.Images.SetKeyName(9, "BO_Customer_32x32.png");
+            this.priceImgLarge.Images.SetKeyName(10, "Image1.png");
+            this.priceImgLarge.Images.SetKeyName(11, "BO_Product_32x32.png");
+            this.priceImgLarge.Images.SetKeyName(12, "Action_Edit_32x32.png");
+            // 
             // ProductPriceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -380,7 +406,9 @@
             this.Controls.Add(this.panelControl1);
             this.Name = "ProductPriceForm";
             this.Text = "产品报价信息";
+            this.Controls.SetChildIndex(this.ribbonControl1, 0);
             this.Controls.SetChildIndex(this.panelControl1, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
@@ -410,6 +438,7 @@
             this.panelControl3.ResumeLayout(false);
             this.panelControl3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.priceImgLarge)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -446,5 +475,6 @@
         private DevExpress.XtraEditors.PanelControl panelControl3;
         private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
         private DevExpress.XtraEditors.LabelControl labelControl1;
+        private DevExpress.Utils.ImageCollection priceImgLarge;
     }
 }

@@ -25,6 +25,9 @@ namespace MEMS.Client.CRM
             this.ribbonPageGroup2.Visible = true;
             this.barbtn1.Visibility = BarItemVisibility.Always;
             this.barbtn1.Caption = "创建版本";
+            this.barbtn1.LargeGlyph = MEMS.Client.CRM.Properties.Resources.edit_32x32;
+
+
         }
     }
 }
