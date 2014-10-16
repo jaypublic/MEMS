@@ -15,7 +15,6 @@ namespace MEMS.Client.CRM
     {
         int m_pid;
         T_Product m_product;
-
         List<T_Crafts> modifycraftlst = new List<T_Crafts>();
         CRMServiceClient m_client = new CRMServiceClient();
         public ProductinfoForm(frmmodetype type)
@@ -163,6 +162,8 @@ namespace MEMS.Client.CRM
         {
             if (gvcraft.DataRowCount > 0)
             {
+                gvcraft.CloseEditor();
+                gvcraft.UpdateCurrentRow();
                 var ds = (List<T_Crafts>)this.gvcraft.DataSource;
                 foreach (var craft in ds)
                 {
@@ -337,18 +338,6 @@ namespace MEMS.Client.CRM
         {
 
         }  
-
-        private void btn_create_Click(object sender, EventArgs e)
-        {
-            try
-            {
-
-            }
-            catch (Exception ex)
-            {
-                XtraMessageBox.Show(ex.Message);
-            }
-        }
 
     }
 }
