@@ -82,6 +82,7 @@ namespace MEMSservice.BLL
             {
                 var rst = from c in db.T_Crafts
                           where c.pid == pid
+                          orderby c.processindex
                           select c;
                 return rst.ToList();
             }
