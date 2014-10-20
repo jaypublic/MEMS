@@ -68,17 +68,19 @@ namespace MEMS.Client.Common
                     break;
             }
         }
-        protected void enabletxtbox(Control.ControlCollection controlCollection)
+        protected void readonlytxtbox(Control.ControlCollection controlCollection,Boolean enable)
         {
             foreach (Control txtbox in controlCollection)
             {
-                if (txtbox is TextEdit)
+                if (txtbox is TextEdit )
                 {
-                    txtbox.Enabled = false;
+
+                    (txtbox as TextEdit).Properties.ReadOnly = enable;
+
                 }
                 else
                 {
-                    enabletxtbox(txtbox.Controls);
+                    readonlytxtbox(txtbox.Controls, enable);
                 }
             }
         }

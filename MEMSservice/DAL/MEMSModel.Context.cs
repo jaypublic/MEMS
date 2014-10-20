@@ -37,9 +37,9 @@ namespace MEMSservice.DAL
         public DbSet<T_Crafts> T_Crafts { get; set; }
         public DbSet<T_CraftsPrice> T_CraftsPrice { get; set; }
         public DbSet<T_Product> T_Product { get; set; }
-        public DbSet<T_ProductbasicPrice> T_ProductbasicPrice { get; set; }
         public DbSet<T_FileMgr> T_FileMgr { get; set; }
         public DbSet<T_ProductType> T_ProductType { get; set; }
         public DbSet<T_ProductDraw> T_ProductDraw { get; set; }
+        public DbSet<T_ProductbasicPrice> T_ProductbasicPrice { get; set; }
     }
 }

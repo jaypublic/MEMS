@@ -121,5 +121,32 @@ namespace MEMSservice.BLL
                 return rst.ToList();
             }
         }
+        public List<T_ProductbasicPrice> getProductPriceList(int pid)
+        {
+            using (MEMSEntities db = new MEMSEntities())
+            {
+                var rst = from p in db.T_ProductbasicPrice
+                          where p.productid == pid
+                          orderby p.id descending
+                          select p;
+                return rst.ToList();
+            }
+        }
+        public int AddProductPrice(T_ProductbasicPrice price)
+        {
+            using(MEMSEntities db=new MEMSEntities())
+            {
+                db.Entry(price).State = EntityState.Added;
+                var success = db.SaveChanges() > 0 ? true : false;
+                if (success)
+                {
+                    return price.id;
+                }
+                else
+                {
+                    return 0;
+                }
+            }
+        }
     }
 }

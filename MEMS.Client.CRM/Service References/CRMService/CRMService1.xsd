@@ -274,4 +274,28 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="T_ProductDraw" nillable="true" type="tns:T_ProductDraw" />
+  <xs:complexType name="ArrayOfT_ProductbasicPrice">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="T_ProductbasicPrice" nillable="true" type="tns:T_ProductbasicPrice" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfT_ProductbasicPrice" nillable="true" type="tns:ArrayOfT_ProductbasicPrice" />
+  <xs:complexType name="T_ProductbasicPrice">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="manageprice" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="materialprice" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="materialpricedesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="mgrpricedesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="otherprice" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="otherpricedesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pricebasicremark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="productid" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="returnmatprice" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="returnpricedesc" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="totalprice" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="version" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="T_ProductbasicPrice" nillable="true" type="tns:T_ProductbasicPrice" />
 </xs:schema>

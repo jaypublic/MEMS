@@ -50,7 +50,7 @@ namespace MEMS.Client.CRM
             {
                 m_customer = client.getCustomerbyid(m_cid);
                 SetData(m_customer);
-                enabletxtbox(this.Controls);
+                readonlytxtbox(this.Controls, true);
             }
             var comtypelst = client.getCpytypeList();
             foreach (var comtype in comtypelst)

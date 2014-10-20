@@ -482,5 +482,29 @@ namespace MEMSservice
                 throw ex;
             }
         }
+        public List<T_ProductbasicPrice> getProductPriceList(int productid)
+        {
+            try
+            {
+                ph = new ProductHelper();
+                return ph.getProductPriceList(productid);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public int AddNewProductPrice(T_ProductbasicPrice price)
+        {
+            try
+            {
+                ph = new ProductHelper();
+                return ph.AddProductPrice(price);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

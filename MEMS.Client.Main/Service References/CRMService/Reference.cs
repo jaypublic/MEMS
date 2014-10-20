@@ -2435,6 +2435,243 @@ namespace MEMS.Client.Main.CRMService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_ProductbasicPrice", Namespace="http://schemas.datacontract.org/2004/07/MEMSservice.DAL")]
+    [System.SerializableAttribute()]
+    public partial class T_ProductbasicPrice : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> managepriceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> materialpriceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string materialpricedescField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string mgrpricedescField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> otherpriceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string otherpricedescField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string pricebasicremarkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> productidField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> returnmatpriceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string returnpricedescField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> totalpriceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string versionField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id {
+            get {
+                return this.idField;
+            }
+            set {
+                if ((this.idField.Equals(value) != true)) {
+                    this.idField = value;
+                    this.RaisePropertyChanged("id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> manageprice {
+            get {
+                return this.managepriceField;
+            }
+            set {
+                if ((this.managepriceField.Equals(value) != true)) {
+                    this.managepriceField = value;
+                    this.RaisePropertyChanged("manageprice");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> materialprice {
+            get {
+                return this.materialpriceField;
+            }
+            set {
+                if ((this.materialpriceField.Equals(value) != true)) {
+                    this.materialpriceField = value;
+                    this.RaisePropertyChanged("materialprice");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string materialpricedesc {
+            get {
+                return this.materialpricedescField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.materialpricedescField, value) != true)) {
+                    this.materialpricedescField = value;
+                    this.RaisePropertyChanged("materialpricedesc");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string mgrpricedesc {
+            get {
+                return this.mgrpricedescField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.mgrpricedescField, value) != true)) {
+                    this.mgrpricedescField = value;
+                    this.RaisePropertyChanged("mgrpricedesc");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> otherprice {
+            get {
+                return this.otherpriceField;
+            }
+            set {
+                if ((this.otherpriceField.Equals(value) != true)) {
+                    this.otherpriceField = value;
+                    this.RaisePropertyChanged("otherprice");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string otherpricedesc {
+            get {
+                return this.otherpricedescField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.otherpricedescField, value) != true)) {
+                    this.otherpricedescField = value;
+                    this.RaisePropertyChanged("otherpricedesc");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string pricebasicremark {
+            get {
+                return this.pricebasicremarkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.pricebasicremarkField, value) != true)) {
+                    this.pricebasicremarkField = value;
+                    this.RaisePropertyChanged("pricebasicremark");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> productid {
+            get {
+                return this.productidField;
+            }
+            set {
+                if ((this.productidField.Equals(value) != true)) {
+                    this.productidField = value;
+                    this.RaisePropertyChanged("productid");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> returnmatprice {
+            get {
+                return this.returnmatpriceField;
+            }
+            set {
+                if ((this.returnmatpriceField.Equals(value) != true)) {
+                    this.returnmatpriceField = value;
+                    this.RaisePropertyChanged("returnmatprice");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string returnpricedesc {
+            get {
+                return this.returnpricedescField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.returnpricedescField, value) != true)) {
+                    this.returnpricedescField = value;
+                    this.RaisePropertyChanged("returnpricedesc");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> totalprice {
+            get {
+                return this.totalpriceField;
+            }
+            set {
+                if ((this.totalpriceField.Equals(value) != true)) {
+                    this.totalpriceField = value;
+                    this.RaisePropertyChanged("totalprice");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string version {
+            get {
+                return this.versionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.versionField, value) != true)) {
+                    this.versionField = value;
+                    this.RaisePropertyChanged("version");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="CRMService.ICRMService")]
     public interface ICRMService {
@@ -2555,6 +2792,12 @@ namespace MEMS.Client.Main.CRMService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/getProductDrawList", ReplyAction="http://tempuri.org/ICRMService/getProductDrawListResponse")]
         MEMS.Client.Main.CRMService.T_ProductDraw[] getProductDrawList(int productid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/getProductPriceList", ReplyAction="http://tempuri.org/ICRMService/getProductPriceListResponse")]
+        MEMS.Client.Main.CRMService.T_ProductbasicPrice[] getProductPriceList(int productid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/AddNewProductPrice", ReplyAction="http://tempuri.org/ICRMService/AddNewProductPriceResponse")]
+        int AddNewProductPrice(MEMS.Client.Main.CRMService.T_ProductbasicPrice price);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -2738,6 +2981,14 @@ namespace MEMS.Client.Main.CRMService {
         
         public MEMS.Client.Main.CRMService.T_ProductDraw[] getProductDrawList(int productid) {
             return base.Channel.getProductDrawList(productid);
+        }
+        
+        public MEMS.Client.Main.CRMService.T_ProductbasicPrice[] getProductPriceList(int productid) {
+            return base.Channel.getProductPriceList(productid);
+        }
+        
+        public int AddNewProductPrice(MEMS.Client.Main.CRMService.T_ProductbasicPrice price) {
+            return base.Channel.AddNewProductPrice(price);
         }
     }
 }

@@ -90,5 +90,9 @@ namespace MEMSservice
         bool DeleteCraft(T_Crafts craft);
         [OperationContract]
         List<T_ProductDraw> getProductDrawList(int productid);
+        [OperationContract]
+        List<T_ProductbasicPrice> getProductPriceList(int productid);
+        [OperationContract]
+        int AddNewProductPrice(T_ProductbasicPrice price);
     }
 }

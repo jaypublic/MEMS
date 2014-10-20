@@ -46,7 +46,7 @@ namespace MEMS.Client.CRM
             {
                 m_supplier = client.getSupplierbyId(m_supplierid);
                 SetData();
-                enabletxtbox(this.Controls);
+                readonlytxtbox(this.Controls, true);
             }
             var contactlst = new List<T_Suppliers_contacts>(client.getSupplierContacts(m_supplierid));
             this.gcContact.DataSource = contactlst;

@@ -28,26 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProductPriceForm));
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
-            this.gridControl2 = new DevExpress.XtraGrid.GridControl();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gccraftprice = new DevExpress.XtraGrid.GridControl();
+            this.gvcraftprice = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.layoutControl2 = new DevExpress.XtraLayout.LayoutControl();
-            this.textEdit8 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit7 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit6 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit5 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit4 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit3 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit2 = new DevExpress.XtraEditors.TextEdit();
-            this.textEdit1 = new DevExpress.XtraEditors.TextEdit();
-            this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.txtmgrpricedesc = new DevExpress.XtraEditors.TextEdit();
+            this.txtotherpricedesc = new DevExpress.XtraEditors.TextEdit();
+            this.txtotherprice = new DevExpress.XtraEditors.TextEdit();
+            this.txtmanageprice = new DevExpress.XtraEditors.TextEdit();
+            this.txtmaterialpricedesc = new DevExpress.XtraEditors.TextEdit();
+            this.txtreturnpricedesc = new DevExpress.XtraEditors.TextEdit();
+            this.txtmaterialprice = new DevExpress.XtraEditors.TextEdit();
+            this.txtreturnmatprice = new DevExpress.XtraEditors.TextEdit();
+            this.pricegroup = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem10 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem11 = new DevExpress.XtraLayout.LayoutControlItem();
@@ -57,27 +58,27 @@
             this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem16 = new DevExpress.XtraLayout.LayoutControlItem();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
-            this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
+            this.cmbpriceName = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.priceImgLarge = new DevExpress.Utils.ImageCollection();
+            this.priceImgLarge = new DevExpress.Utils.ImageCollection(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
             this.groupControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gccraftprice)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvcraftprice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).BeginInit();
             this.layoutControl2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit8.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtmgrpricedesc.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtotherpricedesc.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtotherprice.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtmanageprice.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtmaterialpricedesc.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtreturnpricedesc.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtmaterialprice.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtreturnmatprice.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pricegroup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).BeginInit();
@@ -88,7 +89,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbpriceName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.priceImgLarge)).BeginInit();
             this.SuspendLayout();
             // 
@@ -107,7 +108,7 @@
             // 
             // groupControl2
             // 
-            this.groupControl2.Controls.Add(this.gridControl2);
+            this.groupControl2.Controls.Add(this.gccraftprice);
             this.groupControl2.Controls.Add(this.layoutControl2);
             this.groupControl2.Controls.Add(this.panelControl3);
             this.groupControl2.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -117,30 +118,30 @@
             this.groupControl2.TabIndex = 2;
             this.groupControl2.Text = "产品基本报价";
             // 
-            // gridControl2
+            // gccraftprice
             // 
-            this.gridControl2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl2.Location = new System.Drawing.Point(2, 175);
-            this.gridControl2.MainView = this.gridView2;
-            this.gridControl2.Name = "gridControl2";
-            this.gridControl2.Size = new System.Drawing.Size(817, 189);
-            this.gridControl2.TabIndex = 2;
-            this.gridControl2.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView2});
+            this.gccraftprice.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gccraftprice.Location = new System.Drawing.Point(2, 175);
+            this.gccraftprice.MainView = this.gvcraftprice;
+            this.gccraftprice.Name = "gccraftprice";
+            this.gccraftprice.Size = new System.Drawing.Size(817, 189);
+            this.gccraftprice.TabIndex = 2;
+            this.gccraftprice.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvcraftprice});
             // 
-            // gridView2
+            // gvcraftprice
             // 
-            this.gridView2.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gvcraftprice.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn4,
             this.gridColumn5,
             this.gridColumn6,
             this.gridColumn7,
             this.gridColumn8});
-            this.gridView2.GridControl = this.gridControl2;
-            this.gridView2.Name = "gridView2";
-            this.gridView2.OptionsView.ShowGroupPanel = false;
-            this.gridView2.OptionsView.ShowViewCaption = true;
-            this.gridView2.ViewCaption = "产品各工序加工费用";
+            this.gvcraftprice.GridControl = this.gccraftprice;
+            this.gvcraftprice.Name = "gvcraftprice";
+            this.gvcraftprice.OptionsView.ShowGroupPanel = false;
+            this.gvcraftprice.OptionsView.ShowViewCaption = true;
+            this.gvcraftprice.ViewCaption = "产品各工序加工费用";
             // 
             // gridColumn4
             // 
@@ -173,92 +174,100 @@
             // 
             // layoutControl2
             // 
-            this.layoutControl2.Controls.Add(this.textEdit8);
-            this.layoutControl2.Controls.Add(this.textEdit7);
-            this.layoutControl2.Controls.Add(this.textEdit6);
-            this.layoutControl2.Controls.Add(this.textEdit5);
-            this.layoutControl2.Controls.Add(this.textEdit4);
-            this.layoutControl2.Controls.Add(this.textEdit3);
-            this.layoutControl2.Controls.Add(this.textEdit2);
-            this.layoutControl2.Controls.Add(this.textEdit1);
+            this.layoutControl2.Controls.Add(this.txtmgrpricedesc);
+            this.layoutControl2.Controls.Add(this.txtotherpricedesc);
+            this.layoutControl2.Controls.Add(this.txtotherprice);
+            this.layoutControl2.Controls.Add(this.txtmanageprice);
+            this.layoutControl2.Controls.Add(this.txtmaterialpricedesc);
+            this.layoutControl2.Controls.Add(this.txtreturnpricedesc);
+            this.layoutControl2.Controls.Add(this.txtmaterialprice);
+            this.layoutControl2.Controls.Add(this.txtreturnmatprice);
             this.layoutControl2.Dock = System.Windows.Forms.DockStyle.Top;
             this.layoutControl2.Location = new System.Drawing.Point(2, 51);
             this.layoutControl2.Name = "layoutControl2";
-            this.layoutControl2.Root = this.layoutControlGroup2;
+            this.layoutControl2.Root = this.pricegroup;
             this.layoutControl2.Size = new System.Drawing.Size(817, 124);
             this.layoutControl2.TabIndex = 0;
             this.layoutControl2.Text = "layoutControl2";
             // 
-            // textEdit8
+            // txtmgrpricedesc
             // 
-            this.textEdit8.Location = new System.Drawing.Point(450, 90);
-            this.textEdit8.Name = "textEdit8";
-            this.textEdit8.Size = new System.Drawing.Size(355, 22);
-            this.textEdit8.StyleController = this.layoutControl2;
-            this.textEdit8.TabIndex = 11;
+            this.txtmgrpricedesc.Location = new System.Drawing.Point(450, 90);
+            this.txtmgrpricedesc.Name = "txtmgrpricedesc";
+            this.txtmgrpricedesc.Size = new System.Drawing.Size(355, 22);
+            this.txtmgrpricedesc.StyleController = this.layoutControl2;
+            this.txtmgrpricedesc.TabIndex = 11;
+            this.txtmgrpricedesc.Tag = "mgrpricedesc";
             // 
-            // textEdit7
+            // txtotherpricedesc
             // 
-            this.textEdit7.Location = new System.Drawing.Point(51, 90);
-            this.textEdit7.Name = "textEdit7";
-            this.textEdit7.Size = new System.Drawing.Size(356, 22);
-            this.textEdit7.StyleController = this.layoutControl2;
-            this.textEdit7.TabIndex = 10;
+            this.txtotherpricedesc.Location = new System.Drawing.Point(51, 90);
+            this.txtotherpricedesc.Name = "txtotherpricedesc";
+            this.txtotherpricedesc.Size = new System.Drawing.Size(356, 22);
+            this.txtotherpricedesc.StyleController = this.layoutControl2;
+            this.txtotherpricedesc.TabIndex = 10;
+            this.txtotherpricedesc.Tag = "otherpricedesc";
             // 
-            // textEdit6
+            // txtotherprice
             // 
-            this.textEdit6.Location = new System.Drawing.Point(51, 64);
-            this.textEdit6.Name = "textEdit6";
-            this.textEdit6.Size = new System.Drawing.Size(356, 22);
-            this.textEdit6.StyleController = this.layoutControl2;
-            this.textEdit6.TabIndex = 9;
+            this.txtotherprice.Location = new System.Drawing.Point(51, 64);
+            this.txtotherprice.Name = "txtotherprice";
+            this.txtotherprice.Size = new System.Drawing.Size(356, 22);
+            this.txtotherprice.StyleController = this.layoutControl2;
+            this.txtotherprice.TabIndex = 9;
+            this.txtotherprice.Tag = "otherprice";
             // 
-            // textEdit5
+            // txtmanageprice
             // 
-            this.textEdit5.Location = new System.Drawing.Point(450, 64);
-            this.textEdit5.Name = "textEdit5";
-            this.textEdit5.Size = new System.Drawing.Size(355, 22);
-            this.textEdit5.StyleController = this.layoutControl2;
-            this.textEdit5.TabIndex = 8;
+            this.txtmanageprice.Location = new System.Drawing.Point(450, 64);
+            this.txtmanageprice.Name = "txtmanageprice";
+            this.txtmanageprice.Size = new System.Drawing.Size(355, 22);
+            this.txtmanageprice.StyleController = this.layoutControl2;
+            this.txtmanageprice.TabIndex = 8;
+            this.txtmanageprice.Tag = "manageprice";
             // 
-            // textEdit4
+            // txtmaterialpricedesc
             // 
-            this.textEdit4.Location = new System.Drawing.Point(450, 38);
-            this.textEdit4.Name = "textEdit4";
-            this.textEdit4.Size = new System.Drawing.Size(355, 22);
-            this.textEdit4.StyleController = this.layoutControl2;
-            this.textEdit4.TabIndex = 7;
+            this.txtmaterialpricedesc.Location = new System.Drawing.Point(450, 38);
+            this.txtmaterialpricedesc.Name = "txtmaterialpricedesc";
+            this.txtmaterialpricedesc.Size = new System.Drawing.Size(355, 22);
+            this.txtmaterialpricedesc.StyleController = this.layoutControl2;
+            this.txtmaterialpricedesc.TabIndex = 7;
+            this.txtmaterialpricedesc.Tag = "materialpricedesc";
             // 
-            // textEdit3
+            // txtreturnpricedesc
             // 
-            this.textEdit3.Location = new System.Drawing.Point(51, 38);
-            this.textEdit3.Name = "textEdit3";
-            this.textEdit3.Size = new System.Drawing.Size(356, 22);
-            this.textEdit3.StyleController = this.layoutControl2;
-            this.textEdit3.TabIndex = 6;
+            this.txtreturnpricedesc.Location = new System.Drawing.Point(51, 38);
+            this.txtreturnpricedesc.Name = "txtreturnpricedesc";
+            this.txtreturnpricedesc.Size = new System.Drawing.Size(356, 22);
+            this.txtreturnpricedesc.StyleController = this.layoutControl2;
+            this.txtreturnpricedesc.TabIndex = 6;
+            this.txtreturnpricedesc.Tag = "returnpricedesc";
             // 
-            // textEdit2
+            // txtmaterialprice
             // 
-            this.textEdit2.Location = new System.Drawing.Point(450, 12);
-            this.textEdit2.Name = "textEdit2";
-            this.textEdit2.Size = new System.Drawing.Size(355, 22);
-            this.textEdit2.StyleController = this.layoutControl2;
-            this.textEdit2.TabIndex = 5;
+            this.txtmaterialprice.Location = new System.Drawing.Point(450, 12);
+            this.txtmaterialprice.Name = "txtmaterialprice";
+            this.txtmaterialprice.Size = new System.Drawing.Size(355, 22);
+            this.txtmaterialprice.StyleController = this.layoutControl2;
+            this.txtmaterialprice.TabIndex = 5;
+            this.txtmaterialprice.Tag = "materialprice";
             // 
-            // textEdit1
+            // txtreturnmatprice
             // 
-            this.textEdit1.Location = new System.Drawing.Point(51, 12);
-            this.textEdit1.Name = "textEdit1";
-            this.textEdit1.Size = new System.Drawing.Size(356, 22);
-            this.textEdit1.StyleController = this.layoutControl2;
-            this.textEdit1.TabIndex = 4;
+            this.txtreturnmatprice.Location = new System.Drawing.Point(51, 12);
+            this.txtreturnmatprice.Name = "txtreturnmatprice";
+            this.txtreturnmatprice.Size = new System.Drawing.Size(356, 22);
+            this.txtreturnmatprice.StyleController = this.layoutControl2;
+            this.txtreturnmatprice.TabIndex = 4;
+            this.txtreturnmatprice.Tag = "returnmatprice";
             // 
-            // layoutControlGroup2
+            // pricegroup
             // 
-            this.layoutControlGroup2.CustomizationFormText = "layoutControlGroup2";
-            this.layoutControlGroup2.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
-            this.layoutControlGroup2.GroupBordersVisible = false;
-            this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.pricegroup.CustomizationFormText = "layoutControlGroup2";
+            this.pricegroup.EnableIndentsWithoutBorders = DevExpress.Utils.DefaultBoolean.True;
+            this.pricegroup.GroupBordersVisible = false;
+            this.pricegroup.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem9,
             this.layoutControlItem10,
             this.layoutControlItem11,
@@ -267,15 +276,15 @@
             this.layoutControlItem14,
             this.layoutControlItem15,
             this.layoutControlItem16});
-            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup2.Name = "layoutControlGroup2";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(817, 124);
-            this.layoutControlGroup2.Text = "layoutControlGroup2";
-            this.layoutControlGroup2.TextVisible = false;
+            this.pricegroup.Location = new System.Drawing.Point(0, 0);
+            this.pricegroup.Name = "pricegroup";
+            this.pricegroup.Size = new System.Drawing.Size(817, 124);
+            this.pricegroup.Text = "pricegroup";
+            this.pricegroup.TextVisible = false;
             // 
             // layoutControlItem9
             // 
-            this.layoutControlItem9.Control = this.textEdit1;
+            this.layoutControlItem9.Control = this.txtreturnmatprice;
             this.layoutControlItem9.CustomizationFormText = "退废料";
             this.layoutControlItem9.Location = new System.Drawing.Point(0, 0);
             this.layoutControlItem9.Name = "layoutControlItem9";
@@ -285,7 +294,7 @@
             // 
             // layoutControlItem10
             // 
-            this.layoutControlItem10.Control = this.textEdit2;
+            this.layoutControlItem10.Control = this.txtmaterialprice;
             this.layoutControlItem10.CustomizationFormText = "材料费";
             this.layoutControlItem10.Location = new System.Drawing.Point(399, 0);
             this.layoutControlItem10.Name = "layoutControlItem10";
@@ -295,7 +304,7 @@
             // 
             // layoutControlItem11
             // 
-            this.layoutControlItem11.Control = this.textEdit3;
+            this.layoutControlItem11.Control = this.txtreturnpricedesc;
             this.layoutControlItem11.CustomizationFormText = "说明";
             this.layoutControlItem11.Location = new System.Drawing.Point(0, 26);
             this.layoutControlItem11.Name = "layoutControlItem11";
@@ -305,7 +314,7 @@
             // 
             // layoutControlItem12
             // 
-            this.layoutControlItem12.Control = this.textEdit4;
+            this.layoutControlItem12.Control = this.txtmaterialpricedesc;
             this.layoutControlItem12.CustomizationFormText = "说明";
             this.layoutControlItem12.Location = new System.Drawing.Point(399, 26);
             this.layoutControlItem12.Name = "layoutControlItem12";
@@ -315,7 +324,7 @@
             // 
             // layoutControlItem13
             // 
-            this.layoutControlItem13.Control = this.textEdit5;
+            this.layoutControlItem13.Control = this.txtmanageprice;
             this.layoutControlItem13.CustomizationFormText = "管理费";
             this.layoutControlItem13.Location = new System.Drawing.Point(399, 52);
             this.layoutControlItem13.Name = "layoutControlItem13";
@@ -325,7 +334,7 @@
             // 
             // layoutControlItem14
             // 
-            this.layoutControlItem14.Control = this.textEdit6;
+            this.layoutControlItem14.Control = this.txtotherprice;
             this.layoutControlItem14.CustomizationFormText = "运杂费";
             this.layoutControlItem14.Location = new System.Drawing.Point(0, 52);
             this.layoutControlItem14.Name = "layoutControlItem14";
@@ -335,7 +344,7 @@
             // 
             // layoutControlItem15
             // 
-            this.layoutControlItem15.Control = this.textEdit7;
+            this.layoutControlItem15.Control = this.txtotherpricedesc;
             this.layoutControlItem15.CustomizationFormText = "说明";
             this.layoutControlItem15.Location = new System.Drawing.Point(0, 78);
             this.layoutControlItem15.Name = "layoutControlItem15";
@@ -345,7 +354,7 @@
             // 
             // layoutControlItem16
             // 
-            this.layoutControlItem16.Control = this.textEdit8;
+            this.layoutControlItem16.Control = this.txtmgrpricedesc;
             this.layoutControlItem16.CustomizationFormText = "说明";
             this.layoutControlItem16.Location = new System.Drawing.Point(399, 78);
             this.layoutControlItem16.Name = "layoutControlItem16";
@@ -356,7 +365,7 @@
             // panelControl3
             // 
             this.panelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
-            this.panelControl3.Controls.Add(this.comboBoxEdit1);
+            this.panelControl3.Controls.Add(this.cmbpriceName);
             this.panelControl3.Controls.Add(this.labelControl1);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelControl3.Location = new System.Drawing.Point(2, 22);
@@ -364,14 +373,15 @@
             this.panelControl3.Size = new System.Drawing.Size(817, 29);
             this.panelControl3.TabIndex = 1;
             // 
-            // comboBoxEdit1
+            // cmbpriceName
             // 
-            this.comboBoxEdit1.Location = new System.Drawing.Point(63, 6);
-            this.comboBoxEdit1.Name = "comboBoxEdit1";
-            this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.cmbpriceName.Location = new System.Drawing.Point(63, 6);
+            this.cmbpriceName.Name = "cmbpriceName";
+            this.cmbpriceName.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit1.Size = new System.Drawing.Size(165, 22);
-            this.comboBoxEdit1.TabIndex = 1;
+            this.cmbpriceName.Size = new System.Drawing.Size(165, 22);
+            this.cmbpriceName.TabIndex = 1;
+            this.cmbpriceName.SelectedIndexChanged += new System.EventHandler(this.cmbpriceName_SelectedIndexChanged);
             // 
             // labelControl1
             // 
@@ -413,19 +423,19 @@
             this.panelControl1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
             this.groupControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gccraftprice)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvcraftprice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl2)).EndInit();
             this.layoutControl2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit8.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit7.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit6.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit5.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit4.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit3.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit2.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.textEdit1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtmgrpricedesc.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtotherpricedesc.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtotherprice.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtmanageprice.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtmaterialpricedesc.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtreturnpricedesc.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtmaterialprice.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtreturnmatprice.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pricegroup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem10)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem11)).EndInit();
@@ -437,7 +447,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             this.panelControl3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmbpriceName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.priceImgLarge)).EndInit();
             this.ResumeLayout(false);
 
@@ -447,23 +457,23 @@
 
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.GroupControl groupControl2;
-        private DevExpress.XtraGrid.GridControl gridControl2;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
+        private DevExpress.XtraGrid.GridControl gccraftprice;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvcraftprice;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
         private DevExpress.XtraLayout.LayoutControl layoutControl2;
-        private DevExpress.XtraEditors.TextEdit textEdit8;
-        private DevExpress.XtraEditors.TextEdit textEdit7;
-        private DevExpress.XtraEditors.TextEdit textEdit6;
-        private DevExpress.XtraEditors.TextEdit textEdit5;
-        private DevExpress.XtraEditors.TextEdit textEdit4;
-        private DevExpress.XtraEditors.TextEdit textEdit3;
-        private DevExpress.XtraEditors.TextEdit textEdit2;
-        private DevExpress.XtraEditors.TextEdit textEdit1;
-        private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
+        private DevExpress.XtraEditors.TextEdit txtmgrpricedesc;
+        private DevExpress.XtraEditors.TextEdit txtotherpricedesc;
+        private DevExpress.XtraEditors.TextEdit txtotherprice;
+        private DevExpress.XtraEditors.TextEdit txtmanageprice;
+        private DevExpress.XtraEditors.TextEdit txtmaterialpricedesc;
+        private DevExpress.XtraEditors.TextEdit txtreturnpricedesc;
+        private DevExpress.XtraEditors.TextEdit txtmaterialprice;
+        private DevExpress.XtraEditors.TextEdit txtreturnmatprice;
+        private DevExpress.XtraLayout.LayoutControlGroup pricegroup;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem9;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem10;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem11;
@@ -473,7 +483,7 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem15;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem16;
         private DevExpress.XtraEditors.PanelControl panelControl3;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
+        private DevExpress.XtraEditors.ComboBoxEdit cmbpriceName;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.Utils.ImageCollection priceImgLarge;
     }

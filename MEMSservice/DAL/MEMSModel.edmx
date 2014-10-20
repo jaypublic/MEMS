@@ -69,7 +69,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="pricebasicid" Type="int" />
           <Property Name="processid" Type="int" />
           <Property Name="processprice" Type="decimal" Precision="10" Scale="2" />
@@ -165,14 +165,17 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="productid" Type="int" />
           <Property Name="version" Type="nvarchar" MaxLength="50" />
           <Property Name="returnmatprice" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="returnpricedesc" Type="nvarchar" MaxLength="50" />
           <Property Name="materialprice" Type="decimal" Precision="10" Scale="2" />
-          <Property Name="machineprice" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="materialpricedesc" Type="nvarchar" MaxLength="50" />
           <Property Name="manageprice" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="mgrpricedesc" Type="nvarchar" MaxLength="50" />
           <Property Name="otherprice" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="otherpricedesc" Type="nvarchar" MaxLength="50" />
           <Property Name="totalprice" Type="decimal" Precision="10" Scale="2" />
           <Property Name="pricebasicremark" Type="nvarchar" MaxLength="50" />
         </EntityType>
@@ -260,10 +263,10 @@
           <EntitySet Name="T_Crafts" EntityType="MEMSModel.T_Crafts" />
           <EntitySet Name="T_CraftsPrice" EntityType="MEMSModel.T_CraftsPrice" />
           <EntitySet Name="T_Product" EntityType="MEMSModel.T_Product" />
-          <EntitySet Name="T_ProductbasicPrice" EntityType="MEMSModel.T_ProductbasicPrice" />
           <EntitySet Name="T_FileMgr" EntityType="MEMSModel.T_FileMgr" />
           <EntitySet Name="T_ProductType" EntityType="MEMSModel.T_ProductType" />
           <EntitySet Name="T_ProductDraw" EntityType="MEMSModel.T_ProductDraw" />
+          <EntitySet Name="T_ProductbasicPrice" EntityType="MEMSModel.T_ProductbasicPrice" />
         </EntityContainer>
         <EntityType Name="T_Base_companytype">
           <Key>
@@ -420,7 +423,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="Int32" Name="pricebasicid" />
           <Property Type="Int32" Name="processid" />
           <Property Type="Decimal" Name="processprice" Precision="10" Scale="2" />
@@ -438,21 +441,6 @@
           <Property Type="Double" Name="pronetweight" />
           <Property Type="Double" Name="progrossweight" />
           <Property Type="Int32" Name="protype" />
-        </EntityType>
-        <EntityType Name="T_ProductbasicPrice">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Type="Int32" Name="id" Nullable="false" />
-          <Property Type="Int32" Name="productid" />
-          <Property Type="String" Name="version" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Type="Decimal" Name="returnmatprice" Precision="10" Scale="2" />
-          <Property Type="Decimal" Name="materialprice" Precision="10" Scale="2" />
-          <Property Type="Decimal" Name="machineprice" Precision="10" Scale="2" />
-          <Property Type="Decimal" Name="manageprice" Precision="10" Scale="2" />
-          <Property Type="Decimal" Name="otherprice" Precision="10" Scale="2" />
-          <Property Type="Decimal" Name="totalprice" Precision="10" Scale="2" />
-          <Property Type="String" Name="pricebasicremark" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="T_FileMgr">
           <Key>
@@ -484,6 +472,24 @@
           <Property Type="String" Name="remark" MaxLength="200" FixedLength="false" Unicode="true" />
           <Property Type="Boolean" Name="isdelete" />
           <Property Type="String" Name="filepath" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="T_ProductbasicPrice">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="productid" />
+          <Property Type="String" Name="version" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="returnmatprice" Precision="10" Scale="2" />
+          <Property Type="String" Name="returnpricedesc" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="materialprice" Precision="10" Scale="2" />
+          <Property Type="String" Name="materialpricedesc" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="manageprice" Precision="10" Scale="2" />
+          <Property Type="String" Name="mgrpricedesc" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="otherprice" Precision="10" Scale="2" />
+          <Property Type="String" Name="otherpricedesc" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="totalprice" Precision="10" Scale="2" />
+          <Property Type="String" Name="pricebasicremark" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -677,22 +683,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="T_ProductbasicPrice">
-            <EntityTypeMapping TypeName="MEMSModel.T_ProductbasicPrice">
-              <MappingFragment StoreEntitySet="T_ProductbasicPrice">
-                <ScalarProperty Name="pricebasicremark" ColumnName="pricebasicremark" />
-                <ScalarProperty Name="totalprice" ColumnName="totalprice" />
-                <ScalarProperty Name="otherprice" ColumnName="otherprice" />
-                <ScalarProperty Name="manageprice" ColumnName="manageprice" />
-                <ScalarProperty Name="machineprice" ColumnName="machineprice" />
-                <ScalarProperty Name="materialprice" ColumnName="materialprice" />
-                <ScalarProperty Name="returnmatprice" ColumnName="returnmatprice" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="productid" ColumnName="productid" />
-                <ScalarProperty Name="id" ColumnName="id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="T_FileMgr">
             <EntityTypeMapping TypeName="MEMSModel.T_FileMgr">
               <MappingFragment StoreEntitySet="T_FileMgr">
@@ -723,6 +713,25 @@
                 <ScalarProperty Name="remark" ColumnName="remark" />
                 <ScalarProperty Name="drawingno" ColumnName="drawingno" />
                 <ScalarProperty Name="pid" ColumnName="pid" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_ProductbasicPrice">
+            <EntityTypeMapping TypeName="MEMSModel.T_ProductbasicPrice">
+              <MappingFragment StoreEntitySet="T_ProductbasicPrice">
+                <ScalarProperty Name="pricebasicremark" ColumnName="pricebasicremark" />
+                <ScalarProperty Name="totalprice" ColumnName="totalprice" />
+                <ScalarProperty Name="otherpricedesc" ColumnName="otherpricedesc" />
+                <ScalarProperty Name="otherprice" ColumnName="otherprice" />
+                <ScalarProperty Name="mgrpricedesc" ColumnName="mgrpricedesc" />
+                <ScalarProperty Name="manageprice" ColumnName="manageprice" />
+                <ScalarProperty Name="materialpricedesc" ColumnName="materialpricedesc" />
+                <ScalarProperty Name="materialprice" ColumnName="materialprice" />
+                <ScalarProperty Name="returnpricedesc" ColumnName="returnpricedesc" />
+                <ScalarProperty Name="returnmatprice" ColumnName="returnmatprice" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="productid" ColumnName="productid" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
