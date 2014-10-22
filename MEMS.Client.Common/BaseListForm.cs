@@ -109,6 +109,10 @@ namespace MEMS.Client.Common
         {
             this.Close();
         }
+        /// <summary>
+        /// 打开详细窗体并在完成编辑后刷新
+        /// </summary>
+        /// <param name="newfrm"></param>
         protected void refreshFormData(BaseinfoForm newfrm)
         {
             newfrm.StartPosition = FormStartPosition.CenterParent;
@@ -130,7 +134,7 @@ namespace MEMS.Client.Common
             }
         }
         /// <summary>
-        /// 窗体载入事件
+        /// 继承的窗体载入方法
         /// </summary>
         protected virtual void FormLoad()
         {

@@ -11,6 +11,9 @@ namespace MEMS.Client.Common
 {
     public partial class BaseinfoForm : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        /// <summary>
+        /// 窗体的模式，分为新增、修改、删除
+        /// </summary>
         protected frmmodetype formmode;
         public BaseinfoForm()
         {
@@ -49,7 +52,9 @@ namespace MEMS.Client.Common
                 XtraMessageBox.Show(ex.Message);
             }
         }
-
+        /// <summary>
+        /// 继承的窗体load方法
+        /// </summary>
         protected virtual void FormLoad()
         {
             switch (formmode)
@@ -68,6 +73,11 @@ namespace MEMS.Client.Common
                     break;
             }
         }
+        /// <summary>
+        /// 设置窗体内的textEdit控件的只读属性
+        /// </summary>
+        /// <param name="controlCollection">一般传入this.Controls</param>
+        /// <param name="enable">true为所有textEdit控件只读，false为可编辑</param>
         protected void readonlytxtbox(Control.ControlCollection controlCollection,Boolean enable)
         {
             foreach (Control txtbox in controlCollection)
