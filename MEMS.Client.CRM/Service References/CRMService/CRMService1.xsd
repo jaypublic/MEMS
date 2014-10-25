@@ -298,4 +298,22 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="T_ProductbasicPrice" nillable="true" type="tns:T_ProductbasicPrice" />
+  <xs:complexType name="ArrayOfT_CraftsPrice">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="T_CraftsPrice" nillable="true" type="tns:T_CraftsPrice" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfT_CraftsPrice" nillable="true" type="tns:ArrayOfT_CraftsPrice" />
+  <xs:complexType name="T_CraftsPrice">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="pid" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="pricebasicid" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="processid" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="processidx" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="processname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="processprice" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="T_CraftsPrice" nillable="true" type="tns:T_CraftsPrice" />
 </xs:schema>

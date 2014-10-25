@@ -2672,6 +2672,147 @@ namespace MEMS.Client.Main.CRMService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_CraftsPrice", Namespace="http://schemas.datacontract.org/2004/07/MEMSservice.DAL")]
+    [System.SerializableAttribute()]
+    public partial class T_CraftsPrice : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> pidField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> pricebasicidField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> processidField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> processidxField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string processnameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> processpriceField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id {
+            get {
+                return this.idField;
+            }
+            set {
+                if ((this.idField.Equals(value) != true)) {
+                    this.idField = value;
+                    this.RaisePropertyChanged("id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> pid {
+            get {
+                return this.pidField;
+            }
+            set {
+                if ((this.pidField.Equals(value) != true)) {
+                    this.pidField = value;
+                    this.RaisePropertyChanged("pid");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> pricebasicid {
+            get {
+                return this.pricebasicidField;
+            }
+            set {
+                if ((this.pricebasicidField.Equals(value) != true)) {
+                    this.pricebasicidField = value;
+                    this.RaisePropertyChanged("pricebasicid");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> processid {
+            get {
+                return this.processidField;
+            }
+            set {
+                if ((this.processidField.Equals(value) != true)) {
+                    this.processidField = value;
+                    this.RaisePropertyChanged("processid");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> processidx {
+            get {
+                return this.processidxField;
+            }
+            set {
+                if ((this.processidxField.Equals(value) != true)) {
+                    this.processidxField = value;
+                    this.RaisePropertyChanged("processidx");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string processname {
+            get {
+                return this.processnameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.processnameField, value) != true)) {
+                    this.processnameField = value;
+                    this.RaisePropertyChanged("processname");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> processprice {
+            get {
+                return this.processpriceField;
+            }
+            set {
+                if ((this.processpriceField.Equals(value) != true)) {
+                    this.processpriceField = value;
+                    this.RaisePropertyChanged("processprice");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="CRMService.ICRMService")]
     public interface ICRMService {
@@ -2797,7 +2938,13 @@ namespace MEMS.Client.Main.CRMService {
         MEMS.Client.Main.CRMService.T_ProductbasicPrice[] getProductPriceList(int productid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/AddNewProductPrice", ReplyAction="http://tempuri.org/ICRMService/AddNewProductPriceResponse")]
-        int AddNewProductPrice(MEMS.Client.Main.CRMService.T_ProductbasicPrice price);
+        bool AddNewProductPrice(MEMS.Client.Main.CRMService.T_ProductbasicPrice price, MEMS.Client.Main.CRMService.T_CraftsPrice[] newcplist);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/getCraftPriceList", ReplyAction="http://tempuri.org/ICRMService/getCraftPriceListResponse")]
+        MEMS.Client.Main.CRMService.T_CraftsPrice[] getCraftPriceList(int productid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/getPriceVersion", ReplyAction="http://tempuri.org/ICRMService/getPriceVersionResponse")]
+        string getPriceVersion(int pid);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -2987,8 +3134,16 @@ namespace MEMS.Client.Main.CRMService {
             return base.Channel.getProductPriceList(productid);
         }
         
-        public int AddNewProductPrice(MEMS.Client.Main.CRMService.T_ProductbasicPrice price) {
-            return base.Channel.AddNewProductPrice(price);
+        public bool AddNewProductPrice(MEMS.Client.Main.CRMService.T_ProductbasicPrice price, MEMS.Client.Main.CRMService.T_CraftsPrice[] newcplist) {
+            return base.Channel.AddNewProductPrice(price, newcplist);
+        }
+        
+        public MEMS.Client.Main.CRMService.T_CraftsPrice[] getCraftPriceList(int productid) {
+            return base.Channel.getCraftPriceList(productid);
+        }
+        
+        public string getPriceVersion(int pid) {
+            return base.Channel.getPriceVersion(pid);
         }
     }
 }

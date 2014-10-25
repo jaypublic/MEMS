@@ -71,7 +71,10 @@
           </Key>
           <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="pricebasicid" Type="int" />
+          <Property Name="pid" Type="int" />
           <Property Name="processid" Type="int" />
+          <Property Name="processname" Type="nvarchar" MaxLength="50" />
+          <Property Name="processidx" Type="int" />
           <Property Name="processprice" Type="decimal" Precision="10" Scale="2" />
         </EntityType>
         <EntityType Name="T_Customer">
@@ -427,6 +430,9 @@
           <Property Type="Int32" Name="pricebasicid" />
           <Property Type="Int32" Name="processid" />
           <Property Type="Decimal" Name="processprice" Precision="10" Scale="2" />
+          <Property Type="Int32" Name="pid" />
+          <Property Type="String" Name="processname" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="processidx" />
         </EntityType>
         <EntityType Name="T_Product">
           <Key>
@@ -661,6 +667,9 @@
           <EntitySetMapping Name="T_CraftsPrice">
             <EntityTypeMapping TypeName="MEMSModel.T_CraftsPrice">
               <MappingFragment StoreEntitySet="T_CraftsPrice">
+                <ScalarProperty Name="processidx" ColumnName="processidx" />
+                <ScalarProperty Name="processname" ColumnName="processname" />
+                <ScalarProperty Name="pid" ColumnName="pid" />
                 <ScalarProperty Name="processprice" ColumnName="processprice" />
                 <ScalarProperty Name="processid" ColumnName="processid" />
                 <ScalarProperty Name="pricebasicid" ColumnName="pricebasicid" />

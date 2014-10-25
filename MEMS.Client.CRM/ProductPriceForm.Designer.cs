@@ -36,6 +36,8 @@
             this.gvcraftprice = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -134,6 +136,8 @@
             this.gvcraftprice.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn4,
             this.gridColumn5,
+            this.gridColumn1,
+            this.gridColumn2,
             this.gridColumn6,
             this.gridColumn7,
             this.gridColumn8});
@@ -145,29 +149,47 @@
             // 
             // gridColumn4
             // 
-            this.gridColumn4.Caption = "gridColumn4";
+            this.gridColumn4.Caption = "id";
+            this.gridColumn4.FieldName = "id";
             this.gridColumn4.Name = "gridColumn4";
             // 
             // gridColumn5
             // 
-            this.gridColumn5.Caption = "gridColumn5";
+            this.gridColumn5.Caption = "pid";
+            this.gridColumn5.FieldName = "pid";
             this.gridColumn5.Name = "gridColumn5";
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "processid";
+            this.gridColumn1.FieldName = "processid";
+            this.gridColumn1.Name = "gridColumn1";
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "pricebasicid";
+            this.gridColumn2.FieldName = "pricebasicid";
+            this.gridColumn2.Name = "gridColumn2";
             // 
             // gridColumn6
             // 
-            this.gridColumn6.Caption = "gridColumn6";
+            this.gridColumn6.Caption = "idx";
+            this.gridColumn6.FieldName = "processindex";
             this.gridColumn6.Name = "gridColumn6";
             // 
             // gridColumn7
             // 
             this.gridColumn7.Caption = "工序名称";
+            this.gridColumn7.FieldName = "processname";
             this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.OptionsColumn.AllowEdit = false;
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 0;
             // 
             // gridColumn8
             // 
             this.gridColumn8.Caption = "加工费";
+            this.gridColumn8.FieldName = "processprice";
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.Visible = true;
             this.gridColumn8.VisibleIndex = 1;
@@ -212,6 +234,9 @@
             // 
             this.txtotherprice.Location = new System.Drawing.Point(51, 64);
             this.txtotherprice.Name = "txtotherprice";
+            this.txtotherprice.Properties.Mask.BeepOnError = true;
+            this.txtotherprice.Properties.Mask.EditMask = "n";
+            this.txtotherprice.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtotherprice.Size = new System.Drawing.Size(356, 22);
             this.txtotherprice.StyleController = this.layoutControl2;
             this.txtotherprice.TabIndex = 9;
@@ -221,6 +246,9 @@
             // 
             this.txtmanageprice.Location = new System.Drawing.Point(450, 64);
             this.txtmanageprice.Name = "txtmanageprice";
+            this.txtmanageprice.Properties.Mask.BeepOnError = true;
+            this.txtmanageprice.Properties.Mask.EditMask = "n";
+            this.txtmanageprice.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtmanageprice.Size = new System.Drawing.Size(355, 22);
             this.txtmanageprice.StyleController = this.layoutControl2;
             this.txtmanageprice.TabIndex = 8;
@@ -248,6 +276,10 @@
             // 
             this.txtmaterialprice.Location = new System.Drawing.Point(450, 12);
             this.txtmaterialprice.Name = "txtmaterialprice";
+            this.txtmaterialprice.Properties.EditFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+            this.txtmaterialprice.Properties.Mask.BeepOnError = true;
+            this.txtmaterialprice.Properties.Mask.EditMask = "n";
+            this.txtmaterialprice.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtmaterialprice.Size = new System.Drawing.Size(355, 22);
             this.txtmaterialprice.StyleController = this.layoutControl2;
             this.txtmaterialprice.TabIndex = 5;
@@ -257,6 +289,9 @@
             // 
             this.txtreturnmatprice.Location = new System.Drawing.Point(51, 12);
             this.txtreturnmatprice.Name = "txtreturnmatprice";
+            this.txtreturnmatprice.Properties.Mask.BeepOnError = true;
+            this.txtreturnmatprice.Properties.Mask.EditMask = "n";
+            this.txtreturnmatprice.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtreturnmatprice.Size = new System.Drawing.Size(356, 22);
             this.txtreturnmatprice.StyleController = this.layoutControl2;
             this.txtreturnmatprice.TabIndex = 4;
@@ -486,5 +521,7 @@
         private DevExpress.XtraEditors.ComboBoxEdit cmbpriceName;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private DevExpress.Utils.ImageCollection priceImgLarge;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
     }
 }

@@ -93,6 +93,10 @@ namespace MEMSservice
         [OperationContract]
         List<T_ProductbasicPrice> getProductPriceList(int productid);
         [OperationContract]
-        int AddNewProductPrice(T_ProductbasicPrice price);
+        bool AddNewProductPrice(T_ProductbasicPrice price, List<T_CraftsPrice> newcplist);
+        [OperationContract]
+        List<T_CraftsPrice> getCraftPriceList(int productid);
+        [OperationContract]
+        string getPriceVersion(int pid);
     }
 }

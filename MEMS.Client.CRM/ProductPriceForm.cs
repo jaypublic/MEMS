@@ -18,6 +18,8 @@ namespace MEMS.Client.CRM
         private CRMServiceClient m_client = new CRMServiceClient();
         private bool newversion = false;
         private T_ProductbasicPrice m_pv;
+        private List<T_Crafts> m_craftlst;
+        private List<T_CraftsPrice> m_craftpricelst;
         public ProductPriceForm(int productid)
         {
             InitializeComponent();
@@ -31,8 +33,18 @@ namespace MEMS.Client.CRM
             this.barbtn1.Visibility = BarItemVisibility.Always;
             this.barbtn1.Caption = "创建版本";
             this.barbtn1.LargeGlyph = MEMS.Client.CRM.Properties.Resources.edit_32x32;
-
+            base.readonlytxtbox(this.Controls, true);
+            cmbpriceName.Properties.ReadOnly = false;
             retievePrice();
+            retieveCraft();
+        }
+        /// <summary>
+        /// 获取所有该产品的工序价格版本
+        /// </summary>
+        private void retieveCraft()
+        {
+            m_craftlst = new List<T_Crafts>(m_client.getProductCraft(m_pid));
+            m_craftpricelst = new List<T_CraftsPrice>(m_client.getCraftPriceList(m_pid));
         }
         /// <summary>
         /// 获取所有该产品的价格版本
@@ -61,7 +73,11 @@ namespace MEMS.Client.CRM
             {
                 base.readonlytxtbox(this.Controls, true);
             }
+            var craftpricelst = m_craftpricelst.FindAll(p => p.pricebasicid == priceversion.id);
+            gccraftprice.DataSource = craftpricelst;
+            gvcraftprice.Columns["processprice"].OptionsColumn.AllowEdit = false;
             cmbpriceName.Properties.ReadOnly = false;
+
         }
         /// <summary>
         /// 设置价格信息放入txtbox
@@ -90,18 +106,18 @@ namespace MEMS.Client.CRM
         /// </summary>
         /// <param name="pv"></param>
         /// <returns></returns>
-        private T_ProductbasicPrice getData(T_ProductbasicPrice pv)
+        private T_ProductbasicPrice getDataFromTxt(T_ProductbasicPrice pv)
         {
             try
             {
-                pv.manageprice = Convert.ToDecimal(txtmanageprice.Text);
-                pv.materialprice = Convert.ToDecimal(txtmaterialprice.Text);
+                pv.manageprice = txtmanageprice.Text == string.Empty ? 0 : Convert.ToDecimal(txtmanageprice.Text);
+                pv.materialprice = txtmaterialprice.Text == string.Empty ? 0 : Convert.ToDecimal(txtmaterialprice.Text);
                 pv.materialpricedesc = txtmaterialpricedesc.Text;
                 pv.mgrpricedesc = txtmgrpricedesc.Text;
-                pv.otherprice = Convert.ToDecimal(txtotherprice.Text);
+                pv.otherprice = txtotherprice.Text == "" ? 0 : Convert.ToDecimal(txtotherprice.Text);
                 pv.otherpricedesc = txtotherpricedesc.Text;
-                pv.returnmatprice = Convert.ToDecimal(txtreturnmatprice.Text);
-                pv.returnpricedesc = txtreturnpricedesc.Text;                
+                pv.returnmatprice = txtreturnmatprice.Text == "" ? 0 : Convert.ToDecimal(txtreturnmatprice.Text);
+                pv.returnpricedesc = txtreturnpricedesc.Text;
                 return pv;
             }
             catch (Exception ex)
@@ -109,27 +125,54 @@ namespace MEMS.Client.CRM
                 throw ex;
             }
         }
-
+        /// <summary>
+        /// 保存价格
+        /// </summary>
         protected override void EditObject()
         {
             if (newversion)
             {
-                m_pv = getData((cmbpriceName.Tag as List<T_ProductbasicPrice>)[0]);
-                m_pv.productid = m_pid;
-                var priceid = m_client.AddNewProductPrice(m_pv);
+                m_pv = getDataFromTxt((cmbpriceName.Tag as List<T_ProductbasicPrice>)[0]);
+                m_pv.productid = m_pid;                
+                var newcraftpricelst = (List<T_CraftsPrice>)gccraftprice.DataSource;
+                gvcraftprice.CloseEditor();                
+                foreach (var newcraftprice in newcraftpricelst)
+                {
+                    if (!newcraftprice.processprice.HasValue)
+                    {
+                        throw new Exception("工序" + newcraftprice.processname + "未输入值");
+                    }
+                }
+                var success = m_client.AddNewProductPrice(m_pv, newcraftpricelst.ToArray());
             }
             base.EditObject();
         }
+        /// <summary>
+        /// 新增价格版本
+        /// </summary>
         protected override void custom1()
         {
             T_ProductbasicPrice pv = new T_ProductbasicPrice();
-            pv.version = DateTime.Now.Date.ToString("yyyyMMdd");
+            var verstring = m_client.getPriceVersion(m_pid);
+            pv.version = DateTime.Now.Date.ToString("yyyyMMdd") + verstring;
             cmbpriceName.Properties.Items.Insert(0, pv.version);
-            (cmbpriceName.Tag as List<T_ProductbasicPrice>).Insert(0,pv);
+            (cmbpriceName.Tag as List<T_ProductbasicPrice>).Insert(0, pv);
             cmbpriceName.SelectedIndex = 0;
             base.readonlytxtbox(this.Controls, false);
             newversion = true;
             base.barbtn1.Enabled = false;
+            List<T_CraftsPrice> newcraftpricelst = new List<T_CraftsPrice>();
+            foreach (var craft in m_craftlst)
+            {
+                var craftprice = new T_CraftsPrice();
+                craftprice.pid = craft.pid;
+                craftprice.processid = craft.id;
+                craftprice.processidx = craft.processindex;
+                craftprice.processname = craft.processname;
+                newcraftpricelst.Add(craftprice);
+            }
+            gccraftprice.DataSource = newcraftpricelst;
+            gvcraftprice.Columns["processprice"].OptionsColumn.AllowEdit = true;
         }
     }
 }

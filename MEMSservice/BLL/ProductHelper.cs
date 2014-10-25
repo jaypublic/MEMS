@@ -132,6 +132,11 @@ namespace MEMSservice.BLL
                 return rst.ToList();
             }
         }
+        /// <summary>
+        /// 返回pricebasicid
+        /// </summary>
+        /// <param name="price"></param>
+        /// <returns></returns>
         public int AddProductPrice(T_ProductbasicPrice price)
         {
             using(MEMSEntities db=new MEMSEntities())
@@ -145,6 +150,57 @@ namespace MEMSservice.BLL
                 else
                 {
                     return 0;
+                }
+            }
+        }
+        public List<T_CraftsPrice> getCraftPricelst(int pid)
+        {
+            using (MEMSEntities db = new MEMSEntities())
+            {
+                var rst = from p in db.T_CraftsPrice
+                          where p.pid == pid
+                          select p;
+                return rst.ToList();         
+            }
+        }
+        public bool AddNewCraftPricelst(List<T_CraftsPrice> ncplst,int pbid)
+        {
+            using (MEMSEntities db = new MEMSEntities())
+            {
+                foreach (var newcp in ncplst)
+                {
+                    newcp.pricebasicid = pbid;
+                    db.Entry(newcp).State = EntityState.Added;
+                }
+                return db.SaveChanges() > 0 ? true : false;
+            }
+        }
+        public string getPriceVersion(int pid)
+        {
+            using (MEMSEntities db = new MEMSEntities())
+            {
+                var rst = from p in db.T_ProductbasicPrice
+                          where p.productid == pid
+                          orderby p.id descending
+                          select p;
+                var lastver = rst.FirstOrDefault();
+                if (lastver == null)
+                {
+                    return "01";
+                }
+                else
+                {
+                    if (lastver.version.Substring(0, 8) == DateTime.Now.ToString("yyyyMMdd"))
+                    {
+                        var ver = lastver.version.Substring(8, 2);
+                        int num = Convert.ToInt32(ver) + 1;
+                        ver = num.ToString("D2");
+                        return ver;
+                    }
+                    else
+                    {
+                        return "01";
+                    }
                 }
             }
         }

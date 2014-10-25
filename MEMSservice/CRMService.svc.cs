@@ -494,12 +494,37 @@ namespace MEMSservice
                 throw ex;
             }
         }
-        public int AddNewProductPrice(T_ProductbasicPrice price)
+        public bool AddNewProductPrice(T_ProductbasicPrice price, List<T_CraftsPrice> newcplist)
         {
             try
             {
                 ph = new ProductHelper();
-                return ph.AddProductPrice(price);
+                int pbid = ph.AddProductPrice(price);
+                return ph.AddNewCraftPricelst(newcplist, pbid);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public List<T_CraftsPrice> getCraftPriceList(int productid)
+        {
+            try
+            {
+                ph = new ProductHelper();
+                return ph.getCraftPricelst(productid);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+        public string getPriceVersion(int pid)
+        {
+            try
+            {
+                ph = new ProductHelper();
+                return ph.getPriceVersion(pid);
             }
             catch (Exception ex)
             {

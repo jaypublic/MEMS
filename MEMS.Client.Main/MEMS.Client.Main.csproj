@@ -137,6 +137,9 @@
     <None Include="Service References\CRMService\MEMS.Client.Main.CRMService.T_Crafts.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\CRMService\MEMS.Client.Main.CRMService.T_CraftsPrice.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\CRMService\MEMS.Client.Main.CRMService.T_Customer.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

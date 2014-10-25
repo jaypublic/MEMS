@@ -18,5 +18,8 @@ namespace MEMSservice.DAL
         public Nullable<int> pricebasicid { get; set; }
         public Nullable<int> processid { get; set; }
         public Nullable<decimal> processprice { get; set; }
+        public Nullable<int> pid { get; set; }
+        public string processname { get; set; }
+        public Nullable<int> processidx { get; set; }
     }
 }
