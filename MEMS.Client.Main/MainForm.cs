@@ -114,5 +114,10 @@ namespace MEMS.Client.Main
                 XtraMessageBox.Show(ex.Message);
             }
         }
+
+        private void Btnquotation_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FormFactory.LoadForm(this, typeof(QuotationListForm));
+        }
     }
 }

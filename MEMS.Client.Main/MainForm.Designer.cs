@@ -28,11 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.appMenu = new DevExpress.XtraBars.Ribbon.ApplicationMenu();
+            this.appMenu = new DevExpress.XtraBars.Ribbon.ApplicationMenu(this.components);
             this.iExit = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonImageCollection = new DevExpress.Utils.ImageCollection();
+            this.ribbonImageCollection = new DevExpress.Utils.ImageCollection(this.components);
             this.iHelp = new DevExpress.XtraBars.BarButtonItem();
             this.iAbout = new DevExpress.XtraBars.BarButtonItem();
             this.siStatus = new DevExpress.XtraBars.BarStaticItem();
@@ -49,7 +50,7 @@
             this.BtnCustomer = new DevExpress.XtraBars.BarButtonItem();
             this.BtnSupplier = new DevExpress.XtraBars.BarButtonItem();
             this.BtnProduct = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonImageCollectionLarge = new DevExpress.Utils.ImageCollection();
+            this.ribbonImageCollectionLarge = new DevExpress.Utils.ImageCollection(this.components);
             this.selectPageCategory = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
             this.homeRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.fileRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -57,7 +58,8 @@
             this.skinsRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.exitRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.myMDI = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager();
+            this.myMDI = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.Btnquotation = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonImageCollection)).BeginInit();
@@ -89,10 +91,11 @@
             this.rgbiSkins,
             this.BtnCustomer,
             this.BtnSupplier,
-            this.BtnProduct});
+            this.BtnProduct,
+            this.Btnquotation});
             this.ribbonControl.LargeImages = this.ribbonImageCollectionLarge;
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 65;
+            this.ribbonControl.MaxItemId = 66;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
             this.selectPageCategory});
@@ -294,6 +297,7 @@
             this.ribbonImageCollectionLarge.Images.SetKeyName(9, "BO_Customer_32x32.png");
             this.ribbonImageCollectionLarge.Images.SetKeyName(10, "Image1.png");
             this.ribbonImageCollectionLarge.Images.SetKeyName(11, "BO_Product_32x32.png");
+            this.ribbonImageCollectionLarge.Images.SetKeyName(12, "BO_Sale_Item_32x32.png");
             // 
             // selectPageCategory
             // 
@@ -322,6 +326,7 @@
             // ribbonPageGroup1
             // 
             this.ribbonPageGroup1.ItemLinks.Add(this.BtnProduct);
+            this.ribbonPageGroup1.ItemLinks.Add(this.Btnquotation);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.ShowCaptionButton = false;
             this.ribbonPageGroup1.Text = "产品管理";
@@ -354,14 +359,22 @@
             // 
             this.myMDI.MdiParent = this;
             // 
+            // Btnquotation
+            // 
+            this.Btnquotation.Caption = "产品报价单";
+            this.Btnquotation.Id = 65;
+            this.Btnquotation.LargeImageIndex = 12;
+            this.Btnquotation.Name = "Btnquotation";
+            this.Btnquotation.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.Btnquotation_ItemClick);
+            // 
             // MainForm
             // 
             this.AllowFormGlass = DevExpress.Utils.DefaultBoolean.False;
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1100, 700);
-            this.Controls.Add(this.ribbonControl);
             this.Controls.Add(this.ribbonStatusBar);
+            this.Controls.Add(this.ribbonControl);
             this.IsMdiContainer = true;
             this.Name = "MainForm";
             this.Ribbon = this.ribbonControl;
@@ -410,6 +423,7 @@
         private DevExpress.XtraBars.BarButtonItem BtnProduct;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
         private DevExpress.XtraBars.Ribbon.RibbonPageCategory selectPageCategory;
+        private DevExpress.XtraBars.BarButtonItem Btnquotation;
 
     }
 }

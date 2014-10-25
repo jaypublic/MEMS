@@ -109,6 +109,12 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="QuotationListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuotationListForm.Designer.cs">
+      <DependentUpon>QuotationListForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Service References\CRMService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -154,6 +160,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuotationListForm.resx">
+      <DependentUpon>QuotationListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SupplierinfoForm.resx">
       <DependentUpon>SupplierinfoForm.cs</DependentUpon>
