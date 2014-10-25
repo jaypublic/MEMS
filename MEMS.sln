@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MEMS.Client.CRM", "MEMS.Cli
 		{A81538F5-0361-46B4-AAC4-09ACD1D1AC16} = {A81538F5-0361-46B4-AAC4-09ACD1D1AC16}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MEMS.Client.MRP", "MEMS.Client.MRP\MEMS.Client.MRP.csproj", "{DD247E21-B1DE-48AD-AD5C-6C1FAC69D377}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +39,10 @@ Global
 		{010CD69C-4E94-4DAF-95BF-2C9A80F30E6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{010CD69C-4E94-4DAF-95BF-2C9A80F30E6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{010CD69C-4E94-4DAF-95BF-2C9A80F30E6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD247E21-B1DE-48AD-AD5C-6C1FAC69D377}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD247E21-B1DE-48AD-AD5C-6C1FAC69D377}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD247E21-B1DE-48AD-AD5C-6C1FAC69D377}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD247E21-B1DE-48AD-AD5C-6C1FAC69D377}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
