@@ -138,6 +138,8 @@ namespace MEMS.Client.Common
         /// </summary>
         protected virtual void FormLoad()
         {
+            if (this.DesignMode)
+                return;
             this.searchgroup.Visible = barsearchCheck.Checked;
         }
 
