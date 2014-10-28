@@ -60,6 +60,8 @@
             this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem16 = new DevExpress.XtraLayout.LayoutControlItem();
             this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
+            this.txttotalprice = new DevExpress.XtraEditors.TextEdit();
             this.cmbpriceName = new DevExpress.XtraEditors.ComboBoxEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.priceImgLarge = new DevExpress.Utils.ImageCollection(this.components);
@@ -91,6 +93,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem16)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
             this.panelControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txttotalprice.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbpriceName.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.priceImgLarge)).BeginInit();
             this.SuspendLayout();
@@ -146,6 +149,7 @@
             this.gvcraftprice.OptionsView.ShowGroupPanel = false;
             this.gvcraftprice.OptionsView.ShowViewCaption = true;
             this.gvcraftprice.ViewCaption = "产品各工序加工费用";
+            this.gvcraftprice.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gvcraftprice_CellValueChanged);
             // 
             // gridColumn4
             // 
@@ -241,6 +245,7 @@
             this.txtotherprice.StyleController = this.layoutControl2;
             this.txtotherprice.TabIndex = 9;
             this.txtotherprice.Tag = "otherprice";
+            this.txtotherprice.EditValueChanged += new System.EventHandler(this.txtotherprice_EditValueChanged);
             // 
             // txtmanageprice
             // 
@@ -253,6 +258,7 @@
             this.txtmanageprice.StyleController = this.layoutControl2;
             this.txtmanageprice.TabIndex = 8;
             this.txtmanageprice.Tag = "manageprice";
+            this.txtmanageprice.EditValueChanged += new System.EventHandler(this.txtmanageprice_EditValueChanged);
             // 
             // txtmaterialpricedesc
             // 
@@ -284,6 +290,7 @@
             this.txtmaterialprice.StyleController = this.layoutControl2;
             this.txtmaterialprice.TabIndex = 5;
             this.txtmaterialprice.Tag = "materialprice";
+            this.txtmaterialprice.EditValueChanged += new System.EventHandler(this.txtmaterialprice_EditValueChanged);
             // 
             // txtreturnmatprice
             // 
@@ -296,6 +303,7 @@
             this.txtreturnmatprice.StyleController = this.layoutControl2;
             this.txtreturnmatprice.TabIndex = 4;
             this.txtreturnmatprice.Tag = "returnmatprice";
+            this.txtreturnmatprice.EditValueChanged += new System.EventHandler(this.txtreturnmatprice_EditValueChanged);
             // 
             // pricegroup
             // 
@@ -400,6 +408,8 @@
             // panelControl3
             // 
             this.panelControl3.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.panelControl3.Controls.Add(this.labelControl2);
+            this.panelControl3.Controls.Add(this.txttotalprice);
             this.panelControl3.Controls.Add(this.cmbpriceName);
             this.panelControl3.Controls.Add(this.labelControl1);
             this.panelControl3.Dock = System.Windows.Forms.DockStyle.Top;
@@ -407,6 +417,22 @@
             this.panelControl3.Name = "panelControl3";
             this.panelControl3.Size = new System.Drawing.Size(817, 29);
             this.panelControl3.TabIndex = 1;
+            // 
+            // labelControl2
+            // 
+            this.labelControl2.Location = new System.Drawing.Point(407, 9);
+            this.labelControl2.Name = "labelControl2";
+            this.labelControl2.Size = new System.Drawing.Size(48, 14);
+            this.labelControl2.TabIndex = 3;
+            this.labelControl2.Text = "报价总价";
+            // 
+            // txttotalprice
+            // 
+            this.txttotalprice.Location = new System.Drawing.Point(461, 6);
+            this.txttotalprice.MenuManager = this.ribbonControl1;
+            this.txttotalprice.Name = "txttotalprice";
+            this.txttotalprice.Size = new System.Drawing.Size(170, 22);
+            this.txttotalprice.TabIndex = 2;
             // 
             // cmbpriceName
             // 
@@ -482,6 +508,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
             this.panelControl3.ResumeLayout(false);
             this.panelControl3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txttotalprice.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cmbpriceName.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.priceImgLarge)).EndInit();
             this.ResumeLayout(false);
@@ -523,5 +550,7 @@
         private DevExpress.Utils.ImageCollection priceImgLarge;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraEditors.LabelControl labelControl2;
+        private DevExpress.XtraEditors.TextEdit txttotalprice;
     }
 }

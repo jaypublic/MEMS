@@ -173,6 +173,55 @@ namespace MEMS.Client.CRM
             }
             gccraftprice.DataSource = newcraftpricelst;
             gvcraftprice.Columns["processprice"].OptionsColumn.AllowEdit = true;
+            txttotalprice.Properties.ReadOnly = true;
+        }
+
+        /// <summary>
+        /// 计算总价
+        /// </summary>
+        private void CalTotalPrice()
+        {
+            var manageprice = txtmanageprice.Text == string.Empty ? 0 : Convert.ToDecimal(txtmanageprice.Text);
+            var materialprice = txtmaterialprice.Text == string.Empty ? 0 : Convert.ToDecimal(txtmaterialprice.Text);
+            var otherprice = txtotherprice.Text == "" ? 0 : Convert.ToDecimal(txtotherprice.Text);
+            var returnmatprice = txtreturnmatprice.Text == "" ? 0 : Convert.ToDecimal(txtreturnmatprice.Text);
+            Decimal craftprice = 0;
+            var cplst = (List<T_CraftsPrice>)gvcraftprice.DataSource;
+            if (cplst != null)
+            {
+                foreach (var cp in cplst)
+                {
+                    if (cp.processprice.HasValue)
+                    {
+                        craftprice += cp.processprice.Value;
+                    }
+                }
+            }
+            txttotalprice.Text = (manageprice + materialprice + otherprice + craftprice - returnmatprice).ToString();
+        }
+        private void txtreturnmatprice_EditValueChanged(object sender, EventArgs e)
+        {
+            CalTotalPrice();
+        }
+
+        private void txtmaterialprice_EditValueChanged(object sender, EventArgs e)
+        {
+            CalTotalPrice();
+        }
+
+        private void txtotherprice_EditValueChanged(object sender, EventArgs e)
+        {
+            CalTotalPrice();
+        }
+
+        private void txtmanageprice_EditValueChanged(object sender, EventArgs e)
+        {
+            CalTotalPrice();
+        }
+
+        private void gvcraftprice_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            CalTotalPrice();
         }
     }
 }
