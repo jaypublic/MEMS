@@ -2813,6 +2813,195 @@ namespace MEMS.Client.CRM.CRMService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_quotation", Namespace="http://schemas.datacontract.org/2004/07/MEMSservice.DAL")]
+    [System.SerializableAttribute()]
+    public partial class T_quotation : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> customeridField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string productremarkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<System.DateTime> quotationdateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> quotationpersonField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string quotationtxtField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string quremarkField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string qutationnoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string themeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> totalpriceField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> customerid {
+            get {
+                return this.customeridField;
+            }
+            set {
+                if ((this.customeridField.Equals(value) != true)) {
+                    this.customeridField = value;
+                    this.RaisePropertyChanged("customerid");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id {
+            get {
+                return this.idField;
+            }
+            set {
+                if ((this.idField.Equals(value) != true)) {
+                    this.idField = value;
+                    this.RaisePropertyChanged("id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string productremark {
+            get {
+                return this.productremarkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.productremarkField, value) != true)) {
+                    this.productremarkField = value;
+                    this.RaisePropertyChanged("productremark");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<System.DateTime> quotationdate {
+            get {
+                return this.quotationdateField;
+            }
+            set {
+                if ((this.quotationdateField.Equals(value) != true)) {
+                    this.quotationdateField = value;
+                    this.RaisePropertyChanged("quotationdate");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> quotationperson {
+            get {
+                return this.quotationpersonField;
+            }
+            set {
+                if ((this.quotationpersonField.Equals(value) != true)) {
+                    this.quotationpersonField = value;
+                    this.RaisePropertyChanged("quotationperson");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string quotationtxt {
+            get {
+                return this.quotationtxtField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.quotationtxtField, value) != true)) {
+                    this.quotationtxtField = value;
+                    this.RaisePropertyChanged("quotationtxt");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string quremark {
+            get {
+                return this.quremarkField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.quremarkField, value) != true)) {
+                    this.quremarkField = value;
+                    this.RaisePropertyChanged("quremark");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string qutationno {
+            get {
+                return this.qutationnoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.qutationnoField, value) != true)) {
+                    this.qutationnoField = value;
+                    this.RaisePropertyChanged("qutationno");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string theme {
+            get {
+                return this.themeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.themeField, value) != true)) {
+                    this.themeField = value;
+                    this.RaisePropertyChanged("theme");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> totalprice {
+            get {
+                return this.totalpriceField;
+            }
+            set {
+                if ((this.totalpriceField.Equals(value) != true)) {
+                    this.totalpriceField = value;
+                    this.RaisePropertyChanged("totalprice");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="CRMService.ICRMService")]
     public interface ICRMService {
@@ -2945,6 +3134,9 @@ namespace MEMS.Client.CRM.CRMService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/getPriceVersion", ReplyAction="http://tempuri.org/ICRMService/getPriceVersionResponse")]
         string getPriceVersion(int pid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/getQuotationList", ReplyAction="http://tempuri.org/ICRMService/getQuotationListResponse")]
+        MEMS.Client.CRM.CRMService.T_quotation[] getQuotationList();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -3144,6 +3336,10 @@ namespace MEMS.Client.CRM.CRMService {
         
         public string getPriceVersion(int pid) {
             return base.Channel.getPriceVersion(pid);
+        }
+        
+        public MEMS.Client.CRM.CRMService.T_quotation[] getQuotationList() {
+            return base.Channel.getQuotationList();
         }
     }
 }

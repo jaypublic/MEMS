@@ -564,4 +564,16 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="getQuotationList">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getQuotationListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q45="http://schemas.datacontract.org/2004/07/MEMSservice.DAL" minOccurs="0" name="getQuotationListResult" nillable="true" type="q45:ArrayOfT_quotation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

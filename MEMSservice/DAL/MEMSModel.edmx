@@ -20,6 +20,8 @@
           <EntitySet Name="T_ProductbasicPrice" EntityType="MEMSModel.Store.T_ProductbasicPrice" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="T_ProductDraw" EntityType="MEMSModel.Store.T_ProductDraw" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="T_ProductType" EntityType="MEMSModel.Store.T_ProductType" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="T_quotation" EntityType="MEMSModel.Store.T_quotation" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="T_quotationprice" EntityType="MEMSModel.Store.T_quotationprice" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="T_Suppliers" EntityType="MEMSModel.Store.T_Suppliers" store:Type="Tables" Schema="dbo" />
           <EntitySet Name="T_Suppliers_contacts" EntityType="MEMSModel.Store.T_Suppliers_contacts" store:Type="Tables" Schema="dbo" />
         </EntityContainer>
@@ -203,6 +205,33 @@
           <Property Name="typedesc" Type="varchar" MaxLength="50" />
           <Property Name="fid" Type="int" />
         </EntityType>
+        <EntityType Name="T_quotation">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="qutationno" Type="nvarchar" MaxLength="50" />
+          <Property Name="theme" Type="nvarchar" MaxLength="50" />
+          <Property Name="totalprice" Type="decimal" Precision="12" Scale="2" />
+          <Property Name="customerid" Type="int" />
+          <Property Name="quotationdate" Type="datetime" />
+          <Property Name="productremark" Type="nvarchar" MaxLength="200" />
+          <Property Name="quremark" Type="nvarchar" MaxLength="200" />
+          <Property Name="quotationperson" Type="int" />
+          <Property Name="quotationtxt" Type="nvarchar" MaxLength="200" />
+        </EntityType>
+        <EntityType Name="T_quotationprice">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="quotationid" Type="int" />
+          <Property Name="productid" Type="int" />
+          <Property Name="productnumber" Type="int" />
+          <Property Name="modelprice" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="quotationprice" Type="decimal" Precision="10" Scale="2" />
+          <Property Name="unitprice" Type="decimal" Precision="10" Scale="2" />
+        </EntityType>
         <EntityType Name="T_Suppliers">
           <Key>
             <PropertyRef Name="id" />
@@ -270,6 +299,8 @@
           <EntitySet Name="T_ProductType" EntityType="MEMSModel.T_ProductType" />
           <EntitySet Name="T_ProductDraw" EntityType="MEMSModel.T_ProductDraw" />
           <EntitySet Name="T_ProductbasicPrice" EntityType="MEMSModel.T_ProductbasicPrice" />
+          <EntitySet Name="T_quotation" EntityType="MEMSModel.T_quotation" />
+          <EntitySet Name="T_quotationprice" EntityType="MEMSModel.T_quotationprice" />
         </EntityContainer>
         <EntityType Name="T_Base_companytype">
           <Key>
@@ -496,6 +527,33 @@
           <Property Type="String" Name="otherpricedesc" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Type="Decimal" Name="totalprice" Precision="10" Scale="2" />
           <Property Type="String" Name="pricebasicremark" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="T_quotation">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="qutationno" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="theme" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Type="Decimal" Name="totalprice" Precision="12" Scale="2" />
+          <Property Type="Int32" Name="customerid" />
+          <Property Type="DateTime" Name="quotationdate" Precision="3" />
+          <Property Type="String" Name="productremark" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="quremark" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="quotationperson" />
+          <Property Type="String" Name="quotationtxt" MaxLength="200" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="T_quotationprice">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="quotationid" />
+          <Property Type="Int32" Name="productid" />
+          <Property Type="Int32" Name="productnumber" />
+          <Property Type="Decimal" Name="modelprice" Precision="10" Scale="2" />
+          <Property Type="Decimal" Name="quotationprice" Precision="10" Scale="2" />
+          <Property Type="Decimal" Name="unitprice" Precision="10" Scale="2" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -741,6 +799,35 @@
                 <ScalarProperty Name="returnmatprice" ColumnName="returnmatprice" />
                 <ScalarProperty Name="version" ColumnName="version" />
                 <ScalarProperty Name="productid" ColumnName="productid" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_quotation">
+            <EntityTypeMapping TypeName="MEMSModel.T_quotation">
+              <MappingFragment StoreEntitySet="T_quotation">
+                <ScalarProperty Name="quotationtxt" ColumnName="quotationtxt" />
+                <ScalarProperty Name="quotationperson" ColumnName="quotationperson" />
+                <ScalarProperty Name="quremark" ColumnName="quremark" />
+                <ScalarProperty Name="productremark" ColumnName="productremark" />
+                <ScalarProperty Name="quotationdate" ColumnName="quotationdate" />
+                <ScalarProperty Name="customerid" ColumnName="customerid" />
+                <ScalarProperty Name="totalprice" ColumnName="totalprice" />
+                <ScalarProperty Name="theme" ColumnName="theme" />
+                <ScalarProperty Name="qutationno" ColumnName="qutationno" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="T_quotationprice">
+            <EntityTypeMapping TypeName="MEMSModel.T_quotationprice">
+              <MappingFragment StoreEntitySet="T_quotationprice">
+                <ScalarProperty Name="unitprice" ColumnName="unitprice" />
+                <ScalarProperty Name="quotationprice" ColumnName="quotationprice" />
+                <ScalarProperty Name="modelprice" ColumnName="modelprice" />
+                <ScalarProperty Name="productnumber" ColumnName="productnumber" />
+                <ScalarProperty Name="productid" ColumnName="productid" />
+                <ScalarProperty Name="quotationid" ColumnName="quotationid" />
                 <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>

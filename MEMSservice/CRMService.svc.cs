@@ -531,5 +531,10 @@ namespace MEMSservice
                 throw ex;
             }
         }
+        public List<T_quotation> getQuotationList()
+        {
+            ph = new ProductHelper();
+            return ph.getQuotationList();
+        }
     }
 }

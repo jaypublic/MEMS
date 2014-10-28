@@ -266,6 +266,12 @@
   <wsdl:message name="ICRMService_getPriceVersion_OutputMessage">
     <wsdl:part name="parameters" element="tns:getPriceVersionResponse" />
   </wsdl:message>
+  <wsdl:message name="ICRMService_getQuotationList_InputMessage">
+    <wsdl:part name="parameters" element="tns:getQuotationList" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_getQuotationList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getQuotationListResponse" />
+  </wsdl:message>
   <wsdl:portType name="ICRMService">
     <wsdl:operation name="getCustomerList">
       <wsdl:input wsaw:Action="http://tempuri.org/ICRMService/getCustomerList" message="tns:ICRMService_getCustomerList_InputMessage" />
@@ -438,6 +444,10 @@
     <wsdl:operation name="getPriceVersion">
       <wsdl:input wsaw:Action="http://tempuri.org/ICRMService/getPriceVersion" message="tns:ICRMService_getPriceVersion_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ICRMService/getPriceVersionResponse" message="tns:ICRMService_getPriceVersion_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getQuotationList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMService/getQuotationList" message="tns:ICRMService_getQuotationList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMService/getQuotationListResponse" message="tns:ICRMService_getQuotationList_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ICRMService" type="tns:ICRMService">
@@ -822,6 +832,15 @@
     </wsdl:operation>
     <wsdl:operation name="getPriceVersion">
       <soap:operation soapAction="http://tempuri.org/ICRMService/getPriceVersion" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getQuotationList">
+      <soap:operation soapAction="http://tempuri.org/ICRMService/getQuotationList" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -143,6 +143,12 @@
     <Compile Include="DAL\T_ProductType.cs">
       <DependentUpon>MEMSModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="DAL\T_quotation.cs">
+      <DependentUpon>MEMSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\T_quotationprice.cs">
+      <DependentUpon>MEMSModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="DAL\T_Suppliers.cs">
       <DependentUpon>MEMSModel.tt</DependentUpon>
     </Compile>

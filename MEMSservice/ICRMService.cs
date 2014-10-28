@@ -98,5 +98,7 @@ namespace MEMSservice
         List<T_CraftsPrice> getCraftPriceList(int productid);
         [OperationContract]
         string getPriceVersion(int pid);
+        [OperationContract]
+        List<T_quotation> getQuotationList();
     }
 }

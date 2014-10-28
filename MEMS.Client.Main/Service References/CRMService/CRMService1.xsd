@@ -316,4 +316,25 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="T_CraftsPrice" nillable="true" type="tns:T_CraftsPrice" />
+  <xs:complexType name="ArrayOfT_quotation">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="T_quotation" nillable="true" type="tns:T_quotation" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfT_quotation" nillable="true" type="tns:ArrayOfT_quotation" />
+  <xs:complexType name="T_quotation">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="customerid" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="productremark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="quotationdate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="quotationperson" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="quotationtxt" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="quremark" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="qutationno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="theme" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="totalprice" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="T_quotation" nillable="true" type="tns:T_quotation" />
 </xs:schema>

@@ -204,5 +204,16 @@ namespace MEMSservice.BLL
                 }
             }
         }
+        public List<T_quotation> getQuotationList()
+        {
+            using (MEMSEntities db = new MEMSEntities())
+            {
+                var rst = from q in db.T_quotation
+                          //where q.qutationno.Contains(quno)
+                          orderby q.quotationdate descending
+                          select q;
+                return rst.ToList();
+            }
+        }
     }
 }
