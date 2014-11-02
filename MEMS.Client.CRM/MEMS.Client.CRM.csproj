@@ -109,6 +109,12 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="QuotationinfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuotationinfoForm.Designer.cs">
+      <DependentUpon>QuotationinfoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuotationListForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +166,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuotationinfoForm.resx">
+      <DependentUpon>QuotationinfoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="QuotationListForm.resx">
       <DependentUpon>QuotationListForm.cs</DependentUpon>

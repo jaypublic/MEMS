@@ -3137,6 +3137,9 @@ namespace MEMS.Client.CRM.CRMService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/getQuotationList", ReplyAction="http://tempuri.org/ICRMService/getQuotationListResponse")]
         MEMS.Client.CRM.CRMService.T_quotation[] getQuotationList();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/getQuotationListbyP", ReplyAction="http://tempuri.org/ICRMService/getQuotationListbyPResponse")]
+        MEMS.Client.CRM.CRMService.T_quotation[] getQuotationListbyP(string quno, int customerid, System.DateTime aftdate, System.DateTime bfedate);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -3340,6 +3343,10 @@ namespace MEMS.Client.CRM.CRMService {
         
         public MEMS.Client.CRM.CRMService.T_quotation[] getQuotationList() {
             return base.Channel.getQuotationList();
+        }
+        
+        public MEMS.Client.CRM.CRMService.T_quotation[] getQuotationListbyP(string quno, int customerid, System.DateTime aftdate, System.DateTime bfedate) {
+            return base.Channel.getQuotationListbyP(quno, customerid, aftdate, bfedate);
         }
     }
 }

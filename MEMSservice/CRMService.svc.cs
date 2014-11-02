@@ -533,8 +533,29 @@ namespace MEMSservice
         }
         public List<T_quotation> getQuotationList()
         {
-            ph = new ProductHelper();
-            return ph.getQuotationList();
+            try
+            {
+                ph = new ProductHelper();
+                return ph.getQuotationList();
+            }
+            catch (Exception ex)
+            {
+                
+                throw ex;
+            }
+        }
+        public List<T_quotation> getQuotationListbyP(string quno, int customerid, DateTime aftdate, DateTime bfedate)
+        {
+            try
+            {
+                ph = new ProductHelper();
+                return ph.getQuotationListbyP(quno, customerid, aftdate, bfedate);
+            }
+            catch (Exception ex)
+            {
+                
+                throw ex;
+            }
         }
     }
 }

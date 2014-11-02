@@ -208,11 +208,46 @@ namespace MEMSservice.BLL
         {
             using (MEMSEntities db = new MEMSEntities())
             {
+                string quno = "";
                 var rst = from q in db.T_quotation
-                          //where q.qutationno.Contains(quno)
+                          where q.qutationno.Contains(quno)
                           orderby q.quotationdate descending
                           select q;
                 return rst.ToList();
+            }
+        }
+        /// <summary>
+        /// 根据条件返回报价单列表
+        /// </summary>
+        /// <param name="quno"></param>
+        /// <param name="cid"></param>
+        /// <param name="aftdate"></param>
+        /// <param name="bfedate"></param>
+        /// <returns></returns>
+        public List<T_quotation> getQuotationListbyP(string quno,int cid,DateTime aftdate,DateTime bfedate)
+        {
+            using (MEMSEntities db = new MEMSEntities())
+            {
+                List<T_quotation> qlst;
+                if (cid > 0)
+                {
+                   var rst = from q in db.T_quotation
+                          where q.qutationno.Contains(quno) && q.customerid.Value == cid &&
+                          q.quotationdate.Value >= aftdate && q.quotationdate.Value <= bfedate
+                          orderby q.id descending
+                          select q;
+                   qlst = rst.ToList();
+                }
+                else
+                {
+                   var rst = from q in db.T_quotation
+                          where q.qutationno.Contains(quno) &&
+                          q.quotationdate.Value >= aftdate && q.quotationdate.Value <= bfedate
+                          orderby q.id descending
+                          select q;
+                   qlst = rst.ToList();
+                }
+                return qlst;
             }
         }
     }

@@ -272,6 +272,12 @@
   <wsdl:message name="ICRMService_getQuotationList_OutputMessage">
     <wsdl:part name="parameters" element="tns:getQuotationListResponse" />
   </wsdl:message>
+  <wsdl:message name="ICRMService_getQuotationListbyP_InputMessage">
+    <wsdl:part name="parameters" element="tns:getQuotationListbyP" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_getQuotationListbyP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getQuotationListbyPResponse" />
+  </wsdl:message>
   <wsdl:portType name="ICRMService">
     <wsdl:operation name="getCustomerList">
       <wsdl:input wsaw:Action="http://tempuri.org/ICRMService/getCustomerList" message="tns:ICRMService_getCustomerList_InputMessage" />
@@ -448,6 +454,10 @@
     <wsdl:operation name="getQuotationList">
       <wsdl:input wsaw:Action="http://tempuri.org/ICRMService/getQuotationList" message="tns:ICRMService_getQuotationList_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ICRMService/getQuotationListResponse" message="tns:ICRMService_getQuotationList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getQuotationListbyP">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMService/getQuotationListbyP" message="tns:ICRMService_getQuotationListbyP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMService/getQuotationListbyPResponse" message="tns:ICRMService_getQuotationListbyP_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ICRMService" type="tns:ICRMService">
@@ -841,6 +851,15 @@
     </wsdl:operation>
     <wsdl:operation name="getQuotationList">
       <soap:operation soapAction="http://tempuri.org/ICRMService/getQuotationList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getQuotationListbyP">
+      <soap:operation soapAction="http://tempuri.org/ICRMService/getQuotationListbyP" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -100,5 +100,7 @@ namespace MEMSservice
         string getPriceVersion(int pid);
         [OperationContract]
         List<T_quotation> getQuotationList();
+        [OperationContract]
+        List<T_quotation> getQuotationListbyP(string quno, int customerid, DateTime aftdate, DateTime bfedate);
     }
 }

@@ -576,4 +576,21 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="getQuotationListbyP">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="quno" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="customerid" type="xs:int" />
+        <xs:element minOccurs="0" name="aftdate" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="bfedate" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getQuotationListbyPResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q46="http://schemas.datacontract.org/2004/07/MEMSservice.DAL" minOccurs="0" name="getQuotationListbyPResult" nillable="true" type="q46:ArrayOfT_quotation" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>
