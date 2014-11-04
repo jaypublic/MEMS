@@ -34,8 +34,8 @@ namespace MEMS.Client.CRM
             var quno = this.txtQuNo.Text;
             T_Customer[] customerlst=(T_Customer[])cmbCustomer.Tag;
             int customerid = cmbCustomer.SelectedIndex == 0 ? 0 : customerlst[cmbCustomer.SelectedIndex - 1].id;
-            DateTime aftdate = dateEdit1.DateTime;
-            DateTime bfedate = dateEdit2.DateTime;
+            DateTime aftdate = dateEdit1.EditValue != null ? dateEdit1.DateTime : new DateTime(2000, 1, 1);
+            DateTime bfedate = dateEdit2.EditValue != null ? dateEdit2.DateTime : new DateTime(2100, 1, 1);
             var qlst = m_csclient.getQuotationListbyP(quno, customerid, aftdate, bfedate);
             gcquotation.DataSource = qlst;
             
