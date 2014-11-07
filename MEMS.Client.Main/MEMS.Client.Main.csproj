@@ -250,6 +250,10 @@
       <Project>{010cd69c-4e94-4daf-95bf-2c9a80f30e6f}</Project>
       <Name>MEMS.Client.CRM</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MEMS.Client.Sale\MEMS.Client.Sale.csproj">
+      <Project>{8b9dc3dd-79c2-4939-8995-fd0f059ec7cb}</Project>
+      <Name>MEMS.Client.Sale</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
