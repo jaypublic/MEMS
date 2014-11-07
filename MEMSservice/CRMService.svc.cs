@@ -557,5 +557,61 @@ namespace MEMSservice
                 throw ex;
             }
         }
+        public T_quotation getQuotationbyId(int qid)
+        {
+            try
+            {
+                ph = new ProductHelper();
+                return ph.getQuotationbyId(qid);
+            }
+            catch (Exception ex)
+            {                
+                throw ex;
+            }
+        }
+        /// <summary>
+        /// 添加新报价单
+        /// </summary>
+        /// <param name="newqt"></param>
+        /// <returns></returns>
+        public bool AddNewQuotation(T_quotation newqt)
+        {
+            try
+            {
+                ph = new ProductHelper();
+                return ph.AddNewQuotation(newqt);
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+        }
+        public bool UpdateQuotation(T_quotation qt)
+        {
+            try
+            {
+                ph = new ProductHelper();
+                return ph.UpdateQuotation(qt);
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+        }
+        public bool DeleteQuotation(T_quotation qt)
+        {
+            try
+            {
+                ph = new ProductHelper();
+                return ph.DeleteQuotation(qt);
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+        }
     }
 }

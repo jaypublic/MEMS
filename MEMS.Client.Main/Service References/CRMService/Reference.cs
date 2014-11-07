@@ -3140,6 +3140,18 @@ namespace MEMS.Client.Main.CRMService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/getQuotationListbyP", ReplyAction="http://tempuri.org/ICRMService/getQuotationListbyPResponse")]
         MEMS.Client.Main.CRMService.T_quotation[] getQuotationListbyP(string quno, int customerid, System.DateTime aftdate, System.DateTime bfedate);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/getQuotationbyId", ReplyAction="http://tempuri.org/ICRMService/getQuotationbyIdResponse")]
+        MEMS.Client.Main.CRMService.T_quotation getQuotationbyId(int qid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/AddNewQuotation", ReplyAction="http://tempuri.org/ICRMService/AddNewQuotationResponse")]
+        bool AddNewQuotation(MEMS.Client.Main.CRMService.T_quotation newqt);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/UpdateQuotation", ReplyAction="http://tempuri.org/ICRMService/UpdateQuotationResponse")]
+        bool UpdateQuotation(MEMS.Client.Main.CRMService.T_quotation qt);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/DeleteQuotation", ReplyAction="http://tempuri.org/ICRMService/DeleteQuotationResponse")]
+        bool DeleteQuotation(MEMS.Client.Main.CRMService.T_quotation qt);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -3347,6 +3359,22 @@ namespace MEMS.Client.Main.CRMService {
         
         public MEMS.Client.Main.CRMService.T_quotation[] getQuotationListbyP(string quno, int customerid, System.DateTime aftdate, System.DateTime bfedate) {
             return base.Channel.getQuotationListbyP(quno, customerid, aftdate, bfedate);
+        }
+        
+        public MEMS.Client.Main.CRMService.T_quotation getQuotationbyId(int qid) {
+            return base.Channel.getQuotationbyId(qid);
+        }
+        
+        public bool AddNewQuotation(MEMS.Client.Main.CRMService.T_quotation newqt) {
+            return base.Channel.AddNewQuotation(newqt);
+        }
+        
+        public bool UpdateQuotation(MEMS.Client.Main.CRMService.T_quotation qt) {
+            return base.Channel.UpdateQuotation(qt);
+        }
+        
+        public bool DeleteQuotation(MEMS.Client.Main.CRMService.T_quotation qt) {
+            return base.Channel.DeleteQuotation(qt);
         }
     }
 }

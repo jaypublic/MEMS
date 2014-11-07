@@ -102,5 +102,13 @@ namespace MEMSservice
         List<T_quotation> getQuotationList();
         [OperationContract]
         List<T_quotation> getQuotationListbyP(string quno, int customerid, DateTime aftdate, DateTime bfedate);
+        [OperationContract]
+        T_quotation getQuotationbyId(int qid);
+        [OperationContract]
+        bool AddNewQuotation(T_quotation newqt);
+        [OperationContract]
+        bool UpdateQuotation(T_quotation qt);
+        [OperationContract]
+        bool DeleteQuotation(T_quotation qt);
     }
 }

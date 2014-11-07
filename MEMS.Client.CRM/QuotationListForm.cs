@@ -67,6 +67,11 @@ namespace MEMS.Client.CRM
             }
         }
 
+        private void gvquotation_DoubleClick(object sender, EventArgs e)
+        {
+            EditObject();
+        }
+
 
     }
 }

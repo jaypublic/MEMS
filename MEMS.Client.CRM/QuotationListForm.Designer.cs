@@ -107,9 +107,11 @@
             this.gridColumn6});
             this.gvquotation.GridControl = this.gcquotation;
             this.gvquotation.Name = "gvquotation";
+            this.gvquotation.OptionsBehavior.Editable = false;
             this.gvquotation.OptionsView.ShowGroupPanel = false;
             this.gvquotation.OptionsView.ShowViewCaption = true;
             this.gvquotation.ViewCaption = "报价单列表";
+            this.gvquotation.DoubleClick += new System.EventHandler(this.gvquotation_DoubleClick);
             // 
             // gridColumn1
             // 
