@@ -23,6 +23,8 @@
         <EntityTypeShape EntityType="MEMSModel.T_ProductbasicPrice" Width="1.5" PointX="4.375" PointY="3.125" IsExpanded="true" />
         <EntityTypeShape EntityType="MEMSModel.T_quotation" Width="1.5" PointX="8" PointY="6" />
         <EntityTypeShape EntityType="MEMSModel.T_quotationprice" Width="1.5" PointX="9.625" PointY="6.125" />
+        <EntityTypeShape EntityType="MEMSModel.T_saledetail" Width="1.5" PointX="7.4922723749150855" PointY="28.029344050227358" />
+        <EntityTypeShape EntityType="MEMSModel.T_saleorder" Width="1.5" PointX="9.3976719516318621" PointY="14.481142453142043" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

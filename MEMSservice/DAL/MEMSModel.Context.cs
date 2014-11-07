@@ -43,5 +43,7 @@ namespace MEMSservice.DAL
         public DbSet<T_ProductbasicPrice> T_ProductbasicPrice { get; set; }
         public DbSet<T_quotation> T_quotation { get; set; }
         public DbSet<T_quotationprice> T_quotationprice { get; set; }
+        public DbSet<T_saledetail> T_saledetail { get; set; }
+        public DbSet<T_saleorder> T_saleorder { get; set; }
     }
 }
