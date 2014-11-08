@@ -15,6 +15,7 @@ using MEMS.Client.Common;
 //using MEMS.Client.Main.CRMService;
 using DevExpress.XtraEditors;
 using MEMS.Client.CRM;
+using MEMS.Client.Sale;
 
 namespace MEMS.Client.Main
 {
@@ -118,6 +119,11 @@ namespace MEMS.Client.Main
         private void Btnquotation_ItemClick(object sender, ItemClickEventArgs e)
         {
             FormFactory.LoadForm(this, typeof(QuotationListForm));
+        }
+
+        private void saleorderItem_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FormFactory.LoadForm(this, typeof(SaleListForm));
         }
     }
 }
