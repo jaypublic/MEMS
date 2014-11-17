@@ -19,7 +19,6 @@ namespace MEMSservice.DAL
         public Nullable<System.DateTime> saledate { get; set; }
         public string receiveperiodtype { get; set; }
         public Nullable<int> receiveperiod { get; set; }
-        public Nullable<int> quotationno { get; set; }
         public Nullable<int> receivetype { get; set; }
         public Nullable<int> receivestate { get; set; }
         public Nullable<int> orderstate { get; set; }
@@ -27,5 +26,6 @@ namespace MEMSservice.DAL
         public Nullable<decimal> receiveamount { get; set; }
         public Nullable<decimal> receiveratio { get; set; }
         public string saleattachments { get; set; }
+        public Nullable<int> quotationid { get; set; }
     }
 }

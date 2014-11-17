@@ -18,6 +18,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MEMS.Client.MRP", "MEMS.Client.MRP\MEMS.Client.MRP.csproj", "{DD247E21-B1DE-48AD-AD5C-6C1FAC69D377}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MEMS.Client.Sale", "MEMS.Client.Sale\MEMS.Client.Sale.csproj", "{8B9DC3DD-79C2-4939-8995-FD0F059EC7CB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A81538F5-0361-46B4-AAC4-09ACD1D1AC16} = {A81538F5-0361-46B4-AAC4-09ACD1D1AC16}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

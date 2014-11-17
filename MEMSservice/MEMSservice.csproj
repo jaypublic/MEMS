@@ -74,12 +74,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="CRMService.svc" />
+    <Content Include="SaleService.svc" />
     <Content Include="Service1.svc" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\CustomerHelper.cs" />
     <Compile Include="BLL\ProductHelper.cs" />
+    <Compile Include="BLL\SaleHelper.cs" />
     <Compile Include="BLL\SupplierHelper.cs" />
     <Compile Include="CRMService.svc.cs">
       <DependentUpon>CRMService.svc</DependentUpon>
@@ -101,6 +103,7 @@
     </Compile>
     <Compile Include="DAL\MyDBExtensions.cs" />
     <Compile Include="DAL\ProductList.cs" />
+    <Compile Include="DAL\QtProduct.cs" />
     <Compile Include="DAL\T_Base_companytype.cs">
       <DependentUpon>MEMSModel.tt</DependentUpon>
     </Compile>
@@ -162,6 +165,10 @@
       <DependentUpon>MEMSModel.tt</DependentUpon>
     </Compile>
     <Compile Include="ICRMService.cs" />
+    <Compile Include="ISaleService.cs" />
+    <Compile Include="SaleService.svc.cs">
+      <DependentUpon>SaleService.svc</DependentUpon>
+    </Compile>
     <Compile Include="Service1.svc.cs">
       <DependentUpon>Service1.svc</DependentUpon>
     </Compile>
