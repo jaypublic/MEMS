@@ -16,6 +16,7 @@ namespace MEMS.Client.CRM
         private CRMService.CRMServiceClient m_crmclient = new CRMService.CRMServiceClient();
         private int m_qid;
         private T_quotation m_Qinfo;
+        private List<QtProduct> m_QtProductlst = new List<QtProduct>();
         public QuotationinfoForm(frmmodetype type)
         {
             InitializeComponent();
@@ -29,29 +30,31 @@ namespace MEMS.Client.CRM
         }
         protected override void FormLoad()
         {
+            gcQtprice.DataSource = m_QtProductlst;
             barbtn1.Visibility = BarItemVisibility.Always;
             barbtn1.LargeImageIndex = 9;
             barbtn1.Caption = "添加产品";
-            barbtn2.Visibility = BarItemVisibility.Always;
-            barbtn2.LargeImageIndex = 10;
-            barbtn2.Caption = "移除产品";
             txtTotalPrice.Properties.ReadOnly = true;
-            var customerlst = m_crmclient.getCustomerList();
-            cmbcustomer.Tag = new List<T_Customer>(customerlst);
-            foreach (var c in customerlst)
+            txtCustomer.Properties.ReadOnly = true;
+            
+            if (formmode == frmmodetype.add)
             {
-                cmbcustomer.Properties.Items.Add(c.customername);
+                m_Qinfo = new T_quotation();
             }
-            if (formmode==frmmodetype.edit)
+            else if (formmode==frmmodetype.edit)
             {
                 m_Qinfo = m_crmclient.getQuotationbyId(m_qid);
                 SetData(m_Qinfo);
+                m_QtProductlst = new List<QtProduct>(m_crmclient.getQtProduct(m_qid));
+                gcQtprice.DataSource = m_QtProductlst;
             }
             else if (formmode == frmmodetype.delete)
             {
                 m_Qinfo = m_crmclient.getQuotationbyId(m_qid);
                 SetData(m_Qinfo);
                 base.readonlytxtbox(this.xtraTabPage1.Controls, true);
+                m_QtProductlst = new List<QtProduct>(m_crmclient.getQtProduct(m_qid));
+                gcQtprice.DataSource = m_QtProductlst;
             }
             base.FormLoad();
         }
@@ -68,9 +71,10 @@ namespace MEMS.Client.CRM
             txtQuremark.Text = qinfo.quremark;
             txtTheme.Text = qinfo.theme;
             dateQu.DateTime = qinfo.quotationdate.Value;
-            var clst = (List<T_Customer>)cmbcustomer.Tag;
-            var customer = clst.Find(c => c.id == qinfo.customerid);
-            cmbcustomer.SelectedText = customer.customername;
+            if (qinfo.customerid.HasValue)
+            {
+                txtCustomer.Text = m_crmclient.getCustomerbyid(qinfo.customerid.Value).customername;
+            }
         }
         private void GetData(T_quotation qinfo)
         {
@@ -87,27 +91,19 @@ namespace MEMS.Client.CRM
             {
                 qinfo.quotationdate = dateQu.DateTime;
             }
-            if (cmbcustomer.SelectedIndex == -1)
-            {
-                throw new Exception("请选择报价单客户");
-            }
-            else
-            {
-                var clst = (List<T_Customer>)cmbcustomer.Tag;
-                var customer = clst[cmbcustomer.SelectedIndex];
-                qinfo.customerid = customer.id;
-            }
         }
         protected override void AddObject()
-        {
-            m_Qinfo = new T_quotation();
+        {            
             GetData(m_Qinfo);
-            m_crmclient.AddNewQuotation(m_Qinfo);
+            gvQtprice.CloseEditor();
+            m_crmclient.AddNewQtAndQtprice(m_Qinfo, m_QtProductlst.ToArray());
             base.AddObject();
         }
+
         protected override void EditObject()
         {
             GetData(m_Qinfo);
+            gvQtprice.CloseEditor();
             m_crmclient.UpdateQuotation(m_Qinfo);
             base.EditObject();
         }        
@@ -118,12 +114,41 @@ namespace MEMS.Client.CRM
         }
         protected override void custom1()
         {
+            SelectProForm frm = new SelectProForm();
+            frm.StartPosition = FormStartPosition.CenterParent;
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                var products = frm.selectProductlst;
+                m_Qinfo.customerid = frm.customerID;
+                txtCustomer.Text = m_crmclient.getCustomerbyid(m_Qinfo.customerid.Value).customername;
+                m_QtProductlst.Clear();
+                AddProduct2Qt(products);
+            }
+        }
 
-            SelectProForm frm = new SelectProForm(1);
-        }
-        protected override void custom2()
+        private void AddProduct2Qt(List<T_Product> products)
         {
-            
+            foreach (var p in products)
+            {
+                QtProduct qtproduct = new QtProduct();
+                qtproduct.qp = new T_quotationprice();
+                qtproduct.qp.productid = p.id;
+                qtproduct.productCode = p.procode;
+                qtproduct.productName = p.proname;
+                qtproduct.productSpec = p.prospecification;
+                m_QtProductlst.Add(qtproduct);
+            }
+            gcQtprice.RefreshDataSource();
         }
+
+        private void gvQtprice_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            gvQtprice.CloseEditor();
+            if (m_QtProductlst[e.RowHandle].qp.modelprice.HasValue && m_QtProductlst[e.RowHandle].qp.unitprice.HasValue)
+            {
+                m_QtProductlst[e.RowHandle].qp.quotationprice = m_QtProductlst[e.RowHandle].qp.modelprice.Value + m_QtProductlst[e.RowHandle].qp.unitprice.Value * m_QtProductlst[e.RowHandle].qp.productcount;
+            }
+        }
+
     }
 }

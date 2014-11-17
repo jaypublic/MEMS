@@ -60,6 +60,16 @@ namespace MEMSservice.BLL
                 return rst.FirstOrDefault();
             }
         }
+        public List<T_Product> getProductbyCid(int customerid)
+        {
+            using (MEMSEntities db = new MEMSEntities())
+            {
+                var rst = from p in db.T_Product
+                          where p.customerid == customerid
+                          select p;
+                return rst.ToList();
+            }
+        }
         public bool AddNewProduct(T_Product product)
         {
             using (MEMSEntities db = new MEMSEntities())
@@ -291,12 +301,74 @@ namespace MEMSservice.BLL
                 return db.SaveChanges() > 0 ? true : false;
             }
         }
+        /// <summary>
+        /// 删除报价单
+        /// </summary>
+        /// <param name="qt"></param>
+        /// <returns></returns>
         public bool DeleteQuotation(T_quotation qt)
         {
             using (MEMSEntities db = new MEMSEntities())
             {
                 db.Entry(qt).State = EntityState.Deleted;
                 return db.SaveChanges() > 0 ? true : false;
+            }
+        }
+        /// <summary>
+        /// 获得报价单产品
+        /// </summary>
+        /// <param name="Qtid"></param>
+        /// <returns></returns>
+        public List<QtProduct> getQtProduct(int Qtid)
+        {
+            using (MEMSEntities db = new MEMSEntities())
+            {
+                var rst = from q in db.T_quotationprice
+                          where q.quotationid == Qtid
+                          join p in db.T_Product on q.productid equals (p.id)
+                          select new QtProduct
+                          {
+                              productName = p.proname,
+                              productCode = p.procode,
+                              productSpec = p.prospecification,
+                              qp = q
+                          };
+                return rst.ToList();
+            }
+        }
+        /// <summary>
+        /// 添加新的报价单产品明细
+        /// </summary>
+        /// <param name="qtprice"></param>
+        public bool AddNewQtPrice(QtProduct qtprice)
+        {
+            using (MEMSEntities db = new MEMSEntities())
+            {
+                db.Entry<T_quotationprice>(qtprice.qp).State = EntityState.Added;
+                return db.SaveChanges() > 0 ? true : false;
+            }
+        }
+        /// <summary>
+        /// 添加新的报价单产品明细列表
+        /// </summary>
+        /// <param name="qtpricelst"></param>
+        public bool AddNewQtPriceList(List<QtProduct> qtpricelst)
+        {
+            try
+            {
+                using (MEMSEntities db = new MEMSEntities())
+                {
+                    foreach (var qp in qtpricelst)
+                    {
+                        db.Entry<T_quotationprice>(qp.qp).State = EntityState.Added;
+                    }
+                    return db.SaveChanges() > 0 ? true : false;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw ex;
             }
         }
     }

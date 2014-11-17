@@ -15,11 +15,11 @@ namespace MEMSservice.DAL
     public partial class T_quotationprice
     {
         public int id { get; set; }
-        public Nullable<int> quotationid { get; set; }
-        public Nullable<int> productid { get; set; }
-        public Nullable<int> productnumber { get; set; }
+        public int quotationid { get; set; }
+        public int productid { get; set; }
         public Nullable<decimal> modelprice { get; set; }
         public Nullable<decimal> quotationprice { get; set; }
         public Nullable<decimal> unitprice { get; set; }
+        public int productcount { get; set; }
     }
 }

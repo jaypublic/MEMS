@@ -71,6 +71,8 @@ namespace MEMSservice
         [OperationContract]
         List<ProductList> getProductList();
         [OperationContract]
+        List<T_Product> getProductListbyCid(int cid);
+        [OperationContract]
         List<ProductList> getProductListbycdt(string pcode, string pname, int[] cid);
         [OperationContract]
         List<T_ProductType> getProductTypeList();
@@ -107,8 +109,16 @@ namespace MEMSservice
         [OperationContract]
         bool AddNewQuotation(T_quotation newqt);
         [OperationContract]
+        bool AddNewQtAndQtprice(T_quotation newqt, List<QtProduct> qtpricelst);
+        [OperationContract]
         bool UpdateQuotation(T_quotation qt);
         [OperationContract]
         bool DeleteQuotation(T_quotation qt);
+        [OperationContract]
+        List<QtProduct> getQtProduct(int Qtid);
+        [OperationContract]
+        bool AddNewQtPrice(QtProduct qtprice);
+        [OperationContract]
+        bool AddNewQtPriceList(List<QtProduct> qtpricelst);
     }
 }

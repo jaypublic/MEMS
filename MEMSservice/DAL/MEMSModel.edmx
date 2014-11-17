@@ -227,9 +227,9 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="quotationid" Type="int" />
-          <Property Name="productid" Type="int" />
-          <Property Name="productnumber" Type="int" />
+          <Property Name="quotationid" Type="int" Nullable="false" />
+          <Property Name="productid" Type="int" Nullable="false" />
+          <Property Name="productcount" Type="int" Nullable="false" />
           <Property Name="modelprice" Type="decimal" Precision="10" Scale="2" />
           <Property Name="quotationprice" Type="decimal" Precision="10" Scale="2" />
           <Property Name="unitprice" Type="decimal" Precision="10" Scale="2" />
@@ -238,7 +238,7 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="product" Type="int" />
           <Property Name="productnumber" Type="int" />
           <Property Name="plandeliverydate" Type="datetime" />
@@ -253,12 +253,12 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Name="id" Type="int" Nullable="false" />
+          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="saleno" Type="varchar" MaxLength="50" />
           <Property Name="saledate" Type="datetime" />
           <Property Name="receiveperiodtype" Type="char" MaxLength="1" />
           <Property Name="receiveperiod" Type="int" />
-          <Property Name="quotationno" Type="int" />
+          <Property Name="quotationid" Type="int" />
           <Property Name="receivetype" Type="int" />
           <Property Name="receivestate" Type="int" />
           <Property Name="orderstate" Type="int" />
@@ -585,18 +585,18 @@
             <PropertyRef Name="id" />
           </Key>
           <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="Int32" Name="quotationid" />
-          <Property Type="Int32" Name="productid" />
-          <Property Type="Int32" Name="productnumber" />
+          <Property Type="Int32" Name="quotationid" Nullable="false" />
+          <Property Type="Int32" Name="productid" Nullable="false" />
           <Property Type="Decimal" Name="modelprice" Precision="10" Scale="2" />
           <Property Type="Decimal" Name="quotationprice" Precision="10" Scale="2" />
           <Property Type="Decimal" Name="unitprice" Precision="10" Scale="2" />
+          <Property Type="Int32" Name="productcount" Nullable="false" />
         </EntityType>
         <EntityType Name="T_saledetail">
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="Int32" Name="product" />
           <Property Type="Int32" Name="productnumber" />
           <Property Type="DateTime" Name="plandeliverydate" Precision="3" />
@@ -611,12 +611,11 @@
           <Key>
             <PropertyRef Name="id" />
           </Key>
-          <Property Type="Int32" Name="id" Nullable="false" />
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="String" Name="saleno" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="DateTime" Name="saledate" Precision="3" />
           <Property Type="String" Name="receiveperiodtype" MaxLength="1" FixedLength="true" Unicode="false" />
           <Property Type="Int32" Name="receiveperiod" />
-          <Property Type="Int32" Name="quotationno" />
           <Property Type="Int32" Name="receivetype" />
           <Property Type="Int32" Name="receivestate" />
           <Property Type="Int32" Name="orderstate" />
@@ -624,6 +623,7 @@
           <Property Type="Decimal" Name="receiveamount" Precision="10" Scale="2" />
           <Property Type="Decimal" Name="receiveratio" Precision="10" Scale="2" />
           <Property Type="String" Name="saleattachments" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="quotationid" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -892,10 +892,10 @@
           <EntitySetMapping Name="T_quotationprice">
             <EntityTypeMapping TypeName="MEMSModel.T_quotationprice">
               <MappingFragment StoreEntitySet="T_quotationprice">
+                <ScalarProperty Name="productcount" ColumnName="productcount" />
                 <ScalarProperty Name="unitprice" ColumnName="unitprice" />
                 <ScalarProperty Name="quotationprice" ColumnName="quotationprice" />
                 <ScalarProperty Name="modelprice" ColumnName="modelprice" />
-                <ScalarProperty Name="productnumber" ColumnName="productnumber" />
                 <ScalarProperty Name="productid" ColumnName="productid" />
                 <ScalarProperty Name="quotationid" ColumnName="quotationid" />
                 <ScalarProperty Name="id" ColumnName="id" />
@@ -921,6 +921,7 @@
           <EntitySetMapping Name="T_saleorder">
             <EntityTypeMapping TypeName="MEMSModel.T_saleorder">
               <MappingFragment StoreEntitySet="T_saleorder">
+                <ScalarProperty Name="quotationid" ColumnName="quotationid" />
                 <ScalarProperty Name="saleattachments" ColumnName="saleattachments" />
                 <ScalarProperty Name="receiveratio" ColumnName="receiveratio" />
                 <ScalarProperty Name="receiveamount" ColumnName="receiveamount" />
@@ -928,7 +929,6 @@
                 <ScalarProperty Name="orderstate" ColumnName="orderstate" />
                 <ScalarProperty Name="receivestate" ColumnName="receivestate" />
                 <ScalarProperty Name="receivetype" ColumnName="receivetype" />
-                <ScalarProperty Name="quotationno" ColumnName="quotationno" />
                 <ScalarProperty Name="receiveperiod" ColumnName="receiveperiod" />
                 <ScalarProperty Name="receiveperiodtype" ColumnName="receiveperiodtype" />
                 <ScalarProperty Name="saledate" ColumnName="saledate" />

@@ -372,6 +372,20 @@ namespace MEMSservice
                 throw ex;
             }
         }
+        public List<T_Product> getProductListbyCid(int cid)
+        {
+            try
+            {
+                ph = new ProductHelper();
+                var lst = ph.getProductbyCid(cid);
+                return lst;
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+        }
         public List<ProductList> getProductListbycdt(string pcode,string pname,int[] cid)
         {
             ph = new ProductHelper();
@@ -587,6 +601,24 @@ namespace MEMSservice
                 throw;
             }
         }
+        public bool AddNewQtAndQtprice(T_quotation newqt, List<QtProduct> qtpricelst)
+        {
+            try
+            {
+                ph = new ProductHelper();
+                ph.AddNewQuotation(newqt);
+                foreach (var qp in qtpricelst)
+                {
+                    qp.qp.quotationid = newqt.id;
+                }
+                return ph.AddNewQtPriceList(qtpricelst);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
         public bool UpdateQuotation(T_quotation qt)
         {
             try
@@ -606,6 +638,45 @@ namespace MEMSservice
             {
                 ph = new ProductHelper();
                 return ph.DeleteQuotation(qt);
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+        }
+        public List<QtProduct> getQtProduct(int Qtid)
+        {
+            try
+            {
+                ph = new ProductHelper();
+                return ph.getQtProduct(Qtid);
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+        }
+        public bool AddNewQtPrice(QtProduct qtprice)
+        {
+            try
+            {
+                ph = new ProductHelper();
+                return ph.AddNewQtPrice(qtprice);
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+        }
+        public bool AddNewQtPriceList(List<QtProduct> qtpricelst)
+        {
+            try
+            {
+                ph = new ProductHelper();
+                return ph.AddNewQtPriceList(qtpricelst);
             }
             catch (Exception)
             {

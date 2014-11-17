@@ -205,6 +205,9 @@
     <None Include="Service References\CRMService\MEMS.Client.CRM.CRMService.ProductList.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\CRMService\MEMS.Client.CRM.CRMService.QtProduct.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\CRMService\MEMS.Client.CRM.CRMService.T_Base_companytype.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

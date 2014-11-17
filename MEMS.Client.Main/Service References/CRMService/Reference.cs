@@ -1921,115 +1921,6 @@ namespace MEMS.Client.Main.CRMService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_ProductType", Namespace="http://schemas.datacontract.org/2004/07/MEMSservice.DAL")]
-    [System.SerializableAttribute()]
-    public partial class T_ProductType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> fidField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int idField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string typecodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string typedescField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string typenameField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> fid {
-            get {
-                return this.fidField;
-            }
-            set {
-                if ((this.fidField.Equals(value) != true)) {
-                    this.fidField = value;
-                    this.RaisePropertyChanged("fid");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id {
-            get {
-                return this.idField;
-            }
-            set {
-                if ((this.idField.Equals(value) != true)) {
-                    this.idField = value;
-                    this.RaisePropertyChanged("id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string typecode {
-            get {
-                return this.typecodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.typecodeField, value) != true)) {
-                    this.typecodeField = value;
-                    this.RaisePropertyChanged("typecode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string typedesc {
-            get {
-                return this.typedescField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.typedescField, value) != true)) {
-                    this.typedescField = value;
-                    this.RaisePropertyChanged("typedesc");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string typename {
-            get {
-                return this.typenameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.typenameField, value) != true)) {
-                    this.typenameField = value;
-                    this.RaisePropertyChanged("typename");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="T_Product", Namespace="http://schemas.datacontract.org/2004/07/MEMSservice.DAL")]
     [System.SerializableAttribute()]
     public partial class T_Product : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -2187,6 +2078,115 @@ namespace MEMS.Client.Main.CRMService {
                 if ((object.ReferenceEquals(this.prounitField, value) != true)) {
                     this.prounitField = value;
                     this.RaisePropertyChanged("prounit");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_ProductType", Namespace="http://schemas.datacontract.org/2004/07/MEMSservice.DAL")]
+    [System.SerializableAttribute()]
+    public partial class T_ProductType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<int> fidField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string typecodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string typedescField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string typenameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<int> fid {
+            get {
+                return this.fidField;
+            }
+            set {
+                if ((this.fidField.Equals(value) != true)) {
+                    this.fidField = value;
+                    this.RaisePropertyChanged("fid");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id {
+            get {
+                return this.idField;
+            }
+            set {
+                if ((this.idField.Equals(value) != true)) {
+                    this.idField = value;
+                    this.RaisePropertyChanged("id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string typecode {
+            get {
+                return this.typecodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.typecodeField, value) != true)) {
+                    this.typecodeField = value;
+                    this.RaisePropertyChanged("typecode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string typedesc {
+            get {
+                return this.typedescField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.typedescField, value) != true)) {
+                    this.typedescField = value;
+                    this.RaisePropertyChanged("typedesc");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string typename {
+            get {
+                return this.typenameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.typenameField, value) != true)) {
+                    this.typenameField = value;
+                    this.RaisePropertyChanged("typename");
                 }
             }
         }
@@ -3002,6 +3002,240 @@ namespace MEMS.Client.Main.CRMService {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="QtProduct", Namespace="http://schemas.datacontract.org/2004/07/MEMSservice.DAL")]
+    [System.SerializableAttribute()]
+    public partial class QtProduct : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string productCodeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string productNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string productSpecField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private MEMS.Client.Main.CRMService.T_quotationprice qpField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string productCode {
+            get {
+                return this.productCodeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.productCodeField, value) != true)) {
+                    this.productCodeField = value;
+                    this.RaisePropertyChanged("productCode");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string productName {
+            get {
+                return this.productNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.productNameField, value) != true)) {
+                    this.productNameField = value;
+                    this.RaisePropertyChanged("productName");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string productSpec {
+            get {
+                return this.productSpecField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.productSpecField, value) != true)) {
+                    this.productSpecField = value;
+                    this.RaisePropertyChanged("productSpec");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public MEMS.Client.Main.CRMService.T_quotationprice qp {
+            get {
+                return this.qpField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.qpField, value) != true)) {
+                    this.qpField = value;
+                    this.RaisePropertyChanged("qp");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="T_quotationprice", Namespace="http://schemas.datacontract.org/2004/07/MEMSservice.DAL")]
+    [System.SerializableAttribute()]
+    public partial class T_quotationprice : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int idField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> modelpriceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int productcountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int productidField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int quotationidField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> quotationpriceField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Nullable<decimal> unitpriceField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int id {
+            get {
+                return this.idField;
+            }
+            set {
+                if ((this.idField.Equals(value) != true)) {
+                    this.idField = value;
+                    this.RaisePropertyChanged("id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> modelprice {
+            get {
+                return this.modelpriceField;
+            }
+            set {
+                if ((this.modelpriceField.Equals(value) != true)) {
+                    this.modelpriceField = value;
+                    this.RaisePropertyChanged("modelprice");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int productcount {
+            get {
+                return this.productcountField;
+            }
+            set {
+                if ((this.productcountField.Equals(value) != true)) {
+                    this.productcountField = value;
+                    this.RaisePropertyChanged("productcount");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int productid {
+            get {
+                return this.productidField;
+            }
+            set {
+                if ((this.productidField.Equals(value) != true)) {
+                    this.productidField = value;
+                    this.RaisePropertyChanged("productid");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int quotationid {
+            get {
+                return this.quotationidField;
+            }
+            set {
+                if ((this.quotationidField.Equals(value) != true)) {
+                    this.quotationidField = value;
+                    this.RaisePropertyChanged("quotationid");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> quotationprice {
+            get {
+                return this.quotationpriceField;
+            }
+            set {
+                if ((this.quotationpriceField.Equals(value) != true)) {
+                    this.quotationpriceField = value;
+                    this.RaisePropertyChanged("quotationprice");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Nullable<decimal> unitprice {
+            get {
+                return this.unitpriceField;
+            }
+            set {
+                if ((this.unitpriceField.Equals(value) != true)) {
+                    this.unitpriceField = value;
+                    this.RaisePropertyChanged("unitprice");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="CRMService.ICRMService")]
     public interface ICRMService {
@@ -3093,6 +3327,9 @@ namespace MEMS.Client.Main.CRMService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/getProductList", ReplyAction="http://tempuri.org/ICRMService/getProductListResponse")]
         MEMS.Client.Main.CRMService.ProductList[] getProductList();
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/getProductListbyCid", ReplyAction="http://tempuri.org/ICRMService/getProductListbyCidResponse")]
+        MEMS.Client.Main.CRMService.T_Product[] getProductListbyCid(int cid);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/getProductListbycdt", ReplyAction="http://tempuri.org/ICRMService/getProductListbycdtResponse")]
         MEMS.Client.Main.CRMService.ProductList[] getProductListbycdt(string pcode, string pname, int[] cid);
         
@@ -3147,11 +3384,23 @@ namespace MEMS.Client.Main.CRMService {
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/AddNewQuotation", ReplyAction="http://tempuri.org/ICRMService/AddNewQuotationResponse")]
         bool AddNewQuotation(MEMS.Client.Main.CRMService.T_quotation newqt);
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/AddNewQtAndQtprice", ReplyAction="http://tempuri.org/ICRMService/AddNewQtAndQtpriceResponse")]
+        bool AddNewQtAndQtprice(MEMS.Client.Main.CRMService.T_quotation newqt, MEMS.Client.Main.CRMService.QtProduct[] qtpricelst);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/UpdateQuotation", ReplyAction="http://tempuri.org/ICRMService/UpdateQuotationResponse")]
         bool UpdateQuotation(MEMS.Client.Main.CRMService.T_quotation qt);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/DeleteQuotation", ReplyAction="http://tempuri.org/ICRMService/DeleteQuotationResponse")]
         bool DeleteQuotation(MEMS.Client.Main.CRMService.T_quotation qt);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/getQtProduct", ReplyAction="http://tempuri.org/ICRMService/getQtProductResponse")]
+        MEMS.Client.Main.CRMService.QtProduct[] getQtProduct(int Qtid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/AddNewQtPrice", ReplyAction="http://tempuri.org/ICRMService/AddNewQtPriceResponse")]
+        bool AddNewQtPrice(MEMS.Client.Main.CRMService.QtProduct qtprice);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/AddNewQtPriceList", ReplyAction="http://tempuri.org/ICRMService/AddNewQtPriceListResponse")]
+        bool AddNewQtPriceList(MEMS.Client.Main.CRMService.QtProduct[] qtpricelst);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -3297,6 +3546,10 @@ namespace MEMS.Client.Main.CRMService {
             return base.Channel.getProductList();
         }
         
+        public MEMS.Client.Main.CRMService.T_Product[] getProductListbyCid(int cid) {
+            return base.Channel.getProductListbyCid(cid);
+        }
+        
         public MEMS.Client.Main.CRMService.ProductList[] getProductListbycdt(string pcode, string pname, int[] cid) {
             return base.Channel.getProductListbycdt(pcode, pname, cid);
         }
@@ -3369,12 +3622,28 @@ namespace MEMS.Client.Main.CRMService {
             return base.Channel.AddNewQuotation(newqt);
         }
         
+        public bool AddNewQtAndQtprice(MEMS.Client.Main.CRMService.T_quotation newqt, MEMS.Client.Main.CRMService.QtProduct[] qtpricelst) {
+            return base.Channel.AddNewQtAndQtprice(newqt, qtpricelst);
+        }
+        
         public bool UpdateQuotation(MEMS.Client.Main.CRMService.T_quotation qt) {
             return base.Channel.UpdateQuotation(qt);
         }
         
         public bool DeleteQuotation(MEMS.Client.Main.CRMService.T_quotation qt) {
             return base.Channel.DeleteQuotation(qt);
+        }
+        
+        public MEMS.Client.Main.CRMService.QtProduct[] getQtProduct(int Qtid) {
+            return base.Channel.getQtProduct(Qtid);
+        }
+        
+        public bool AddNewQtPrice(MEMS.Client.Main.CRMService.QtProduct qtprice) {
+            return base.Channel.AddNewQtPrice(qtprice);
+        }
+        
+        public bool AddNewQtPriceList(MEMS.Client.Main.CRMService.QtProduct[] qtpricelst) {
+            return base.Channel.AddNewQtPriceList(qtpricelst);
         }
     }
 }

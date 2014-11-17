@@ -31,21 +31,21 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuotationinfoForm));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
+            this.txtCustomer = new DevExpress.XtraEditors.TextEdit();
             this.txtTheme = new DevExpress.XtraEditors.MemoEdit();
             this.txtProductRemark = new DevExpress.XtraEditors.MemoEdit();
             this.txtQuremark = new DevExpress.XtraEditors.MemoEdit();
             this.dateQu = new DevExpress.XtraEditors.DateEdit();
-            this.cmbcustomer = new DevExpress.XtraEditors.ComboBoxEdit();
             this.txtTotalPrice = new DevExpress.XtraEditors.TextEdit();
             this.txtQuno = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem8 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
@@ -53,35 +53,36 @@
             this.panelControl2 = new DevExpress.XtraEditors.PanelControl();
             this.gcQtprice = new DevExpress.XtraGrid.GridControl();
             this.gvQtprice = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.ribbonImageCollectionLarge = new DevExpress.Utils.ImageCollection(this.components);
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.ribbonImageCollectionLarge = new DevExpress.Utils.ImageCollection(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtCustomer.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTheme.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtProductRemark.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtQuremark.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateQu.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateQu.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbcustomer.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTotalPrice.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtQuno.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
@@ -106,11 +107,11 @@
             // 
             // layoutControl1
             // 
+            this.layoutControl1.Controls.Add(this.txtCustomer);
             this.layoutControl1.Controls.Add(this.txtTheme);
             this.layoutControl1.Controls.Add(this.txtProductRemark);
             this.layoutControl1.Controls.Add(this.txtQuremark);
             this.layoutControl1.Controls.Add(this.dateQu);
-            this.layoutControl1.Controls.Add(this.cmbcustomer);
             this.layoutControl1.Controls.Add(this.txtTotalPrice);
             this.layoutControl1.Controls.Add(this.txtQuno);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -121,32 +122,41 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
+            // txtCustomer
+            // 
+            this.txtCustomer.Location = new System.Drawing.Point(471, 38);
+            this.txtCustomer.MenuManager = this.ribbonControl1;
+            this.txtCustomer.Name = "txtCustomer";
+            this.txtCustomer.Size = new System.Drawing.Size(332, 22);
+            this.txtCustomer.StyleController = this.layoutControl1;
+            this.txtCustomer.TabIndex = 13;
+            // 
             // txtTheme
             // 
             this.txtTheme.Location = new System.Drawing.Point(75, 64);
             this.txtTheme.MenuManager = this.ribbonControl1;
             this.txtTheme.Name = "txtTheme";
-            this.txtTheme.Size = new System.Drawing.Size(728, 72);
+            this.txtTheme.Size = new System.Drawing.Size(728, 63);
             this.txtTheme.StyleController = this.layoutControl1;
             this.txtTheme.TabIndex = 11;
             this.txtTheme.UseOptimizedRendering = true;
             // 
             // txtProductRemark
             // 
-            this.txtProductRemark.Location = new System.Drawing.Point(472, 140);
+            this.txtProductRemark.Location = new System.Drawing.Point(472, 131);
             this.txtProductRemark.MenuManager = this.ribbonControl1;
             this.txtProductRemark.Name = "txtProductRemark";
-            this.txtProductRemark.Size = new System.Drawing.Size(331, 150);
+            this.txtProductRemark.Size = new System.Drawing.Size(331, 159);
             this.txtProductRemark.StyleController = this.layoutControl1;
             this.txtProductRemark.TabIndex = 10;
             this.txtProductRemark.UseOptimizedRendering = true;
             // 
             // txtQuremark
             // 
-            this.txtQuremark.Location = new System.Drawing.Point(75, 140);
+            this.txtQuremark.Location = new System.Drawing.Point(75, 131);
             this.txtQuremark.MenuManager = this.ribbonControl1;
             this.txtQuremark.Name = "txtQuremark";
-            this.txtQuremark.Size = new System.Drawing.Size(330, 150);
+            this.txtQuremark.Size = new System.Drawing.Size(330, 159);
             this.txtQuremark.StyleController = this.layoutControl1;
             this.txtQuremark.TabIndex = 9;
             this.txtQuremark.UseOptimizedRendering = true;
@@ -154,7 +164,7 @@
             // dateQu
             // 
             this.dateQu.EditValue = null;
-            this.dateQu.Location = new System.Drawing.Point(471, 38);
+            this.dateQu.Location = new System.Drawing.Point(471, 12);
             this.dateQu.MenuManager = this.ribbonControl1;
             this.dateQu.Name = "dateQu";
             this.dateQu.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
@@ -164,17 +174,6 @@
             this.dateQu.Size = new System.Drawing.Size(332, 22);
             this.dateQu.StyleController = this.layoutControl1;
             this.dateQu.TabIndex = 7;
-            // 
-            // cmbcustomer
-            // 
-            this.cmbcustomer.Location = new System.Drawing.Point(471, 12);
-            this.cmbcustomer.MenuManager = this.ribbonControl1;
-            this.cmbcustomer.Name = "cmbcustomer";
-            this.cmbcustomer.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cmbcustomer.Size = new System.Drawing.Size(332, 22);
-            this.cmbcustomer.StyleController = this.layoutControl1;
-            this.cmbcustomer.TabIndex = 6;
             // 
             // txtTotalPrice
             // 
@@ -201,12 +200,12 @@
             this.layoutControlGroup1.GroupBordersVisible = false;
             this.layoutControlGroup1.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
             this.layoutControlItem1,
-            this.layoutControlItem3,
             this.layoutControlItem2,
             this.layoutControlItem4,
             this.layoutControlItem6,
             this.layoutControlItem7,
-            this.layoutControlItem8});
+            this.layoutControlItem8,
+            this.layoutControlItem5});
             this.layoutControlGroup1.Location = new System.Drawing.Point(0, 0);
             this.layoutControlGroup1.Name = "layoutControlGroup1";
             this.layoutControlGroup1.Size = new System.Drawing.Size(815, 302);
@@ -223,16 +222,6 @@
             this.layoutControlItem1.Text = "报价单号";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(60, 14);
             // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.Control = this.cmbcustomer;
-            this.layoutControlItem3.CustomizationFormText = "客户";
-            this.layoutControlItem3.Location = new System.Drawing.Point(396, 0);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(399, 26);
-            this.layoutControlItem3.Text = "客户";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(60, 14);
-            // 
             // layoutControlItem2
             // 
             this.layoutControlItem2.Control = this.txtTotalPrice;
@@ -247,7 +236,7 @@
             // 
             this.layoutControlItem4.Control = this.dateQu;
             this.layoutControlItem4.CustomizationFormText = "报价日期";
-            this.layoutControlItem4.Location = new System.Drawing.Point(396, 26);
+            this.layoutControlItem4.Location = new System.Drawing.Point(396, 0);
             this.layoutControlItem4.Name = "layoutControlItem4";
             this.layoutControlItem4.Size = new System.Drawing.Size(399, 26);
             this.layoutControlItem4.Text = "报价日期";
@@ -257,9 +246,9 @@
             // 
             this.layoutControlItem6.Control = this.txtQuremark;
             this.layoutControlItem6.CustomizationFormText = "报价单备注";
-            this.layoutControlItem6.Location = new System.Drawing.Point(0, 128);
+            this.layoutControlItem6.Location = new System.Drawing.Point(0, 119);
             this.layoutControlItem6.Name = "layoutControlItem6";
-            this.layoutControlItem6.Size = new System.Drawing.Size(397, 154);
+            this.layoutControlItem6.Size = new System.Drawing.Size(397, 163);
             this.layoutControlItem6.Text = "报价单备注";
             this.layoutControlItem6.TextSize = new System.Drawing.Size(60, 14);
             // 
@@ -267,9 +256,9 @@
             // 
             this.layoutControlItem7.Control = this.txtProductRemark;
             this.layoutControlItem7.CustomizationFormText = "产品备注";
-            this.layoutControlItem7.Location = new System.Drawing.Point(397, 128);
+            this.layoutControlItem7.Location = new System.Drawing.Point(397, 119);
             this.layoutControlItem7.Name = "layoutControlItem7";
-            this.layoutControlItem7.Size = new System.Drawing.Size(398, 154);
+            this.layoutControlItem7.Size = new System.Drawing.Size(398, 163);
             this.layoutControlItem7.Text = "产品备注";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(60, 14);
             // 
@@ -279,9 +268,19 @@
             this.layoutControlItem8.CustomizationFormText = "主题";
             this.layoutControlItem8.Location = new System.Drawing.Point(0, 52);
             this.layoutControlItem8.Name = "layoutControlItem8";
-            this.layoutControlItem8.Size = new System.Drawing.Size(795, 76);
+            this.layoutControlItem8.Size = new System.Drawing.Size(795, 67);
             this.layoutControlItem8.Text = "主题";
             this.layoutControlItem8.TextSize = new System.Drawing.Size(60, 14);
+            // 
+            // layoutControlItem5
+            // 
+            this.layoutControlItem5.Control = this.txtCustomer;
+            this.layoutControlItem5.CustomizationFormText = "客户";
+            this.layoutControlItem5.Location = new System.Drawing.Point(396, 26);
+            this.layoutControlItem5.Name = "layoutControlItem5";
+            this.layoutControlItem5.Size = new System.Drawing.Size(399, 26);
+            this.layoutControlItem5.Text = "客户";
+            this.layoutControlItem5.TextSize = new System.Drawing.Size(60, 14);
             // 
             // xtraTabControl1
             // 
@@ -345,6 +344,7 @@
             this.gridColumn1,
             this.gridColumn2,
             this.gridColumn3,
+            this.gridColumn10,
             this.gridColumn8,
             this.gridColumn9,
             this.gridColumn4,
@@ -356,6 +356,85 @@
             this.gvQtprice.OptionsView.ShowGroupPanel = false;
             this.gvQtprice.OptionsView.ShowViewCaption = true;
             this.gvQtprice.ViewCaption = "产品列表";
+            this.gvQtprice.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gvQtprice_CellValueChanged);
+            // 
+            // gridColumn1
+            // 
+            this.gridColumn1.Caption = "gridColumn1";
+            this.gridColumn1.FieldName = "qp.id";
+            this.gridColumn1.Name = "gridColumn1";
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "gridColumn2";
+            this.gridColumn2.FieldName = "qp.quotationid";
+            this.gridColumn2.Name = "gridColumn2";
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "gridColumn3";
+            this.gridColumn3.FieldName = "qp.productid";
+            this.gridColumn3.Name = "gridColumn3";
+            // 
+            // gridColumn10
+            // 
+            this.gridColumn10.Caption = "产品编号";
+            this.gridColumn10.FieldName = "productCode";
+            this.gridColumn10.Name = "gridColumn10";
+            this.gridColumn10.OptionsColumn.AllowEdit = false;
+            this.gridColumn10.Visible = true;
+            this.gridColumn10.VisibleIndex = 0;
+            // 
+            // gridColumn8
+            // 
+            this.gridColumn8.Caption = "产品名称";
+            this.gridColumn8.FieldName = "productName";
+            this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.OptionsColumn.AllowEdit = false;
+            this.gridColumn8.Visible = true;
+            this.gridColumn8.VisibleIndex = 1;
+            // 
+            // gridColumn9
+            // 
+            this.gridColumn9.Caption = "产品规格";
+            this.gridColumn9.FieldName = "productSpec";
+            this.gridColumn9.Name = "gridColumn9";
+            this.gridColumn9.OptionsColumn.AllowEdit = false;
+            this.gridColumn9.Visible = true;
+            this.gridColumn9.VisibleIndex = 2;
+            // 
+            // gridColumn4
+            // 
+            this.gridColumn4.Caption = "产品数量";
+            this.gridColumn4.FieldName = "qp.productcount";
+            this.gridColumn4.Name = "gridColumn4";
+            this.gridColumn4.Visible = true;
+            this.gridColumn4.VisibleIndex = 3;
+            // 
+            // gridColumn5
+            // 
+            this.gridColumn5.Caption = "模具费";
+            this.gridColumn5.FieldName = "qp.modelprice";
+            this.gridColumn5.Name = "gridColumn5";
+            this.gridColumn5.Visible = true;
+            this.gridColumn5.VisibleIndex = 4;
+            // 
+            // gridColumn6
+            // 
+            this.gridColumn6.Caption = "单价";
+            this.gridColumn6.FieldName = "qp.unitprice";
+            this.gridColumn6.Name = "gridColumn6";
+            this.gridColumn6.Visible = true;
+            this.gridColumn6.VisibleIndex = 5;
+            // 
+            // gridColumn7
+            // 
+            this.gridColumn7.Caption = "总价";
+            this.gridColumn7.FieldName = "qp.quotationprice";
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.OptionsColumn.AllowEdit = false;
+            this.gridColumn7.Visible = true;
+            this.gridColumn7.VisibleIndex = 6;
             // 
             // ribbonImageCollectionLarge
             // 
@@ -374,72 +453,6 @@
             this.ribbonImageCollectionLarge.InsertGalleryImage("delete_32x32.png", "images/edit/delete_32x32.png", DevExpress.Images.ImageResourceCache.Default.GetImage("images/edit/delete_32x32.png"), 10);
             this.ribbonImageCollectionLarge.Images.SetKeyName(10, "delete_32x32.png");
             // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "gridColumn1";
-            this.gridColumn1.FieldName = "id";
-            this.gridColumn1.Name = "gridColumn1";
-            // 
-            // gridColumn2
-            // 
-            this.gridColumn2.Caption = "gridColumn2";
-            this.gridColumn2.FieldName = "quotationid";
-            this.gridColumn2.Name = "gridColumn2";
-            // 
-            // gridColumn3
-            // 
-            this.gridColumn3.Caption = "gridColumn3";
-            this.gridColumn3.FieldName = "productid";
-            this.gridColumn3.Name = "gridColumn3";
-            // 
-            // gridColumn4
-            // 
-            this.gridColumn4.Caption = "产品数量";
-            this.gridColumn4.FieldName = "productnumber";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 2;
-            // 
-            // gridColumn5
-            // 
-            this.gridColumn5.Caption = "模具费";
-            this.gridColumn5.FieldName = "modelprice";
-            this.gridColumn5.Name = "gridColumn5";
-            this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 3;
-            // 
-            // gridColumn6
-            // 
-            this.gridColumn6.Caption = "单价";
-            this.gridColumn6.FieldName = "unitprice";
-            this.gridColumn6.Name = "gridColumn6";
-            this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 4;
-            // 
-            // gridColumn7
-            // 
-            this.gridColumn7.Caption = "总价";
-            this.gridColumn7.FieldName = "quotationprice";
-            this.gridColumn7.Name = "gridColumn7";
-            this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 5;
-            // 
-            // gridColumn8
-            // 
-            this.gridColumn8.Caption = "产品名称";
-            this.gridColumn8.FieldName = "productname";
-            this.gridColumn8.Name = "gridColumn8";
-            this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 0;
-            // 
-            // gridColumn9
-            // 
-            this.gridColumn9.Caption = "产品规格";
-            this.gridColumn9.FieldName = "prospecification";
-            this.gridColumn9.Name = "gridColumn9";
-            this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 1;
-            // 
             // QuotationinfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -452,22 +465,22 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.txtCustomer.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTheme.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtProductRemark.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtQuremark.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateQu.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateQu.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cmbcustomer.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtTotalPrice.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtQuno.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem8)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.xtraTabControl1.ResumeLayout(false);
             this.xtraTabPage1.ResumeLayout(false);
@@ -495,8 +508,6 @@
         private DevExpress.XtraEditors.MemoEdit txtProductRemark;
         private DevExpress.XtraEditors.MemoEdit txtQuremark;
         private DevExpress.XtraEditors.DateEdit dateQu;
-        private DevExpress.XtraEditors.ComboBoxEdit cmbcustomer;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem3;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem4;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem6;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem7;
@@ -518,6 +529,9 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
+        private DevExpress.XtraEditors.TextEdit txtCustomer;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem5;
 
     }
 }
