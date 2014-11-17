@@ -148,7 +148,20 @@ namespace MEMS.Client.CRM
             {
                 m_QtProductlst[e.RowHandle].qp.quotationprice = m_QtProductlst[e.RowHandle].qp.modelprice.Value + m_QtProductlst[e.RowHandle].qp.unitprice.Value * m_QtProductlst[e.RowHandle].qp.productcount;
             }
+            CalQtTotalPrice();
         }
-
+        private void CalQtTotalPrice()
+        {
+            decimal totalprice = 0;
+            var qtpricelst = (List<QtProduct>)gvQtprice.DataSource;
+            foreach (var qtprice in qtpricelst)
+            {
+                if (qtprice.qp.quotationprice.HasValue)
+                {
+                    totalprice += qtprice.qp.quotationprice.Value;
+                }
+            }
+            txtTotalPrice.Text = totalprice.ToString();
+        }
     }
 }
