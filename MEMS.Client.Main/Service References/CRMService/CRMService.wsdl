@@ -182,6 +182,12 @@
   <wsdl:message name="ICRMService_getProductList_OutputMessage">
     <wsdl:part name="parameters" element="tns:getProductListResponse" />
   </wsdl:message>
+  <wsdl:message name="ICRMService_getProductListbyCid_InputMessage">
+    <wsdl:part name="parameters" element="tns:getProductListbyCid" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_getProductListbyCid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getProductListbyCidResponse" />
+  </wsdl:message>
   <wsdl:message name="ICRMService_getProductListbycdt_InputMessage">
     <wsdl:part name="parameters" element="tns:getProductListbycdt" />
   </wsdl:message>
@@ -271,6 +277,60 @@
   </wsdl:message>
   <wsdl:message name="ICRMService_getQuotationList_OutputMessage">
     <wsdl:part name="parameters" element="tns:getQuotationListResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_getQuotationListbyP_InputMessage">
+    <wsdl:part name="parameters" element="tns:getQuotationListbyP" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_getQuotationListbyP_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getQuotationListbyPResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_getQuotationbyId_InputMessage">
+    <wsdl:part name="parameters" element="tns:getQuotationbyId" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_getQuotationbyId_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getQuotationbyIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_AddNewQuotation_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewQuotation" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_AddNewQuotation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewQuotationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_AddNewQtAndQtprice_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewQtAndQtprice" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_AddNewQtAndQtprice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewQtAndQtpriceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_UpdateQuotation_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateQuotation" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_UpdateQuotation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateQuotationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_DeleteQuotation_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteQuotation" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_DeleteQuotation_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteQuotationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_getQtProduct_InputMessage">
+    <wsdl:part name="parameters" element="tns:getQtProduct" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_getQtProduct_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getQtProductResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_AddNewQtPrice_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewQtPrice" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_AddNewQtPrice_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewQtPriceResponse" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_AddNewQtPriceList_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewQtPriceList" />
+  </wsdl:message>
+  <wsdl:message name="ICRMService_AddNewQtPriceList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewQtPriceListResponse" />
   </wsdl:message>
   <wsdl:portType name="ICRMService">
     <wsdl:operation name="getCustomerList">
@@ -389,6 +449,10 @@
       <wsdl:input wsaw:Action="http://tempuri.org/ICRMService/getProductList" message="tns:ICRMService_getProductList_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ICRMService/getProductListResponse" message="tns:ICRMService_getProductList_OutputMessage" />
     </wsdl:operation>
+    <wsdl:operation name="getProductListbyCid">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMService/getProductListbyCid" message="tns:ICRMService_getProductListbyCid_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMService/getProductListbyCidResponse" message="tns:ICRMService_getProductListbyCid_OutputMessage" />
+    </wsdl:operation>
     <wsdl:operation name="getProductListbycdt">
       <wsdl:input wsaw:Action="http://tempuri.org/ICRMService/getProductListbycdt" message="tns:ICRMService_getProductListbycdt_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ICRMService/getProductListbycdtResponse" message="tns:ICRMService_getProductListbycdt_OutputMessage" />
@@ -448,6 +512,42 @@
     <wsdl:operation name="getQuotationList">
       <wsdl:input wsaw:Action="http://tempuri.org/ICRMService/getQuotationList" message="tns:ICRMService_getQuotationList_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ICRMService/getQuotationListResponse" message="tns:ICRMService_getQuotationList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getQuotationListbyP">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMService/getQuotationListbyP" message="tns:ICRMService_getQuotationListbyP_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMService/getQuotationListbyPResponse" message="tns:ICRMService_getQuotationListbyP_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getQuotationbyId">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMService/getQuotationbyId" message="tns:ICRMService_getQuotationbyId_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMService/getQuotationbyIdResponse" message="tns:ICRMService_getQuotationbyId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewQuotation">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMService/AddNewQuotation" message="tns:ICRMService_AddNewQuotation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMService/AddNewQuotationResponse" message="tns:ICRMService_AddNewQuotation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewQtAndQtprice">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMService/AddNewQtAndQtprice" message="tns:ICRMService_AddNewQtAndQtprice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMService/AddNewQtAndQtpriceResponse" message="tns:ICRMService_AddNewQtAndQtprice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateQuotation">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMService/UpdateQuotation" message="tns:ICRMService_UpdateQuotation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMService/UpdateQuotationResponse" message="tns:ICRMService_UpdateQuotation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteQuotation">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMService/DeleteQuotation" message="tns:ICRMService_DeleteQuotation_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMService/DeleteQuotationResponse" message="tns:ICRMService_DeleteQuotation_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getQtProduct">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMService/getQtProduct" message="tns:ICRMService_getQtProduct_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMService/getQtProductResponse" message="tns:ICRMService_getQtProduct_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewQtPrice">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMService/AddNewQtPrice" message="tns:ICRMService_AddNewQtPrice_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMService/AddNewQtPriceResponse" message="tns:ICRMService_AddNewQtPrice_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewQtPriceList">
+      <wsdl:input wsaw:Action="http://tempuri.org/ICRMService/AddNewQtPriceList" message="tns:ICRMService_AddNewQtPriceList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ICRMService/AddNewQtPriceListResponse" message="tns:ICRMService_AddNewQtPriceList_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ICRMService" type="tns:ICRMService">
@@ -713,6 +813,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="getProductListbyCid">
+      <soap:operation soapAction="http://tempuri.org/ICRMService/getProductListbyCid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
     <wsdl:operation name="getProductListbycdt">
       <soap:operation soapAction="http://tempuri.org/ICRMService/getProductListbycdt" style="document" />
       <wsdl:input>
@@ -841,6 +950,87 @@
     </wsdl:operation>
     <wsdl:operation name="getQuotationList">
       <soap:operation soapAction="http://tempuri.org/ICRMService/getQuotationList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getQuotationListbyP">
+      <soap:operation soapAction="http://tempuri.org/ICRMService/getQuotationListbyP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getQuotationbyId">
+      <soap:operation soapAction="http://tempuri.org/ICRMService/getQuotationbyId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewQuotation">
+      <soap:operation soapAction="http://tempuri.org/ICRMService/AddNewQuotation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewQtAndQtprice">
+      <soap:operation soapAction="http://tempuri.org/ICRMService/AddNewQtAndQtprice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateQuotation">
+      <soap:operation soapAction="http://tempuri.org/ICRMService/UpdateQuotation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteQuotation">
+      <soap:operation soapAction="http://tempuri.org/ICRMService/DeleteQuotation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getQtProduct">
+      <soap:operation soapAction="http://tempuri.org/ICRMService/getQtProduct" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewQtPrice">
+      <soap:operation soapAction="http://tempuri.org/ICRMService/AddNewQtPrice" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewQtPriceList">
+      <soap:operation soapAction="http://tempuri.org/ICRMService/AddNewQtPriceList" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

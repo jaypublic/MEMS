@@ -40,6 +40,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="DevExpress.Data.v13.2, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Images.v13.2, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.PivotGrid.v13.2.Core, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Printing.v13.2.Core, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Utils.v13.2, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
@@ -109,11 +110,23 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="QuotationinfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuotationinfoForm.Designer.cs">
+      <DependentUpon>QuotationinfoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="QuotationListForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="QuotationListForm.Designer.cs">
       <DependentUpon>QuotationListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelectProForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectProForm.Designer.cs">
+      <DependentUpon>SelectProForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Service References\CRMService\Reference.cs">
       <AutoGen>True</AutoGen>
@@ -161,8 +174,14 @@
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="QuotationinfoForm.resx">
+      <DependentUpon>QuotationinfoForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="QuotationListForm.resx">
       <DependentUpon>QuotationListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectProForm.resx">
+      <DependentUpon>SelectProForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SupplierinfoForm.resx">
       <DependentUpon>SupplierinfoForm.cs</DependentUpon>
@@ -184,6 +203,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\CRMService\MEMS.Client.CRM.CRMService.ProductList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CRMService\MEMS.Client.CRM.CRMService.QtProduct.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\CRMService\MEMS.Client.CRM.CRMService.T_Base_companytype.datasource">

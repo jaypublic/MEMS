@@ -52,7 +52,7 @@ namespace MEMS.Client.CRM
                 List<T_Crafts> craftlst = new List<T_Crafts>(m_client.getProductCraft(m_pid));
                 gccraft.DataSource = craftlst;
             }
-            
+            base.FormLoad();
         }
 
         private void setData()

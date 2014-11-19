@@ -20,7 +20,7 @@ namespace MEMSservice.BLL
                 return rst.ToList();
             }
         }
-        public List<ProductList> getProductLstbyCdt(string code,string name,int[] cidlst)
+        public List<ProductList> getProductLstbyCdt(string code, string name, int[] cidlst)
         {
             using (MEMSEntities db = new MEMSEntities())
             {
@@ -28,7 +28,7 @@ namespace MEMSservice.BLL
                           join c in db.T_Customer
                           on p.customerid equals c.id
                           where p.procode.Contains(code) &&
-                          p.proname.Contains(name) &&                          
+                          p.proname.Contains(name) &&
                           cidlst.Contains(p.customerid.Value)
                           select new ProductList
                           {
@@ -58,6 +58,16 @@ namespace MEMSservice.BLL
                           where p.id == pid
                           select p;
                 return rst.FirstOrDefault();
+            }
+        }
+        public List<T_Product> getProductbyCid(int customerid)
+        {
+            using (MEMSEntities db = new MEMSEntities())
+            {
+                var rst = from p in db.T_Product
+                          where p.customerid == customerid
+                          select p;
+                return rst.ToList();
             }
         }
         public bool AddNewProduct(T_Product product)
@@ -139,7 +149,7 @@ namespace MEMSservice.BLL
         /// <returns></returns>
         public int AddProductPrice(T_ProductbasicPrice price)
         {
-            using(MEMSEntities db=new MEMSEntities())
+            using (MEMSEntities db = new MEMSEntities())
             {
                 db.Entry(price).State = EntityState.Added;
                 var success = db.SaveChanges() > 0 ? true : false;
@@ -160,10 +170,10 @@ namespace MEMSservice.BLL
                 var rst = from p in db.T_CraftsPrice
                           where p.pid == pid
                           select p;
-                return rst.ToList();         
+                return rst.ToList();
             }
         }
-        public bool AddNewCraftPricelst(List<T_CraftsPrice> ncplst,int pbid)
+        public bool AddNewCraftPricelst(List<T_CraftsPrice> ncplst, int pbid)
         {
             using (MEMSEntities db = new MEMSEntities())
             {
@@ -208,11 +218,157 @@ namespace MEMSservice.BLL
         {
             using (MEMSEntities db = new MEMSEntities())
             {
+                string quno = "";
                 var rst = from q in db.T_quotation
-                          //where q.qutationno.Contains(quno)
+                          where q.qutationno.Contains(quno)
                           orderby q.quotationdate descending
                           select q;
                 return rst.ToList();
+            }
+        }
+        /// <summary>
+        /// 根据条件返回报价单列表
+        /// </summary>
+        /// <param name="quno"></param>
+        /// <param name="cid"></param>
+        /// <param name="aftdate"></param>
+        /// <param name="bfedate"></param>
+        /// <returns></returns>
+        public List<T_quotation> getQuotationListbyP(string quno, int cid, DateTime aftdate, DateTime bfedate)
+        {
+            using (MEMSEntities db = new MEMSEntities())
+            {
+                List<T_quotation> qlst;
+                if (cid > 0)
+                {
+                    var rst = from q in db.T_quotation
+                              where q.qutationno.Contains(quno) && q.customerid.Value == cid &&
+                              q.quotationdate.Value >= aftdate && q.quotationdate.Value <= bfedate
+                              orderby q.id descending
+                              select q;
+                    qlst = rst.ToList();
+                }
+                else
+                {
+                    var rst = from q in db.T_quotation
+                              where q.qutationno.Contains(quno) &&
+                              q.quotationdate.Value >= aftdate && q.quotationdate.Value <= bfedate
+                              orderby q.id descending
+                              select q;
+                    qlst = rst.ToList();
+                }
+                return qlst;
+            }
+        }
+        /// <summary>
+        /// 根据Id获取报价单
+        /// </summary>
+        /// <param name="qid"></param>
+        /// <returns></returns>
+        public T_quotation getQuotationbyId(int qid)
+        {
+            using (MEMSEntities db = new MEMSEntities())
+            {
+                var rst = from q in db.T_quotation
+                          where q.id == qid
+                          select q;
+                return rst.FirstOrDefault();
+            }
+        }
+        /// <summary>
+        /// 添加新的报价单
+        /// </summary>
+        /// <param name="newqt"></param>
+        /// <returns></returns>
+        public bool AddNewQuotation(T_quotation newqt)
+        {
+            using (MEMSEntities db = new MEMSEntities())
+            {
+                db.Entry(newqt).State = EntityState.Added;
+                return db.SaveChanges() > 0 ? true : false;
+            }
+        }
+        /// <summary>
+        /// 修改报价单
+        /// </summary>
+        /// <param name="qt"></param>
+        /// <returns></returns>
+        public bool UpdateQuotation(T_quotation qt)
+        {
+            using (MEMSEntities db = new MEMSEntities())
+            {
+                db.Entry(qt).State = EntityState.Modified;
+                return db.SaveChanges() > 0 ? true : false;
+            }
+        }
+        /// <summary>
+        /// 删除报价单
+        /// </summary>
+        /// <param name="qt"></param>
+        /// <returns></returns>
+        public bool DeleteQuotation(T_quotation qt)
+        {
+            using (MEMSEntities db = new MEMSEntities())
+            {
+                db.Entry(qt).State = EntityState.Deleted;
+                return db.SaveChanges() > 0 ? true : false;
+            }
+        }
+        /// <summary>
+        /// 获得报价单产品
+        /// </summary>
+        /// <param name="Qtid"></param>
+        /// <returns></returns>
+        public List<QtProduct> getQtProduct(int Qtid)
+        {
+            using (MEMSEntities db = new MEMSEntities())
+            {
+                var rst = from q in db.T_quotationprice
+                          where q.quotationid == Qtid
+                          join p in db.T_Product on q.productid equals (p.id)
+                          select new QtProduct
+                          {
+                              productName = p.proname,
+                              productCode = p.procode,
+                              productSpec = p.prospecification,
+                              qp = q
+                          };
+                return rst.ToList();
+            }
+        }
+        /// <summary>
+        /// 添加新的报价单产品明细
+        /// </summary>
+        /// <param name="qtprice"></param>
+        public bool AddNewQtPrice(QtProduct qtprice)
+        {
+            using (MEMSEntities db = new MEMSEntities())
+            {
+                db.Entry<T_quotationprice>(qtprice.qp).State = EntityState.Added;
+                return db.SaveChanges() > 0 ? true : false;
+            }
+        }
+        /// <summary>
+        /// 添加新的报价单产品明细列表
+        /// </summary>
+        /// <param name="qtpricelst"></param>
+        public bool AddNewQtPriceList(List<QtProduct> qtpricelst)
+        {
+            try
+            {
+                using (MEMSEntities db = new MEMSEntities())
+                {
+                    foreach (var qp in qtpricelst)
+                    {
+                        db.Entry<T_quotationprice>(qp.qp).State = EntityState.Added;
+                    }
+                    return db.SaveChanges() > 0 ? true : false;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+                throw ex;
             }
         }
     }

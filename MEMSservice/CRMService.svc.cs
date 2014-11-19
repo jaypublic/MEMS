@@ -372,6 +372,20 @@ namespace MEMSservice
                 throw ex;
             }
         }
+        public List<T_Product> getProductListbyCid(int cid)
+        {
+            try
+            {
+                ph = new ProductHelper();
+                var lst = ph.getProductbyCid(cid);
+                return lst;
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+        }
         public List<ProductList> getProductListbycdt(string pcode,string pname,int[] cid)
         {
             ph = new ProductHelper();
@@ -533,8 +547,142 @@ namespace MEMSservice
         }
         public List<T_quotation> getQuotationList()
         {
-            ph = new ProductHelper();
-            return ph.getQuotationList();
+            try
+            {
+                ph = new ProductHelper();
+                return ph.getQuotationList();
+            }
+            catch (Exception ex)
+            {
+                
+                throw ex;
+            }
+        }
+        public List<T_quotation> getQuotationListbyP(string quno, int customerid, DateTime aftdate, DateTime bfedate)
+        {
+            try
+            {
+                ph = new ProductHelper();
+                return ph.getQuotationListbyP(quno, customerid, aftdate, bfedate);
+            }
+            catch (Exception ex)
+            {
+                
+                throw ex;
+            }
+        }
+        public T_quotation getQuotationbyId(int qid)
+        {
+            try
+            {
+                ph = new ProductHelper();
+                return ph.getQuotationbyId(qid);
+            }
+            catch (Exception ex)
+            {                
+                throw ex;
+            }
+        }
+        /// <summary>
+        /// 添加新报价单
+        /// </summary>
+        /// <param name="newqt"></param>
+        /// <returns></returns>
+        public bool AddNewQuotation(T_quotation newqt)
+        {
+            try
+            {
+                ph = new ProductHelper();
+                return ph.AddNewQuotation(newqt);
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+        }
+        public bool AddNewQtAndQtprice(T_quotation newqt, List<QtProduct> qtpricelst)
+        {
+            try
+            {
+                ph = new ProductHelper();
+                ph.AddNewQuotation(newqt);
+                foreach (var qp in qtpricelst)
+                {
+                    qp.qp.quotationid = newqt.id;
+                }
+                return ph.AddNewQtPriceList(qtpricelst);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+        public bool UpdateQuotation(T_quotation qt)
+        {
+            try
+            {
+                ph = new ProductHelper();
+                return ph.UpdateQuotation(qt);
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+        }
+        public bool DeleteQuotation(T_quotation qt)
+        {
+            try
+            {
+                ph = new ProductHelper();
+                return ph.DeleteQuotation(qt);
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+        }
+        public List<QtProduct> getQtProduct(int Qtid)
+        {
+            try
+            {
+                ph = new ProductHelper();
+                return ph.getQtProduct(Qtid);
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+        }
+        public bool AddNewQtPrice(QtProduct qtprice)
+        {
+            try
+            {
+                ph = new ProductHelper();
+                return ph.AddNewQtPrice(qtprice);
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+        }
+        public bool AddNewQtPriceList(List<QtProduct> qtpricelst)
+        {
+            try
+            {
+                ph = new ProductHelper();
+                return ph.AddNewQtPriceList(qtpricelst);
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
         }
     }
 }

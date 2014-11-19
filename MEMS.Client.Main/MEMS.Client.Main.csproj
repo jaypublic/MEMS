@@ -115,6 +115,24 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\SaleService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <None Include="Service References\CRMService\MEMS.Client.Main.CRMService.QtProduct.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SaleService\MEMS.Client.Main.SaleService.T_saleorder.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\SaleService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\SaleService\configuration.svcinfo" />
+    <None Include="Service References\SaleService\configuration91.svcinfo" />
+    <None Include="Service References\SaleService\SaleService.disco" />
     <None Include="Properties\DataSources\MEMS.Client.CRM.CRMService.T_Customer.datasource" />
     <None Include="Service References\CRMService\CRMService3.xsd">
       <SubType>Designer</SubType>
@@ -216,6 +234,16 @@
     <None Include="Service References\CRMService\CRMService2.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\SaleService\SaleService.wsdl" />
+    <None Include="Service References\SaleService\SaleService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SaleService\SaleService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\SaleService\SaleService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
@@ -239,6 +267,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\CRMService\" />
+    <WCFMetadataStorage Include="Service References\SaleService\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MEMS.Client.Common\MEMS.Client.Common.csproj">
@@ -249,6 +278,10 @@
     <ProjectReference Include="..\MEMS.Client.CRM\MEMS.Client.CRM.csproj">
       <Project>{010cd69c-4e94-4daf-95bf-2c9a80f30e6f}</Project>
       <Name>MEMS.Client.CRM</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MEMS.Client.Sale\MEMS.Client.Sale.csproj">
+      <Project>{8b9dc3dd-79c2-4939-8995-fd0f059ec7cb}</Project>
+      <Name>MEMS.Client.Sale</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

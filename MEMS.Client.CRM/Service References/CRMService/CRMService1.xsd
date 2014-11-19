@@ -211,6 +211,26 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="ProductList" nillable="true" type="tns:ProductList" />
+  <xs:complexType name="ArrayOfT_Product">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="T_Product" nillable="true" type="tns:T_Product" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfT_Product" nillable="true" type="tns:ArrayOfT_Product" />
+  <xs:complexType name="T_Product">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="customerid" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="procode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="progrossweight" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="proname" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="pronetweight" nillable="true" type="xs:double" />
+      <xs:element minOccurs="0" name="prospecification" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="protype" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="prounit" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="T_Product" nillable="true" type="tns:T_Product" />
   <xs:complexType name="ArrayOfT_ProductType">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="T_ProductType" nillable="true" type="tns:T_ProductType" />
@@ -227,20 +247,6 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="T_ProductType" nillable="true" type="tns:T_ProductType" />
-  <xs:complexType name="T_Product">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="customerid" nillable="true" type="xs:int" />
-      <xs:element minOccurs="0" name="id" type="xs:int" />
-      <xs:element minOccurs="0" name="procode" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="progrossweight" nillable="true" type="xs:double" />
-      <xs:element minOccurs="0" name="proname" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="pronetweight" nillable="true" type="xs:double" />
-      <xs:element minOccurs="0" name="prospecification" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="protype" nillable="true" type="xs:int" />
-      <xs:element minOccurs="0" name="prounit" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="T_Product" nillable="true" type="tns:T_Product" />
   <xs:complexType name="ArrayOfT_Crafts">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="T_Crafts" nillable="true" type="tns:T_Crafts" />
@@ -337,4 +343,31 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="T_quotation" nillable="true" type="tns:T_quotation" />
+  <xs:complexType name="ArrayOfQtProduct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="QtProduct" nillable="true" type="tns:QtProduct" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfQtProduct" nillable="true" type="tns:ArrayOfQtProduct" />
+  <xs:complexType name="QtProduct">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="productCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="productName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="productSpec" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="qp" nillable="true" type="tns:T_quotationprice" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="QtProduct" nillable="true" type="tns:QtProduct" />
+  <xs:complexType name="T_quotationprice">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="modelprice" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="productcount" type="xs:int" />
+      <xs:element minOccurs="0" name="productid" type="xs:int" />
+      <xs:element minOccurs="0" name="quotationid" type="xs:int" />
+      <xs:element minOccurs="0" name="quotationprice" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="unitprice" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="T_quotationprice" nillable="true" type="tns:T_quotationprice" />
 </xs:schema>
