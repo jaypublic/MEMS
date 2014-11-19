@@ -9,10 +9,10 @@ using MEMS.Client.Sale.SaleService;
 
 namespace MEMS.Client.Sale
 {
-    public partial class SaleListForm : MEMS.Client.Common.BaseListForm
+    public partial class SaleOrderListForm : MEMS.Client.Common.BaseListForm
     {
         SaleServiceClient m_SaleClient = new SaleServiceClient();
-        public SaleListForm()
+        public SaleOrderListForm()
         {
             InitializeComponent();
         }

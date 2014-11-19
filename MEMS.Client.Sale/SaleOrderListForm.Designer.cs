@@ -1,6 +1,6 @@
 ﻿namespace MEMS.Client.Sale
 {
-    partial class SaleListForm
+    partial class SaleOrderListForm
     {
         /// <summary>
         /// 必需的设计器变量。

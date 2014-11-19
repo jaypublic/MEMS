@@ -123,7 +123,7 @@ namespace MEMS.Client.Main
 
         private void saleorderItem_ItemClick(object sender, ItemClickEventArgs e)
         {
-            FormFactory.LoadForm(this, typeof(SaleListForm));
+            FormFactory.LoadForm(this, typeof(SaleOrderListForm));
         }
     }
 }
