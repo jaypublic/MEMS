@@ -13,7 +13,7 @@ namespace MEMSservice
     public class SaleService : ISaleService
     {
         SaleHelper m_sh;
-        public List<T_saleorder> getAllSaleOrderList()
+        public List<SaleOrder> getAllSaleOrderList()
         {
             try
             {

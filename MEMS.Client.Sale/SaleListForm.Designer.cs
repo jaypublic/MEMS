@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.gcSale = new DevExpress.XtraGrid.GridControl();
-            this.gvSale = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gcSaleOrder = new DevExpress.XtraGrid.GridControl();
+            this.gvSaleOrder = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -37,10 +37,11 @@
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.searchgroup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribboncontrol)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcSale)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvSale)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcSaleOrder)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvSaleOrder)).BeginInit();
             this.SuspendLayout();
             // 
             // searchgroup
@@ -53,44 +54,45 @@
             this.ribboncontrol.Size = new System.Drawing.Size(717, 125);
             this.ribboncontrol.Toolbar.ShowCustomizeItem = false;
             // 
-            // gcSale
+            // gcSaleOrder
             // 
-            this.gcSale.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcSale.Location = new System.Drawing.Point(0, 225);
-            this.gcSale.MainView = this.gvSale;
-            this.gcSale.MenuManager = this.ribboncontrol;
-            this.gcSale.Name = "gcSale";
-            this.gcSale.Size = new System.Drawing.Size(717, 258);
-            this.gcSale.TabIndex = 3;
-            this.gcSale.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gvSale});
+            this.gcSaleOrder.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gcSaleOrder.Location = new System.Drawing.Point(0, 225);
+            this.gcSaleOrder.MainView = this.gvSaleOrder;
+            this.gcSaleOrder.MenuManager = this.ribboncontrol;
+            this.gcSaleOrder.Name = "gcSaleOrder";
+            this.gcSaleOrder.Size = new System.Drawing.Size(717, 258);
+            this.gcSaleOrder.TabIndex = 3;
+            this.gcSaleOrder.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvSaleOrder});
             // 
-            // gvSale
+            // gvSaleOrder
             // 
-            this.gvSale.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gvSaleOrder.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn1,
             this.gridColumn2,
             this.gridColumn3,
             this.gridColumn4,
+            this.gridColumn8,
             this.gridColumn5,
             this.gridColumn6,
             this.gridColumn7});
-            this.gvSale.GridControl = this.gcSale;
-            this.gvSale.Name = "gvSale";
-            this.gvSale.OptionsView.ShowGroupPanel = false;
-            this.gvSale.OptionsView.ShowViewCaption = true;
-            this.gvSale.ViewCaption = "销售单列表";
+            this.gvSaleOrder.GridControl = this.gcSaleOrder;
+            this.gvSaleOrder.Name = "gvSaleOrder";
+            this.gvSaleOrder.OptionsView.ShowGroupPanel = false;
+            this.gvSaleOrder.OptionsView.ShowViewCaption = true;
+            this.gvSaleOrder.ViewCaption = "销售单列表";
             // 
             // gridColumn1
             // 
             this.gridColumn1.Caption = "id";
-            this.gridColumn1.FieldName = "id";
+            this.gridColumn1.FieldName = "so.id";
             this.gridColumn1.Name = "gridColumn1";
             // 
             // gridColumn2
             // 
             this.gridColumn2.Caption = "销售单号";
-            this.gridColumn2.FieldName = "saleno";
+            this.gridColumn2.FieldName = "so.saleno";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
             this.gridColumn2.VisibleIndex = 0;
@@ -98,7 +100,7 @@
             // gridColumn3
             // 
             this.gridColumn3.Caption = "销售日期";
-            this.gridColumn3.FieldName = "saledate";
+            this.gridColumn3.FieldName = "so.saledate";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 1;
@@ -106,15 +108,13 @@
             // gridColumn4
             // 
             this.gridColumn4.Caption = "报价单id";
-            this.gridColumn4.FieldName = "quotationid";
+            this.gridColumn4.FieldName = "so.quotationid";
             this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 2;
             // 
             // gridColumn5
             // 
             this.gridColumn5.Caption = "订单总金额";
-            this.gridColumn5.FieldName = "saletotalamount";
+            this.gridColumn5.FieldName = "so.saletotalamount";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 3;
@@ -122,7 +122,7 @@
             // gridColumn6
             // 
             this.gridColumn6.Caption = "订单状态";
-            this.gridColumn6.FieldName = "orderstate";
+            this.gridColumn6.FieldName = "so.orderstate";
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 4;
@@ -130,33 +130,41 @@
             // gridColumn7
             // 
             this.gridColumn7.Caption = "收款金额";
-            this.gridColumn7.FieldName = "receiveamount";
+            this.gridColumn7.FieldName = "so.receiveamount";
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 5;
+            // 
+            // gridColumn8
+            // 
+            this.gridColumn8.Caption = "报价单号";
+            this.gridColumn8.FieldName = "qtno";
+            this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.Visible = true;
+            this.gridColumn8.VisibleIndex = 2;
             // 
             // SaleListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.ClientSize = new System.Drawing.Size(717, 483);
-            this.Controls.Add(this.gcSale);
+            this.Controls.Add(this.gcSaleOrder);
             this.Name = "SaleListForm";
             this.Text = "销售订单";
             this.Controls.SetChildIndex(this.ribboncontrol, 0);
             this.Controls.SetChildIndex(this.searchgroup, 0);
-            this.Controls.SetChildIndex(this.gcSale, 0);
+            this.Controls.SetChildIndex(this.gcSaleOrder, 0);
             ((System.ComponentModel.ISupportInitialize)(this.searchgroup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribboncontrol)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcSale)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvSale)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcSaleOrder)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvSaleOrder)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private DevExpress.XtraGrid.GridControl gcSale;
-        private DevExpress.XtraGrid.Views.Grid.GridView gvSale;
+        private DevExpress.XtraGrid.GridControl gcSaleOrder;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvSaleOrder;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
@@ -164,5 +172,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
     }
 }

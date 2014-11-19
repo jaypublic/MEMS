@@ -123,6 +123,9 @@
     <None Include="Service References\CRMService\MEMS.Client.Main.CRMService.QtProduct.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\SaleService\MEMS.Client.Main.SaleService.SaleOrder.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\SaleService\MEMS.Client.Main.SaleService.T_saleorder.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

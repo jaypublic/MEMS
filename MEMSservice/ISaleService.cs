@@ -14,7 +14,7 @@ namespace MEMSservice
     public interface ISaleService
     {
         [OperationContract]
-        List<T_saleorder> getAllSaleOrderList();
+        List<SaleOrder> getAllSaleOrderList();
         [OperationContract]
         T_saleorder getSaleOrderbyId(int saleorderid);
     }

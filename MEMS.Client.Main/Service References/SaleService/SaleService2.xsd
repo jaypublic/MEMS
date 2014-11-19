@@ -9,7 +9,7 @@
   <xs:element name="getAllSaleOrderListResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/MEMSservice.DAL" minOccurs="0" name="getAllSaleOrderListResult" nillable="true" type="q1:ArrayOfT_saleorder" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/MEMSservice.DAL" minOccurs="0" name="getAllSaleOrderListResult" nillable="true" type="q1:ArrayOfSaleOrder" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

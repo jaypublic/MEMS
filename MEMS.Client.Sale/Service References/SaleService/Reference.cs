@@ -15,6 +15,67 @@ namespace MEMS.Client.Sale.SaleService {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="SaleOrder", Namespace="http://schemas.datacontract.org/2004/07/MEMSservice.DAL")]
+    [System.SerializableAttribute()]
+    public partial class SaleOrder : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string qtnoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private MEMS.Client.Sale.SaleService.T_saleorder soField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string qtno {
+            get {
+                return this.qtnoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.qtnoField, value) != true)) {
+                    this.qtnoField = value;
+                    this.RaisePropertyChanged("qtno");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public MEMS.Client.Sale.SaleService.T_saleorder so {
+            get {
+                return this.soField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.soField, value) != true)) {
+                    this.soField = value;
+                    this.RaisePropertyChanged("so");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="T_saleorder", Namespace="http://schemas.datacontract.org/2004/07/MEMSservice.DAL")]
     [System.SerializableAttribute()]
     public partial class T_saleorder : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -255,7 +316,7 @@ namespace MEMS.Client.Sale.SaleService {
     public interface ISaleService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISaleService/getAllSaleOrderList", ReplyAction="http://tempuri.org/ISaleService/getAllSaleOrderListResponse")]
-        MEMS.Client.Sale.SaleService.T_saleorder[] getAllSaleOrderList();
+        MEMS.Client.Sale.SaleService.SaleOrder[] getAllSaleOrderList();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISaleService/getSaleOrderbyId", ReplyAction="http://tempuri.org/ISaleService/getSaleOrderbyIdResponse")]
         MEMS.Client.Sale.SaleService.T_saleorder getSaleOrderbyId(int saleorderid);
@@ -288,7 +349,7 @@ namespace MEMS.Client.Sale.SaleService {
                 base(binding, remoteAddress) {
         }
         
-        public MEMS.Client.Sale.SaleService.T_saleorder[] getAllSaleOrderList() {
+        public MEMS.Client.Sale.SaleService.SaleOrder[] getAllSaleOrderList() {
             return base.Channel.getAllSaleOrderList();
         }
         

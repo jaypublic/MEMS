@@ -59,6 +59,12 @@
     <Compile Include="SaleListForm.Designer.cs">
       <DependentUpon>SaleListForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SaleOrderinfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SaleOrderinfoForm.Designer.cs">
+      <DependentUpon>SaleOrderinfoForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Service References\SaleService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -76,12 +82,18 @@
     <EmbeddedResource Include="SaleListForm.resx">
       <DependentUpon>SaleListForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SaleOrderinfoForm.resx">
+      <DependentUpon>SaleOrderinfoForm.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Service References\SaleService\MEMS.Client.Sale.SaleService.SaleOrder.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\SaleService\MEMS.Client.Sale.SaleService.T_saleorder.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

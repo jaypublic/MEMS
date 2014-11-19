@@ -104,6 +104,7 @@
     <Compile Include="DAL\MyDBExtensions.cs" />
     <Compile Include="DAL\ProductList.cs" />
     <Compile Include="DAL\QtProduct.cs" />
+    <Compile Include="DAL\SaleOrder.cs" />
     <Compile Include="DAL\T_Base_companytype.cs">
       <DependentUpon>MEMSModel.tt</DependentUpon>
     </Compile>

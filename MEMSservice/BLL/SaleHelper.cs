@@ -13,12 +13,13 @@ namespace MEMSservice.BLL
         /// 返回销售订单集合
         /// </summary>
         /// <returns></returns>
-        public List<T_saleorder> getAllSaleOrderList()
+        public List<SaleOrder> getAllSaleOrderList()
         {
             using (MEMSEntities db = new MEMSEntities())
             {
                 var rs = from s in db.T_saleorder
-                         select s;
+                         join q in db.T_quotation on s.quotationid equals (q.id)
+                         select new SaleOrder{so = s, qtno = q.qutationno };
                 return rs.ToList();
             }
         }

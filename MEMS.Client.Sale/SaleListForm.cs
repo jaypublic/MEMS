@@ -18,8 +18,9 @@ namespace MEMS.Client.Sale
         }
         protected override void SearchObject()
         {
-            var saleList = m_SaleClient.getAllSaleOrderList();
-            this.gcSale.DataSource = saleList;
+            var saleOrderList = m_SaleClient.getAllSaleOrderList();
+            this.gcSaleOrder.DataSource = saleOrderList;
+            //gvSaleOrder.Columns[5].
         }
         protected override void AddObject()
         {
