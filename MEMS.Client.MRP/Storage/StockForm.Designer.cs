@@ -108,6 +108,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.ClientSize = new System.Drawing.Size(717, 391);
             this.Controls.Add(this.MatCodeTreeList);
+            this.IsComplexSearch = true;
             this.Name = "StockForm";
             this.Text = "库位管理";
             this.Controls.SetChildIndex(this.ribboncontrol, 0);
