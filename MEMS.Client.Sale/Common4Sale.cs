@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DevExpress.XtraEditors.Repository;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,6 +8,58 @@ namespace MEMS.Client.Sale
 {
     public class Common4Sale
     {
+    }
+    /// <summary>
+    /// 枚举类型显示处理类
+    /// </summary>
+    public class DisPlayEnum
+    {
+        public int key { get; set; }
+        public string value { get; set; }
+        public override string ToString()
+        {
+            return value;
+        }
+        /// <summary>
+        /// 获得枚举类型的数据源绑定
+        /// </summary>
+        /// <param name="enumtype"></param>
+        /// <returns></returns>
+        public static List<DisPlayEnum> getEnumDS(Type enumtype)
+        {
+            List<DisPlayEnum> ds = new List<DisPlayEnum>();
+            var enumNames = Enum.GetNames(enumtype);
+            for (int i = 0; i < enumNames.Length; i++)
+            {
+                DisPlayEnum t = new DisPlayEnum();
+                t.key = i;
+                t.value = enumNames[i];
+                ds.Add(t);
+            }
+            return ds;
+        }
+        /// <summary>
+        /// 获得枚举类型的数据源绑定,并绑定至dev的lookupEdit
+        /// </summary>
+        /// <param name="lkupedit"></param>
+        /// <param name="enumtype"></param>
+        public static void getEnumDS(RepositoryItemLookUpEdit lkupedit, Type enumtype)
+        {
+            List<DisPlayEnum> ds = new List<DisPlayEnum>();
+            var enumNames = Enum.GetNames(enumtype);
+            for (int i = 0; i < enumNames.Length; i++)
+            {
+                DisPlayEnum t = new DisPlayEnum();
+                t.key = i;
+                t.value = enumNames[i];
+                ds.Add(t);
+            }
+            lkupedit.DataSource = ds;
+            lkupedit.ValueMember = "key";
+            lkupedit.DisplayMember = "value";
+            lkupedit.ShowFooter = false;
+            lkupedit.ShowHeader = false;
+        }        
     }
     /// <summary>
     /// 收款类型

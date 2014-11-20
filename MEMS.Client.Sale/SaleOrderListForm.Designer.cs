@@ -34,14 +34,18 @@
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.cmborderstate = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.lkupOrderState = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.searchgroup)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribboncontrol)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcSaleOrder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvSaleOrder)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmborderstate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lkupOrderState)).BeginInit();
             this.SuspendLayout();
             // 
             // searchgroup
@@ -61,6 +65,9 @@
             this.gcSaleOrder.MainView = this.gvSaleOrder;
             this.gcSaleOrder.MenuManager = this.ribboncontrol;
             this.gcSaleOrder.Name = "gcSaleOrder";
+            this.gcSaleOrder.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.cmborderstate,
+            this.lkupOrderState});
             this.gcSaleOrder.Size = new System.Drawing.Size(717, 258);
             this.gcSaleOrder.TabIndex = 3;
             this.gcSaleOrder.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -111,6 +118,14 @@
             this.gridColumn4.FieldName = "so.quotationid";
             this.gridColumn4.Name = "gridColumn4";
             // 
+            // gridColumn8
+            // 
+            this.gridColumn8.Caption = "报价单号";
+            this.gridColumn8.FieldName = "qtno";
+            this.gridColumn8.Name = "gridColumn8";
+            this.gridColumn8.Visible = true;
+            this.gridColumn8.VisibleIndex = 2;
+            // 
             // gridColumn5
             // 
             this.gridColumn5.Caption = "订单总金额";
@@ -122,10 +137,20 @@
             // gridColumn6
             // 
             this.gridColumn6.Caption = "订单状态";
+            this.gridColumn6.ColumnEdit = this.cmborderstate;
             this.gridColumn6.FieldName = "so.orderstate";
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 4;
+            // 
+            // cmborderstate
+            // 
+            this.cmborderstate.AutoHeight = false;
+            this.cmborderstate.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cmborderstate.Name = "cmborderstate";
+            this.cmborderstate.TextEditStyle = DevExpress.XtraEditors.Controls.TextEditStyles.DisableTextEditor;
+            this.cmborderstate.ButtonClick += new DevExpress.XtraEditors.Controls.ButtonPressedEventHandler(this.cmborderstate_ButtonClick);
             // 
             // gridColumn7
             // 
@@ -135,20 +160,22 @@
             this.gridColumn7.Visible = true;
             this.gridColumn7.VisibleIndex = 5;
             // 
-            // gridColumn8
+            // lkupOrderState
             // 
-            this.gridColumn8.Caption = "报价单号";
-            this.gridColumn8.FieldName = "qtno";
-            this.gridColumn8.Name = "gridColumn8";
-            this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 2;
+            this.lkupOrderState.AutoHeight = false;
+            this.lkupOrderState.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lkupOrderState.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("value", "Name1"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("key", "Name2", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default)});
+            this.lkupOrderState.Name = "lkupOrderState";
             // 
-            // SaleListForm
+            // SaleOrderListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.ClientSize = new System.Drawing.Size(717, 483);
             this.Controls.Add(this.gcSaleOrder);
-            this.Name = "SaleListForm";
+            this.Name = "SaleOrderListForm";
             this.Text = "销售订单";
             this.Controls.SetChildIndex(this.ribboncontrol, 0);
             this.Controls.SetChildIndex(this.searchgroup, 0);
@@ -157,6 +184,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribboncontrol)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcSaleOrder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvSaleOrder)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cmborderstate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lkupOrderState)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -173,5 +202,7 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
+        private DevExpress.XtraEditors.Repository.RepositoryItemComboBox cmborderstate;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit lkupOrderState;
     }
 }

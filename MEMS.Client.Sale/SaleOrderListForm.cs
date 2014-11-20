@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using MEMS.Client.Sale.SaleService;
+using DevExpress.XtraEditors;
 
 namespace MEMS.Client.Sale
 {
@@ -20,11 +21,10 @@ namespace MEMS.Client.Sale
         {
             var saleOrderList = m_SaleClient.getAllSaleOrderList();
             this.gcSaleOrder.DataSource = saleOrderList;
-            //gvSaleOrder.Columns[5].
         }
         protected override void AddObject()
         {
-            
+
         }
         protected override void EditObject()
         {
@@ -36,7 +36,22 @@ namespace MEMS.Client.Sale
         }
         protected override void FormLoad()
         {
+            //DisPlayEnum.getEnumDS(lkupOrderState, typeof(orderState));
+            cmborderstate.Items.AddRange(DisPlayEnum.getEnumDS(typeof(orderState)));
+            //cmborderstate.OwnerEdit.Text = cmborderstate.OwnerEdit.SelectedText;
+            //(ComboBoxEdit)cmborderstate).EditValue = (cmborderstate as ComboBoxEdit).SelectedText;
+            //ComboBoxEdit cmb=cmborderstate;
+            //cmborderstate.Items.
             base.FormLoad();
         }
+
+        private void cmborderstate_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        {
+            //ComboBoxEdit cmb = (ComboBoxEdit)sender;
+            //cmb.EditValue = cmb.SelectedText;
+            Console.WriteLine(cmborderstate.Items.Count);
+        }
     }
+
+    
 }
