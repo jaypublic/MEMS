@@ -11,6 +11,26 @@ namespace MEMS.Client.Common
 {
     public partial class BaseListForm : DevExpress.XtraBars.Ribbon.RibbonForm
     {
+        private bool _IsComplexSearch;
+
+        [Description("True:点击查询按钮直接进行查询; False:点击查询按钮显示高级查询栏")]
+        [DisplayName("复杂查询")]
+        [Category("扩展")]
+        [Browsable(true)]
+        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
+        [DefaultValue(true)]
+        public bool IsComplexSearch
+        {
+            get
+            {
+                return _IsComplexSearch;
+            }
+            set
+            {
+                _IsComplexSearch = value;
+            }
+        }
+
         public BaseListForm()
         {
             InitializeComponent();            
@@ -102,7 +122,15 @@ namespace MEMS.Client.Common
 
         private void barsearchCheck_CheckedChanged(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-            this.searchgroup.Visible = barsearchCheck.Checked;
+            if (_IsComplexSearch)
+            {
+                searchButton_Click(sender, null);
+            }
+            else
+            {
+                this.searchgroup.Visible = barsearchCheck.Checked;
+            }
+
         }
 
         private void barClose_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
@@ -196,6 +224,66 @@ namespace MEMS.Client.Common
         /// 自定义按钮3的继承执行方法
         /// </summary>
         protected virtual void custom3()
+        {
+            throw new NotImplementedException("方法未实现");
+        }
+
+        private void barbtn4_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            try
+            {
+                custom4();
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// 自定义按钮4的继承执行方法
+        /// </summary>
+        protected virtual void custom4()
+        {
+            throw new NotImplementedException("方法未实现");
+        }
+
+        private void barbtn5_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            try
+            {
+                custom5();
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// 自定义按钮5的继承执行方法
+        /// </summary>
+        protected virtual void custom5()
+        {
+            throw new NotImplementedException("方法未实现");
+        }
+
+        private void barbtn6_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
+        {
+            try
+            {
+                custom6();
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// 自定义按钮6的继承执行方法
+        /// </summary>
+        protected virtual void custom6()
         {
             throw new NotImplementedException("方法未实现");
         }
