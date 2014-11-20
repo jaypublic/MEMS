@@ -51,10 +51,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CodeTypeForm.cs">
+    <Compile Include="POBase\CodeTypeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CodeTypeForm.Designer.cs">
+    <Compile Include="POBase\CodeTypeForm.Designer.cs">
       <DependentUpon>CodeTypeForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Entities\T_PurchaseOrder.cs" />
@@ -70,16 +70,16 @@
     <Compile Include="Enums\POTypes.cs" />
     <Compile Include="Enums\ArrivalStatus.cs" />
     <Compile Include="Global.cs" />
-    <Compile Include="POInfoForm.cs">
+    <Compile Include="PurchaseOrder\POInfoForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="POInfoForm.Designer.cs">
+    <Compile Include="PurchaseOrder\POInfoForm.Designer.cs">
       <DependentUpon>POInfoForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="POListForm.cs">
+    <Compile Include="PurchaseOrder\POListForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="POListForm.Designer.cs">
+    <Compile Include="PurchaseOrder\POListForm.Designer.cs">
       <DependentUpon>POListForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -89,10 +89,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="Proxy\ServiceProxy.cs" />
-    <Compile Include="UnitForm.cs">
+    <Compile Include="POBase\UnitForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UnitForm.Designer.cs">
+    <Compile Include="POBase\UnitForm.Designer.cs">
       <DependentUpon>UnitForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UserWindows\CodeEditWindow.cs">
@@ -101,28 +101,28 @@
     <Compile Include="UserWindows\CodeEditWindow.Designer.cs">
       <DependentUpon>CodeEditWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="StandardMaterailListForm.cs">
+    <Compile Include="POBase\StandardMaterailListForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StandardMaterailListForm.Designer.cs">
+    <Compile Include="POBase\StandardMaterailListForm.Designer.cs">
       <DependentUpon>StandardMaterailListForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MaterailTypeForm.cs">
+    <Compile Include="POBase\MaterailTypeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MaterailTypeForm.Designer.cs">
+    <Compile Include="POBase\MaterailTypeForm.Designer.cs">
       <DependentUpon>MaterailTypeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="MaterailModeForm.cs">
+    <Compile Include="POBase\MaterailModeForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MaterailModeForm.Designer.cs">
+    <Compile Include="POBase\MaterailModeForm.Designer.cs">
       <DependentUpon>MaterailModeForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="StandardMaterailInfoForm.cs">
+    <Compile Include="POBase\StandardMaterailInfoForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="StandardMaterailInfoForm.Designer.cs">
+    <Compile Include="POBase\StandardMaterailInfoForm.Designer.cs">
       <DependentUpon>StandardMaterailInfoForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UserWindows\MatCodeSearchWindow.cs">
@@ -138,16 +138,16 @@
     <Compile Include="UserWindows\ApprovalWindow.Designer.cs">
       <DependentUpon>ApprovalWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="POApprovalForm.cs">
+    <Compile Include="PurchaseOrder\POApprovalForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="POApprovalForm.Designer.cs">
+    <Compile Include="PurchaseOrder\POApprovalForm.Designer.cs">
       <DependentUpon>POApprovalForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="POPayListForm.cs">
+    <Compile Include="PurchaseOrder\POPayListForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="POPayListForm.Designer.cs">
+    <Compile Include="PurchaseOrder\POPayListForm.Designer.cs">
       <DependentUpon>POPayListForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UserWindows\ArrivalWindow.cs">
@@ -156,21 +156,39 @@
     <Compile Include="UserWindows\ArrivalWindow.Designer.cs">
       <DependentUpon>ArrivalWindow.cs</DependentUpon>
     </Compile>
-    <Compile Include="POPayInfoForm.cs">
+    <Compile Include="PurchaseOrder\POPayInfoForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="POPayInfoForm.Designer.cs">
+    <Compile Include="PurchaseOrder\POPayInfoForm.Designer.cs">
       <DependentUpon>POPayInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Storage\EnteringWarehouseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Storage\EnteringWarehouseForm.Designer.cs">
+      <DependentUpon>EnteringWarehouseForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Storage\UseApplyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Storage\UseApplyForm.Designer.cs">
+      <DependentUpon>UseApplyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Storage\StockForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Storage\StockForm.Designer.cs">
+      <DependentUpon>StockForm.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="CodeTypeForm.resx">
+    <EmbeddedResource Include="POBase\CodeTypeForm.resx">
       <DependentUpon>CodeTypeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="POInfoForm.resx">
+    <EmbeddedResource Include="PurchaseOrder\POInfoForm.resx">
       <DependentUpon>POInfoForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="POListForm.resx">
+    <EmbeddedResource Include="PurchaseOrder\POListForm.resx">
       <DependentUpon>POListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
@@ -178,22 +196,22 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="UnitForm.resx">
+    <EmbeddedResource Include="POBase\UnitForm.resx">
       <DependentUpon>UnitForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserWindows\CodeEditWindow.resx">
       <DependentUpon>CodeEditWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StandardMaterailListForm.resx">
+    <EmbeddedResource Include="POBase\StandardMaterailListForm.resx">
       <DependentUpon>StandardMaterailListForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MaterailTypeForm.resx">
+    <EmbeddedResource Include="POBase\MaterailTypeForm.resx">
       <DependentUpon>MaterailTypeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="MaterailModeForm.resx">
+    <EmbeddedResource Include="POBase\MaterailModeForm.resx">
       <DependentUpon>MaterailModeForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="StandardMaterailInfoForm.resx">
+    <EmbeddedResource Include="POBase\StandardMaterailInfoForm.resx">
       <DependentUpon>StandardMaterailInfoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserWindows\MatCodeSearchWindow.resx">
@@ -202,17 +220,26 @@
     <EmbeddedResource Include="UserWindows\ApprovalWindow.resx">
       <DependentUpon>ApprovalWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="POApprovalForm.resx">
+    <EmbeddedResource Include="PurchaseOrder\POApprovalForm.resx">
       <DependentUpon>POApprovalForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="POPayListForm.resx">
+    <EmbeddedResource Include="PurchaseOrder\POPayListForm.resx">
       <DependentUpon>POPayListForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserWindows\ArrivalWindow.resx">
       <DependentUpon>ArrivalWindow.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="POPayInfoForm.resx">
+    <EmbeddedResource Include="PurchaseOrder\POPayInfoForm.resx">
       <DependentUpon>POPayInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Storage\EnteringWarehouseForm.resx">
+      <DependentUpon>EnteringWarehouseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Storage\UseApplyForm.resx">
+      <DependentUpon>UseApplyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Storage\StockForm.resx">
+      <DependentUpon>StockForm.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -251,6 +278,7 @@
   <ItemGroup>
     <None Include="Resources\product_16x16.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

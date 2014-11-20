@@ -16,6 +16,7 @@ using MEMS.Client.Common;
 using DevExpress.XtraEditors;
 using MEMS.Client.CRM;
 using MEMS.Client.Sale;
+using MEMS.Client.MRP;
 
 namespace MEMS.Client.Main
 {
@@ -26,7 +27,7 @@ namespace MEMS.Client.Main
         {
             InitializeComponent();
             InitSkinGallery();
-            
+
         }
         void InitSkinGallery()
         {
@@ -67,7 +68,7 @@ namespace MEMS.Client.Main
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            
+
             selectPageCategory.Visible = false;
             this.Visible = false;
             using (var logfrm = new LogonForm())
@@ -125,5 +126,67 @@ namespace MEMS.Client.Main
         {
             FormFactory.LoadForm(this, typeof(SaleOrderListForm));
         }
+
+        #region 基础管理
+        private void barBtnCodeType_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FormFactory.LoadForm(this, typeof(CodeTypeForm));
+        }
+
+        private void barBtnUnit_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FormFactory.LoadForm(this, typeof(UnitForm));
+        }
+
+        private void barBtnMaterailType_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FormFactory.LoadForm(this, typeof(MaterailTypeForm));
+        }
+
+        private void barBtnMaterailMode_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FormFactory.LoadForm(this, typeof(MaterailModeForm));
+        }
+
+        private void barBtnMatCode_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FormFactory.LoadForm(this, typeof(StandardMaterialListForm));
+        }
+        #endregion
+
+        #region 采购管理
+        private void barBtnPO_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FormFactory.LoadForm(this, typeof(POListForm));
+        }
+
+        private void barBtnPOApproval_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FormFactory.LoadForm(this, typeof(POApprovalForm));
+        }
+
+        private void barBtnPOPay_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FormFactory.LoadForm(this, typeof(POPayListForm));
+        }
+        #endregion
+
+        #region 仓储管理
+        private void barBtnStock_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FormFactory.LoadForm(this, typeof(StockForm));
+        }
+
+        private void barBtnEnteringWarehouse_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FormFactory.LoadForm(this, typeof(EnteringWarehouseForm));
+        }
+
+        private void barBtnUseApply_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FormFactory.LoadForm(this, typeof(UseApplyForm));
+        }
+        #endregion
+
     }
 }

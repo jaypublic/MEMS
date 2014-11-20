@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BaseListForm));
             this.ribboncontrol = new DevExpress.XtraBars.Ribbon.RibbonControl();
             this.barAdd = new DevExpress.XtraBars.BarButtonItem();
@@ -39,13 +38,16 @@
             this.barbtn1 = new DevExpress.XtraBars.BarButtonItem();
             this.barbtn2 = new DevExpress.XtraBars.BarButtonItem();
             this.barbtn3 = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonImageCollectionLarge = new DevExpress.Utils.ImageCollection(this.components);
+            this.barbtn4 = new DevExpress.XtraBars.BarButtonItem();
+            this.barbtn5 = new DevExpress.XtraBars.BarButtonItem();
+            this.barbtn6 = new DevExpress.XtraBars.BarButtonItem();
+            this.ribbonImageCollectionLarge = new DevExpress.Utils.ImageCollection();
             this.ribbonMenu = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.searchgroup = new DevExpress.XtraEditors.GroupControl();
             this.searchButton = new DevExpress.XtraEditors.SimpleButton();
-            this.imageCollection1 = new DevExpress.Utils.ImageCollection(this.components);
+            this.imageCollection1 = new DevExpress.Utils.ImageCollection();
             ((System.ComponentModel.ISupportInitialize)(this.ribboncontrol)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonImageCollectionLarge)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.searchgroup)).BeginInit();
@@ -65,10 +67,13 @@
             this.barsearchCheck,
             this.barbtn1,
             this.barbtn2,
-            this.barbtn3});
+            this.barbtn3,
+            this.barbtn4,
+            this.barbtn5,
+            this.barbtn6});
             this.ribboncontrol.LargeImages = this.ribbonImageCollectionLarge;
             this.ribboncontrol.Location = new System.Drawing.Point(0, 0);
-            this.ribboncontrol.MaxItemId = 10;
+            this.ribboncontrol.MaxItemId = 13;
             this.ribboncontrol.Name = "ribboncontrol";
             this.ribboncontrol.Pages.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPage[] {
             this.ribbonMenu});
@@ -77,7 +82,7 @@
             this.ribboncontrol.ShowApplicationButton = DevExpress.Utils.DefaultBoolean.False;
             this.ribboncontrol.ShowPageHeadersMode = DevExpress.XtraBars.Ribbon.ShowPageHeadersMode.Hide;
             this.ribboncontrol.ShowToolbarCustomizeItem = false;
-            this.ribboncontrol.Size = new System.Drawing.Size(717, 98);
+            this.ribboncontrol.Size = new System.Drawing.Size(717, 125);
             this.ribboncontrol.Toolbar.ShowCustomizeItem = false;
             this.ribboncontrol.ToolbarLocation = DevExpress.XtraBars.Ribbon.RibbonQuickAccessToolbarLocation.Hidden;
             // 
@@ -148,6 +153,36 @@
             this.barbtn3.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
             this.barbtn3.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtn3_ItemClick);
             // 
+            // barbtn4
+            // 
+            this.barbtn4.Caption = "自定义";
+            this.barbtn4.Glyph = ((System.Drawing.Image)(resources.GetObject("barbtn4.Glyph")));
+            this.barbtn4.Id = 10;
+            this.barbtn4.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barbtn4.LargeGlyph")));
+            this.barbtn4.Name = "barbtn4";
+            this.barbtn4.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.barbtn4.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtn4_ItemClick);
+            // 
+            // barbtn5
+            // 
+            this.barbtn5.Caption = "自定义";
+            this.barbtn5.Glyph = ((System.Drawing.Image)(resources.GetObject("barbtn5.Glyph")));
+            this.barbtn5.Id = 11;
+            this.barbtn5.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barbtn5.LargeGlyph")));
+            this.barbtn5.Name = "barbtn5";
+            this.barbtn5.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.barbtn5.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtn5_ItemClick);
+            // 
+            // barbtn6
+            // 
+            this.barbtn6.Caption = "自定义";
+            this.barbtn6.Glyph = ((System.Drawing.Image)(resources.GetObject("barbtn6.Glyph")));
+            this.barbtn6.Id = 12;
+            this.barbtn6.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("barbtn6.LargeGlyph")));
+            this.barbtn6.Name = "barbtn6";
+            this.barbtn6.Visibility = DevExpress.XtraBars.BarItemVisibility.Never;
+            this.barbtn6.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.barbtn6_ItemClick);
+            // 
             // ribbonImageCollectionLarge
             // 
             this.ribbonImageCollectionLarge.ImageSize = new System.Drawing.Size(32, 32);
@@ -187,6 +222,9 @@
             this.ribbonPageGroup1.ItemLinks.Add(this.barbtn1);
             this.ribbonPageGroup1.ItemLinks.Add(this.barbtn2);
             this.ribbonPageGroup1.ItemLinks.Add(this.barbtn3);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barbtn4);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barbtn5);
+            this.ribbonPageGroup1.ItemLinks.Add(this.barbtn6);
             this.ribbonPageGroup1.Name = "ribbonPageGroup1";
             this.ribbonPageGroup1.ShowCaptionButton = false;
             this.ribbonPageGroup1.Text = "基本操作";
@@ -202,7 +240,7 @@
             // 
             this.searchgroup.Controls.Add(this.searchButton);
             this.searchgroup.Dock = System.Windows.Forms.DockStyle.Top;
-            this.searchgroup.Location = new System.Drawing.Point(0, 98);
+            this.searchgroup.Location = new System.Drawing.Point(0, 125);
             this.searchgroup.Name = "searchgroup";
             this.searchgroup.Size = new System.Drawing.Size(717, 100);
             this.searchgroup.TabIndex = 1;
@@ -250,6 +288,7 @@
             this.Controls.Add(this.searchgroup);
             this.Controls.Add(this.ribboncontrol);
             this.Name = "BaseListForm";
+            this.Ribbon = this.ribboncontrol;
             this.Text = "BaseListForm";
             this.Load += new System.EventHandler(this.BaseListForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ribboncontrol)).EndInit();
@@ -264,20 +303,23 @@
         #endregion
 
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup1;
-        private DevExpress.XtraBars.BarButtonItem barAdd;
-        private DevExpress.XtraBars.BarButtonItem barEdit;
-        private DevExpress.XtraBars.BarButtonItem barDelete;
-        private DevExpress.XtraBars.BarButtonItem barClose;
         internal DevExpress.Utils.ImageCollection ribbonImageCollectionLarge;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup2;
         private DevExpress.XtraEditors.SimpleButton searchButton;
         protected DevExpress.XtraEditors.GroupControl searchgroup;
-        private DevExpress.XtraBars.BarCheckItem barsearchCheck;
         public DevExpress.XtraBars.Ribbon.RibbonControl ribboncontrol;
         public DevExpress.XtraBars.Ribbon.RibbonPage ribbonMenu;
         internal DevExpress.Utils.ImageCollection imageCollection1;
-        public DevExpress.XtraBars.BarButtonItem barbtn1;
-        public DevExpress.XtraBars.BarButtonItem barbtn2;
-        public DevExpress.XtraBars.BarButtonItem barbtn3;
+        protected internal DevExpress.XtraBars.BarButtonItem barAdd;
+        protected internal DevExpress.XtraBars.BarButtonItem barEdit;
+        protected internal DevExpress.XtraBars.BarButtonItem barDelete;
+        protected internal DevExpress.XtraBars.BarButtonItem barClose;
+        protected internal DevExpress.XtraBars.BarCheckItem barsearchCheck;
+        protected internal DevExpress.XtraBars.BarButtonItem barbtn1;
+        protected internal DevExpress.XtraBars.BarButtonItem barbtn2;
+        protected internal DevExpress.XtraBars.BarButtonItem barbtn3;
+        protected internal DevExpress.XtraBars.BarButtonItem barbtn4;
+        protected internal DevExpress.XtraBars.BarButtonItem barbtn5;
+        protected internal DevExpress.XtraBars.BarButtonItem barbtn6;
     }
 }
