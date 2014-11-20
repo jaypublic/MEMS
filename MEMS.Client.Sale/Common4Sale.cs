@@ -69,11 +69,11 @@ namespace MEMS.Client.Sale
         /// <summary>
         /// 按订单收款
         /// </summary>
-        Order,
+        按订单收款,
         /// <summary>
         /// 按产品明细收款
         /// </summary>
-        Product
+        按产品明细收款
     }
     /// <summary>
     /// 订单状态
@@ -83,15 +83,15 @@ namespace MEMS.Client.Sale
         /// <summary>
         /// 订单开始
         /// </summary>
-        Start,
+        订单开始,
         /// <summary>
         /// 订单收款中
         /// </summary>
-        Receive,
+        订单收款中,
         /// <summary>
         /// 订单关闭
         /// </summary>
-        Close
+        订单关闭
     }
     /// <summary>
     /// 收款状态
@@ -101,14 +101,14 @@ namespace MEMS.Client.Sale
         /// <summary>
         /// 收款未开始
         /// </summary>
-        NotStart,
+        收款未开始,
         /// <summary>
         /// 收款进行中
         /// </summary>
-        Process,
+        收款进行中,
         /// <summary>
         /// 收款完成
         /// </summary>
-        Finish
+        收款完成
     }
 }
