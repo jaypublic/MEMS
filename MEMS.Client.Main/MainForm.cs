@@ -50,25 +50,8 @@ namespace MEMS.Client.Main
             }
         }
 
-        private void BtnCustomer_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            FormFactory.LoadForm(this, typeof(CustomerListForm));
-        }
-
-        private void BtnSupplier_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            FormFactory.LoadForm(this, typeof(SupplierListForm));
-        }
-
-        private void BtnProduct_ItemClick(object sender, ItemClickEventArgs e)
-        {
-            FormFactory.LoadForm(this, typeof(ProductListForm));
-            //this.ActivateMdiChild(new ProductListForm());
-        }
-
         private void MainForm_Load(object sender, EventArgs e)
         {
-
             selectPageCategory.Visible = false;
             this.Visible = false;
             using (var logfrm = new LogonForm())
@@ -117,15 +100,35 @@ namespace MEMS.Client.Main
             }
         }
 
+        #region 客户关系管理
+        private void BtnCustomer_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FormFactory.LoadForm(this, typeof(CustomerListForm));
+        }
+
+        private void BtnSupplier_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FormFactory.LoadForm(this, typeof(SupplierListForm));
+        }
+
+        private void BtnProduct_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FormFactory.LoadForm(this, typeof(ProductListForm));
+            //this.ActivateMdiChild(new ProductListForm());
+        }
+
         private void Btnquotation_ItemClick(object sender, ItemClickEventArgs e)
         {
             FormFactory.LoadForm(this, typeof(QuotationListForm));
         }
+        #endregion
 
+        #region 销售管理
         private void saleorderItem_ItemClick(object sender, ItemClickEventArgs e)
         {
             FormFactory.LoadForm(this, typeof(SaleListForm));
         }
+        #endregion
 
         #region 基础管理
         private void barBtnCodeType_ItemClick(object sender, ItemClickEventArgs e)

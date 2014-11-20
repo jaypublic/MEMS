@@ -42,10 +42,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.MatCodeTreeList)).BeginInit();
             this.SuspendLayout();
             // 
-            // searchgroup
-            // 
-            this.searchgroup.Location = new System.Drawing.Point(0, 125);
-            // 
             // ribboncontrol
             // 
             this.ribboncontrol.ExpandCollapseItem.Id = 0;
@@ -112,6 +108,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.ClientSize = new System.Drawing.Size(717, 391);
             this.Controls.Add(this.MatCodeTreeList);
+            this.IsComplexSearch = true;
             this.Name = "CodeTypeForm";
             this.Text = "编码类别管理";
             this.Controls.SetChildIndex(this.ribboncontrol, 0);

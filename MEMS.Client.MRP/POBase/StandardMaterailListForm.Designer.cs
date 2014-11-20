@@ -52,10 +52,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             this.SuspendLayout();
             // 
-            // searchgroup
-            // 
-            this.searchgroup.Location = new System.Drawing.Point(0, 125);
-            // 
             // ribboncontrol
             // 
             this.ribboncontrol.ExpandCollapseItem.Id = 0;
@@ -185,6 +181,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.ClientSize = new System.Drawing.Size(717, 391);
             this.Controls.Add(this.gcMaterialCode);
+            this.IsComplexSearch = true;
             this.Name = "StandardMaterialListForm";
             this.Text = "标准物资管理";
             this.Load += new System.EventHandler(this.StandardMaterialListForm_Load);

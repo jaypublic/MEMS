@@ -46,10 +46,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.SuspendLayout();
             // 
-            // searchgroup
-            // 
-            this.searchgroup.Location = new System.Drawing.Point(0, 125);
-            // 
             // ribboncontrol
             // 
             this.ribboncontrol.ExpandCollapseItem.Id = 0;
@@ -134,6 +130,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.ClientSize = new System.Drawing.Size(717, 391);
             this.Controls.Add(this.gcCode);
+            this.IsComplexSearch = true;
             this.Name = "MaterailTypeForm";
             this.Text = "物资类型管理";
             this.Controls.SetChildIndex(this.ribboncontrol, 0);
