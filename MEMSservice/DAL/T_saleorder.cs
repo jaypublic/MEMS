@@ -16,16 +16,16 @@ namespace MEMSservice.DAL
     {
         public int id { get; set; }
         public string saleno { get; set; }
-        public Nullable<System.DateTime> saledate { get; set; }
-        public string receiveperiodtype { get; set; }
+        public System.DateTime saledate { get; set; }
+        public int receiveperiodtype { get; set; }
         public Nullable<int> receiveperiod { get; set; }
-        public Nullable<int> receivetype { get; set; }
-        public Nullable<int> receivestate { get; set; }
-        public Nullable<int> orderstate { get; set; }
+        public int receivetype { get; set; }
+        public int receivestate { get; set; }
+        public int orderstate { get; set; }
         public Nullable<decimal> saletotalamount { get; set; }
         public Nullable<decimal> receiveamount { get; set; }
         public Nullable<decimal> receiveratio { get; set; }
-        public string saleattachments { get; set; }
         public Nullable<int> quotationid { get; set; }
+        public string remarks { get; set; }
     }
 }

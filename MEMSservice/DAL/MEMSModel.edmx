@@ -255,17 +255,17 @@
           </Key>
           <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="saleno" Type="varchar" MaxLength="50" />
-          <Property Name="saledate" Type="datetime" />
-          <Property Name="receiveperiodtype" Type="char" MaxLength="1" />
+          <Property Name="saledate" Type="datetime" Nullable="false" />
+          <Property Name="receiveperiodtype" Type="int" Nullable="false" />
           <Property Name="receiveperiod" Type="int" />
           <Property Name="quotationid" Type="int" />
-          <Property Name="receivetype" Type="int" />
-          <Property Name="receivestate" Type="int" />
-          <Property Name="orderstate" Type="int" />
+          <Property Name="receivetype" Type="int" Nullable="false" />
+          <Property Name="receivestate" Type="int" Nullable="false" />
+          <Property Name="orderstate" Type="int" Nullable="false" />
           <Property Name="saletotalamount" Type="decimal" Precision="10" Scale="2" />
           <Property Name="receiveamount" Type="decimal" Precision="10" Scale="2" />
           <Property Name="receiveratio" Type="numeric" Precision="10" Scale="2" />
-          <Property Name="saleattachments" Type="nvarchar" MaxLength="100" />
+          <Property Name="remarks" Type="nvarchar" MaxLength="500" />
         </EntityType>
         <EntityType Name="T_Suppliers">
           <Key>
@@ -613,17 +613,17 @@
           </Key>
           <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Type="String" Name="saleno" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Type="DateTime" Name="saledate" Precision="3" />
-          <Property Type="String" Name="receiveperiodtype" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="DateTime" Name="saledate" Precision="3" Nullable="false" />
+          <Property Type="Int32" Name="receiveperiodtype" Nullable="false" />
           <Property Type="Int32" Name="receiveperiod" />
-          <Property Type="Int32" Name="receivetype" />
-          <Property Type="Int32" Name="receivestate" />
-          <Property Type="Int32" Name="orderstate" />
+          <Property Type="Int32" Name="receivetype" Nullable="false" />
+          <Property Type="Int32" Name="receivestate" Nullable="false" />
+          <Property Type="Int32" Name="orderstate" Nullable="false" />
           <Property Type="Decimal" Name="saletotalamount" Precision="10" Scale="2" />
           <Property Type="Decimal" Name="receiveamount" Precision="10" Scale="2" />
           <Property Type="Decimal" Name="receiveratio" Precision="10" Scale="2" />
-          <Property Type="String" Name="saleattachments" MaxLength="100" FixedLength="false" Unicode="true" />
           <Property Type="Int32" Name="quotationid" />
+          <Property Type="String" Name="remarks" MaxLength="500" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -921,8 +921,8 @@
           <EntitySetMapping Name="T_saleorder">
             <EntityTypeMapping TypeName="MEMSModel.T_saleorder">
               <MappingFragment StoreEntitySet="T_saleorder">
+                <ScalarProperty Name="remarks" ColumnName="remarks" />
                 <ScalarProperty Name="quotationid" ColumnName="quotationid" />
-                <ScalarProperty Name="saleattachments" ColumnName="saleattachments" />
                 <ScalarProperty Name="receiveratio" ColumnName="receiveratio" />
                 <ScalarProperty Name="receiveamount" ColumnName="receiveamount" />
                 <ScalarProperty Name="saletotalamount" ColumnName="saletotalamount" />

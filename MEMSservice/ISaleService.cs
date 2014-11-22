@@ -17,5 +17,7 @@ namespace MEMSservice
         List<SaleOrder> getAllSaleOrderList();
         [OperationContract]
         T_saleorder getSaleOrderbyId(int saleorderid);
+        [OperationContract]
+        List<SaleOrder> getSaleOrderList(string soNo, DateTime dtstart, DateTime dtend);
     }
 }

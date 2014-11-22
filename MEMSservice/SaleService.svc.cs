@@ -31,5 +31,18 @@ namespace MEMSservice
             m_sh = new SaleHelper();
             return m_sh.getSaleOrderbyId(saleorderid);
         }
+        public List<SaleOrder> getSaleOrderList(string soNo,DateTime dtstart,DateTime dtend)
+        {
+            try
+            {
+                m_sh = new SaleHelper();
+                return m_sh.getSaleOrderList(soNo, dtstart, dtend);
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+        }
     }
 }

@@ -87,7 +87,7 @@ namespace MEMS.Client.Sale.SaleService {
         private int idField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> orderstateField;
+        private int orderstateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<int> quotationidField;
@@ -99,22 +99,22 @@ namespace MEMS.Client.Sale.SaleService {
         private System.Nullable<int> receiveperiodField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string receiveperiodtypeField;
+        private int receiveperiodtypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<decimal> receiveratioField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> receivestateField;
+        private int receivestateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> receivetypeField;
+        private int receivetypeField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string saleattachmentsField;
+        private string remarksField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> saledateField;
+        private System.DateTime saledateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string salenoField;
@@ -146,7 +146,7 @@ namespace MEMS.Client.Sale.SaleService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> orderstate {
+        public int orderstate {
             get {
                 return this.orderstateField;
             }
@@ -198,12 +198,12 @@ namespace MEMS.Client.Sale.SaleService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string receiveperiodtype {
+        public int receiveperiodtype {
             get {
                 return this.receiveperiodtypeField;
             }
             set {
-                if ((object.ReferenceEquals(this.receiveperiodtypeField, value) != true)) {
+                if ((this.receiveperiodtypeField.Equals(value) != true)) {
                     this.receiveperiodtypeField = value;
                     this.RaisePropertyChanged("receiveperiodtype");
                 }
@@ -224,7 +224,7 @@ namespace MEMS.Client.Sale.SaleService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> receivestate {
+        public int receivestate {
             get {
                 return this.receivestateField;
             }
@@ -237,7 +237,7 @@ namespace MEMS.Client.Sale.SaleService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> receivetype {
+        public int receivetype {
             get {
                 return this.receivetypeField;
             }
@@ -250,20 +250,20 @@ namespace MEMS.Client.Sale.SaleService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string saleattachments {
+        public string remarks {
             get {
-                return this.saleattachmentsField;
+                return this.remarksField;
             }
             set {
-                if ((object.ReferenceEquals(this.saleattachmentsField, value) != true)) {
-                    this.saleattachmentsField = value;
-                    this.RaisePropertyChanged("saleattachments");
+                if ((object.ReferenceEquals(this.remarksField, value) != true)) {
+                    this.remarksField = value;
+                    this.RaisePropertyChanged("remarks");
                 }
             }
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> saledate {
+        public System.DateTime saledate {
             get {
                 return this.saledateField;
             }
@@ -320,6 +320,9 @@ namespace MEMS.Client.Sale.SaleService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISaleService/getSaleOrderbyId", ReplyAction="http://tempuri.org/ISaleService/getSaleOrderbyIdResponse")]
         MEMS.Client.Sale.SaleService.T_saleorder getSaleOrderbyId(int saleorderid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISaleService/getSaleOrderList", ReplyAction="http://tempuri.org/ISaleService/getSaleOrderListResponse")]
+        MEMS.Client.Sale.SaleService.SaleOrder[] getSaleOrderList(string soNo, System.DateTime dtstart, System.DateTime dtend);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -355,6 +358,10 @@ namespace MEMS.Client.Sale.SaleService {
         
         public MEMS.Client.Sale.SaleService.T_saleorder getSaleOrderbyId(int saleorderid) {
             return base.Channel.getSaleOrderbyId(saleorderid);
+        }
+        
+        public MEMS.Client.Sale.SaleService.SaleOrder[] getSaleOrderList(string soNo, System.DateTime dtstart, System.DateTime dtend) {
+            return base.Channel.getSaleOrderList(soNo, dtstart, dtend);
         }
     }
 }

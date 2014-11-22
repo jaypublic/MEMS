@@ -38,5 +38,23 @@ namespace MEMSservice.BLL
                 return rs.FirstOrDefault();
             }
         }
+        /// <summary>
+        /// 根据销售单号以及销售日期返回销售订单列表
+        /// </summary>
+        /// <param name="saleOrderNo">销售单号</param>
+        /// <param name="dtstart">开始日期</param>
+        /// <param name="dtend">结束日期</param>
+        /// <returns></returns>
+        public List<SaleOrder> getSaleOrderList(string saleOrderNo,DateTime dtstart,DateTime dtend)
+        {
+            using (MEMSEntities db = new MEMSEntities())
+            {
+                var rs = from s in db.T_saleorder
+                         where s.saleno.Contains(saleOrderNo) && s.saledate >= dtstart && s.saledate <= dtend
+                         join q in db.T_quotation on s.quotationid equals (q.id)
+                         select new SaleOrder { so = s, qtno = q.qutationno };
+                return rs.ToList();
+            }
+        }
     }
 }

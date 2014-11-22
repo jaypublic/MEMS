@@ -27,4 +27,20 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="getSaleOrderList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="soNo" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="dtstart" type="xs:dateTime" />
+        <xs:element minOccurs="0" name="dtend" type="xs:dateTime" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getSaleOrderListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/MEMSservice.DAL" minOccurs="0" name="getSaleOrderListResult" nillable="true" type="q3:ArrayOfSaleOrder" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>
