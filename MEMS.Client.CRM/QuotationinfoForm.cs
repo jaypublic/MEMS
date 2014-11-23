@@ -52,7 +52,7 @@ namespace MEMS.Client.CRM
             {
                 m_Qinfo = m_crmclient.getQuotationbyId(m_qid);
                 SetData(m_Qinfo);
-                base.readonlytxtbox(this.xtraTabPage1.Controls, true);
+                base.readonlytxtbox(this.Controls, true);
                 m_QtProductlst = new List<QtProduct>(m_crmclient.getQtProduct(m_qid));
                 gcQtprice.DataSource = m_QtProductlst;
             }
@@ -163,5 +163,6 @@ namespace MEMS.Client.CRM
             }
             txtTotalPrice.Text = totalprice.ToString();
         }
+
     }
 }
