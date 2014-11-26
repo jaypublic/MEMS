@@ -19,5 +19,11 @@ namespace MEMSservice
         T_saleorder getSaleOrderbyId(int saleorderid);
         [OperationContract]
         List<SaleOrder> getSaleOrderList(string soNo, DateTime dtstart, DateTime dtend);
+        [OperationContract]
+        bool AddNewSaleOrder(T_saleorder so);
+        [OperationContract]
+        bool UpdateSaleOrder(T_saleorder so);
+        [OperationContract]
+        bool DeleteSaleOrder(T_saleorder so);
     }
 }

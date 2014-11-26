@@ -1,4 +1,5 @@
 ﻿using DevExpress.XtraEditors.Repository;
+using DevExpress.XtraEditors;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +22,17 @@ namespace MEMS.Client.Sale
             return value;
         }
         /// <summary>
+        /// 获得枚举类型值对应的名称
+        /// </summary>
+        /// <param name="enumtype"></param>
+        /// <param name="enumkey"></param>
+        /// <returns></returns>
+        public static string getEnumName(Type enumtype, int enumkey)
+        {
+            var enumNames = Enum.GetNames(enumtype);
+            return enumNames[enumkey];
+        }
+        /// <summary>
         /// 获得枚举类型的数据源绑定
         /// </summary>
         /// <param name="enumtype"></param>
@@ -38,8 +50,9 @@ namespace MEMS.Client.Sale
             }
             return ds;
         }
+
         /// <summary>
-        /// 获得枚举类型的数据源绑定,并绑定至dev的lookupEdit
+        /// 获得枚举类型的数据源绑定,并绑定至xtragrid的lookupEdit
         /// </summary>
         /// <param name="lkupedit"></param>
         /// <param name="enumtype"></param>
@@ -59,7 +72,45 @@ namespace MEMS.Client.Sale
             lkupedit.DisplayMember = "value";
             lkupedit.ShowFooter = false;
             lkupedit.ShowHeader = false;
-        }        
+        }
+
+        /// <summary>
+        /// 获得枚举类型的数据源绑定,并绑定至lookupEdit
+        /// </summary>
+        /// <param name="lkupedit"></param>
+        /// <param name="enumtype"></param>
+        public static void getEnumDS(DevExpress.XtraEditors.LookUpEdit lkupedit, Type enumtype)
+        {
+            List<DisPlayEnum> ds = new List<DisPlayEnum>();
+            var enumNames = Enum.GetNames(enumtype);
+            for (int i = 0; i < enumNames.Length; i++)
+            {
+                DisPlayEnum t = new DisPlayEnum();
+                t.key = i;
+                t.value = enumNames[i];
+                ds.Add(t);
+            }
+            lkupedit.Properties.DataSource = ds;
+            lkupedit.Properties.ValueMember = "key";
+            lkupedit.Properties.DisplayMember = "value";
+            lkupedit.Properties.ShowFooter = false;
+            lkupedit.Properties.ShowHeader = false;
+            lkupedit.Properties.NullText = "";
+            lkupedit.Properties.DropDownRows = enumNames.Length;
+            var keycol = new DevExpress.XtraEditors.Controls.LookUpColumnInfo("key", "key");
+            var valuecol = new DevExpress.XtraEditors.Controls.LookUpColumnInfo("value", "value");
+            lkupedit.Properties.Columns.Add(keycol);
+            lkupedit.Properties.Columns.Add(valuecol);
+            keycol.Visible = false;
+        }
+    }
+    /// <summary>
+    /// 账期单位
+    /// </summary>
+    public enum periodUnit
+    {
+        月,
+        日
     }
     /// <summary>
     /// 收款类型

@@ -9,5 +9,6 @@ namespace MEMSservice.DAL
     {
         public T_saleorder so { get; set; }
         public string qtno { get; set; }
+        public string customername { set; get; }
     }
 }

@@ -52,8 +52,48 @@ namespace MEMSservice.BLL
                 var rs = from s in db.T_saleorder
                          where s.saleno.Contains(saleOrderNo) && s.saledate >= dtstart && s.saledate <= dtend
                          join q in db.T_quotation on s.quotationid equals (q.id)
-                         select new SaleOrder { so = s, qtno = q.qutationno };
+                         join c in db.T_Customer on s.customerid equals (c.id)
+                         select new SaleOrder { so = s, qtno = q.qutationno, customername = c.customername };
                 return rs.ToList();
+            }
+        }
+        /// <summary>
+        /// 添加新销售订单主表
+        /// </summary>
+        /// <param name="so">销售订单主表</param>
+        /// <returns></returns>
+        public bool AddNewSaleOrder(T_saleorder so)
+        {
+            using (MEMSEntities db = new MEMSEntities())
+            {
+                db.Entry(so).State = EntityState.Added;
+                return db.SaveChanges() > 0 ? true : false;
+            }
+        }
+        /// <summary>
+        /// 修改销售订单主表
+        /// </summary>
+        /// <param name="so">销售订单主表</param>
+        /// <returns></returns>
+        public bool UpdateSaleOrder(T_saleorder so)
+        {
+            using (MEMSEntities db = new MEMSEntities())
+            {
+                db.Entry(so).State = EntityState.Modified;
+                return db.SaveChanges() > 0 ? true : false;
+            }
+        }
+        /// <summary>
+        /// 删除销售订单主表
+        /// </summary>
+        /// <param name="so">销售订单主表</param>
+        /// <returns></returns>
+        public bool DeleteSaleOrder(T_saleorder so)
+        {
+            using (MEMSEntities db = new MEMSEntities())
+            {
+                db.Entry(so).State = EntityState.Deleted;
+                return db.SaveChanges() > 0 ? true : false;
             }
         }
     }

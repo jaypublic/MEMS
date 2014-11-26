@@ -25,6 +25,24 @@
   <wsdl:message name="ISaleService_getSaleOrderList_OutputMessage">
     <wsdl:part name="parameters" element="tns:getSaleOrderListResponse" />
   </wsdl:message>
+  <wsdl:message name="ISaleService_AddNewSaleOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewSaleOrder" />
+  </wsdl:message>
+  <wsdl:message name="ISaleService_AddNewSaleOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddNewSaleOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISaleService_UpdateSaleOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSaleOrder" />
+  </wsdl:message>
+  <wsdl:message name="ISaleService_UpdateSaleOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:UpdateSaleOrderResponse" />
+  </wsdl:message>
+  <wsdl:message name="ISaleService_DeleteSaleOrder_InputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSaleOrder" />
+  </wsdl:message>
+  <wsdl:message name="ISaleService_DeleteSaleOrder_OutputMessage">
+    <wsdl:part name="parameters" element="tns:DeleteSaleOrderResponse" />
+  </wsdl:message>
   <wsdl:portType name="ISaleService">
     <wsdl:operation name="getAllSaleOrderList">
       <wsdl:input wsaw:Action="http://tempuri.org/ISaleService/getAllSaleOrderList" message="tns:ISaleService_getAllSaleOrderList_InputMessage" />
@@ -37,6 +55,18 @@
     <wsdl:operation name="getSaleOrderList">
       <wsdl:input wsaw:Action="http://tempuri.org/ISaleService/getSaleOrderList" message="tns:ISaleService_getSaleOrderList_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISaleService/getSaleOrderListResponse" message="tns:ISaleService_getSaleOrderList_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddNewSaleOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISaleService/AddNewSaleOrder" message="tns:ISaleService_AddNewSaleOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISaleService/AddNewSaleOrderResponse" message="tns:ISaleService_AddNewSaleOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSaleOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISaleService/UpdateSaleOrder" message="tns:ISaleService_UpdateSaleOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISaleService/UpdateSaleOrderResponse" message="tns:ISaleService_UpdateSaleOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSaleOrder">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISaleService/DeleteSaleOrder" message="tns:ISaleService_DeleteSaleOrder_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISaleService/DeleteSaleOrderResponse" message="tns:ISaleService_DeleteSaleOrder_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ISaleService" type="tns:ISaleService">
@@ -61,6 +91,33 @@
     </wsdl:operation>
     <wsdl:operation name="getSaleOrderList">
       <soap:operation soapAction="http://tempuri.org/ISaleService/getSaleOrderList" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddNewSaleOrder">
+      <soap:operation soapAction="http://tempuri.org/ISaleService/AddNewSaleOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSaleOrder">
+      <soap:operation soapAction="http://tempuri.org/ISaleService/UpdateSaleOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSaleOrder">
+      <soap:operation soapAction="http://tempuri.org/ISaleService/DeleteSaleOrder" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

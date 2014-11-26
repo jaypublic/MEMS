@@ -8,6 +8,7 @@
   <xs:element name="ArrayOfSaleOrder" nillable="true" type="tns:ArrayOfSaleOrder" />
   <xs:complexType name="SaleOrder">
     <xs:sequence>
+      <xs:element minOccurs="0" name="customername" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="qtno" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="so" nillable="true" type="tns:T_saleorder" />
     </xs:sequence>
@@ -15,9 +16,10 @@
   <xs:element name="SaleOrder" nillable="true" type="tns:SaleOrder" />
   <xs:complexType name="T_saleorder">
     <xs:sequence>
+      <xs:element minOccurs="0" name="customerid" type="xs:int" />
       <xs:element minOccurs="0" name="id" type="xs:int" />
       <xs:element minOccurs="0" name="orderstate" type="xs:int" />
-      <xs:element minOccurs="0" name="quotationid" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="quotationid" type="xs:int" />
       <xs:element minOccurs="0" name="receiveamount" nillable="true" type="xs:decimal" />
       <xs:element minOccurs="0" name="receiveperiod" nillable="true" type="xs:int" />
       <xs:element minOccurs="0" name="receiveperiodtype" type="xs:int" />

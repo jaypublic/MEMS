@@ -19,38 +19,46 @@ namespace MEMS.Client.Sale
         }
         protected override void SearchObject()
         {
-            var saleOrderList = m_SaleClient.getAllSaleOrderList();
+            var saleno = this.txtSaleNo.Text;
+            DateTime aftdate = dateEdit1.EditValue != null ? dateEdit1.DateTime : new DateTime(2000, 1, 1);
+            DateTime bfedate = dateEdit2.EditValue != null ? dateEdit2.DateTime : new DateTime(2100, 1, 1);
+            var saleOrderList = m_SaleClient.getSaleOrderList(saleno, aftdate, bfedate);
             this.gcSaleOrder.DataSource = saleOrderList;
         }
         protected override void AddObject()
         {
-
+            var frm = new SaleOrderinfoForm(Common.frmmodetype.add);
+            refreshFormData(frm);
         }
         protected override void EditObject()
         {
-            
+            if (gvSaleOrder.DataRowCount > 0)
+            {
+                var soid = (int)gvSaleOrder.GetFocusedRowCellValue("so.id");
+                var frm = new SaleOrderinfoForm(Common.frmmodetype.edit, soid);
+                refreshFormData(frm);
+            }
         }
         protected override void DeleteObject()
         {
-            
+            if (gvSaleOrder.DataRowCount > 0)
+            {
+                var soid = (int)gvSaleOrder.GetFocusedRowCellValue("so.id");
+                var frm = new SaleOrderinfoForm(Common.frmmodetype.delete, soid);
+                refreshFormData(frm);
+            }
         }
         protected override void FormLoad()
         {
-            //DisPlayEnum.getEnumDS(lkupOrderState, typeof(orderState));
-            cmborderstate.Items.AddRange(DisPlayEnum.getEnumDS(typeof(orderState)));
-            //cmborderstate.OwnerEdit.Text = cmborderstate.OwnerEdit.SelectedText;
-            //(ComboBoxEdit)cmborderstate).EditValue = (cmborderstate as ComboBoxEdit).SelectedText;
-            //ComboBoxEdit cmb=cmborderstate;
-            //cmborderstate.Items.
+            DisPlayEnum.getEnumDS(lkupOrderState, typeof(orderState));
             base.FormLoad();
         }
 
-        private void cmborderstate_ButtonClick(object sender, DevExpress.XtraEditors.Controls.ButtonPressedEventArgs e)
+        private void gvSaleOrder_DoubleClick(object sender, EventArgs e)
         {
-            //ComboBoxEdit cmb = (ComboBoxEdit)sender;
-            //cmb.EditValue = cmb.SelectedText;
-            Console.WriteLine(cmborderstate.Items.Count);
+            EditObject();
         }
+
     }
 
     

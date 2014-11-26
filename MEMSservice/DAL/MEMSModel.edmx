@@ -258,7 +258,8 @@
           <Property Name="saledate" Type="datetime" Nullable="false" />
           <Property Name="receiveperiodtype" Type="int" Nullable="false" />
           <Property Name="receiveperiod" Type="int" />
-          <Property Name="quotationid" Type="int" />
+          <Property Name="customerid" Type="int" Nullable="false" />
+          <Property Name="quotationid" Type="int" Nullable="false" />
           <Property Name="receivetype" Type="int" Nullable="false" />
           <Property Name="receivestate" Type="int" Nullable="false" />
           <Property Name="orderstate" Type="int" Nullable="false" />
@@ -622,8 +623,9 @@
           <Property Type="Decimal" Name="saletotalamount" Precision="10" Scale="2" />
           <Property Type="Decimal" Name="receiveamount" Precision="10" Scale="2" />
           <Property Type="Decimal" Name="receiveratio" Precision="10" Scale="2" />
-          <Property Type="Int32" Name="quotationid" />
+          <Property Type="Int32" Name="quotationid" Nullable="false" />
           <Property Type="String" Name="remarks" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Type="Int32" Name="customerid" Nullable="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -921,6 +923,7 @@
           <EntitySetMapping Name="T_saleorder">
             <EntityTypeMapping TypeName="MEMSModel.T_saleorder">
               <MappingFragment StoreEntitySet="T_saleorder">
+                <ScalarProperty Name="customerid" ColumnName="customerid" />
                 <ScalarProperty Name="remarks" ColumnName="remarks" />
                 <ScalarProperty Name="quotationid" ColumnName="quotationid" />
                 <ScalarProperty Name="receiveratio" ColumnName="receiveratio" />

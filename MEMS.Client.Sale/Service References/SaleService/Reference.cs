@@ -23,6 +23,9 @@ namespace MEMS.Client.Sale.SaleService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string customernameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string qtnoField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -35,6 +38,19 @@ namespace MEMS.Client.Sale.SaleService {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string customername {
+            get {
+                return this.customernameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.customernameField, value) != true)) {
+                    this.customernameField = value;
+                    this.RaisePropertyChanged("customername");
+                }
             }
         }
         
@@ -84,13 +100,16 @@ namespace MEMS.Client.Sale.SaleService {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int customeridField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int idField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private int orderstateField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> quotationidField;
+        private int quotationidField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Nullable<decimal> receiveamountField;
@@ -133,6 +152,19 @@ namespace MEMS.Client.Sale.SaleService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
+        public int customerid {
+            get {
+                return this.customeridField;
+            }
+            set {
+                if ((this.customeridField.Equals(value) != true)) {
+                    this.customeridField = value;
+                    this.RaisePropertyChanged("customerid");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
         public int id {
             get {
                 return this.idField;
@@ -159,7 +191,7 @@ namespace MEMS.Client.Sale.SaleService {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> quotationid {
+        public int quotationid {
             get {
                 return this.quotationidField;
             }
@@ -323,6 +355,15 @@ namespace MEMS.Client.Sale.SaleService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISaleService/getSaleOrderList", ReplyAction="http://tempuri.org/ISaleService/getSaleOrderListResponse")]
         MEMS.Client.Sale.SaleService.SaleOrder[] getSaleOrderList(string soNo, System.DateTime dtstart, System.DateTime dtend);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISaleService/AddNewSaleOrder", ReplyAction="http://tempuri.org/ISaleService/AddNewSaleOrderResponse")]
+        bool AddNewSaleOrder(MEMS.Client.Sale.SaleService.T_saleorder so);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISaleService/UpdateSaleOrder", ReplyAction="http://tempuri.org/ISaleService/UpdateSaleOrderResponse")]
+        bool UpdateSaleOrder(MEMS.Client.Sale.SaleService.T_saleorder so);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISaleService/DeleteSaleOrder", ReplyAction="http://tempuri.org/ISaleService/DeleteSaleOrderResponse")]
+        bool DeleteSaleOrder(MEMS.Client.Sale.SaleService.T_saleorder so);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -362,6 +403,18 @@ namespace MEMS.Client.Sale.SaleService {
         
         public MEMS.Client.Sale.SaleService.SaleOrder[] getSaleOrderList(string soNo, System.DateTime dtstart, System.DateTime dtend) {
             return base.Channel.getSaleOrderList(soNo, dtstart, dtend);
+        }
+        
+        public bool AddNewSaleOrder(MEMS.Client.Sale.SaleService.T_saleorder so) {
+            return base.Channel.AddNewSaleOrder(so);
+        }
+        
+        public bool UpdateSaleOrder(MEMS.Client.Sale.SaleService.T_saleorder so) {
+            return base.Channel.UpdateSaleOrder(so);
+        }
+        
+        public bool DeleteSaleOrder(MEMS.Client.Sale.SaleService.T_saleorder so) {
+            return base.Channel.DeleteSaleOrder(so);
         }
     }
 }

@@ -44,5 +44,49 @@ namespace MEMSservice
                 throw;
             }
         }
+
+
+        public bool AddNewSaleOrder(T_saleorder so)
+        {
+            try
+            {
+                m_sh = new SaleHelper();
+                return m_sh.AddNewSaleOrder(so);
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+        }
+
+        public bool UpdateSaleOrder(T_saleorder so)
+        {
+            try
+            {
+                m_sh = new SaleHelper();
+                return m_sh.UpdateSaleOrder(so);
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+        }
+
+
+        public bool DeleteSaleOrder(T_saleorder so)
+        {
+            try
+            {
+                m_sh = new SaleHelper();
+                return m_sh.DeleteSaleOrder(so);
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+        }
     }
 }

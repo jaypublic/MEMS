@@ -65,6 +65,11 @@
     <Compile Include="SaleOrderinfoForm.Designer.cs">
       <DependentUpon>SaleOrderinfoForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Service References\CRMService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\SaleService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -91,6 +96,73 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="Service References\CRMService\CRMService.wsdl" />
+    <None Include="Service References\CRMService\CRMService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CRMService\CRMService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CRMService\CRMService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CRMService\CRMService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CRMService\MEMS.Client.Sale.CRMService.ProductList.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CRMService\MEMS.Client.Sale.CRMService.QtProduct.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CRMService\MEMS.Client.Sale.CRMService.T_Base_companytype.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CRMService\MEMS.Client.Sale.CRMService.T_Base_customertype.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CRMService\MEMS.Client.Sale.CRMService.T_Base_profession.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CRMService\MEMS.Client.Sale.CRMService.T_Base_suppliertype.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CRMService\MEMS.Client.Sale.CRMService.T_Crafts.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CRMService\MEMS.Client.Sale.CRMService.T_CraftsPrice.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CRMService\MEMS.Client.Sale.CRMService.T_Customer.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CRMService\MEMS.Client.Sale.CRMService.T_Customer_address.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CRMService\MEMS.Client.Sale.CRMService.T_Customer_contacts.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CRMService\MEMS.Client.Sale.CRMService.T_Product.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CRMService\MEMS.Client.Sale.CRMService.T_ProductbasicPrice.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CRMService\MEMS.Client.Sale.CRMService.T_ProductDraw.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CRMService\MEMS.Client.Sale.CRMService.T_ProductType.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CRMService\MEMS.Client.Sale.CRMService.T_quotation.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CRMService\MEMS.Client.Sale.CRMService.T_Suppliers.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\CRMService\MEMS.Client.Sale.CRMService.T_Suppliers_contacts.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\SaleService\MEMS.Client.Sale.SaleService.SaleOrder.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -109,6 +181,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\CRMService\" />
     <WCFMetadataStorage Include="Service References\SaleService\" />
   </ItemGroup>
   <ItemGroup>
@@ -122,6 +195,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Service References\SaleService\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CRMService\CRMService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CRMService\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CRMService\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\CRMService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>

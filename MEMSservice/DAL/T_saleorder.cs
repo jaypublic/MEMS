@@ -25,7 +25,8 @@ namespace MEMSservice.DAL
         public Nullable<decimal> saletotalamount { get; set; }
         public Nullable<decimal> receiveamount { get; set; }
         public Nullable<decimal> receiveratio { get; set; }
-        public Nullable<int> quotationid { get; set; }
+        public int quotationid { get; set; }
         public string remarks { get; set; }
+        public int customerid { get; set; }
     }
 }
