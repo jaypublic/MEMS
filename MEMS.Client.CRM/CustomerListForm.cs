@@ -8,6 +8,8 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using MEMS.Client.Common;
 using MEMS.Client.CRM.CRMService;
+using MEMS.DB.Models;
+using MEMS.DB.ExtModels;
 
 namespace MEMS.Client.CRM
 {
@@ -23,7 +25,7 @@ namespace MEMS.Client.CRM
             var companyname = txt_customername.Text;
             var companysname = txt_sname.Text;
             CRMServiceClient client = new CRMServiceClient();
-            List<T_Customer> clist = new List<T_Customer>(client.getCustomerListbyP(companyno,companyname,companysname));
+            List<T_Customer> clist = client.getCustomerListbyP(companyno,companyname,companysname);
             this.gccustomer.DataSource = clist;
         }
         protected override void AddObject()

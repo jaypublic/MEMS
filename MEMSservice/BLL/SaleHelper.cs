@@ -2,8 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using System.Data;
-using MEMSservice.DAL;
+//using System.Data;
+
+using System.Data.Entity;
+using MEMS.DB.Models;
+using MEMS.DB.ExtModels;
 
 namespace MEMSservice.BLL
 {
@@ -15,7 +18,7 @@ namespace MEMSservice.BLL
         /// <returns></returns>
         public List<SaleOrder> getAllSaleOrderList()
         {
-            using (MEMSEntities db = new MEMSEntities())
+            using (MEMSContext db = new MEMSContext())
             {
                 var rs = from s in db.T_saleorder
                          join q in db.T_quotation on s.quotationid equals (q.id)
@@ -30,7 +33,7 @@ namespace MEMSservice.BLL
         /// <returns></returns>
         public T_saleorder getSaleOrderbyId(int soid)
         {
-            using (MEMSEntities db = new MEMSEntities())
+            using (MEMSContext db = new MEMSContext())
             {
                 var rs = from s in db.T_saleorder
                          where s.id == soid
@@ -47,7 +50,7 @@ namespace MEMSservice.BLL
         /// <returns></returns>
         public List<SaleOrder> getSaleOrderList(string saleOrderNo,DateTime dtstart,DateTime dtend)
         {
-            using (MEMSEntities db = new MEMSEntities())
+            using (MEMSContext db = new MEMSContext())
             {
                 var rs = from s in db.T_saleorder
                          where s.saleno.Contains(saleOrderNo) && s.saledate >= dtstart && s.saledate <= dtend
@@ -64,7 +67,7 @@ namespace MEMSservice.BLL
         /// <returns></returns>
         public bool AddNewSaleOrder(T_saleorder so)
         {
-            using (MEMSEntities db = new MEMSEntities())
+            using (MEMSContext db = new MEMSContext())
             {
                 db.Entry(so).State = EntityState.Added;
                 return db.SaveChanges() > 0 ? true : false;
@@ -77,7 +80,7 @@ namespace MEMSservice.BLL
         /// <returns></returns>
         public bool UpdateSaleOrder(T_saleorder so)
         {
-            using (MEMSEntities db = new MEMSEntities())
+            using (MEMSContext db = new MEMSContext())
             {
                 db.Entry(so).State = EntityState.Modified;
                 return db.SaveChanges() > 0 ? true : false;
@@ -90,10 +93,25 @@ namespace MEMSservice.BLL
         /// <returns></returns>
         public bool DeleteSaleOrder(T_saleorder so)
         {
-            using (MEMSEntities db = new MEMSEntities())
+            using (MEMSContext db = new MEMSContext())
             {
                 db.Entry(so).State = EntityState.Deleted;
                 return db.SaveChanges() > 0 ? true : false;
+            }
+        }
+        /// <summary>
+        /// 根据销售单主表id获取从表数据
+        /// </summary>
+        /// <param name="soid"></param>
+        /// <returns></returns>
+        public List<T_saledetail> getSaleDetailbysoid(int soid)
+        {
+            using (MEMSContext db = new MEMSContext())
+            {
+                var rs = from sd in db.T_saledetail
+                         where sd.soid == soid
+                         select sd;
+                return rs.ToList();
             }
         }
     }

@@ -9,3407 +9,182 @@
 //------------------------------------------------------------------------------
 
 namespace MEMS.Client.Sale.CRMService {
-    using System.Runtime.Serialization;
-    using System;
     
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_Customer", Namespace="http://schemas.datacontract.org/2004/07/MEMSservice.DAL")]
-    [System.SerializableAttribute()]
-    public partial class T_Customer : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string accountnameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string accountnoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string bankField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string cityField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string companyaddressField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string companytypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string countryField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> createtimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> createuidField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string customerdescField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string customernameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string customernoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string customertypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string emailField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string faxField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int idField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string invoiceaddressField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string phoneField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string postcodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string productinfoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string professionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string provinceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string remarksField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string simplenameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string sourceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string taxcodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string websiteField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string accountname {
-            get {
-                return this.accountnameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.accountnameField, value) != true)) {
-                    this.accountnameField = value;
-                    this.RaisePropertyChanged("accountname");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string accountno {
-            get {
-                return this.accountnoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.accountnoField, value) != true)) {
-                    this.accountnoField = value;
-                    this.RaisePropertyChanged("accountno");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string bank {
-            get {
-                return this.bankField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.bankField, value) != true)) {
-                    this.bankField = value;
-                    this.RaisePropertyChanged("bank");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string city {
-            get {
-                return this.cityField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.cityField, value) != true)) {
-                    this.cityField = value;
-                    this.RaisePropertyChanged("city");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string companyaddress {
-            get {
-                return this.companyaddressField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.companyaddressField, value) != true)) {
-                    this.companyaddressField = value;
-                    this.RaisePropertyChanged("companyaddress");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string companytype {
-            get {
-                return this.companytypeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.companytypeField, value) != true)) {
-                    this.companytypeField = value;
-                    this.RaisePropertyChanged("companytype");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string country {
-            get {
-                return this.countryField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.countryField, value) != true)) {
-                    this.countryField = value;
-                    this.RaisePropertyChanged("country");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> createtime {
-            get {
-                return this.createtimeField;
-            }
-            set {
-                if ((this.createtimeField.Equals(value) != true)) {
-                    this.createtimeField = value;
-                    this.RaisePropertyChanged("createtime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> createuid {
-            get {
-                return this.createuidField;
-            }
-            set {
-                if ((this.createuidField.Equals(value) != true)) {
-                    this.createuidField = value;
-                    this.RaisePropertyChanged("createuid");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string customerdesc {
-            get {
-                return this.customerdescField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.customerdescField, value) != true)) {
-                    this.customerdescField = value;
-                    this.RaisePropertyChanged("customerdesc");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string customername {
-            get {
-                return this.customernameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.customernameField, value) != true)) {
-                    this.customernameField = value;
-                    this.RaisePropertyChanged("customername");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string customerno {
-            get {
-                return this.customernoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.customernoField, value) != true)) {
-                    this.customernoField = value;
-                    this.RaisePropertyChanged("customerno");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string customertype {
-            get {
-                return this.customertypeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.customertypeField, value) != true)) {
-                    this.customertypeField = value;
-                    this.RaisePropertyChanged("customertype");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string email {
-            get {
-                return this.emailField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.emailField, value) != true)) {
-                    this.emailField = value;
-                    this.RaisePropertyChanged("email");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string fax {
-            get {
-                return this.faxField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.faxField, value) != true)) {
-                    this.faxField = value;
-                    this.RaisePropertyChanged("fax");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id {
-            get {
-                return this.idField;
-            }
-            set {
-                if ((this.idField.Equals(value) != true)) {
-                    this.idField = value;
-                    this.RaisePropertyChanged("id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string invoiceaddress {
-            get {
-                return this.invoiceaddressField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.invoiceaddressField, value) != true)) {
-                    this.invoiceaddressField = value;
-                    this.RaisePropertyChanged("invoiceaddress");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string phone {
-            get {
-                return this.phoneField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.phoneField, value) != true)) {
-                    this.phoneField = value;
-                    this.RaisePropertyChanged("phone");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string postcode {
-            get {
-                return this.postcodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.postcodeField, value) != true)) {
-                    this.postcodeField = value;
-                    this.RaisePropertyChanged("postcode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string productinfo {
-            get {
-                return this.productinfoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.productinfoField, value) != true)) {
-                    this.productinfoField = value;
-                    this.RaisePropertyChanged("productinfo");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string profession {
-            get {
-                return this.professionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.professionField, value) != true)) {
-                    this.professionField = value;
-                    this.RaisePropertyChanged("profession");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string province {
-            get {
-                return this.provinceField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.provinceField, value) != true)) {
-                    this.provinceField = value;
-                    this.RaisePropertyChanged("province");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string remarks {
-            get {
-                return this.remarksField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.remarksField, value) != true)) {
-                    this.remarksField = value;
-                    this.RaisePropertyChanged("remarks");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string simplename {
-            get {
-                return this.simplenameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.simplenameField, value) != true)) {
-                    this.simplenameField = value;
-                    this.RaisePropertyChanged("simplename");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string source {
-            get {
-                return this.sourceField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.sourceField, value) != true)) {
-                    this.sourceField = value;
-                    this.RaisePropertyChanged("source");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string taxcode {
-            get {
-                return this.taxcodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.taxcodeField, value) != true)) {
-                    this.taxcodeField = value;
-                    this.RaisePropertyChanged("taxcode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string website {
-            get {
-                return this.websiteField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.websiteField, value) != true)) {
-                    this.websiteField = value;
-                    this.RaisePropertyChanged("website");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_Base_companytype", Namespace="http://schemas.datacontract.org/2004/07/MEMSservice.DAL")]
-    [System.SerializableAttribute()]
-    public partial class T_Base_companytype : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int idField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string remarksField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string typenameField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id {
-            get {
-                return this.idField;
-            }
-            set {
-                if ((this.idField.Equals(value) != true)) {
-                    this.idField = value;
-                    this.RaisePropertyChanged("id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string remarks {
-            get {
-                return this.remarksField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.remarksField, value) != true)) {
-                    this.remarksField = value;
-                    this.RaisePropertyChanged("remarks");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string typename {
-            get {
-                return this.typenameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.typenameField, value) != true)) {
-                    this.typenameField = value;
-                    this.RaisePropertyChanged("typename");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_Base_customertype", Namespace="http://schemas.datacontract.org/2004/07/MEMSservice.DAL")]
-    [System.SerializableAttribute()]
-    public partial class T_Base_customertype : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int idField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string remarksField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string typenameField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id {
-            get {
-                return this.idField;
-            }
-            set {
-                if ((this.idField.Equals(value) != true)) {
-                    this.idField = value;
-                    this.RaisePropertyChanged("id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string remarks {
-            get {
-                return this.remarksField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.remarksField, value) != true)) {
-                    this.remarksField = value;
-                    this.RaisePropertyChanged("remarks");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string typename {
-            get {
-                return this.typenameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.typenameField, value) != true)) {
-                    this.typenameField = value;
-                    this.RaisePropertyChanged("typename");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_Base_profession", Namespace="http://schemas.datacontract.org/2004/07/MEMSservice.DAL")]
-    [System.SerializableAttribute()]
-    public partial class T_Base_profession : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int idField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string professionnameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string remarksField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id {
-            get {
-                return this.idField;
-            }
-            set {
-                if ((this.idField.Equals(value) != true)) {
-                    this.idField = value;
-                    this.RaisePropertyChanged("id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string professionname {
-            get {
-                return this.professionnameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.professionnameField, value) != true)) {
-                    this.professionnameField = value;
-                    this.RaisePropertyChanged("professionname");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string remarks {
-            get {
-                return this.remarksField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.remarksField, value) != true)) {
-                    this.remarksField = value;
-                    this.RaisePropertyChanged("remarks");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_Customer_contacts", Namespace="http://schemas.datacontract.org/2004/07/MEMSservice.DAL")]
-    [System.SerializableAttribute()]
-    public partial class T_Customer_contacts : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string cellphoneField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string contactnameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> createtimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> createuidField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> customeridField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string emailField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string faxField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int idField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string positionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string qqField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string remarksField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string sexField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string telphoneField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string cellphone {
-            get {
-                return this.cellphoneField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.cellphoneField, value) != true)) {
-                    this.cellphoneField = value;
-                    this.RaisePropertyChanged("cellphone");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string contactname {
-            get {
-                return this.contactnameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.contactnameField, value) != true)) {
-                    this.contactnameField = value;
-                    this.RaisePropertyChanged("contactname");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> createtime {
-            get {
-                return this.createtimeField;
-            }
-            set {
-                if ((this.createtimeField.Equals(value) != true)) {
-                    this.createtimeField = value;
-                    this.RaisePropertyChanged("createtime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> createuid {
-            get {
-                return this.createuidField;
-            }
-            set {
-                if ((this.createuidField.Equals(value) != true)) {
-                    this.createuidField = value;
-                    this.RaisePropertyChanged("createuid");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> customerid {
-            get {
-                return this.customeridField;
-            }
-            set {
-                if ((this.customeridField.Equals(value) != true)) {
-                    this.customeridField = value;
-                    this.RaisePropertyChanged("customerid");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string email {
-            get {
-                return this.emailField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.emailField, value) != true)) {
-                    this.emailField = value;
-                    this.RaisePropertyChanged("email");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string fax {
-            get {
-                return this.faxField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.faxField, value) != true)) {
-                    this.faxField = value;
-                    this.RaisePropertyChanged("fax");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id {
-            get {
-                return this.idField;
-            }
-            set {
-                if ((this.idField.Equals(value) != true)) {
-                    this.idField = value;
-                    this.RaisePropertyChanged("id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string position {
-            get {
-                return this.positionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.positionField, value) != true)) {
-                    this.positionField = value;
-                    this.RaisePropertyChanged("position");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string qq {
-            get {
-                return this.qqField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.qqField, value) != true)) {
-                    this.qqField = value;
-                    this.RaisePropertyChanged("qq");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string remarks {
-            get {
-                return this.remarksField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.remarksField, value) != true)) {
-                    this.remarksField = value;
-                    this.RaisePropertyChanged("remarks");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string sex {
-            get {
-                return this.sexField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.sexField, value) != true)) {
-                    this.sexField = value;
-                    this.RaisePropertyChanged("sex");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string telphone {
-            get {
-                return this.telphoneField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.telphoneField, value) != true)) {
-                    this.telphoneField = value;
-                    this.RaisePropertyChanged("telphone");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_Customer_address", Namespace="http://schemas.datacontract.org/2004/07/MEMSservice.DAL")]
-    [System.SerializableAttribute()]
-    public partial class T_Customer_address : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string addressField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string addressnameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string cityField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string countryField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> createtimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> createuidField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> customeridField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int idField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string address {
-            get {
-                return this.addressField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.addressField, value) != true)) {
-                    this.addressField = value;
-                    this.RaisePropertyChanged("address");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string addressname {
-            get {
-                return this.addressnameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.addressnameField, value) != true)) {
-                    this.addressnameField = value;
-                    this.RaisePropertyChanged("addressname");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string city {
-            get {
-                return this.cityField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.cityField, value) != true)) {
-                    this.cityField = value;
-                    this.RaisePropertyChanged("city");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string country {
-            get {
-                return this.countryField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.countryField, value) != true)) {
-                    this.countryField = value;
-                    this.RaisePropertyChanged("country");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> createtime {
-            get {
-                return this.createtimeField;
-            }
-            set {
-                if ((this.createtimeField.Equals(value) != true)) {
-                    this.createtimeField = value;
-                    this.RaisePropertyChanged("createtime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> createuid {
-            get {
-                return this.createuidField;
-            }
-            set {
-                if ((this.createuidField.Equals(value) != true)) {
-                    this.createuidField = value;
-                    this.RaisePropertyChanged("createuid");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> customerid {
-            get {
-                return this.customeridField;
-            }
-            set {
-                if ((this.customeridField.Equals(value) != true)) {
-                    this.customeridField = value;
-                    this.RaisePropertyChanged("customerid");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id {
-            get {
-                return this.idField;
-            }
-            set {
-                if ((this.idField.Equals(value) != true)) {
-                    this.idField = value;
-                    this.RaisePropertyChanged("id");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_Suppliers", Namespace="http://schemas.datacontract.org/2004/07/MEMSservice.DAL")]
-    [System.SerializableAttribute()]
-    public partial class T_Suppliers : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string accountnameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string accountnoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string addressField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string bankField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string businessscopeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string cityField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string countryField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> createtimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> createuidField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string emailField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string faxField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int idField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string legalpersonField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string postcodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string provinceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string remarksField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string simplenameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string suppliernameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string suppliernoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string suppliertypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string taxcodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string telphoneField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string websiteField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string accountname {
-            get {
-                return this.accountnameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.accountnameField, value) != true)) {
-                    this.accountnameField = value;
-                    this.RaisePropertyChanged("accountname");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string accountno {
-            get {
-                return this.accountnoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.accountnoField, value) != true)) {
-                    this.accountnoField = value;
-                    this.RaisePropertyChanged("accountno");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string address {
-            get {
-                return this.addressField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.addressField, value) != true)) {
-                    this.addressField = value;
-                    this.RaisePropertyChanged("address");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string bank {
-            get {
-                return this.bankField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.bankField, value) != true)) {
-                    this.bankField = value;
-                    this.RaisePropertyChanged("bank");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string businessscope {
-            get {
-                return this.businessscopeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.businessscopeField, value) != true)) {
-                    this.businessscopeField = value;
-                    this.RaisePropertyChanged("businessscope");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string city {
-            get {
-                return this.cityField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.cityField, value) != true)) {
-                    this.cityField = value;
-                    this.RaisePropertyChanged("city");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string country {
-            get {
-                return this.countryField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.countryField, value) != true)) {
-                    this.countryField = value;
-                    this.RaisePropertyChanged("country");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> createtime {
-            get {
-                return this.createtimeField;
-            }
-            set {
-                if ((this.createtimeField.Equals(value) != true)) {
-                    this.createtimeField = value;
-                    this.RaisePropertyChanged("createtime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> createuid {
-            get {
-                return this.createuidField;
-            }
-            set {
-                if ((this.createuidField.Equals(value) != true)) {
-                    this.createuidField = value;
-                    this.RaisePropertyChanged("createuid");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string email {
-            get {
-                return this.emailField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.emailField, value) != true)) {
-                    this.emailField = value;
-                    this.RaisePropertyChanged("email");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string fax {
-            get {
-                return this.faxField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.faxField, value) != true)) {
-                    this.faxField = value;
-                    this.RaisePropertyChanged("fax");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id {
-            get {
-                return this.idField;
-            }
-            set {
-                if ((this.idField.Equals(value) != true)) {
-                    this.idField = value;
-                    this.RaisePropertyChanged("id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string legalperson {
-            get {
-                return this.legalpersonField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.legalpersonField, value) != true)) {
-                    this.legalpersonField = value;
-                    this.RaisePropertyChanged("legalperson");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string postcode {
-            get {
-                return this.postcodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.postcodeField, value) != true)) {
-                    this.postcodeField = value;
-                    this.RaisePropertyChanged("postcode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string province {
-            get {
-                return this.provinceField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.provinceField, value) != true)) {
-                    this.provinceField = value;
-                    this.RaisePropertyChanged("province");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string remarks {
-            get {
-                return this.remarksField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.remarksField, value) != true)) {
-                    this.remarksField = value;
-                    this.RaisePropertyChanged("remarks");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string simplename {
-            get {
-                return this.simplenameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.simplenameField, value) != true)) {
-                    this.simplenameField = value;
-                    this.RaisePropertyChanged("simplename");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string suppliername {
-            get {
-                return this.suppliernameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.suppliernameField, value) != true)) {
-                    this.suppliernameField = value;
-                    this.RaisePropertyChanged("suppliername");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string supplierno {
-            get {
-                return this.suppliernoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.suppliernoField, value) != true)) {
-                    this.suppliernoField = value;
-                    this.RaisePropertyChanged("supplierno");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string suppliertype {
-            get {
-                return this.suppliertypeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.suppliertypeField, value) != true)) {
-                    this.suppliertypeField = value;
-                    this.RaisePropertyChanged("suppliertype");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string taxcode {
-            get {
-                return this.taxcodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.taxcodeField, value) != true)) {
-                    this.taxcodeField = value;
-                    this.RaisePropertyChanged("taxcode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string telphone {
-            get {
-                return this.telphoneField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.telphoneField, value) != true)) {
-                    this.telphoneField = value;
-                    this.RaisePropertyChanged("telphone");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string website {
-            get {
-                return this.websiteField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.websiteField, value) != true)) {
-                    this.websiteField = value;
-                    this.RaisePropertyChanged("website");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_Base_suppliertype", Namespace="http://schemas.datacontract.org/2004/07/MEMSservice.DAL")]
-    [System.SerializableAttribute()]
-    public partial class T_Base_suppliertype : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int idField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string remarksField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string typenameField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id {
-            get {
-                return this.idField;
-            }
-            set {
-                if ((this.idField.Equals(value) != true)) {
-                    this.idField = value;
-                    this.RaisePropertyChanged("id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string remarks {
-            get {
-                return this.remarksField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.remarksField, value) != true)) {
-                    this.remarksField = value;
-                    this.RaisePropertyChanged("remarks");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string typename {
-            get {
-                return this.typenameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.typenameField, value) != true)) {
-                    this.typenameField = value;
-                    this.RaisePropertyChanged("typename");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_Suppliers_contacts", Namespace="http://schemas.datacontract.org/2004/07/MEMSservice.DAL")]
-    [System.SerializableAttribute()]
-    public partial class T_Suppliers_contacts : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string cellphoneField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string contactnameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> createtimeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> createuidField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string emailField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string faxField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int idField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string positionField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string qqField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string remarksField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string sexField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> supplieridField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string telphoneField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string cellphone {
-            get {
-                return this.cellphoneField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.cellphoneField, value) != true)) {
-                    this.cellphoneField = value;
-                    this.RaisePropertyChanged("cellphone");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string contactname {
-            get {
-                return this.contactnameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.contactnameField, value) != true)) {
-                    this.contactnameField = value;
-                    this.RaisePropertyChanged("contactname");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> createtime {
-            get {
-                return this.createtimeField;
-            }
-            set {
-                if ((this.createtimeField.Equals(value) != true)) {
-                    this.createtimeField = value;
-                    this.RaisePropertyChanged("createtime");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> createuid {
-            get {
-                return this.createuidField;
-            }
-            set {
-                if ((this.createuidField.Equals(value) != true)) {
-                    this.createuidField = value;
-                    this.RaisePropertyChanged("createuid");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string email {
-            get {
-                return this.emailField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.emailField, value) != true)) {
-                    this.emailField = value;
-                    this.RaisePropertyChanged("email");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string fax {
-            get {
-                return this.faxField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.faxField, value) != true)) {
-                    this.faxField = value;
-                    this.RaisePropertyChanged("fax");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id {
-            get {
-                return this.idField;
-            }
-            set {
-                if ((this.idField.Equals(value) != true)) {
-                    this.idField = value;
-                    this.RaisePropertyChanged("id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string position {
-            get {
-                return this.positionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.positionField, value) != true)) {
-                    this.positionField = value;
-                    this.RaisePropertyChanged("position");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string qq {
-            get {
-                return this.qqField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.qqField, value) != true)) {
-                    this.qqField = value;
-                    this.RaisePropertyChanged("qq");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string remarks {
-            get {
-                return this.remarksField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.remarksField, value) != true)) {
-                    this.remarksField = value;
-                    this.RaisePropertyChanged("remarks");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string sex {
-            get {
-                return this.sexField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.sexField, value) != true)) {
-                    this.sexField = value;
-                    this.RaisePropertyChanged("sex");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> supplierid {
-            get {
-                return this.supplieridField;
-            }
-            set {
-                if ((this.supplieridField.Equals(value) != true)) {
-                    this.supplieridField = value;
-                    this.RaisePropertyChanged("supplierid");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string telphone {
-            get {
-                return this.telphoneField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.telphoneField, value) != true)) {
-                    this.telphoneField = value;
-                    this.RaisePropertyChanged("telphone");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ProductList", Namespace="http://schemas.datacontract.org/2004/07/MEMSservice.DAL")]
-    [System.SerializableAttribute()]
-    public partial class ProductList : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int customeridField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string customernameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int idField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string procodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string pronameField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int customerid {
-            get {
-                return this.customeridField;
-            }
-            set {
-                if ((this.customeridField.Equals(value) != true)) {
-                    this.customeridField = value;
-                    this.RaisePropertyChanged("customerid");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string customername {
-            get {
-                return this.customernameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.customernameField, value) != true)) {
-                    this.customernameField = value;
-                    this.RaisePropertyChanged("customername");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id {
-            get {
-                return this.idField;
-            }
-            set {
-                if ((this.idField.Equals(value) != true)) {
-                    this.idField = value;
-                    this.RaisePropertyChanged("id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string procode {
-            get {
-                return this.procodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.procodeField, value) != true)) {
-                    this.procodeField = value;
-                    this.RaisePropertyChanged("procode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string proname {
-            get {
-                return this.pronameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.pronameField, value) != true)) {
-                    this.pronameField = value;
-                    this.RaisePropertyChanged("proname");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_Product", Namespace="http://schemas.datacontract.org/2004/07/MEMSservice.DAL")]
-    [System.SerializableAttribute()]
-    public partial class T_Product : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> customeridField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int idField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string procodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<double> progrossweightField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string pronameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<double> pronetweightField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string prospecificationField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> protypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string prounitField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> customerid {
-            get {
-                return this.customeridField;
-            }
-            set {
-                if ((this.customeridField.Equals(value) != true)) {
-                    this.customeridField = value;
-                    this.RaisePropertyChanged("customerid");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id {
-            get {
-                return this.idField;
-            }
-            set {
-                if ((this.idField.Equals(value) != true)) {
-                    this.idField = value;
-                    this.RaisePropertyChanged("id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string procode {
-            get {
-                return this.procodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.procodeField, value) != true)) {
-                    this.procodeField = value;
-                    this.RaisePropertyChanged("procode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<double> progrossweight {
-            get {
-                return this.progrossweightField;
-            }
-            set {
-                if ((this.progrossweightField.Equals(value) != true)) {
-                    this.progrossweightField = value;
-                    this.RaisePropertyChanged("progrossweight");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string proname {
-            get {
-                return this.pronameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.pronameField, value) != true)) {
-                    this.pronameField = value;
-                    this.RaisePropertyChanged("proname");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<double> pronetweight {
-            get {
-                return this.pronetweightField;
-            }
-            set {
-                if ((this.pronetweightField.Equals(value) != true)) {
-                    this.pronetweightField = value;
-                    this.RaisePropertyChanged("pronetweight");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string prospecification {
-            get {
-                return this.prospecificationField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.prospecificationField, value) != true)) {
-                    this.prospecificationField = value;
-                    this.RaisePropertyChanged("prospecification");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> protype {
-            get {
-                return this.protypeField;
-            }
-            set {
-                if ((this.protypeField.Equals(value) != true)) {
-                    this.protypeField = value;
-                    this.RaisePropertyChanged("protype");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string prounit {
-            get {
-                return this.prounitField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.prounitField, value) != true)) {
-                    this.prounitField = value;
-                    this.RaisePropertyChanged("prounit");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_ProductType", Namespace="http://schemas.datacontract.org/2004/07/MEMSservice.DAL")]
-    [System.SerializableAttribute()]
-    public partial class T_ProductType : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> fidField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int idField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string typecodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string typedescField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string typenameField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> fid {
-            get {
-                return this.fidField;
-            }
-            set {
-                if ((this.fidField.Equals(value) != true)) {
-                    this.fidField = value;
-                    this.RaisePropertyChanged("fid");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id {
-            get {
-                return this.idField;
-            }
-            set {
-                if ((this.idField.Equals(value) != true)) {
-                    this.idField = value;
-                    this.RaisePropertyChanged("id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string typecode {
-            get {
-                return this.typecodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.typecodeField, value) != true)) {
-                    this.typecodeField = value;
-                    this.RaisePropertyChanged("typecode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string typedesc {
-            get {
-                return this.typedescField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.typedescField, value) != true)) {
-                    this.typedescField = value;
-                    this.RaisePropertyChanged("typedesc");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string typename {
-            get {
-                return this.typenameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.typenameField, value) != true)) {
-                    this.typenameField = value;
-                    this.RaisePropertyChanged("typename");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_Crafts", Namespace="http://schemas.datacontract.org/2004/07/MEMSservice.DAL")]
-    [System.SerializableAttribute()]
-    public partial class T_Crafts : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int idField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> pidField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> processindexField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string processnameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string remarksField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id {
-            get {
-                return this.idField;
-            }
-            set {
-                if ((this.idField.Equals(value) != true)) {
-                    this.idField = value;
-                    this.RaisePropertyChanged("id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> pid {
-            get {
-                return this.pidField;
-            }
-            set {
-                if ((this.pidField.Equals(value) != true)) {
-                    this.pidField = value;
-                    this.RaisePropertyChanged("pid");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> processindex {
-            get {
-                return this.processindexField;
-            }
-            set {
-                if ((this.processindexField.Equals(value) != true)) {
-                    this.processindexField = value;
-                    this.RaisePropertyChanged("processindex");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string processname {
-            get {
-                return this.processnameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.processnameField, value) != true)) {
-                    this.processnameField = value;
-                    this.RaisePropertyChanged("processname");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string remarks {
-            get {
-                return this.remarksField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.remarksField, value) != true)) {
-                    this.remarksField = value;
-                    this.RaisePropertyChanged("remarks");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_ProductDraw", Namespace="http://schemas.datacontract.org/2004/07/MEMSservice.DAL")]
-    [System.SerializableAttribute()]
-    public partial class T_ProductDraw : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string drawingnoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string filepathField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int idField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<bool> isdeleteField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int pidField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string remarkField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string drawingno {
-            get {
-                return this.drawingnoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.drawingnoField, value) != true)) {
-                    this.drawingnoField = value;
-                    this.RaisePropertyChanged("drawingno");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string filepath {
-            get {
-                return this.filepathField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.filepathField, value) != true)) {
-                    this.filepathField = value;
-                    this.RaisePropertyChanged("filepath");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id {
-            get {
-                return this.idField;
-            }
-            set {
-                if ((this.idField.Equals(value) != true)) {
-                    this.idField = value;
-                    this.RaisePropertyChanged("id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<bool> isdelete {
-            get {
-                return this.isdeleteField;
-            }
-            set {
-                if ((this.isdeleteField.Equals(value) != true)) {
-                    this.isdeleteField = value;
-                    this.RaisePropertyChanged("isdelete");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int pid {
-            get {
-                return this.pidField;
-            }
-            set {
-                if ((this.pidField.Equals(value) != true)) {
-                    this.pidField = value;
-                    this.RaisePropertyChanged("pid");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string remark {
-            get {
-                return this.remarkField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.remarkField, value) != true)) {
-                    this.remarkField = value;
-                    this.RaisePropertyChanged("remark");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_ProductbasicPrice", Namespace="http://schemas.datacontract.org/2004/07/MEMSservice.DAL")]
-    [System.SerializableAttribute()]
-    public partial class T_ProductbasicPrice : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int idField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<decimal> managepriceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<decimal> materialpriceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string materialpricedescField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string mgrpricedescField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<decimal> otherpriceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string otherpricedescField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string pricebasicremarkField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> productidField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<decimal> returnmatpriceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string returnpricedescField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<decimal> totalpriceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string versionField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id {
-            get {
-                return this.idField;
-            }
-            set {
-                if ((this.idField.Equals(value) != true)) {
-                    this.idField = value;
-                    this.RaisePropertyChanged("id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<decimal> manageprice {
-            get {
-                return this.managepriceField;
-            }
-            set {
-                if ((this.managepriceField.Equals(value) != true)) {
-                    this.managepriceField = value;
-                    this.RaisePropertyChanged("manageprice");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<decimal> materialprice {
-            get {
-                return this.materialpriceField;
-            }
-            set {
-                if ((this.materialpriceField.Equals(value) != true)) {
-                    this.materialpriceField = value;
-                    this.RaisePropertyChanged("materialprice");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string materialpricedesc {
-            get {
-                return this.materialpricedescField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.materialpricedescField, value) != true)) {
-                    this.materialpricedescField = value;
-                    this.RaisePropertyChanged("materialpricedesc");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string mgrpricedesc {
-            get {
-                return this.mgrpricedescField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.mgrpricedescField, value) != true)) {
-                    this.mgrpricedescField = value;
-                    this.RaisePropertyChanged("mgrpricedesc");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<decimal> otherprice {
-            get {
-                return this.otherpriceField;
-            }
-            set {
-                if ((this.otherpriceField.Equals(value) != true)) {
-                    this.otherpriceField = value;
-                    this.RaisePropertyChanged("otherprice");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string otherpricedesc {
-            get {
-                return this.otherpricedescField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.otherpricedescField, value) != true)) {
-                    this.otherpricedescField = value;
-                    this.RaisePropertyChanged("otherpricedesc");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string pricebasicremark {
-            get {
-                return this.pricebasicremarkField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.pricebasicremarkField, value) != true)) {
-                    this.pricebasicremarkField = value;
-                    this.RaisePropertyChanged("pricebasicremark");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> productid {
-            get {
-                return this.productidField;
-            }
-            set {
-                if ((this.productidField.Equals(value) != true)) {
-                    this.productidField = value;
-                    this.RaisePropertyChanged("productid");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<decimal> returnmatprice {
-            get {
-                return this.returnmatpriceField;
-            }
-            set {
-                if ((this.returnmatpriceField.Equals(value) != true)) {
-                    this.returnmatpriceField = value;
-                    this.RaisePropertyChanged("returnmatprice");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string returnpricedesc {
-            get {
-                return this.returnpricedescField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.returnpricedescField, value) != true)) {
-                    this.returnpricedescField = value;
-                    this.RaisePropertyChanged("returnpricedesc");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<decimal> totalprice {
-            get {
-                return this.totalpriceField;
-            }
-            set {
-                if ((this.totalpriceField.Equals(value) != true)) {
-                    this.totalpriceField = value;
-                    this.RaisePropertyChanged("totalprice");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string version {
-            get {
-                return this.versionField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.versionField, value) != true)) {
-                    this.versionField = value;
-                    this.RaisePropertyChanged("version");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_CraftsPrice", Namespace="http://schemas.datacontract.org/2004/07/MEMSservice.DAL")]
-    [System.SerializableAttribute()]
-    public partial class T_CraftsPrice : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int idField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> pidField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> pricebasicidField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> processidField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> processidxField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string processnameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<decimal> processpriceField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id {
-            get {
-                return this.idField;
-            }
-            set {
-                if ((this.idField.Equals(value) != true)) {
-                    this.idField = value;
-                    this.RaisePropertyChanged("id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> pid {
-            get {
-                return this.pidField;
-            }
-            set {
-                if ((this.pidField.Equals(value) != true)) {
-                    this.pidField = value;
-                    this.RaisePropertyChanged("pid");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> pricebasicid {
-            get {
-                return this.pricebasicidField;
-            }
-            set {
-                if ((this.pricebasicidField.Equals(value) != true)) {
-                    this.pricebasicidField = value;
-                    this.RaisePropertyChanged("pricebasicid");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> processid {
-            get {
-                return this.processidField;
-            }
-            set {
-                if ((this.processidField.Equals(value) != true)) {
-                    this.processidField = value;
-                    this.RaisePropertyChanged("processid");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> processidx {
-            get {
-                return this.processidxField;
-            }
-            set {
-                if ((this.processidxField.Equals(value) != true)) {
-                    this.processidxField = value;
-                    this.RaisePropertyChanged("processidx");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string processname {
-            get {
-                return this.processnameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.processnameField, value) != true)) {
-                    this.processnameField = value;
-                    this.RaisePropertyChanged("processname");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<decimal> processprice {
-            get {
-                return this.processpriceField;
-            }
-            set {
-                if ((this.processpriceField.Equals(value) != true)) {
-                    this.processpriceField = value;
-                    this.RaisePropertyChanged("processprice");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_quotation", Namespace="http://schemas.datacontract.org/2004/07/MEMSservice.DAL")]
-    [System.SerializableAttribute()]
-    public partial class T_quotation : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> customeridField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int idField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string productremarkField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> quotationdateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> quotationpersonField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string quotationtxtField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string quremarkField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string qutationnoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string themeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<decimal> totalpriceField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> customerid {
-            get {
-                return this.customeridField;
-            }
-            set {
-                if ((this.customeridField.Equals(value) != true)) {
-                    this.customeridField = value;
-                    this.RaisePropertyChanged("customerid");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id {
-            get {
-                return this.idField;
-            }
-            set {
-                if ((this.idField.Equals(value) != true)) {
-                    this.idField = value;
-                    this.RaisePropertyChanged("id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string productremark {
-            get {
-                return this.productremarkField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.productremarkField, value) != true)) {
-                    this.productremarkField = value;
-                    this.RaisePropertyChanged("productremark");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> quotationdate {
-            get {
-                return this.quotationdateField;
-            }
-            set {
-                if ((this.quotationdateField.Equals(value) != true)) {
-                    this.quotationdateField = value;
-                    this.RaisePropertyChanged("quotationdate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> quotationperson {
-            get {
-                return this.quotationpersonField;
-            }
-            set {
-                if ((this.quotationpersonField.Equals(value) != true)) {
-                    this.quotationpersonField = value;
-                    this.RaisePropertyChanged("quotationperson");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string quotationtxt {
-            get {
-                return this.quotationtxtField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.quotationtxtField, value) != true)) {
-                    this.quotationtxtField = value;
-                    this.RaisePropertyChanged("quotationtxt");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string quremark {
-            get {
-                return this.quremarkField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.quremarkField, value) != true)) {
-                    this.quremarkField = value;
-                    this.RaisePropertyChanged("quremark");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string qutationno {
-            get {
-                return this.qutationnoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.qutationnoField, value) != true)) {
-                    this.qutationnoField = value;
-                    this.RaisePropertyChanged("qutationno");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string theme {
-            get {
-                return this.themeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.themeField, value) != true)) {
-                    this.themeField = value;
-                    this.RaisePropertyChanged("theme");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<decimal> totalprice {
-            get {
-                return this.totalpriceField;
-            }
-            set {
-                if ((this.totalpriceField.Equals(value) != true)) {
-                    this.totalpriceField = value;
-                    this.RaisePropertyChanged("totalprice");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="QtProduct", Namespace="http://schemas.datacontract.org/2004/07/MEMSservice.DAL")]
-    [System.SerializableAttribute()]
-    public partial class QtProduct : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string productCodeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string productNameField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string productSpecField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private MEMS.Client.Sale.CRMService.T_quotationprice qpField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string productCode {
-            get {
-                return this.productCodeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.productCodeField, value) != true)) {
-                    this.productCodeField = value;
-                    this.RaisePropertyChanged("productCode");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string productName {
-            get {
-                return this.productNameField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.productNameField, value) != true)) {
-                    this.productNameField = value;
-                    this.RaisePropertyChanged("productName");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string productSpec {
-            get {
-                return this.productSpecField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.productSpecField, value) != true)) {
-                    this.productSpecField = value;
-                    this.RaisePropertyChanged("productSpec");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public MEMS.Client.Sale.CRMService.T_quotationprice qp {
-            get {
-                return this.qpField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.qpField, value) != true)) {
-                    this.qpField = value;
-                    this.RaisePropertyChanged("qp");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_quotationprice", Namespace="http://schemas.datacontract.org/2004/07/MEMSservice.DAL")]
-    [System.SerializableAttribute()]
-    public partial class T_quotationprice : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int idField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<decimal> modelpriceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int productcountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int productidField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int quotationidField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<decimal> quotationpriceField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<decimal> unitpriceField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id {
-            get {
-                return this.idField;
-            }
-            set {
-                if ((this.idField.Equals(value) != true)) {
-                    this.idField = value;
-                    this.RaisePropertyChanged("id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<decimal> modelprice {
-            get {
-                return this.modelpriceField;
-            }
-            set {
-                if ((this.modelpriceField.Equals(value) != true)) {
-                    this.modelpriceField = value;
-                    this.RaisePropertyChanged("modelprice");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int productcount {
-            get {
-                return this.productcountField;
-            }
-            set {
-                if ((this.productcountField.Equals(value) != true)) {
-                    this.productcountField = value;
-                    this.RaisePropertyChanged("productcount");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int productid {
-            get {
-                return this.productidField;
-            }
-            set {
-                if ((this.productidField.Equals(value) != true)) {
-                    this.productidField = value;
-                    this.RaisePropertyChanged("productid");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int quotationid {
-            get {
-                return this.quotationidField;
-            }
-            set {
-                if ((this.quotationidField.Equals(value) != true)) {
-                    this.quotationidField = value;
-                    this.RaisePropertyChanged("quotationid");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<decimal> quotationprice {
-            get {
-                return this.quotationpriceField;
-            }
-            set {
-                if ((this.quotationpriceField.Equals(value) != true)) {
-                    this.quotationpriceField = value;
-                    this.RaisePropertyChanged("quotationprice");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<decimal> unitprice {
-            get {
-                return this.unitpriceField;
-            }
-            set {
-                if ((this.unitpriceField.Equals(value) != true)) {
-                    this.unitpriceField = value;
-                    this.RaisePropertyChanged("unitprice");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="CRMService.ICRMService")]
-    public interface ICRMService {
+    internal interface ICRMService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/getCustomerList", ReplyAction="http://tempuri.org/ICRMService/getCustomerListResponse")]
-        MEMS.Client.Sale.CRMService.T_Customer[] getCustomerList();
+        System.Collections.Generic.List<MEMS.DB.Models.T_Customer> getCustomerList();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/getCustomerListbyP", ReplyAction="http://tempuri.org/ICRMService/getCustomerListbyPResponse")]
-        MEMS.Client.Sale.CRMService.T_Customer[] getCustomerListbyP(string cno, string cname, string csname);
+        System.Collections.Generic.List<MEMS.DB.Models.T_Customer> getCustomerListbyP(string cno, string cname, string csname);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/getCustomerbyid", ReplyAction="http://tempuri.org/ICRMService/getCustomerbyidResponse")]
-        MEMS.Client.Sale.CRMService.T_Customer getCustomerbyid(int customerid);
+        MEMS.DB.Models.T_Customer getCustomerbyid(int customerid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/AddNewCustomer", ReplyAction="http://tempuri.org/ICRMService/AddNewCustomerResponse")]
-        void AddNewCustomer(MEMS.Client.Sale.CRMService.T_Customer newcustomer);
+        void AddNewCustomer(MEMS.DB.Models.T_Customer newcustomer);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/EditCustomer", ReplyAction="http://tempuri.org/ICRMService/EditCustomerResponse")]
-        void EditCustomer(MEMS.Client.Sale.CRMService.T_Customer customer);
+        void EditCustomer(MEMS.DB.Models.T_Customer customer);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/DeleteCustomer", ReplyAction="http://tempuri.org/ICRMService/DeleteCustomerResponse")]
-        void DeleteCustomer(MEMS.Client.Sale.CRMService.T_Customer customer);
+        void DeleteCustomer(MEMS.DB.Models.T_Customer customer);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/getCpytypeList", ReplyAction="http://tempuri.org/ICRMService/getCpytypeListResponse")]
-        MEMS.Client.Sale.CRMService.T_Base_companytype[] getCpytypeList();
+        System.Collections.Generic.List<MEMS.DB.Models.T_Base_companytype> getCpytypeList();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/getCtmtypeList", ReplyAction="http://tempuri.org/ICRMService/getCtmtypeListResponse")]
-        MEMS.Client.Sale.CRMService.T_Base_customertype[] getCtmtypeList();
+        System.Collections.Generic.List<MEMS.DB.Models.T_Base_customertype> getCtmtypeList();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/getProfList", ReplyAction="http://tempuri.org/ICRMService/getProfListResponse")]
-        MEMS.Client.Sale.CRMService.T_Base_profession[] getProfList();
+        System.Collections.Generic.List<MEMS.DB.Models.T_Base_profession> getProfList();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/getCustomerContactList", ReplyAction="http://tempuri.org/ICRMService/getCustomerContactListResponse")]
-        MEMS.Client.Sale.CRMService.T_Customer_contacts[] getCustomerContactList(int customerid);
+        System.Collections.Generic.List<MEMS.DB.Models.T_Customer_contacts> getCustomerContactList(int customerid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/getCustomerAddressList", ReplyAction="http://tempuri.org/ICRMService/getCustomerAddressListResponse")]
-        MEMS.Client.Sale.CRMService.T_Customer_address[] getCustomerAddressList(int customerid);
+        System.Collections.Generic.List<MEMS.DB.Models.T_Customer_address> getCustomerAddressList(int customerid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/DelCustomerAddress", ReplyAction="http://tempuri.org/ICRMService/DelCustomerAddressResponse")]
-        void DelCustomerAddress(MEMS.Client.Sale.CRMService.T_Customer_address address);
+        void DelCustomerAddress(MEMS.DB.Models.T_Customer_address address);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/DelCustomerContact", ReplyAction="http://tempuri.org/ICRMService/DelCustomerContactResponse")]
-        void DelCustomerContact(MEMS.Client.Sale.CRMService.T_Customer_contacts contacts);
+        void DelCustomerContact(MEMS.DB.Models.T_Customer_contacts contacts);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/AddCustomerAddress", ReplyAction="http://tempuri.org/ICRMService/AddCustomerAddressResponse")]
-        void AddCustomerAddress(MEMS.Client.Sale.CRMService.T_Customer_address address);
+        void AddCustomerAddress(MEMS.DB.Models.T_Customer_address address);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/AddCustomerContact", ReplyAction="http://tempuri.org/ICRMService/AddCustomerContactResponse")]
-        void AddCustomerContact(MEMS.Client.Sale.CRMService.T_Customer_contacts contacts);
+        void AddCustomerContact(MEMS.DB.Models.T_Customer_contacts contacts);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/UpdCustomerAddress", ReplyAction="http://tempuri.org/ICRMService/UpdCustomerAddressResponse")]
-        void UpdCustomerAddress(MEMS.Client.Sale.CRMService.T_Customer_address address);
+        void UpdCustomerAddress(MEMS.DB.Models.T_Customer_address address);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/UpdCustomerContact", ReplyAction="http://tempuri.org/ICRMService/UpdCustomerContactResponse")]
-        void UpdCustomerContact(MEMS.Client.Sale.CRMService.T_Customer_contacts contacts);
+        void UpdCustomerContact(MEMS.DB.Models.T_Customer_contacts contacts);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/getAllSupplier", ReplyAction="http://tempuri.org/ICRMService/getAllSupplierResponse")]
-        MEMS.Client.Sale.CRMService.T_Suppliers[] getAllSupplier();
+        System.Collections.Generic.List<MEMS.DB.Models.T_Suppliers> getAllSupplier();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/getSupplierList", ReplyAction="http://tempuri.org/ICRMService/getSupplierListResponse")]
-        MEMS.Client.Sale.CRMService.T_Suppliers[] getSupplierList(string spno, string spname);
+        System.Collections.Generic.List<MEMS.DB.Models.T_Suppliers> getSupplierList(string spno, string spname);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/getSupplierbyId", ReplyAction="http://tempuri.org/ICRMService/getSupplierbyIdResponse")]
-        MEMS.Client.Sale.CRMService.T_Suppliers getSupplierbyId(int sid);
+        MEMS.DB.Models.T_Suppliers getSupplierbyId(int sid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/addNewSupplier", ReplyAction="http://tempuri.org/ICRMService/addNewSupplierResponse")]
-        void addNewSupplier(MEMS.Client.Sale.CRMService.T_Suppliers newsupplier);
+        void addNewSupplier(MEMS.DB.Models.T_Suppliers newsupplier);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/EditSupplier", ReplyAction="http://tempuri.org/ICRMService/EditSupplierResponse")]
-        void EditSupplier(MEMS.Client.Sale.CRMService.T_Suppliers supplier);
+        void EditSupplier(MEMS.DB.Models.T_Suppliers supplier);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/DeleteSupplier", ReplyAction="http://tempuri.org/ICRMService/DeleteSupplierResponse")]
-        void DeleteSupplier(MEMS.Client.Sale.CRMService.T_Suppliers supplier);
+        void DeleteSupplier(MEMS.DB.Models.T_Suppliers supplier);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/getSuptypeLst", ReplyAction="http://tempuri.org/ICRMService/getSuptypeLstResponse")]
-        MEMS.Client.Sale.CRMService.T_Base_suppliertype[] getSuptypeLst();
+        System.Collections.Generic.List<MEMS.DB.Models.T_Base_suppliertype> getSuptypeLst();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/getSupplierContacts", ReplyAction="http://tempuri.org/ICRMService/getSupplierContactsResponse")]
-        MEMS.Client.Sale.CRMService.T_Suppliers_contacts[] getSupplierContacts(int supplierid);
+        System.Collections.Generic.List<MEMS.DB.Models.T_Suppliers_contacts> getSupplierContacts(int supplierid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/AddSupplierContacts", ReplyAction="http://tempuri.org/ICRMService/AddSupplierContactsResponse")]
-        void AddSupplierContacts(MEMS.Client.Sale.CRMService.T_Suppliers_contacts contact);
+        void AddSupplierContacts(MEMS.DB.Models.T_Suppliers_contacts contact);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/EditSupplierContacts", ReplyAction="http://tempuri.org/ICRMService/EditSupplierContactsResponse")]
-        void EditSupplierContacts(MEMS.Client.Sale.CRMService.T_Suppliers_contacts contact);
+        void EditSupplierContacts(MEMS.DB.Models.T_Suppliers_contacts contact);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/DelSupplierContacts", ReplyAction="http://tempuri.org/ICRMService/DelSupplierContactsResponse")]
-        void DelSupplierContacts(MEMS.Client.Sale.CRMService.T_Suppliers_contacts contact);
+        void DelSupplierContacts(MEMS.DB.Models.T_Suppliers_contacts contact);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/getProductList", ReplyAction="http://tempuri.org/ICRMService/getProductListResponse")]
-        MEMS.Client.Sale.CRMService.ProductList[] getProductList();
+        System.Collections.Generic.List<MEMS.DB.ExtModels.ProductList> getProductList();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/getProductListbyCid", ReplyAction="http://tempuri.org/ICRMService/getProductListbyCidResponse")]
-        MEMS.Client.Sale.CRMService.T_Product[] getProductListbyCid(int cid);
+        System.Collections.Generic.List<MEMS.DB.Models.T_Product> getProductListbyCid(int cid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/getProductListbycdt", ReplyAction="http://tempuri.org/ICRMService/getProductListbycdtResponse")]
-        MEMS.Client.Sale.CRMService.ProductList[] getProductListbycdt(string pcode, string pname, int[] cid);
+        System.Collections.Generic.List<MEMS.DB.ExtModels.ProductList> getProductListbycdt(string pcode, string pname, System.Collections.Generic.List<int> cid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/getProductTypeList", ReplyAction="http://tempuri.org/ICRMService/getProductTypeListResponse")]
-        MEMS.Client.Sale.CRMService.T_ProductType[] getProductTypeList();
+        System.Collections.Generic.List<MEMS.DB.Models.T_ProductType> getProductTypeList();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/getProductbyId", ReplyAction="http://tempuri.org/ICRMService/getProductbyIdResponse")]
-        MEMS.Client.Sale.CRMService.T_Product getProductbyId(int pid);
+        MEMS.DB.Models.T_Product getProductbyId(int pid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/AddNewProduct", ReplyAction="http://tempuri.org/ICRMService/AddNewProductResponse")]
-        bool AddNewProduct(MEMS.Client.Sale.CRMService.T_Product product);
+        bool AddNewProduct(MEMS.DB.Models.T_Product product);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/UpdateProduct", ReplyAction="http://tempuri.org/ICRMService/UpdateProductResponse")]
-        bool UpdateProduct(MEMS.Client.Sale.CRMService.T_Product product);
+        bool UpdateProduct(MEMS.DB.Models.T_Product product);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/getProductCraft", ReplyAction="http://tempuri.org/ICRMService/getProductCraftResponse")]
-        MEMS.Client.Sale.CRMService.T_Crafts[] getProductCraft(int pid);
+        System.Collections.Generic.List<MEMS.DB.Models.T_Crafts> getProductCraft(int pid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/AddNewCraft", ReplyAction="http://tempuri.org/ICRMService/AddNewCraftResponse")]
-        bool AddNewCraft(MEMS.Client.Sale.CRMService.T_Crafts craft);
+        bool AddNewCraft(MEMS.DB.Models.T_Crafts craft);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/UpdateCraft", ReplyAction="http://tempuri.org/ICRMService/UpdateCraftResponse")]
-        bool UpdateCraft(MEMS.Client.Sale.CRMService.T_Crafts craft);
+        bool UpdateCraft(MEMS.DB.Models.T_Crafts craft);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/DeleteCraft", ReplyAction="http://tempuri.org/ICRMService/DeleteCraftResponse")]
-        bool DeleteCraft(MEMS.Client.Sale.CRMService.T_Crafts craft);
+        bool DeleteCraft(MEMS.DB.Models.T_Crafts craft);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/getProductDrawList", ReplyAction="http://tempuri.org/ICRMService/getProductDrawListResponse")]
-        MEMS.Client.Sale.CRMService.T_ProductDraw[] getProductDrawList(int productid);
+        System.Collections.Generic.List<MEMS.DB.Models.T_ProductDraw> getProductDrawList(int productid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/getProductPriceList", ReplyAction="http://tempuri.org/ICRMService/getProductPriceListResponse")]
-        MEMS.Client.Sale.CRMService.T_ProductbasicPrice[] getProductPriceList(int productid);
+        System.Collections.Generic.List<MEMS.DB.Models.T_ProductbasicPrice> getProductPriceList(int productid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/AddNewProductPrice", ReplyAction="http://tempuri.org/ICRMService/AddNewProductPriceResponse")]
-        bool AddNewProductPrice(MEMS.Client.Sale.CRMService.T_ProductbasicPrice price, MEMS.Client.Sale.CRMService.T_CraftsPrice[] newcplist);
+        bool AddNewProductPrice(MEMS.DB.Models.T_ProductbasicPrice price, System.Collections.Generic.List<MEMS.DB.Models.T_CraftsPrice> newcplist);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/getCraftPriceList", ReplyAction="http://tempuri.org/ICRMService/getCraftPriceListResponse")]
-        MEMS.Client.Sale.CRMService.T_CraftsPrice[] getCraftPriceList(int productid);
+        System.Collections.Generic.List<MEMS.DB.Models.T_CraftsPrice> getCraftPriceList(int productid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/getPriceVersion", ReplyAction="http://tempuri.org/ICRMService/getPriceVersionResponse")]
         string getPriceVersion(int pid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/getQuotationList", ReplyAction="http://tempuri.org/ICRMService/getQuotationListResponse")]
-        MEMS.Client.Sale.CRMService.T_quotation[] getQuotationList();
+        System.Collections.Generic.List<MEMS.DB.Models.T_quotation> getQuotationList();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/getQuotationListbyP", ReplyAction="http://tempuri.org/ICRMService/getQuotationListbyPResponse")]
-        MEMS.Client.Sale.CRMService.T_quotation[] getQuotationListbyP(string quno, int customerid, System.DateTime aftdate, System.DateTime bfedate);
+        System.Collections.Generic.List<MEMS.DB.Models.T_quotation> getQuotationListbyP(string quno, int customerid, System.DateTime aftdate, System.DateTime bfedate);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/getQuotationbyId", ReplyAction="http://tempuri.org/ICRMService/getQuotationbyIdResponse")]
-        MEMS.Client.Sale.CRMService.T_quotation getQuotationbyId(int qid);
+        MEMS.DB.Models.T_quotation getQuotationbyId(int qid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/AddNewQuotation", ReplyAction="http://tempuri.org/ICRMService/AddNewQuotationResponse")]
-        bool AddNewQuotation(MEMS.Client.Sale.CRMService.T_quotation newqt);
+        bool AddNewQuotation(MEMS.DB.Models.T_quotation newqt);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/AddNewQtAndQtprice", ReplyAction="http://tempuri.org/ICRMService/AddNewQtAndQtpriceResponse")]
-        bool AddNewQtAndQtprice(MEMS.Client.Sale.CRMService.T_quotation newqt, MEMS.Client.Sale.CRMService.QtProduct[] qtpricelst);
+        bool AddNewQtAndQtprice(MEMS.DB.Models.T_quotation newqt, System.Collections.Generic.List<MEMS.DB.ExtModels.QtProduct> qtpricelst);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/UpdateQuotation", ReplyAction="http://tempuri.org/ICRMService/UpdateQuotationResponse")]
-        bool UpdateQuotation(MEMS.Client.Sale.CRMService.T_quotation qt);
+        bool UpdateQuotation(MEMS.DB.Models.T_quotation qt);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/DeleteQuotation", ReplyAction="http://tempuri.org/ICRMService/DeleteQuotationResponse")]
-        bool DeleteQuotation(MEMS.Client.Sale.CRMService.T_quotation qt);
+        bool DeleteQuotation(MEMS.DB.Models.T_quotation qt);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/getQtProduct", ReplyAction="http://tempuri.org/ICRMService/getQtProductResponse")]
-        MEMS.Client.Sale.CRMService.QtProduct[] getQtProduct(int Qtid);
+        System.Collections.Generic.List<MEMS.DB.ExtModels.QtProduct> getQtProduct(int Qtid);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/AddNewQtPrice", ReplyAction="http://tempuri.org/ICRMService/AddNewQtPriceResponse")]
-        bool AddNewQtPrice(MEMS.Client.Sale.CRMService.QtProduct qtprice);
+        bool AddNewQtPrice(MEMS.DB.ExtModels.QtProduct qtprice);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/AddNewQtPriceList", ReplyAction="http://tempuri.org/ICRMService/AddNewQtPriceListResponse")]
-        bool AddNewQtPriceList(MEMS.Client.Sale.CRMService.QtProduct[] qtpricelst);
+        bool AddNewQtPriceList(System.Collections.Generic.List<MEMS.DB.ExtModels.QtProduct> qtpricelst);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public interface ICRMServiceChannel : MEMS.Client.Sale.CRMService.ICRMService, System.ServiceModel.IClientChannel {
+    internal interface ICRMServiceChannel : MEMS.Client.Sale.CRMService.ICRMService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    public partial class CRMServiceClient : System.ServiceModel.ClientBase<MEMS.Client.Sale.CRMService.ICRMService>, MEMS.Client.Sale.CRMService.ICRMService {
+    internal partial class CRMServiceClient : System.ServiceModel.ClientBase<MEMS.Client.Sale.CRMService.ICRMService>, MEMS.Client.Sale.CRMService.ICRMService {
         
         public CRMServiceClient() {
         }
@@ -3430,175 +205,175 @@ namespace MEMS.Client.Sale.CRMService {
                 base(binding, remoteAddress) {
         }
         
-        public MEMS.Client.Sale.CRMService.T_Customer[] getCustomerList() {
+        public System.Collections.Generic.List<MEMS.DB.Models.T_Customer> getCustomerList() {
             return base.Channel.getCustomerList();
         }
         
-        public MEMS.Client.Sale.CRMService.T_Customer[] getCustomerListbyP(string cno, string cname, string csname) {
+        public System.Collections.Generic.List<MEMS.DB.Models.T_Customer> getCustomerListbyP(string cno, string cname, string csname) {
             return base.Channel.getCustomerListbyP(cno, cname, csname);
         }
         
-        public MEMS.Client.Sale.CRMService.T_Customer getCustomerbyid(int customerid) {
+        public MEMS.DB.Models.T_Customer getCustomerbyid(int customerid) {
             return base.Channel.getCustomerbyid(customerid);
         }
         
-        public void AddNewCustomer(MEMS.Client.Sale.CRMService.T_Customer newcustomer) {
+        public void AddNewCustomer(MEMS.DB.Models.T_Customer newcustomer) {
             base.Channel.AddNewCustomer(newcustomer);
         }
         
-        public void EditCustomer(MEMS.Client.Sale.CRMService.T_Customer customer) {
+        public void EditCustomer(MEMS.DB.Models.T_Customer customer) {
             base.Channel.EditCustomer(customer);
         }
         
-        public void DeleteCustomer(MEMS.Client.Sale.CRMService.T_Customer customer) {
+        public void DeleteCustomer(MEMS.DB.Models.T_Customer customer) {
             base.Channel.DeleteCustomer(customer);
         }
         
-        public MEMS.Client.Sale.CRMService.T_Base_companytype[] getCpytypeList() {
+        public System.Collections.Generic.List<MEMS.DB.Models.T_Base_companytype> getCpytypeList() {
             return base.Channel.getCpytypeList();
         }
         
-        public MEMS.Client.Sale.CRMService.T_Base_customertype[] getCtmtypeList() {
+        public System.Collections.Generic.List<MEMS.DB.Models.T_Base_customertype> getCtmtypeList() {
             return base.Channel.getCtmtypeList();
         }
         
-        public MEMS.Client.Sale.CRMService.T_Base_profession[] getProfList() {
+        public System.Collections.Generic.List<MEMS.DB.Models.T_Base_profession> getProfList() {
             return base.Channel.getProfList();
         }
         
-        public MEMS.Client.Sale.CRMService.T_Customer_contacts[] getCustomerContactList(int customerid) {
+        public System.Collections.Generic.List<MEMS.DB.Models.T_Customer_contacts> getCustomerContactList(int customerid) {
             return base.Channel.getCustomerContactList(customerid);
         }
         
-        public MEMS.Client.Sale.CRMService.T_Customer_address[] getCustomerAddressList(int customerid) {
+        public System.Collections.Generic.List<MEMS.DB.Models.T_Customer_address> getCustomerAddressList(int customerid) {
             return base.Channel.getCustomerAddressList(customerid);
         }
         
-        public void DelCustomerAddress(MEMS.Client.Sale.CRMService.T_Customer_address address) {
+        public void DelCustomerAddress(MEMS.DB.Models.T_Customer_address address) {
             base.Channel.DelCustomerAddress(address);
         }
         
-        public void DelCustomerContact(MEMS.Client.Sale.CRMService.T_Customer_contacts contacts) {
+        public void DelCustomerContact(MEMS.DB.Models.T_Customer_contacts contacts) {
             base.Channel.DelCustomerContact(contacts);
         }
         
-        public void AddCustomerAddress(MEMS.Client.Sale.CRMService.T_Customer_address address) {
+        public void AddCustomerAddress(MEMS.DB.Models.T_Customer_address address) {
             base.Channel.AddCustomerAddress(address);
         }
         
-        public void AddCustomerContact(MEMS.Client.Sale.CRMService.T_Customer_contacts contacts) {
+        public void AddCustomerContact(MEMS.DB.Models.T_Customer_contacts contacts) {
             base.Channel.AddCustomerContact(contacts);
         }
         
-        public void UpdCustomerAddress(MEMS.Client.Sale.CRMService.T_Customer_address address) {
+        public void UpdCustomerAddress(MEMS.DB.Models.T_Customer_address address) {
             base.Channel.UpdCustomerAddress(address);
         }
         
-        public void UpdCustomerContact(MEMS.Client.Sale.CRMService.T_Customer_contacts contacts) {
+        public void UpdCustomerContact(MEMS.DB.Models.T_Customer_contacts contacts) {
             base.Channel.UpdCustomerContact(contacts);
         }
         
-        public MEMS.Client.Sale.CRMService.T_Suppliers[] getAllSupplier() {
+        public System.Collections.Generic.List<MEMS.DB.Models.T_Suppliers> getAllSupplier() {
             return base.Channel.getAllSupplier();
         }
         
-        public MEMS.Client.Sale.CRMService.T_Suppliers[] getSupplierList(string spno, string spname) {
+        public System.Collections.Generic.List<MEMS.DB.Models.T_Suppliers> getSupplierList(string spno, string spname) {
             return base.Channel.getSupplierList(spno, spname);
         }
         
-        public MEMS.Client.Sale.CRMService.T_Suppliers getSupplierbyId(int sid) {
+        public MEMS.DB.Models.T_Suppliers getSupplierbyId(int sid) {
             return base.Channel.getSupplierbyId(sid);
         }
         
-        public void addNewSupplier(MEMS.Client.Sale.CRMService.T_Suppliers newsupplier) {
+        public void addNewSupplier(MEMS.DB.Models.T_Suppliers newsupplier) {
             base.Channel.addNewSupplier(newsupplier);
         }
         
-        public void EditSupplier(MEMS.Client.Sale.CRMService.T_Suppliers supplier) {
+        public void EditSupplier(MEMS.DB.Models.T_Suppliers supplier) {
             base.Channel.EditSupplier(supplier);
         }
         
-        public void DeleteSupplier(MEMS.Client.Sale.CRMService.T_Suppliers supplier) {
+        public void DeleteSupplier(MEMS.DB.Models.T_Suppliers supplier) {
             base.Channel.DeleteSupplier(supplier);
         }
         
-        public MEMS.Client.Sale.CRMService.T_Base_suppliertype[] getSuptypeLst() {
+        public System.Collections.Generic.List<MEMS.DB.Models.T_Base_suppliertype> getSuptypeLst() {
             return base.Channel.getSuptypeLst();
         }
         
-        public MEMS.Client.Sale.CRMService.T_Suppliers_contacts[] getSupplierContacts(int supplierid) {
+        public System.Collections.Generic.List<MEMS.DB.Models.T_Suppliers_contacts> getSupplierContacts(int supplierid) {
             return base.Channel.getSupplierContacts(supplierid);
         }
         
-        public void AddSupplierContacts(MEMS.Client.Sale.CRMService.T_Suppliers_contacts contact) {
+        public void AddSupplierContacts(MEMS.DB.Models.T_Suppliers_contacts contact) {
             base.Channel.AddSupplierContacts(contact);
         }
         
-        public void EditSupplierContacts(MEMS.Client.Sale.CRMService.T_Suppliers_contacts contact) {
+        public void EditSupplierContacts(MEMS.DB.Models.T_Suppliers_contacts contact) {
             base.Channel.EditSupplierContacts(contact);
         }
         
-        public void DelSupplierContacts(MEMS.Client.Sale.CRMService.T_Suppliers_contacts contact) {
+        public void DelSupplierContacts(MEMS.DB.Models.T_Suppliers_contacts contact) {
             base.Channel.DelSupplierContacts(contact);
         }
         
-        public MEMS.Client.Sale.CRMService.ProductList[] getProductList() {
+        public System.Collections.Generic.List<MEMS.DB.ExtModels.ProductList> getProductList() {
             return base.Channel.getProductList();
         }
         
-        public MEMS.Client.Sale.CRMService.T_Product[] getProductListbyCid(int cid) {
+        public System.Collections.Generic.List<MEMS.DB.Models.T_Product> getProductListbyCid(int cid) {
             return base.Channel.getProductListbyCid(cid);
         }
         
-        public MEMS.Client.Sale.CRMService.ProductList[] getProductListbycdt(string pcode, string pname, int[] cid) {
+        public System.Collections.Generic.List<MEMS.DB.ExtModels.ProductList> getProductListbycdt(string pcode, string pname, System.Collections.Generic.List<int> cid) {
             return base.Channel.getProductListbycdt(pcode, pname, cid);
         }
         
-        public MEMS.Client.Sale.CRMService.T_ProductType[] getProductTypeList() {
+        public System.Collections.Generic.List<MEMS.DB.Models.T_ProductType> getProductTypeList() {
             return base.Channel.getProductTypeList();
         }
         
-        public MEMS.Client.Sale.CRMService.T_Product getProductbyId(int pid) {
+        public MEMS.DB.Models.T_Product getProductbyId(int pid) {
             return base.Channel.getProductbyId(pid);
         }
         
-        public bool AddNewProduct(MEMS.Client.Sale.CRMService.T_Product product) {
+        public bool AddNewProduct(MEMS.DB.Models.T_Product product) {
             return base.Channel.AddNewProduct(product);
         }
         
-        public bool UpdateProduct(MEMS.Client.Sale.CRMService.T_Product product) {
+        public bool UpdateProduct(MEMS.DB.Models.T_Product product) {
             return base.Channel.UpdateProduct(product);
         }
         
-        public MEMS.Client.Sale.CRMService.T_Crafts[] getProductCraft(int pid) {
+        public System.Collections.Generic.List<MEMS.DB.Models.T_Crafts> getProductCraft(int pid) {
             return base.Channel.getProductCraft(pid);
         }
         
-        public bool AddNewCraft(MEMS.Client.Sale.CRMService.T_Crafts craft) {
+        public bool AddNewCraft(MEMS.DB.Models.T_Crafts craft) {
             return base.Channel.AddNewCraft(craft);
         }
         
-        public bool UpdateCraft(MEMS.Client.Sale.CRMService.T_Crafts craft) {
+        public bool UpdateCraft(MEMS.DB.Models.T_Crafts craft) {
             return base.Channel.UpdateCraft(craft);
         }
         
-        public bool DeleteCraft(MEMS.Client.Sale.CRMService.T_Crafts craft) {
+        public bool DeleteCraft(MEMS.DB.Models.T_Crafts craft) {
             return base.Channel.DeleteCraft(craft);
         }
         
-        public MEMS.Client.Sale.CRMService.T_ProductDraw[] getProductDrawList(int productid) {
+        public System.Collections.Generic.List<MEMS.DB.Models.T_ProductDraw> getProductDrawList(int productid) {
             return base.Channel.getProductDrawList(productid);
         }
         
-        public MEMS.Client.Sale.CRMService.T_ProductbasicPrice[] getProductPriceList(int productid) {
+        public System.Collections.Generic.List<MEMS.DB.Models.T_ProductbasicPrice> getProductPriceList(int productid) {
             return base.Channel.getProductPriceList(productid);
         }
         
-        public bool AddNewProductPrice(MEMS.Client.Sale.CRMService.T_ProductbasicPrice price, MEMS.Client.Sale.CRMService.T_CraftsPrice[] newcplist) {
+        public bool AddNewProductPrice(MEMS.DB.Models.T_ProductbasicPrice price, System.Collections.Generic.List<MEMS.DB.Models.T_CraftsPrice> newcplist) {
             return base.Channel.AddNewProductPrice(price, newcplist);
         }
         
-        public MEMS.Client.Sale.CRMService.T_CraftsPrice[] getCraftPriceList(int productid) {
+        public System.Collections.Generic.List<MEMS.DB.Models.T_CraftsPrice> getCraftPriceList(int productid) {
             return base.Channel.getCraftPriceList(productid);
         }
         
@@ -3606,43 +381,43 @@ namespace MEMS.Client.Sale.CRMService {
             return base.Channel.getPriceVersion(pid);
         }
         
-        public MEMS.Client.Sale.CRMService.T_quotation[] getQuotationList() {
+        public System.Collections.Generic.List<MEMS.DB.Models.T_quotation> getQuotationList() {
             return base.Channel.getQuotationList();
         }
         
-        public MEMS.Client.Sale.CRMService.T_quotation[] getQuotationListbyP(string quno, int customerid, System.DateTime aftdate, System.DateTime bfedate) {
+        public System.Collections.Generic.List<MEMS.DB.Models.T_quotation> getQuotationListbyP(string quno, int customerid, System.DateTime aftdate, System.DateTime bfedate) {
             return base.Channel.getQuotationListbyP(quno, customerid, aftdate, bfedate);
         }
         
-        public MEMS.Client.Sale.CRMService.T_quotation getQuotationbyId(int qid) {
+        public MEMS.DB.Models.T_quotation getQuotationbyId(int qid) {
             return base.Channel.getQuotationbyId(qid);
         }
         
-        public bool AddNewQuotation(MEMS.Client.Sale.CRMService.T_quotation newqt) {
+        public bool AddNewQuotation(MEMS.DB.Models.T_quotation newqt) {
             return base.Channel.AddNewQuotation(newqt);
         }
         
-        public bool AddNewQtAndQtprice(MEMS.Client.Sale.CRMService.T_quotation newqt, MEMS.Client.Sale.CRMService.QtProduct[] qtpricelst) {
+        public bool AddNewQtAndQtprice(MEMS.DB.Models.T_quotation newqt, System.Collections.Generic.List<MEMS.DB.ExtModels.QtProduct> qtpricelst) {
             return base.Channel.AddNewQtAndQtprice(newqt, qtpricelst);
         }
         
-        public bool UpdateQuotation(MEMS.Client.Sale.CRMService.T_quotation qt) {
+        public bool UpdateQuotation(MEMS.DB.Models.T_quotation qt) {
             return base.Channel.UpdateQuotation(qt);
         }
         
-        public bool DeleteQuotation(MEMS.Client.Sale.CRMService.T_quotation qt) {
+        public bool DeleteQuotation(MEMS.DB.Models.T_quotation qt) {
             return base.Channel.DeleteQuotation(qt);
         }
         
-        public MEMS.Client.Sale.CRMService.QtProduct[] getQtProduct(int Qtid) {
+        public System.Collections.Generic.List<MEMS.DB.ExtModels.QtProduct> getQtProduct(int Qtid) {
             return base.Channel.getQtProduct(Qtid);
         }
         
-        public bool AddNewQtPrice(MEMS.Client.Sale.CRMService.QtProduct qtprice) {
+        public bool AddNewQtPrice(MEMS.DB.ExtModels.QtProduct qtprice) {
             return base.Channel.AddNewQtPrice(qtprice);
         }
         
-        public bool AddNewQtPriceList(MEMS.Client.Sale.CRMService.QtProduct[] qtpricelst) {
+        public bool AddNewQtPriceList(System.Collections.Generic.List<MEMS.DB.ExtModels.QtProduct> qtpricelst) {
             return base.Channel.AddNewQtPriceList(qtpricelst);
         }
     }

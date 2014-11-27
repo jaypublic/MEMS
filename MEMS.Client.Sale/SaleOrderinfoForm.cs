@@ -10,6 +10,8 @@ using MEMS.Client.Common;
 using MEMS.Client.Sale.SaleService;
 using MEMS.Client.Sale.CRMService;
 using DevExpress.XtraEditors;
+using MEMS.DB.Models;
+using MEMS.DB.ExtModels;
 
 namespace MEMS.Client.Sale
 {
@@ -88,7 +90,7 @@ namespace MEMS.Client.Sale
             lkpcustomer.Properties.ShowFooter = false;
             lkpcustomer.Properties.ShowHeader = false;
             lkpcustomer.Properties.NullText = "";
-            lkpcustomer.Properties.DropDownRows = customerlst.Length;
+            lkpcustomer.Properties.DropDownRows = customerlst.Count;
             var keycol = new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "id");
             lkpcustomer.Properties.Columns.Add(keycol);
             var textcol = new DevExpress.XtraEditors.Controls.LookUpColumnInfo("customername", "name");
@@ -114,7 +116,7 @@ namespace MEMS.Client.Sale
             lkpqtno.Properties.ShowFooter = false;
             lkpqtno.Properties.ShowHeader = false;
             lkpqtno.Properties.NullText = "";
-            lkpqtno.Properties.DropDownRows = qtlst.Length;
+            lkpqtno.Properties.DropDownRows = qtlst.Count;
             var keycol = new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "id");
             lkpqtno.Properties.Columns.Add(keycol);
             var textcol = new DevExpress.XtraEditors.Controls.LookUpColumnInfo("qutationno", "name");

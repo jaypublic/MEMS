@@ -4,8 +4,11 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
-using MEMSservice.DAL;
+
 using MEMSservice.BLL;
+using MEMS.DB.Models;
+using MEMS.DB.ExtModels;
+
 namespace MEMSservice
 {
     // 注意: 使用“重构”菜单上的“重命名”命令，可以同时更改代码、svc 和配置文件中的类名“SaleService”。
@@ -45,7 +48,6 @@ namespace MEMSservice
             }
         }
 
-
         public bool AddNewSaleOrder(T_saleorder so)
         {
             try
@@ -74,13 +76,25 @@ namespace MEMSservice
             }
         }
 
-
         public bool DeleteSaleOrder(T_saleorder so)
         {
             try
             {
                 m_sh = new SaleHelper();
                 return m_sh.DeleteSaleOrder(so);
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+        }
+        public List<T_saledetail> getSaleDetailbysoid(int soid)
+        {
+            try
+            {
+                m_sh = new SaleHelper();
+                return m_sh.getSaleDetailbysoid(soid);
             }
             catch (Exception)
             {

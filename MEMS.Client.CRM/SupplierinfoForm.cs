@@ -8,6 +8,8 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using MEMS.Client.Common;
 using MEMS.Client.CRM.CRMService;
+using MEMS.DB.Models;
+using MEMS.DB.ExtModels;
 
 namespace MEMS.Client.CRM
 {
@@ -48,7 +50,7 @@ namespace MEMS.Client.CRM
                 SetData();
                 readonlytxtbox(this.Controls, true);
             }
-            var contactlst = new List<T_Suppliers_contacts>(client.getSupplierContacts(m_supplierid));
+            var contactlst = client.getSupplierContacts(m_supplierid);
             this.gcContact.DataSource = contactlst;
         }
 

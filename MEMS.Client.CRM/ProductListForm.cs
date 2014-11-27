@@ -7,6 +7,8 @@ using System.Text;
 using System.Windows.Forms;
 using DevExpress.XtraEditors.Controls;
 using MEMS.Client.CRM.CRMService;
+using MEMS.DB.Models;
+using MEMS.DB.ExtModels;
 
 namespace MEMS.Client.CRM
 {
@@ -36,7 +38,7 @@ namespace MEMS.Client.CRM
                 customerlst.Add(Convert.ToInt32(cid));
             }
             CRMServiceClient client = new CRMServiceClient();
-            List<ProductList> plst = new List<ProductList>(client.getProductListbycdt(procode,proname,customerlst.ToArray()));
+            List<ProductList> plst = client.getProductListbycdt(procode,proname,customerlst);
             gcproduct.DataSource = plst;
         }
         protected override void AddObject()

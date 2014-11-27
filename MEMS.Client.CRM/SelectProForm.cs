@@ -8,6 +8,8 @@ using System.Windows.Forms;
 using MEMS.Client.CRM.CRMService;
 using DevExpress.XtraBars;
 using DevExpress.XtraEditors;
+using MEMS.DB.Models;
+using MEMS.DB.ExtModels;
 
 namespace MEMS.Client.CRM
 {
@@ -18,7 +20,7 @@ namespace MEMS.Client.CRM
         /// </summary>
         public List<T_Product> selectProductlst { get; private set; }
         public int customerID { get; private set; }
-        CRMService.CRMServiceClient m_crmclient = new CRMService.CRMServiceClient();
+        CRMServiceClient m_crmclient = new CRMServiceClient();
         private SelectStep frmSelectStep;
         public enum SelectStep
         {

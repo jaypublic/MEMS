@@ -151,6 +151,10 @@
       <Project>{7231a9bf-11f5-4b10-aee7-3291fe3e326d}</Project>
       <Name>MEMS.Client.Common</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MEMS.DB\MEMS.DB.csproj">
+      <Project>{e014d3c0-2cf7-4ef7-95ea-b017f6b98b0a}</Project>
+      <Name>MEMS.DB</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="CustomerinfoForm.resx">
@@ -197,65 +201,24 @@
     <Content Include="app.config">
       <SubType>Designer</SubType>
     </Content>
-    <None Include="Resources\edit_16x16.png" />
-    <None Include="Resources\edit_32x32.png" />
-    <None Include="Service References\CRMService\CRMService3.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\CRMService\MEMS.Client.CRM.CRMService.ProductList.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\CRMService\MEMS.Client.CRM.CRMService.QtProduct.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\CRMService\MEMS.Client.CRM.CRMService.T_Base_companytype.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\CRMService\MEMS.Client.CRM.CRMService.T_Base_customertype.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\CRMService\MEMS.Client.CRM.CRMService.T_Base_profession.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\CRMService\MEMS.Client.CRM.CRMService.T_Base_suppliertype.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\CRMService\MEMS.Client.CRM.CRMService.T_Crafts.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\CRMService\MEMS.Client.CRM.CRMService.T_CraftsPrice.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\CRMService\MEMS.Client.CRM.CRMService.T_Customer.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\CRMService\MEMS.Client.CRM.CRMService.T_Customer_address.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\CRMService\MEMS.Client.CRM.CRMService.T_Customer_contacts.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\CRMService\MEMS.Client.CRM.CRMService.T_Product.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\CRMService\MEMS.Client.CRM.CRMService.T_ProductbasicPrice.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\CRMService\MEMS.Client.CRM.CRMService.T_ProductDraw.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\CRMService\MEMS.Client.CRM.CRMService.T_ProductType.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\CRMService\MEMS.Client.CRM.CRMService.T_quotation.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\CRMService\MEMS.Client.CRM.CRMService.T_Suppliers.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\CRMService\MEMS.Client.CRM.CRMService.T_Suppliers_contacts.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
+    <None Include="Properties\DataSources\MEMS.DB.ExtModels.ProductList.datasource" />
+    <None Include="Properties\DataSources\MEMS.DB.ExtModels.QtProduct.datasource" />
+    <None Include="Properties\DataSources\MEMS.DB.Models.T_Base_companytype.datasource" />
+    <None Include="Properties\DataSources\MEMS.DB.Models.T_Base_customertype.datasource" />
+    <None Include="Properties\DataSources\MEMS.DB.Models.T_Base_profession.datasource" />
+    <None Include="Properties\DataSources\MEMS.DB.Models.T_Base_suppliertype.datasource" />
+    <None Include="Properties\DataSources\MEMS.DB.Models.T_Crafts.datasource" />
+    <None Include="Properties\DataSources\MEMS.DB.Models.T_CraftsPrice.datasource" />
+    <None Include="Properties\DataSources\MEMS.DB.Models.T_Customer.datasource" />
+    <None Include="Properties\DataSources\MEMS.DB.Models.T_Customer_address.datasource" />
+    <None Include="Properties\DataSources\MEMS.DB.Models.T_Customer_contacts.datasource" />
+    <None Include="Properties\DataSources\MEMS.DB.Models.T_Product.datasource" />
+    <None Include="Properties\DataSources\MEMS.DB.Models.T_ProductbasicPrice.datasource" />
+    <None Include="Properties\DataSources\MEMS.DB.Models.T_ProductDraw.datasource" />
+    <None Include="Properties\DataSources\MEMS.DB.Models.T_ProductType.datasource" />
+    <None Include="Properties\DataSources\MEMS.DB.Models.T_quotation.datasource" />
+    <None Include="Properties\DataSources\MEMS.DB.Models.T_Suppliers.datasource" />
+    <None Include="Properties\DataSources\MEMS.DB.Models.T_Suppliers_contacts.datasource" />
     <None Include="Service References\CRMService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
@@ -263,6 +226,8 @@
     <None Include="Service References\CRMService\configuration.svcinfo" />
     <None Include="Service References\CRMService\configuration91.svcinfo" />
     <None Include="Service References\CRMService\CRMService.disco" />
+    <None Include="Resources\edit_16x16.png" />
+    <None Include="Resources\edit_32x32.png" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -275,6 +240,12 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\CRMService\CRMService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CRMService\CRMService3.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CRMService\CRMService4.xsd">
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>

@@ -47,11 +47,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework">
-      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    <Reference Include="EntityFramework, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dlls\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\Dlls\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -76,7 +81,9 @@
     <Content Include="CRMService.svc" />
     <Content Include="SaleService.svc" />
     <Content Include="Service1.svc" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BLL\CustomerHelper.cs" />
@@ -85,85 +92,6 @@
     <Compile Include="BLL\SupplierHelper.cs" />
     <Compile Include="CRMService.svc.cs">
       <DependentUpon>CRMService.svc</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\MEMSModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MEMSModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\MEMSModel.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MEMSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\MEMSModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>MEMSModel.edmx</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\MyDBExtensions.cs" />
-    <Compile Include="DAL\ProductList.cs" />
-    <Compile Include="DAL\QtProduct.cs" />
-    <Compile Include="DAL\SaleOrder.cs" />
-    <Compile Include="DAL\T_Base_companytype.cs">
-      <DependentUpon>MEMSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\T_Base_customertype.cs">
-      <DependentUpon>MEMSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\T_Base_profession.cs">
-      <DependentUpon>MEMSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\T_Base_suppliertype.cs">
-      <DependentUpon>MEMSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\T_Crafts.cs">
-      <DependentUpon>MEMSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\T_CraftsPrice.cs">
-      <DependentUpon>MEMSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\T_Customer.cs">
-      <DependentUpon>MEMSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\T_Customer_address.cs">
-      <DependentUpon>MEMSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\T_Customer_contacts.cs">
-      <DependentUpon>MEMSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\T_FileMgr.cs">
-      <DependentUpon>MEMSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\T_Product.cs">
-      <DependentUpon>MEMSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\T_ProductbasicPrice.cs">
-      <DependentUpon>MEMSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\T_ProductDraw.cs">
-      <DependentUpon>MEMSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\T_ProductType.cs">
-      <DependentUpon>MEMSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\T_quotation.cs">
-      <DependentUpon>MEMSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\T_quotationprice.cs">
-      <DependentUpon>MEMSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\T_saledetail.cs">
-      <DependentUpon>MEMSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\T_saleorder.cs">
-      <DependentUpon>MEMSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\T_Suppliers.cs">
-      <DependentUpon>MEMSModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DAL\T_Suppliers_contacts.cs">
-      <DependentUpon>MEMSModel.tt</DependentUpon>
     </Compile>
     <Compile Include="ICRMService.cs" />
     <Compile Include="ISaleService.cs" />
@@ -180,24 +108,6 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="packages.config" />
-    <EntityDeploy Include="DAL\MEMSModel.edmx">
-      <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>MEMSModel.Designer.cs</LastGenOutput>
-    </EntityDeploy>
-    <Content Include="DAL\MEMSModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>MEMSModel.edmx</DependentUpon>
-      <LastGenOutput>MEMSModel.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="DAL\MEMSModel.edmx.diagram">
-      <DependentUpon>MEMSModel.edmx</DependentUpon>
-    </Content>
-    <Content Include="DAL\MEMSModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>MEMSModel.edmx</DependentUpon>
-      <LastGenOutput>MEMSModel.cs</LastGenOutput>
-    </Content>
     <None Include="Properties\PublishProfiles\mems.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -208,6 +118,12 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MEMS.DB\MEMS.DB.csproj">
+      <Project>{e014d3c0-2cf7-4ef7-95ea-b017f6b98b0a}</Project>
+      <Name>MEMS.DB</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

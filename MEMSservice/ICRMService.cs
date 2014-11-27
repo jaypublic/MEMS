@@ -4,7 +4,9 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
-using MEMSservice.DAL;
+
+using MEMS.DB.Models;
+using MEMS.DB.ExtModels;
 
 namespace MEMSservice
 {

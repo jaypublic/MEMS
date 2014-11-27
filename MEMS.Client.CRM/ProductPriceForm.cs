@@ -9,6 +9,8 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using MEMS.DB.Models;
+using MEMS.DB.ExtModels;
 
 namespace MEMS.Client.CRM
 {
@@ -43,8 +45,8 @@ namespace MEMS.Client.CRM
         /// </summary>
         private void retieveCraft()
         {
-            m_craftlst = new List<T_Crafts>(m_client.getProductCraft(m_pid));
-            m_craftpricelst = new List<T_CraftsPrice>(m_client.getCraftPriceList(m_pid));
+            m_craftlst = m_client.getProductCraft(m_pid);
+            m_craftpricelst = m_client.getCraftPriceList(m_pid);
         }
         /// <summary>
         /// 获取所有该产品的价格版本
@@ -52,7 +54,7 @@ namespace MEMS.Client.CRM
         private void retievePrice()
         {
             var pricelst = m_client.getProductPriceList(m_pid);
-            cmbpriceName.Tag = new List<T_ProductbasicPrice>(pricelst);
+            cmbpriceName.Tag = pricelst;
             foreach (var p in pricelst)
             {
                 cmbpriceName.Properties.Items.Add(p.version);
@@ -143,7 +145,7 @@ namespace MEMS.Client.CRM
                         throw new Exception("工序" + newcraftprice.processname + "未输入值");
                     }
                 }
-                var success = m_client.AddNewProductPrice(m_pv, newcraftpricelst.ToArray());
+                var success = m_client.AddNewProductPrice(m_pv, newcraftpricelst);
             }
             base.EditObject();
         }

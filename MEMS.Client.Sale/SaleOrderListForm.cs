@@ -7,6 +7,8 @@ using System.Text;
 using System.Windows.Forms;
 using MEMS.Client.Sale.SaleService;
 using DevExpress.XtraEditors;
+using MEMS.DB.ExtModels;
+using MEMS.DB.Models;
 
 namespace MEMS.Client.Sale
 {

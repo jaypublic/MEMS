@@ -8,6 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 using MEMS.Client.CRM.CRMService;
 using DevExpress.XtraBars;
+using MEMS.DB.Models;
+using MEMS.DB.ExtModels;
 
 namespace MEMS.Client.CRM
 {
@@ -45,7 +47,7 @@ namespace MEMS.Client.CRM
             {
                 m_Qinfo = m_crmclient.getQuotationbyId(m_qid);
                 SetData(m_Qinfo);
-                m_QtProductlst = new List<QtProduct>(m_crmclient.getQtProduct(m_qid));
+                m_QtProductlst = m_crmclient.getQtProduct(m_qid);
                 gcQtprice.DataSource = m_QtProductlst;
             }
             else if (formmode == frmmodetype.delete)
@@ -53,7 +55,7 @@ namespace MEMS.Client.CRM
                 m_Qinfo = m_crmclient.getQuotationbyId(m_qid);
                 SetData(m_Qinfo);
                 base.readonlytxtbox(this.Controls, true);
-                m_QtProductlst = new List<QtProduct>(m_crmclient.getQtProduct(m_qid));
+                m_QtProductlst = m_crmclient.getQtProduct(m_qid);
                 gcQtprice.DataSource = m_QtProductlst;
             }
             base.FormLoad();
@@ -96,7 +98,7 @@ namespace MEMS.Client.CRM
         {            
             GetData(m_Qinfo);
             gvQtprice.CloseEditor();
-            m_crmclient.AddNewQtAndQtprice(m_Qinfo, m_QtProductlst.ToArray());
+            m_crmclient.AddNewQtAndQtprice(m_Qinfo, m_QtProductlst);
             base.AddObject();
         }
 

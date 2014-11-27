@@ -4,8 +4,9 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
-using MEMSservice.DAL;
-using MEMSservice.BLL;
+
+using MEMS.DB.Models;
+using MEMS.DB.ExtModels;
 
 namespace MEMSservice
 {
@@ -25,5 +26,7 @@ namespace MEMSservice
         bool UpdateSaleOrder(T_saleorder so);
         [OperationContract]
         bool DeleteSaleOrder(T_saleorder so);
+        [OperationContract]
+        List<T_saledetail> getSaleDetailbysoid(int soid);
     }
 }
