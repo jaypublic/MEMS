@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuotationinfoForm));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.txtTheme = new DevExpress.XtraEditors.TextEdit();
@@ -35,17 +36,18 @@
             this.txtProductRemark = new DevExpress.XtraEditors.MemoEdit();
             this.txtQuremark = new DevExpress.XtraEditors.MemoEdit();
             this.dateQu = new DevExpress.XtraEditors.DateEdit();
-            this.txtTotalPrice = new DevExpress.XtraEditors.TextEdit();
+            this.txtQtPrice = new DevExpress.XtraEditors.TextEdit();
             this.txtQuno = new DevExpress.XtraEditors.TextEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
+            this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem4 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem6 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem7 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem2 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem5 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.layoutControlItem3 = new DevExpress.XtraLayout.LayoutControlItem();
-            this.ribbonImageCollectionLarge = new DevExpress.Utils.ImageCollection();
+            this.ribbonImageCollectionLarge = new DevExpress.Utils.ImageCollection(this.components);
             this.gcQtprice = new DevExpress.XtraGrid.GridControl();
             this.gvQtprice = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -59,7 +61,6 @@
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.layoutControlGroup2 = new DevExpress.XtraLayout.LayoutControlGroup();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
@@ -69,21 +70,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtQuremark.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateQu.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateQu.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTotalPrice.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtQtPrice.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtQuno.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonImageCollectionLarge)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcQtprice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvQtprice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonPageGroup2
@@ -102,7 +103,7 @@
             this.layoutControl1.Controls.Add(this.txtProductRemark);
             this.layoutControl1.Controls.Add(this.txtQuremark);
             this.layoutControl1.Controls.Add(this.dateQu);
-            this.layoutControl1.Controls.Add(this.txtTotalPrice);
+            this.layoutControl1.Controls.Add(this.txtQtPrice);
             this.layoutControl1.Controls.Add(this.txtQuno);
             this.layoutControl1.Dock = System.Windows.Forms.DockStyle.Top;
             this.layoutControl1.Location = new System.Drawing.Point(0, 125);
@@ -164,14 +165,14 @@
             this.dateQu.StyleController = this.layoutControl1;
             this.dateQu.TabIndex = 1;
             // 
-            // txtTotalPrice
+            // txtQtPrice
             // 
-            this.txtTotalPrice.Location = new System.Drawing.Point(282, 44);
-            this.txtTotalPrice.MenuManager = this.ribbonControl1;
-            this.txtTotalPrice.Name = "txtTotalPrice";
-            this.txtTotalPrice.Size = new System.Drawing.Size(128, 22);
-            this.txtTotalPrice.StyleController = this.layoutControl1;
-            this.txtTotalPrice.TabIndex = 2;
+            this.txtQtPrice.Location = new System.Drawing.Point(282, 44);
+            this.txtQtPrice.MenuManager = this.ribbonControl1;
+            this.txtQtPrice.Name = "txtQtPrice";
+            this.txtQtPrice.Size = new System.Drawing.Size(128, 22);
+            this.txtQtPrice.StyleController = this.layoutControl1;
+            this.txtQtPrice.TabIndex = 2;
             // 
             // txtQuno
             // 
@@ -195,6 +196,22 @@
             this.layoutControlGroup1.Text = "layoutControlGroup1";
             this.layoutControlGroup1.TextVisible = false;
             // 
+            // layoutControlGroup2
+            // 
+            this.layoutControlGroup2.CustomizationFormText = "报价单基本信息";
+            this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
+            this.layoutControlItem1,
+            this.layoutControlItem4,
+            this.layoutControlItem3,
+            this.layoutControlItem6,
+            this.layoutControlItem7,
+            this.layoutControlItem2,
+            this.layoutControlItem5});
+            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlGroup2.Name = "layoutControlGroup2";
+            this.layoutControlGroup2.Size = new System.Drawing.Size(805, 149);
+            this.layoutControlGroup2.Text = "报价单基本信息";
+            // 
             // layoutControlItem1
             // 
             this.layoutControlItem1.Control = this.txtQuno;
@@ -205,16 +222,6 @@
             this.layoutControlItem1.Text = "报价单号";
             this.layoutControlItem1.TextSize = new System.Drawing.Size(60, 14);
             // 
-            // layoutControlItem2
-            // 
-            this.layoutControlItem2.Control = this.txtTotalPrice;
-            this.layoutControlItem2.CustomizationFormText = "layoutControlItem2";
-            this.layoutControlItem2.Location = new System.Drawing.Point(195, 0);
-            this.layoutControlItem2.Name = "layoutControlItem2";
-            this.layoutControlItem2.Size = new System.Drawing.Size(195, 26);
-            this.layoutControlItem2.Text = "报价金额";
-            this.layoutControlItem2.TextSize = new System.Drawing.Size(60, 14);
-            // 
             // layoutControlItem4
             // 
             this.layoutControlItem4.Control = this.dateQu;
@@ -224,6 +231,16 @@
             this.layoutControlItem4.Size = new System.Drawing.Size(196, 26);
             this.layoutControlItem4.Text = "报价日期";
             this.layoutControlItem4.TextSize = new System.Drawing.Size(60, 14);
+            // 
+            // layoutControlItem3
+            // 
+            this.layoutControlItem3.Control = this.txtTheme;
+            this.layoutControlItem3.CustomizationFormText = "layoutControlItem3";
+            this.layoutControlItem3.Location = new System.Drawing.Point(0, 26);
+            this.layoutControlItem3.Name = "layoutControlItem3";
+            this.layoutControlItem3.Size = new System.Drawing.Size(781, 26);
+            this.layoutControlItem3.Text = "主题";
+            this.layoutControlItem3.TextSize = new System.Drawing.Size(60, 14);
             // 
             // layoutControlItem6
             // 
@@ -245,6 +262,16 @@
             this.layoutControlItem7.Text = "产品备注";
             this.layoutControlItem7.TextSize = new System.Drawing.Size(60, 14);
             // 
+            // layoutControlItem2
+            // 
+            this.layoutControlItem2.Control = this.txtQtPrice;
+            this.layoutControlItem2.CustomizationFormText = "layoutControlItem2";
+            this.layoutControlItem2.Location = new System.Drawing.Point(195, 0);
+            this.layoutControlItem2.Name = "layoutControlItem2";
+            this.layoutControlItem2.Size = new System.Drawing.Size(195, 26);
+            this.layoutControlItem2.Text = "报价金额";
+            this.layoutControlItem2.TextSize = new System.Drawing.Size(60, 14);
+            // 
             // layoutControlItem5
             // 
             this.layoutControlItem5.Control = this.txtCustomer;
@@ -254,16 +281,6 @@
             this.layoutControlItem5.Size = new System.Drawing.Size(195, 26);
             this.layoutControlItem5.Text = "客户";
             this.layoutControlItem5.TextSize = new System.Drawing.Size(60, 14);
-            // 
-            // layoutControlItem3
-            // 
-            this.layoutControlItem3.Control = this.txtTheme;
-            this.layoutControlItem3.CustomizationFormText = "layoutControlItem3";
-            this.layoutControlItem3.Location = new System.Drawing.Point(0, 26);
-            this.layoutControlItem3.Name = "layoutControlItem3";
-            this.layoutControlItem3.Size = new System.Drawing.Size(781, 26);
-            this.layoutControlItem3.Text = "主题";
-            this.layoutControlItem3.TextSize = new System.Drawing.Size(60, 14);
             // 
             // ribbonImageCollectionLarge
             // 
@@ -387,7 +404,7 @@
             // gridColumn7
             // 
             this.gridColumn7.Caption = "总价";
-            this.gridColumn7.FieldName = "qp.quotationprice";
+            this.gridColumn7.FieldName = "qp.totalprice";
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.OptionsColumn.AllowEdit = false;
             this.gridColumn7.Visible = true;
@@ -397,22 +414,6 @@
             // 
             this.gridView1.GridControl = this.gcQtprice;
             this.gridView1.Name = "gridView1";
-            // 
-            // layoutControlGroup2
-            // 
-            this.layoutControlGroup2.CustomizationFormText = "报价单基本信息";
-            this.layoutControlGroup2.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem1,
-            this.layoutControlItem4,
-            this.layoutControlItem3,
-            this.layoutControlItem6,
-            this.layoutControlItem7,
-            this.layoutControlItem2,
-            this.layoutControlItem5});
-            this.layoutControlGroup2.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlGroup2.Name = "layoutControlGroup2";
-            this.layoutControlGroup2.Size = new System.Drawing.Size(805, 149);
-            this.layoutControlGroup2.Text = "报价单基本信息";
             // 
             // QuotationinfoForm
             // 
@@ -434,21 +435,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtQuremark.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateQu.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateQu.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtTotalPrice.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtQtPrice.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtQuno.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonImageCollectionLarge)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcQtprice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvQtprice)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -456,7 +457,7 @@
         #endregion
 
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
-        private DevExpress.XtraEditors.TextEdit txtTotalPrice;
+        private DevExpress.XtraEditors.TextEdit txtQtPrice;
         private DevExpress.XtraEditors.TextEdit txtQuno;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem1;

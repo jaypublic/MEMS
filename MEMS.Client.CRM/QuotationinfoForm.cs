@@ -36,7 +36,7 @@ namespace MEMS.Client.CRM
             barbtn1.Visibility = BarItemVisibility.Always;
             barbtn1.LargeImageIndex = 9;
             barbtn1.Caption = "添加产品";
-            txtTotalPrice.Properties.ReadOnly = true;
+            txtQtPrice.Properties.ReadOnly = true;
             txtCustomer.Properties.ReadOnly = true;
             
             if (formmode == frmmodetype.add)
@@ -49,6 +49,7 @@ namespace MEMS.Client.CRM
                 SetData(m_Qinfo);
                 m_QtProductlst = m_crmclient.getQtProduct(m_qid);
                 gcQtprice.DataSource = m_QtProductlst;
+                barbtn1.Enabled = false;
             }
             else if (formmode == frmmodetype.delete)
             {
@@ -57,6 +58,7 @@ namespace MEMS.Client.CRM
                 base.readonlytxtbox(this.Controls, true);
                 m_QtProductlst = m_crmclient.getQtProduct(m_qid);
                 gcQtprice.DataSource = m_QtProductlst;
+                barbtn1.Enabled = false;
             }
             base.FormLoad();
         }
@@ -68,7 +70,7 @@ namespace MEMS.Client.CRM
         private void SetData(T_quotation qinfo)
         {            
             txtQuno.Text = qinfo.qutationno;
-            txtTotalPrice.Text = qinfo.totalprice.HasValue ? qinfo.totalprice.Value.ToString() : "";
+            txtQtPrice.Text = qinfo.quotationprice.HasValue ? qinfo.quotationprice.Value.ToString() : "";
             txtProductRemark.Text = qinfo.productremark;
             txtQuremark.Text = qinfo.quremark;
             txtTheme.Text = qinfo.theme;
@@ -82,7 +84,7 @@ namespace MEMS.Client.CRM
         {
             qinfo.qutationno = txtQuno.Text;
             qinfo.theme = txtTheme.Text;
-            qinfo.totalprice = txtTotalPrice.Text == "" ? 0 : Convert.ToDecimal(txtTotalPrice.Text);
+            qinfo.quotationprice = txtQtPrice.Text == "" ? 0 : Convert.ToDecimal(txtQtPrice.Text);
             qinfo.productremark = txtProductRemark.Text;
             qinfo.quremark = txtQuremark.Text;
             if (dateQu.Text == "")
@@ -148,7 +150,7 @@ namespace MEMS.Client.CRM
             gvQtprice.CloseEditor();
             if (m_QtProductlst[e.RowHandle].qp.modelprice.HasValue && m_QtProductlst[e.RowHandle].qp.unitprice.HasValue)
             {
-                m_QtProductlst[e.RowHandle].qp.quotationprice = m_QtProductlst[e.RowHandle].qp.modelprice.Value + m_QtProductlst[e.RowHandle].qp.unitprice.Value * m_QtProductlst[e.RowHandle].qp.productcount;
+                m_QtProductlst[e.RowHandle].qp.totalprice = m_QtProductlst[e.RowHandle].qp.modelprice.Value + m_QtProductlst[e.RowHandle].qp.unitprice.Value * m_QtProductlst[e.RowHandle].qp.productcount;
             }
             CalQtTotalPrice();
         }
@@ -158,12 +160,12 @@ namespace MEMS.Client.CRM
             var qtpricelst = (List<QtProduct>)gvQtprice.DataSource;
             foreach (var qtprice in qtpricelst)
             {
-                if (qtprice.qp.quotationprice.HasValue)
+                if (qtprice.qp.totalprice.HasValue)
                 {
-                    totalprice += qtprice.qp.quotationprice.Value;
+                    totalprice += qtprice.qp.totalprice.Value;
                 }
             }
-            txtTotalPrice.Text = totalprice.ToString();
+            txtQtPrice.Text = totalprice.ToString();
         }
 
     }

@@ -12,6 +12,7 @@ using MEMS.Client.Sale.CRMService;
 using DevExpress.XtraEditors;
 using MEMS.DB.Models;
 using MEMS.DB.ExtModels;
+using DevExpress.XtraBars;
 
 namespace MEMS.Client.Sale
 {
@@ -39,6 +40,8 @@ namespace MEMS.Client.Sale
             InitCustomerCmb();
             DisPlayEnum.getEnumDS(lkpPeriodUnit, typeof(periodUnit));
             DisPlayEnum.getEnumDS(lkpRevType, typeof(receiveType));
+            this.barbtn1.Visibility = BarItemVisibility.Always;
+            this.barbtn1.LargeImageIndex = 8;
             if (formmode == frmmodetype.add)
             {
                 m_saleorder = new T_saleorder();
@@ -163,6 +166,15 @@ namespace MEMS.Client.Sale
         {
             m_ssclient.DeleteSaleOrder(m_saleorder);
             base.DeleteObject();
+        }
+        protected override void custom1()
+        {
+            var qtid = (int)lkpqtno.EditValue;
+            FormSelectProduct frm = new FormSelectProduct(qtid);
+            if (frm.ShowDialog() == DialogResult.OK)
+            {
+                var qtproduct = frm.selectQtProduct;
+            }
         }
     }
 }

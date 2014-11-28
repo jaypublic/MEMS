@@ -67,7 +67,6 @@
             this.searchgroup.Controls.Add(this.labelControl2);
             this.searchgroup.Controls.Add(this.txtQuNo);
             this.searchgroup.Controls.Add(this.labelControl1);
-            this.searchgroup.Location = new System.Drawing.Point(0, 125);
             this.searchgroup.Size = new System.Drawing.Size(740, 100);
             this.searchgroup.Controls.SetChildIndex(this.labelControl1, 0);
             this.searchgroup.Controls.SetChildIndex(this.txtQuNo, 0);
@@ -152,7 +151,7 @@
             // gridColumn6
             // 
             this.gridColumn6.Caption = "总价";
-            this.gridColumn6.FieldName = "totalprice";
+            this.gridColumn6.FieldName = "quotationprice";
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
             this.gridColumn6.VisibleIndex = 3;

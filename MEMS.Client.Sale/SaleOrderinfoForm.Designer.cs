@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SaleOrderinfoForm));
             this.Masterlayout = new DevExpress.XtraLayout.LayoutControl();
             this.txtOrderStatus = new DevExpress.XtraEditors.TextEdit();
             this.gcSaledetail = new DevExpress.XtraGrid.GridControl();
@@ -62,6 +64,7 @@
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.selectProImage = new DevExpress.Utils.ImageCollection(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Masterlayout)).BeginInit();
             this.Masterlayout.SuspendLayout();
@@ -100,11 +103,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.selectProImage)).BeginInit();
             this.SuspendLayout();
+            // 
+            // ribbonPageGroup2
+            // 
+            this.ribbonPageGroup2.Visible = true;
             // 
             // ribbonControl1
             // 
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
+            this.ribbonControl1.LargeImages = this.selectProImage;
             this.ribbonControl1.Size = new System.Drawing.Size(830, 125);
             // 
             // Masterlayout
@@ -490,6 +499,21 @@
             this.panelControl1.Size = new System.Drawing.Size(830, 386);
             this.panelControl1.TabIndex = 1;
             // 
+            // selectProImage
+            // 
+            this.selectProImage.ImageSize = new System.Drawing.Size(32, 32);
+            this.selectProImage.ImageStream = ((DevExpress.Utils.ImageCollectionStreamer)(resources.GetObject("selectProImage.ImageStream")));
+            this.selectProImage.Images.SetKeyName(0, "Ribbon_New_32x32.png");
+            this.selectProImage.Images.SetKeyName(1, "Ribbon_Open_32x32.png");
+            this.selectProImage.Images.SetKeyName(2, "Ribbon_Close_32x32.png");
+            this.selectProImage.Images.SetKeyName(3, "Ribbon_Find_32x32.png");
+            this.selectProImage.Images.SetKeyName(4, "Ribbon_Save_32x32.png");
+            this.selectProImage.Images.SetKeyName(5, "Ribbon_SaveAs_32x32.png");
+            this.selectProImage.Images.SetKeyName(6, "Ribbon_Exit_32x32.png");
+            this.selectProImage.Images.SetKeyName(7, "ButtonForward.png");
+            this.selectProImage.InsertGalleryImage("insert_32x32.png", "images/actions/insert_32x32.png", DevExpress.Images.ImageResourceCache.Default.GetImage("images/actions/insert_32x32.png"), 8);
+            this.selectProImage.Images.SetKeyName(8, "insert_32x32.png");
+            // 
             // SaleOrderinfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -537,6 +561,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.selectProImage)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -577,5 +602,6 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem13;
         private DevExpress.XtraEditors.TextEdit txtOrderStatus;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem14;
+        internal DevExpress.Utils.ImageCollection selectProImage;
     }
 }
