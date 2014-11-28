@@ -31,7 +31,7 @@ namespace MEMS.DB.Models.Mapping
             this.Property(t => t.id).HasColumnName("id");
             this.Property(t => t.qutationno).HasColumnName("qutationno");
             this.Property(t => t.theme).HasColumnName("theme");
-            this.Property(t => t.totalprice).HasColumnName("totalprice");
+            this.Property(t => t.quotationprice).HasColumnName("quotationprice");
             this.Property(t => t.customerid).HasColumnName("customerid");
             this.Property(t => t.quotationdate).HasColumnName("quotationdate");
             this.Property(t => t.productremark).HasColumnName("productremark");

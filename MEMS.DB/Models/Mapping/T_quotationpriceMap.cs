@@ -18,7 +18,7 @@ namespace MEMS.DB.Models.Mapping
             this.Property(t => t.productid).HasColumnName("productid");
             this.Property(t => t.productcount).HasColumnName("productcount");
             this.Property(t => t.modelprice).HasColumnName("modelprice");
-            this.Property(t => t.quotationprice).HasColumnName("quotationprice");
+            this.Property(t => t.totalprice).HasColumnName("totalprice");
             this.Property(t => t.unitprice).HasColumnName("unitprice");
         }
     }

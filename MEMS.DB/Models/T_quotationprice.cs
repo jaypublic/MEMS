@@ -10,7 +10,7 @@ namespace MEMS.DB.Models
         public int productid { get; set; }
         public int productcount { get; set; }
         public Nullable<decimal> modelprice { get; set; }
-        public Nullable<decimal> quotationprice { get; set; }
+        public Nullable<decimal> totalprice { get; set; }
         public Nullable<decimal> unitprice { get; set; }
     }
 }
