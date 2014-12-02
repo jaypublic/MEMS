@@ -15,7 +15,7 @@ namespace MEMS.DB.Models.Mapping
             this.ToTable("T_saledetail");
             this.Property(t => t.id).HasColumnName("id");
             this.Property(t => t.soid).HasColumnName("soid");
-            this.Property(t => t.product).HasColumnName("product");
+            this.Property(t => t.productid).HasColumnName("productid");
             this.Property(t => t.productnumber).HasColumnName("productnumber");
             this.Property(t => t.plandeliverydate).HasColumnName("plandeliverydate");
             this.Property(t => t.producttotalprice).HasColumnName("producttotalprice");

@@ -35,6 +35,9 @@ namespace MEMS.Client.Sale.SaleService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISaleService/getSaleDetailbysoid", ReplyAction="http://tempuri.org/ISaleService/getSaleDetailbysoidResponse")]
         System.Collections.Generic.List<MEMS.DB.Models.T_saledetail> getSaleDetailbysoid(int soid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISaleService/getSaleProductbysoid", ReplyAction="http://tempuri.org/ISaleService/getSaleProductbysoidResponse")]
+        System.Collections.Generic.List<MEMS.DB.ExtModels.SaleProduct> getSaleProductbysoid(int soid);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -90,6 +93,10 @@ namespace MEMS.Client.Sale.SaleService {
         
         public System.Collections.Generic.List<MEMS.DB.Models.T_saledetail> getSaleDetailbysoid(int soid) {
             return base.Channel.getSaleDetailbysoid(soid);
+        }
+        
+        public System.Collections.Generic.List<MEMS.DB.ExtModels.SaleProduct> getSaleProductbysoid(int soid) {
+            return base.Channel.getSaleProductbysoid(soid);
         }
     }
 }

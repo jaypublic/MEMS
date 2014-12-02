@@ -100,4 +100,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="getSaleProductbysoid">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="soid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="getSaleProductbysoidResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q8="http://schemas.datacontract.org/2004/07/MEMS.DB.ExtModels" minOccurs="0" name="getSaleProductbysoidResult" nillable="true" type="q8:ArrayOfSaleProduct" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

@@ -7,7 +7,7 @@ namespace MEMS.DB.Models
     {
         public int id { get; set; }
         public int soid { get; set; }
-        public int product { get; set; }
+        public int productid { get; set; }
         public Nullable<int> productnumber { get; set; }
         public Nullable<System.DateTime> plandeliverydate { get; set; }
         public Nullable<decimal> producttotalprice { get; set; }

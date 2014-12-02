@@ -34,6 +34,7 @@ namespace MEMS.DB.Models
         public DbSet<T_quotationprice> T_quotationprice { get; set; }
         public DbSet<T_saledetail> T_saledetail { get; set; }
         public DbSet<T_saleorder> T_saleorder { get; set; }
+        public DbSet<T_SaleReceive> T_SaleReceive { get; set; }
         public DbSet<T_Suppliers> T_Suppliers { get; set; }
         public DbSet<T_Suppliers_contacts> T_Suppliers_contacts { get; set; }
 
@@ -57,6 +58,7 @@ namespace MEMS.DB.Models
             modelBuilder.Configurations.Add(new T_quotationpriceMap());
             modelBuilder.Configurations.Add(new T_saledetailMap());
             modelBuilder.Configurations.Add(new T_saleorderMap());
+            modelBuilder.Configurations.Add(new T_SaleReceiveMap());
             modelBuilder.Configurations.Add(new T_SuppliersMap());
             modelBuilder.Configurations.Add(new T_Suppliers_contactsMap());
         }

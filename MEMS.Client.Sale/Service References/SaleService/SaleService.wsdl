@@ -50,6 +50,12 @@
   <wsdl:message name="ISaleService_getSaleDetailbysoid_OutputMessage">
     <wsdl:part name="parameters" element="tns:getSaleDetailbysoidResponse" />
   </wsdl:message>
+  <wsdl:message name="ISaleService_getSaleProductbysoid_InputMessage">
+    <wsdl:part name="parameters" element="tns:getSaleProductbysoid" />
+  </wsdl:message>
+  <wsdl:message name="ISaleService_getSaleProductbysoid_OutputMessage">
+    <wsdl:part name="parameters" element="tns:getSaleProductbysoidResponse" />
+  </wsdl:message>
   <wsdl:portType name="ISaleService">
     <wsdl:operation name="getAllSaleOrderList">
       <wsdl:input wsaw:Action="http://tempuri.org/ISaleService/getAllSaleOrderList" message="tns:ISaleService_getAllSaleOrderList_InputMessage" />
@@ -78,6 +84,10 @@
     <wsdl:operation name="getSaleDetailbysoid">
       <wsdl:input wsaw:Action="http://tempuri.org/ISaleService/getSaleDetailbysoid" message="tns:ISaleService_getSaleDetailbysoid_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/ISaleService/getSaleDetailbysoidResponse" message="tns:ISaleService_getSaleDetailbysoid_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="getSaleProductbysoid">
+      <wsdl:input wsaw:Action="http://tempuri.org/ISaleService/getSaleProductbysoid" message="tns:ISaleService_getSaleProductbysoid_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/ISaleService/getSaleProductbysoidResponse" message="tns:ISaleService_getSaleProductbysoid_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_ISaleService" type="tns:ISaleService">
@@ -138,6 +148,15 @@
     </wsdl:operation>
     <wsdl:operation name="getSaleDetailbysoid">
       <soap:operation soapAction="http://tempuri.org/ISaleService/getSaleDetailbysoid" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getSaleProductbysoid">
+      <soap:operation soapAction="http://tempuri.org/ISaleService/getSaleProductbysoid" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

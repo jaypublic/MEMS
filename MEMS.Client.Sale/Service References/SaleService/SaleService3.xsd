@@ -15,4 +15,21 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="SaleOrder" nillable="true" type="tns:SaleOrder" />
+  <xs:complexType name="ArrayOfSaleProduct">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="SaleProduct" nillable="true" type="tns:SaleProduct" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfSaleProduct" nillable="true" type="tns:ArrayOfSaleProduct" />
+  <xs:complexType name="SaleProduct">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="pModelPrice" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="pUnitPrice" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="productCode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="productName" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="productSpec" nillable="true" type="xs:string" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/MEMS.DB.Models" minOccurs="0" name="sd" nillable="true" type="q2:T_saledetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="SaleProduct" nillable="true" type="tns:SaleProduct" />
 </xs:schema>

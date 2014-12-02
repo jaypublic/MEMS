@@ -49,6 +49,7 @@
     <Compile Include="ExtModels\ProductList.cs" />
     <Compile Include="ExtModels\QtProduct.cs" />
     <Compile Include="ExtModels\SaleOrder.cs" />
+    <Compile Include="ExtModels\SaleProduct.cs" />
     <Compile Include="Models\Mapping\T_Base_companytypeMap.cs" />
     <Compile Include="Models\Mapping\T_Base_customertypeMap.cs" />
     <Compile Include="Models\Mapping\T_Base_professionMap.cs" />
@@ -67,6 +68,7 @@
     <Compile Include="Models\Mapping\T_quotationpriceMap.cs" />
     <Compile Include="Models\Mapping\T_saledetailMap.cs" />
     <Compile Include="Models\Mapping\T_saleorderMap.cs" />
+    <Compile Include="Models\Mapping\T_SaleReceiveMap.cs" />
     <Compile Include="Models\Mapping\T_SuppliersMap.cs" />
     <Compile Include="Models\Mapping\T_Suppliers_contactsMap.cs" />
     <Compile Include="Models\MEMSContext.cs" />
@@ -88,6 +90,7 @@
     <Compile Include="Models\T_quotationprice.cs" />
     <Compile Include="Models\T_saledetail.cs" />
     <Compile Include="Models\T_saleorder.cs" />
+    <Compile Include="Models\T_SaleReceive.cs" />
     <Compile Include="Models\T_Suppliers.cs" />
     <Compile Include="Models\T_Suppliers_contacts.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
