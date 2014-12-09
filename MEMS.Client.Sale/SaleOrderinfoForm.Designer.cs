@@ -34,6 +34,16 @@
             this.txtOrderStatus = new DevExpress.XtraEditors.TextEdit();
             this.gcSaledetail = new DevExpress.XtraGrid.GridControl();
             this.gvSaledetail = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colid = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colpid = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colpcode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colpname = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colpspec = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colpunitprice = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colpmodelprice = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colpcount = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colpdate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colptotalprice = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtremarks = new DevExpress.XtraEditors.MemoEdit();
             this.txtRevStatus = new DevExpress.XtraEditors.TextEdit();
             this.txtPeriod = new DevExpress.XtraEditors.TextEdit();
@@ -148,6 +158,7 @@
             this.txtOrderStatus.Location = new System.Drawing.Point(671, 96);
             this.txtOrderStatus.MenuManager = this.ribbonControl1;
             this.txtOrderStatus.Name = "txtOrderStatus";
+            this.txtOrderStatus.Properties.ReadOnly = true;
             this.txtOrderStatus.Size = new System.Drawing.Size(145, 22);
             this.txtOrderStatus.StyleController = this.Masterlayout;
             this.txtOrderStatus.TabIndex = 17;
@@ -165,11 +176,99 @@
             // 
             // gvSaledetail
             // 
+            this.gvSaledetail.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colid,
+            this.colpid,
+            this.colpcode,
+            this.colpname,
+            this.colpspec,
+            this.colpunitprice,
+            this.colpmodelprice,
+            this.colpcount,
+            this.colpdate,
+            this.colptotalprice});
             this.gvSaledetail.GridControl = this.gcSaledetail;
             this.gvSaledetail.Name = "gvSaledetail";
             this.gvSaledetail.OptionsView.ShowGroupPanel = false;
             this.gvSaledetail.OptionsView.ShowViewCaption = true;
             this.gvSaledetail.ViewCaption = "订单产品";
+            this.gvSaledetail.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gvSaledetail_CellValueChanged);
+            // 
+            // colid
+            // 
+            this.colid.Caption = "gridColumn1";
+            this.colid.FieldName = "sd.id";
+            this.colid.Name = "colid";
+            // 
+            // colpid
+            // 
+            this.colpid.Caption = "gridColumn2";
+            this.colpid.FieldName = "sd.productid";
+            this.colpid.Name = "colpid";
+            // 
+            // colpcode
+            // 
+            this.colpcode.Caption = "产品编号";
+            this.colpcode.FieldName = "productCode";
+            this.colpcode.Name = "colpcode";
+            this.colpcode.Visible = true;
+            this.colpcode.VisibleIndex = 0;
+            // 
+            // colpname
+            // 
+            this.colpname.Caption = "产品名称";
+            this.colpname.FieldName = "productName";
+            this.colpname.Name = "colpname";
+            this.colpname.Visible = true;
+            this.colpname.VisibleIndex = 1;
+            // 
+            // colpspec
+            // 
+            this.colpspec.Caption = "产品规格";
+            this.colpspec.FieldName = "productSpec";
+            this.colpspec.Name = "colpspec";
+            this.colpspec.Visible = true;
+            this.colpspec.VisibleIndex = 2;
+            // 
+            // colpunitprice
+            // 
+            this.colpunitprice.Caption = "产品单价";
+            this.colpunitprice.FieldName = "pUnitPrice";
+            this.colpunitprice.Name = "colpunitprice";
+            this.colpunitprice.Visible = true;
+            this.colpunitprice.VisibleIndex = 3;
+            // 
+            // colpmodelprice
+            // 
+            this.colpmodelprice.Caption = "产品模具费";
+            this.colpmodelprice.FieldName = "pModelPrice";
+            this.colpmodelprice.Name = "colpmodelprice";
+            this.colpmodelprice.Visible = true;
+            this.colpmodelprice.VisibleIndex = 4;
+            // 
+            // colpcount
+            // 
+            this.colpcount.Caption = "产品数量";
+            this.colpcount.FieldName = "sd.productnumber";
+            this.colpcount.Name = "colpcount";
+            this.colpcount.Visible = true;
+            this.colpcount.VisibleIndex = 5;
+            // 
+            // colpdate
+            // 
+            this.colpdate.Caption = "计划发货日期";
+            this.colpdate.FieldName = "sd.plandeliverydate";
+            this.colpdate.Name = "colpdate";
+            this.colpdate.Visible = true;
+            this.colpdate.VisibleIndex = 7;
+            // 
+            // colptotalprice
+            // 
+            this.colptotalprice.Caption = "产品总价";
+            this.colptotalprice.FieldName = "sd.producttotalprice";
+            this.colptotalprice.Name = "colptotalprice";
+            this.colptotalprice.Visible = true;
+            this.colptotalprice.VisibleIndex = 6;
             // 
             // txtremarks
             // 
@@ -186,6 +285,7 @@
             this.txtRevStatus.Location = new System.Drawing.Point(471, 96);
             this.txtRevStatus.MenuManager = this.ribbonControl1;
             this.txtRevStatus.Name = "txtRevStatus";
+            this.txtRevStatus.Properties.ReadOnly = true;
             this.txtRevStatus.Size = new System.Drawing.Size(145, 22);
             this.txtRevStatus.StyleController = this.Masterlayout;
             this.txtRevStatus.TabIndex = 14;
@@ -195,6 +295,9 @@
             this.txtPeriod.Location = new System.Drawing.Point(273, 96);
             this.txtPeriod.MenuManager = this.ribbonControl1;
             this.txtPeriod.Name = "txtPeriod";
+            this.txtPeriod.Properties.Mask.BeepOnError = true;
+            this.txtPeriod.Properties.Mask.EditMask = "d";
+            this.txtPeriod.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
             this.txtPeriod.Size = new System.Drawing.Size(143, 22);
             this.txtPeriod.StyleController = this.Masterlayout;
             this.txtPeriod.TabIndex = 13;
@@ -226,6 +329,7 @@
             this.txtRevRatio.Location = new System.Drawing.Point(471, 70);
             this.txtRevRatio.MenuManager = this.ribbonControl1;
             this.txtRevRatio.Name = "txtRevRatio";
+            this.txtRevRatio.Properties.ReadOnly = true;
             this.txtRevRatio.Size = new System.Drawing.Size(144, 22);
             this.txtRevRatio.StyleController = this.Masterlayout;
             this.txtRevRatio.TabIndex = 10;
@@ -238,9 +342,11 @@
             this.txtRevAmt.Properties.Mask.BeepOnError = true;
             this.txtRevAmt.Properties.Mask.EditMask = "n";
             this.txtRevAmt.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtRevAmt.Properties.ReadOnly = true;
             this.txtRevAmt.Size = new System.Drawing.Size(143, 22);
             this.txtRevAmt.StyleController = this.Masterlayout;
             this.txtRevAmt.TabIndex = 9;
+            this.txtRevAmt.TextChanged += new System.EventHandler(this.txtRevAmt_TextChanged);
             // 
             // txtOrderAmt
             // 
@@ -250,6 +356,7 @@
             this.txtOrderAmt.Properties.Mask.BeepOnError = true;
             this.txtOrderAmt.Properties.Mask.EditMask = "n";
             this.txtOrderAmt.Properties.Mask.MaskType = DevExpress.XtraEditors.Mask.MaskType.Numeric;
+            this.txtOrderAmt.Properties.ReadOnly = true;
             this.txtOrderAmt.Size = new System.Drawing.Size(143, 22);
             this.txtOrderAmt.StyleController = this.Masterlayout;
             this.txtOrderAmt.TabIndex = 8;
@@ -603,5 +710,15 @@
         private DevExpress.XtraEditors.TextEdit txtOrderStatus;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem14;
         internal DevExpress.Utils.ImageCollection selectProImage;
+        private DevExpress.XtraGrid.Columns.GridColumn colid;
+        private DevExpress.XtraGrid.Columns.GridColumn colpid;
+        private DevExpress.XtraGrid.Columns.GridColumn colpcode;
+        private DevExpress.XtraGrid.Columns.GridColumn colpname;
+        private DevExpress.XtraGrid.Columns.GridColumn colpspec;
+        private DevExpress.XtraGrid.Columns.GridColumn colpunitprice;
+        private DevExpress.XtraGrid.Columns.GridColumn colpmodelprice;
+        private DevExpress.XtraGrid.Columns.GridColumn colpcount;
+        private DevExpress.XtraGrid.Columns.GridColumn colpdate;
+        private DevExpress.XtraGrid.Columns.GridColumn colptotalprice;
     }
 }

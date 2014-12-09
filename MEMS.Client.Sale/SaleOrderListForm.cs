@@ -22,7 +22,7 @@ namespace MEMS.Client.Sale
         protected override void SearchObject()
         {
             var saleno = this.txtSaleNo.Text;
-            DateTime aftdate = dateEdit1.EditValue != null ? dateEdit1.DateTime : new DateTime(2000, 1, 1);
+            DateTime aftdate = dateEdit1.DateTime;
             DateTime bfedate = dateEdit2.EditValue != null ? dateEdit2.DateTime : new DateTime(2100, 1, 1);
             var saleOrderList = m_SaleClient.getSaleOrderList(saleno, aftdate, bfedate);
             this.gcSaleOrder.DataSource = saleOrderList;

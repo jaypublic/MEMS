@@ -74,6 +74,26 @@ namespace MEMSservice.BLL
             }
         }
         /// <summary>
+        /// 添加新销售订单主从表信息
+        /// </summary>
+        /// <param name="so">主表对象</param>
+        /// <param name="sdlist">从表对象</param>
+        /// <returns></returns>
+        public bool AddNewSaleOrder(T_saleorder so, List<T_saledetail> sdlist)
+        {
+            using (MEMSContext db = new MEMSContext())
+            {
+                db.Entry(so).State = EntityState.Added;
+                db.SaveChanges();
+                foreach (var sd in sdlist)
+                {
+                    sd.soid = so.id;
+                    db.Entry(sd).State = EntityState.Added;
+                }
+                return db.SaveChanges() > 0 ? true : false;
+            }
+        }
+        /// <summary>
         /// 修改销售订单主表
         /// </summary>
         /// <param name="so">销售订单主表</param>
@@ -111,6 +131,31 @@ namespace MEMSservice.BLL
                 var rs = from sd in db.T_saledetail
                          where sd.soid == soid
                          select sd;
+                return rs.ToList();
+            }
+        }
+        /// <summary>
+        /// 获得
+        /// </summary>
+        /// <param name="soid"></param>
+        /// <returns></returns>
+        public List<SaleProduct> getSaleProductbysoid(int soid)
+        {
+            using (MEMSContext db = new MEMSContext())
+            {
+                var rs = from sd in db.T_saledetail
+                         join p in db.T_Product on sd.productid equals (p.id)
+                         join q in db.T_quotationprice on p.id equals (q.productid)
+                         where sd.soid == soid
+                         select new SaleProduct
+                         {
+                             sd = sd,
+                             productCode = p.procode,
+                             productName = p.proname,
+                             productSpec = p.prospecification,
+                             pModelPrice = q.modelprice,
+                             pUnitPrice = q.unitprice
+                         };
                 return rs.ToList();
             }
         }

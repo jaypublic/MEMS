@@ -28,5 +28,9 @@ namespace MEMSservice
         bool DeleteSaleOrder(T_saleorder so);
         [OperationContract]
         List<T_saledetail> getSaleDetailbysoid(int soid);
+        [OperationContract]
+        List<SaleProduct> getSaleProductbysoid(int soid);
+        [OperationContract]
+        bool AddNewSoSd(T_saleorder so, List<T_saledetail> sdlist);
     }
 }

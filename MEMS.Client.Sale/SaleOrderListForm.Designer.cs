@@ -40,7 +40,6 @@
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.lkupOrderState = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.cmborderstate = new DevExpress.XtraEditors.Repository.RepositoryItemComboBox();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.dateEdit2 = new DevExpress.XtraEditors.DateEdit();
@@ -110,8 +109,7 @@
             this.gridColumn4,
             this.gridColumn8,
             this.gridColumn5,
-            this.gridColumn6,
-            this.gridColumn7});
+            this.gridColumn6});
             this.gvSaleOrder.GridControl = this.gcSaleOrder;
             this.gvSaleOrder.Name = "gvSaleOrder";
             this.gvSaleOrder.OptionsBehavior.Editable = false;
@@ -172,7 +170,7 @@
             // 
             // gridColumn5
             // 
-            this.gridColumn5.Caption = "订单总金额";
+            this.gridColumn5.Caption = "订单金额";
             this.gridColumn5.FieldName = "so.saletotalamount";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
@@ -196,14 +194,6 @@
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("value", "Name1"),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("key", "Name2", 20, DevExpress.Utils.FormatType.None, "", false, DevExpress.Utils.HorzAlignment.Default)});
             this.lkupOrderState.Name = "lkupOrderState";
-            // 
-            // gridColumn7
-            // 
-            this.gridColumn7.Caption = "收款金额";
-            this.gridColumn7.FieldName = "so.receiveamount";
-            this.gridColumn7.Name = "gridColumn7";
-            this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 6;
             // 
             // cmborderstate
             // 
@@ -312,7 +302,6 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn5;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
         private DevExpress.XtraEditors.Repository.RepositoryItemComboBox cmborderstate;
         private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit lkupOrderState;

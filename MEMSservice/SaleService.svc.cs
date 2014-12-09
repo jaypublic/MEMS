@@ -102,5 +102,31 @@ namespace MEMSservice
                 throw;
             }
         }
+        public List<SaleProduct> getSaleProductbysoid(int soid)
+        {
+            try
+            {
+                m_sh = new SaleHelper();
+                return m_sh.getSaleProductbysoid(soid);
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+        }
+        public bool AddNewSoSd(T_saleorder so, List<T_saledetail> sdlist)
+        {
+            try
+            {
+                m_sh = new SaleHelper();
+                return m_sh.AddNewSaleOrder(so, sdlist);
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+        }
     }
 }

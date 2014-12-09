@@ -22,6 +22,7 @@ namespace MEMS.Client.Sale
         SaleServiceClient m_ssclient = new SaleServiceClient();
         CRMServiceClient m_crmclient = new CRMServiceClient();
         T_saleorder m_saleorder;
+        List<SaleProduct> m_saleProducts = new List<SaleProduct>();
 
         public SaleOrderinfoForm(frmmodetype type)
         {
@@ -42,6 +43,7 @@ namespace MEMS.Client.Sale
             DisPlayEnum.getEnumDS(lkpRevType, typeof(receiveType));
             this.barbtn1.Visibility = BarItemVisibility.Always;
             this.barbtn1.LargeImageIndex = 8;
+            gcSaledetail.DataSource = m_saleProducts;
             if (formmode == frmmodetype.add)
             {
                 m_saleorder = new T_saleorder();
@@ -50,6 +52,16 @@ namespace MEMS.Client.Sale
             {
                 m_saleorder = m_ssclient.getSaleOrderbyId(m_soid);
                 SetData(m_saleorder);
+                m_saleProducts = m_ssclient.getSaleProductbysoid(m_soid);
+                gcSaledetail.DataSource = m_saleProducts;
+                gvSaledetail.RefreshData();
+
+                colpcode.OptionsColumn.AllowEdit = false;
+                colpname.OptionsColumn.AllowEdit = false;
+                colpspec.OptionsColumn.AllowEdit = false;
+                colpmodelprice.OptionsColumn.AllowEdit = false;
+                colpunitprice.OptionsColumn.AllowEdit = false;
+                colptotalprice.OptionsColumn.AllowEdit = false;
             }
             else if (formmode == frmmodetype.delete)
             {
@@ -57,6 +69,8 @@ namespace MEMS.Client.Sale
                 SetData(m_saleorder);
                 readonlytxtbox(this.Controls, true);
                 gvSaledetail.OptionsBehavior.Editable = false;
+                m_saleProducts = m_ssclient.getSaleProductbysoid(m_soid);
+                gcSaledetail.RefreshDataSource();
             }
         }
         /// <summary>
@@ -67,10 +81,15 @@ namespace MEMS.Client.Sale
         {
             txtSono.Text = saleOrder.saleno;
             txtOrderAmt.Text = saleOrder.saletotalamount.HasValue ? saleOrder.saletotalamount.Value.ToString() : "";
-            txtPeriod.Text = saleOrder.receiveperiod.HasValue ? saleOrder.receiveperiod.Value.ToString() : "";
-            txtRevRatio.Text = saleOrder.receiveratio.HasValue ? saleOrder.receiveratio.Value.ToString() : "";
+            txtPeriod.Text = saleOrder.receiveperiod.HasValue ? saleOrder.receiveperiod.Value.ToString() : "";            
             txtremarks.Text = saleOrder.remarks;
-            txtRevAmt.Text = saleOrder.receiveamount.HasValue ? saleOrder.receiveamount.Value.ToString() : "";
+            if (saleOrder.receiveamount.HasValue)
+            {
+                txtRevAmt.Text = saleOrder.receiveamount.Value.ToString();
+            }
+            
+            //txtRevAmt.Text = saleOrder.receiveamount.HasValue ? saleOrder.receiveamount.Value.ToString() : "";
+            txtRevRatio.Text = (saleOrder.receiveratio.HasValue ? saleOrder.receiveratio.Value.ToString() : "0") + "%";
             txtRevStatus.Text = DisPlayEnum.getEnumName(typeof(receiveState), saleOrder.receivestate);
             txtOrderStatus.Text = DisPlayEnum.getEnumName(typeof(orderState), saleOrder.orderstate);
             dateSaleOrder.DateTime = saleOrder.saledate;
@@ -141,19 +160,33 @@ namespace MEMS.Client.Sale
             }
             saleOrder.quotationid = (int)lkpqtno.EditValue;
             saleOrder.saledate = dateSaleOrder.DateTime;
-            saleOrder.saletotalamount = Convert.ToDecimal(txtOrderAmt.Text);
-            saleOrder.receiveamount = Convert.ToDecimal(txtRevAmt.Text);
-            saleOrder.receiveratio = Convert.ToDecimal(txtRevRatio.Text);
+            saleOrder.saletotalamount = txtOrderAmt.Text == "" ? 0 : Convert.ToDecimal(txtOrderAmt.Text);
+            //saleOrder.receiveamount = Convert.ToDecimal(txtRevAmt.Text);
+            //saleOrder.receiveratio = Convert.ToDecimal(txtRevRatio.Text);            
+            if (lkpRevType.EditValue == null)
+            {
+                throw new Exception("请选择收款类型");
+            }
             saleOrder.receivetype = (int)lkpRevType.EditValue;
+            if (lkpPeriodUnit.EditValue == null)
+            {
+                throw new Exception("请选择账期类型");
+            }
             saleOrder.receiveperiodtype = (int)lkpPeriodUnit.EditValue;
-            saleOrder.receiveperiod = Convert.ToInt32(txtPeriod.Text);
+            saleOrder.receiveperiod = txtPeriod.Text == "" ? 0 : Convert.ToInt32(txtPeriod.Text);
             saleOrder.remarks = txtremarks.Text;
         }
 
         protected override void AddObject()
         {
             getData(m_saleorder);
-            m_ssclient.AddNewSaleOrder(m_saleorder);
+            //m_ssclient.AddNewSaleOrder(m_saleorder);
+            List<T_saledetail> sdlist = new List<T_saledetail>();
+            foreach (var sp in m_saleProducts)
+            {
+                sdlist.Add(sp.sd);
+            }
+            m_ssclient.AddNewSoSd(m_saleorder, sdlist);
             base.AddObject();
         }
         protected override void EditObject()
@@ -173,8 +206,63 @@ namespace MEMS.Client.Sale
             FormSelectProduct frm = new FormSelectProduct(qtid);
             if (frm.ShowDialog() == DialogResult.OK)
             {
-                var qtproduct = frm.selectQtProduct;
+                var qtproducts = frm.selectQtProduct;
+                AddSaleProduct(qtproducts);
             }
+        }
+
+        private void AddSaleProduct(List<QtProduct> productlst)
+        {            
+            try
+            {
+                m_saleProducts.Clear();
+                foreach (var p in productlst)
+                {
+                    SaleProduct sp = new SaleProduct();
+                    sp.sd = new T_saledetail();
+                    sp.sd.productid = p.qp.productid;
+                    sp.sd.producttotalprice = p.qp.totalprice;
+                    sp.productCode = p.productCode;
+                    sp.productName = p.productName;
+                    sp.productSpec = p.productSpec;
+                    sp.pUnitPrice = p.qp.unitprice;
+                    sp.pModelPrice = p.qp.modelprice;
+                    //sp.sd.plandeliverydate=
+                    m_saleProducts.Add(sp);
+                }
+                gcSaledetail.RefreshDataSource();
+            }
+            catch (Exception ex)
+            {
+                XtraMessageBox.Show(ex.Message);
+            }
+        }
+
+        private void txtRevAmt_TextChanged(object sender, EventArgs e)
+        {
+            var ratio = Math.Round((Convert.ToDecimal(txtRevAmt.Text) / Convert.ToDecimal(txtOrderAmt.Text)) * 100, 2, MidpointRounding.AwayFromZero);
+            txtRevRatio.Text = ratio.ToString() + "%";
+        }
+
+        private void gvSaledetail_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
+        {
+            gvSaledetail.CloseEditor();
+            if (e.Column.FieldName == "sd.productnumber")
+            {
+                m_saleProducts[e.RowHandle].sd.producttotalprice = m_saleProducts[e.RowHandle].pModelPrice.Value + m_saleProducts[e.RowHandle].pUnitPrice.Value * m_saleProducts[e.RowHandle].sd.productnumber.Value;
+            }
+            txtOrderAmt.Text = CalTotalPrice();
+        }
+
+        private string CalTotalPrice()
+        {
+            decimal totalprice = 0;
+            foreach (var p in m_saleProducts)
+            {
+                if (p.sd.producttotalprice.HasValue)
+                    totalprice += p.sd.producttotalprice.Value;
+            }
+            return totalprice.ToString();
         }
     }
 }
