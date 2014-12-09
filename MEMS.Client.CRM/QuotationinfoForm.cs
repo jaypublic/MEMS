@@ -132,17 +132,26 @@ namespace MEMS.Client.CRM
 
         private void AddProduct2Qt(List<T_Product> products)
         {
-            foreach (var p in products)
+            try
             {
-                QtProduct qtproduct = new QtProduct();
-                qtproduct.qp = new T_quotationprice();
-                qtproduct.qp.productid = p.id;
-                qtproduct.productCode = p.procode;
-                qtproduct.productName = p.proname;
-                qtproduct.productSpec = p.prospecification;
-                m_QtProductlst.Add(qtproduct);
+                m_QtProductlst.Clear();
+                foreach (var p in products)
+                {
+                    QtProduct qtproduct = new QtProduct();
+                    qtproduct.qp = new T_quotationprice();
+                    qtproduct.qp.productid = p.id;
+                    qtproduct.productCode = p.procode;
+                    qtproduct.productName = p.proname;
+                    qtproduct.productSpec = p.prospecification;
+                    m_QtProductlst.Add(qtproduct);
+                }
+                gcQtprice.RefreshDataSource();
             }
-            gcQtprice.RefreshDataSource();
+            catch (Exception)
+            {
+                
+                throw;
+            }
         }
 
         private void gvQtprice_CellValueChanged(object sender, DevExpress.XtraGrid.Views.Base.CellValueChangedEventArgs e)
@@ -152,9 +161,9 @@ namespace MEMS.Client.CRM
             {
                 m_QtProductlst[e.RowHandle].qp.totalprice = m_QtProductlst[e.RowHandle].qp.modelprice.Value + m_QtProductlst[e.RowHandle].qp.unitprice.Value * m_QtProductlst[e.RowHandle].qp.productcount;
             }
-            CalQtTotalPrice();
+            txtQtPrice.Text = CalQtTotalPrice();
         }
-        private void CalQtTotalPrice()
+        private string CalQtTotalPrice()
         {
             decimal totalprice = 0;
             var qtpricelst = (List<QtProduct>)gvQtprice.DataSource;
@@ -165,7 +174,7 @@ namespace MEMS.Client.CRM
                     totalprice += qtprice.qp.totalprice.Value;
                 }
             }
-            txtQtPrice.Text = totalprice.ToString();
+            return totalprice.ToString();
         }
 
     }
