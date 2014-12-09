@@ -201,6 +201,7 @@
     <Content Include="app.config">
       <SubType>Designer</SubType>
     </Content>
+    <None Include="Service References\CRMService\CRMService1.disco" />
     <None Include="Properties\DataSources\MEMS.DB.ExtModels.ProductList.datasource" />
     <None Include="Properties\DataSources\MEMS.DB.ExtModels.QtProduct.datasource" />
     <None Include="Properties\DataSources\MEMS.DB.Models.T_Base_companytype.datasource" />
@@ -219,34 +220,33 @@
     <None Include="Properties\DataSources\MEMS.DB.Models.T_quotation.datasource" />
     <None Include="Properties\DataSources\MEMS.DB.Models.T_Suppliers.datasource" />
     <None Include="Properties\DataSources\MEMS.DB.Models.T_Suppliers_contacts.datasource" />
+    <None Include="Service References\CRMService\CRMService1.wsdl" />
+    <None Include="Service References\CRMService\CRMService5.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CRMService\CRMService51.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CRMService\CRMService52.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CRMService\CRMService53.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\CRMService\CRMService54.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Service References\CRMService\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <None Include="Service References\CRMService\configuration.svcinfo" />
     <None Include="Service References\CRMService\configuration91.svcinfo" />
-    <None Include="Service References\CRMService\CRMService.disco" />
     <None Include="Resources\edit_16x16.png" />
     <None Include="Resources\edit_32x32.png" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <None Include="Service References\CRMService\CRMService.wsdl" />
-    <None Include="Service References\CRMService\CRMService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\CRMService\CRMService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\CRMService\CRMService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\CRMService\CRMService3.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\CRMService\CRMService4.xsd">
-      <SubType>Designer</SubType>
     </None>
   </ItemGroup>
   <ItemGroup>

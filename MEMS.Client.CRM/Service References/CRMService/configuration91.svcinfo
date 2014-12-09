@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="kzJ0UBAFotw6X3lFcfsDbsSmjuk=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="O24y29bdrvdnlxPF3E7PgmpBqhU=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_ICRMService">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_ICRMService" contract="CRMService.ICRMService" bindingType="basicHttpBinding" address="http://localhost:55160/CRMService.svc" bindingConfiguration="BasicHttpBinding_ICRMService">
+    <endpoint name="BasicHttpBinding_ICRMService" contract="CRMService.ICRMService" bindingType="basicHttpBinding" address="http://localhost/mems/CRMService.svc" bindingConfiguration="BasicHttpBinding_ICRMService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:55160/CRMService.svc</serializedValue>
+          <serializedValue>http://localhost/mems/CRMService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

@@ -5,7 +5,7 @@
     <EnableDataBinding>true</EnableDataBinding>
     <ExcludedTypes />
     <ImportXmlTypes>false</ImportXmlTypes>
-    <GenerateInternalTypes>true</GenerateInternalTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
     <GenerateMessageContracts>false</GenerateMessageContracts>
     <NamespaceMappings />
     <CollectionMappings>
@@ -22,16 +22,16 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:55160/CRMService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost/mems/CRMService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="CRMService.xsd" MetadataType="Schema" ID="e5a946ba-d1bc-4239-9194-f69f4199a59f" SourceId="1" SourceUrl="http://localhost:55160/CRMService.svc?xsd=xsd4" />
-    <MetadataFile FileName="CRMService1.xsd" MetadataType="Schema" ID="29e6dff1-cfb5-48af-bd0a-faa3d1c27618" SourceId="1" SourceUrl="http://localhost:55160/CRMService.svc?xsd=xsd2" />
-    <MetadataFile FileName="CRMService2.xsd" MetadataType="Schema" ID="0e3205e1-3c5d-453f-8d54-978a03950f57" SourceId="1" SourceUrl="http://localhost:55160/CRMService.svc?xsd=xsd3" />
-    <MetadataFile FileName="CRMService3.xsd" MetadataType="Schema" ID="89f448f1-66ed-4695-8bb2-f7a24b2aa5cf" SourceId="1" SourceUrl="http://localhost:55160/CRMService.svc?xsd=xsd0" />
-    <MetadataFile FileName="CRMService4.xsd" MetadataType="Schema" ID="d289809f-0c67-4689-800b-f7a5a2cf14ec" SourceId="1" SourceUrl="http://localhost:55160/CRMService.svc?xsd=xsd1" />
-    <MetadataFile FileName="CRMService.disco" MetadataType="Disco" ID="cf78eca4-81f7-49d5-affa-bb6fdadcd083" SourceId="1" SourceUrl="http://localhost:55160/CRMService.svc?disco" />
-    <MetadataFile FileName="CRMService.wsdl" MetadataType="Wsdl" ID="3636279a-da3d-43cc-8f79-647adae151f7" SourceId="1" SourceUrl="http://localhost:55160/CRMService.svc?wsdl" />
+    <MetadataFile FileName="CRMService5.xsd" MetadataType="Schema" ID="a6c5072d-d451-457b-a99f-31a55afa0d24" SourceId="1" SourceUrl="http://localhost/mems/CRMService.svc?xsd=xsd0" />
+    <MetadataFile FileName="CRMService51.xsd" MetadataType="Schema" ID="a89ac4dc-71ce-4e70-bdb9-98f76730d5b1" SourceId="1" SourceUrl="http://localhost/mems/CRMService.svc?xsd=xsd1" />
+    <MetadataFile FileName="CRMService52.xsd" MetadataType="Schema" ID="aa6757e2-9147-4a95-98c4-0b393ba704ba" SourceId="1" SourceUrl="http://localhost/mems/CRMService.svc?xsd=xsd2" />
+    <MetadataFile FileName="CRMService53.xsd" MetadataType="Schema" ID="937413f8-370c-4535-8000-afd0c64d1979" SourceId="1" SourceUrl="http://localhost/mems/CRMService.svc?xsd=xsd3" />
+    <MetadataFile FileName="CRMService54.xsd" MetadataType="Schema" ID="ff7466a6-cdcd-4ac6-a2de-103be8c9395e" SourceId="1" SourceUrl="http://localhost/mems/CRMService.svc?xsd=xsd4" />
+    <MetadataFile FileName="CRMService1.disco" MetadataType="Disco" ID="be8ee15d-0737-4ca7-8a48-6a7850f41669" SourceId="1" SourceUrl="http://localhost/mems/CRMService.svc?disco" />
+    <MetadataFile FileName="CRMService1.wsdl" MetadataType="Wsdl" ID="ab5ecde8-5ffb-4590-8728-ba523ba3a6ab" SourceId="1" SourceUrl="http://localhost/mems/CRMService.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

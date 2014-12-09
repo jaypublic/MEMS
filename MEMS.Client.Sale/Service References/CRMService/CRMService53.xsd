@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/MEMS.DB.ExtModels" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/MEMS.DB.ExtModels" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:import schemaLocation="http://localhost:55160/CRMService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/MEMS.DB.Models" />
+  <xs:import schemaLocation="http://localhost/mems/CRMService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/MEMS.DB.Models" />
   <xs:complexType name="ArrayOfProductList">
     <xs:sequence>
       <xs:element minOccurs="0" maxOccurs="unbounded" name="ProductList" nillable="true" type="tns:ProductList" />

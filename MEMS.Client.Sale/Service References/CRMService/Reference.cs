@@ -13,7 +13,7 @@ namespace MEMS.Client.Sale.CRMService {
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="CRMService.ICRMService")]
-    internal interface ICRMService {
+    public interface ICRMService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ICRMService/getCustomerList", ReplyAction="http://tempuri.org/ICRMService/getCustomerListResponse")]
         System.Collections.Generic.List<MEMS.DB.Models.T_Customer> getCustomerList();
@@ -179,12 +179,12 @@ namespace MEMS.Client.Sale.CRMService {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    internal interface ICRMServiceChannel : MEMS.Client.Sale.CRMService.ICRMService, System.ServiceModel.IClientChannel {
+    public interface ICRMServiceChannel : MEMS.Client.Sale.CRMService.ICRMService, System.ServiceModel.IClientChannel {
     }
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    internal partial class CRMServiceClient : System.ServiceModel.ClientBase<MEMS.Client.Sale.CRMService.ICRMService>, MEMS.Client.Sale.CRMService.ICRMService {
+    public partial class CRMServiceClient : System.ServiceModel.ClientBase<MEMS.Client.Sale.CRMService.ICRMService>, MEMS.Client.Sale.CRMService.ICRMService {
         
         public CRMServiceClient() {
         }

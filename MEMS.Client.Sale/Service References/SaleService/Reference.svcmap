@@ -22,15 +22,15 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:55160/SaleService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost/mems/SaleService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="SaleService.xsd" MetadataType="Schema" ID="5ba1861e-f8ef-4f09-87a1-d2416c6b4ff9" SourceId="1" SourceUrl="http://localhost:55160/SaleService.svc?xsd=xsd3" />
-    <MetadataFile FileName="SaleService1.xsd" MetadataType="Schema" ID="ad671a4b-d4b8-430e-9cb5-8866f680423a" SourceId="1" SourceUrl="http://localhost:55160/SaleService.svc?xsd=xsd0" />
-    <MetadataFile FileName="SaleService2.xsd" MetadataType="Schema" ID="97846078-a725-4720-b35a-1dd7fcbe1536" SourceId="1" SourceUrl="http://localhost:55160/SaleService.svc?xsd=xsd1" />
-    <MetadataFile FileName="SaleService.wsdl" MetadataType="Wsdl" ID="4690955f-e654-4809-8d71-fa0a510938bb" SourceId="1" SourceUrl="http://localhost:55160/SaleService.svc?wsdl" />
-    <MetadataFile FileName="SaleService.disco" MetadataType="Disco" ID="c8b7c5bf-ac1c-4189-91e3-60f59f907c49" SourceId="1" SourceUrl="http://localhost:55160/SaleService.svc?disco" />
-    <MetadataFile FileName="SaleService3.xsd" MetadataType="Schema" ID="b8f19713-119b-4670-9cbc-284985d737be" SourceId="1" SourceUrl="http://localhost:55160/SaleService.svc?xsd=xsd2" />
+    <MetadataFile FileName="SaleService4.xsd" MetadataType="Schema" ID="11b1d782-470d-47b0-9dfa-e4a152a8dec4" SourceId="1" SourceUrl="http://localhost/mems/SaleService.svc?xsd=xsd1" />
+    <MetadataFile FileName="SaleService41.xsd" MetadataType="Schema" ID="913ad9f8-88ab-4ea8-8f2e-89f88a38b08e" SourceId="1" SourceUrl="http://localhost/mems/SaleService.svc?xsd=xsd0" />
+    <MetadataFile FileName="SaleService42.xsd" MetadataType="Schema" ID="32f2892b-45f9-4f76-829c-7393ed57bb7e" SourceId="1" SourceUrl="http://localhost/mems/SaleService.svc?xsd=xsd3" />
+    <MetadataFile FileName="SaleService43.xsd" MetadataType="Schema" ID="6b6af335-8578-4b69-83c7-b5f3d6999493" SourceId="1" SourceUrl="http://localhost/mems/SaleService.svc?xsd=xsd2" />
+    <MetadataFile FileName="SaleService1.disco" MetadataType="Disco" ID="946dbe71-21ea-4a65-b974-076e74a57030" SourceId="1" SourceUrl="http://localhost/mems/SaleService.svc?disco" />
+    <MetadataFile FileName="SaleService1.wsdl" MetadataType="Wsdl" ID="b90c4b90-5c96-4a8f-bea3-82217c5e6b7c" SourceId="1" SourceUrl="http://localhost/mems/SaleService.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
