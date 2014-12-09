@@ -128,6 +128,10 @@ namespace MEMS.Client.Main
         {
             FormFactory.LoadForm(this, typeof(SaleOrderListForm));
         }
+        private void saleRecieveItem_ItemClick(object sender, ItemClickEventArgs e)
+        {
+            FormFactory.LoadForm(this, typeof(SaleOrder4RecieveListForm));
+        }
         #endregion
 
         #region 基础管理
@@ -190,6 +194,8 @@ namespace MEMS.Client.Main
             FormFactory.LoadForm(this, typeof(UseApplyForm));
         }
         #endregion
+
+
 
     }
 }
