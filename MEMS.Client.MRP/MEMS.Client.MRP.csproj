@@ -51,6 +51,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\T_StockCode.cs" />
+    <Compile Include="Entities\T_StockMaterial.cs" />
+    <Compile Include="Entities\T_ApplyUseOrder.cs" />
+    <Compile Include="Entities\T_ApplyUseOrderDetail.cs" />
+    <Compile Include="Enums\StorageStatus.cs" />
+    <Compile Include="Enums\ApplyUseTypes.cs" />
     <Compile Include="POBase\CodeTypeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -94,6 +100,18 @@
     </Compile>
     <Compile Include="POBase\UnitForm.Designer.cs">
       <DependentUpon>UnitForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Storage\EnteringInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Storage\EnteringInfoForm.Designer.cs">
+      <DependentUpon>EnteringInfoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Storage\ApplyUseOrderInfoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Storage\ApplyUseOrderInfoForm.Designer.cs">
+      <DependentUpon>ApplyUseOrderInfoForm.cs</DependentUpon>
     </Compile>
     <Compile Include="UserWindows\CodeEditWindow.cs">
       <SubType>Form</SubType>
@@ -180,6 +198,18 @@
     <Compile Include="Storage\StockForm.Designer.cs">
       <DependentUpon>StockForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserWindows\EnteringWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserWindows\EnteringWindow.Designer.cs">
+      <DependentUpon>EnteringWindow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserWindows\StockMaterialsSearchWindow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserWindows\StockMaterialsSearchWindow.Designer.cs">
+      <DependentUpon>StockMaterialsSearchWindow.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="POBase\CodeTypeForm.resx">
@@ -198,6 +228,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="POBase\UnitForm.resx">
       <DependentUpon>UnitForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Storage\EnteringInfoForm.resx">
+      <DependentUpon>EnteringInfoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Storage\ApplyUseOrderInfoForm.resx">
+      <DependentUpon>ApplyUseOrderInfoForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserWindows\CodeEditWindow.resx">
       <DependentUpon>CodeEditWindow.cs</DependentUpon>
@@ -240,6 +276,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Storage\StockForm.resx">
       <DependentUpon>StockForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserWindows\EnteringWindow.resx">
+      <DependentUpon>EnteringWindow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserWindows\StockMaterialsSearchWindow.resx">
+      <DependentUpon>StockMaterialsSearchWindow.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

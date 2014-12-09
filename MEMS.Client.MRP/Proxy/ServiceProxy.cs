@@ -41,6 +41,21 @@ namespace MEMS.Client.MRP.Proxy
             {
                 InitPO();
             }
+
+            if (StockCodeList == null)
+            {
+                InitStockCodeList();
+            }
+
+            if (StockMaterialList == null)
+            {
+                InitStockMaterialList();
+            }
+
+            if (ApplyUseOrderList == null)
+            {
+                InitApplyUseOrderList();
+            }
         }
 
         #region 组织、人员
@@ -296,8 +311,8 @@ namespace MEMS.Client.MRP.Proxy
         {
             StdMatList = new List<T_StandardMaterial>();
 
-            T_StandardMaterial stdMatA = new T_StandardMaterial() { MatCode = "A0B0C1001", Desc = "测试编码1", MatTypeCode = "TA", MatModeCode = "MA" };
-            T_StandardMaterial stdMatB = new T_StandardMaterial() { MatCode = "A0B0C2002", Desc = "测试编码2", MatTypeCode = "TC", MatModeCode = "MC" };
+            T_StandardMaterial stdMatA = new T_StandardMaterial() { MatCode = "A0B0C1001", MatDesc = "测试编码1", MatTypeCode = "TA", MatModeCode = "MA" };
+            T_StandardMaterial stdMatB = new T_StandardMaterial() { MatCode = "A0B0C2002", MatDesc = "测试编码2", MatTypeCode = "TC", MatModeCode = "MC" };
 
             StdMatList.Add(stdMatA);
             StdMatList.Add(stdMatB);
@@ -353,18 +368,19 @@ namespace MEMS.Client.MRP.Proxy
                 amount = 100,
                 applicant = "0002",
                 applicantdesc = "李四",
-                applydate = "2014-11-01",
+                applydate = "2014-12-03",
                 applydept = "D000",
                 applydeptdesc = "A部门",
                 buyer = "0001",
                 buyerdesc = "张三",
                 arrivalstatus = 0,
-                demandarrivaldate = "2014-12-03",
+                demandarrivaldate = "2014-12-21",
                 paymentstatus = 0,
                 postatus = 0,
                 registdate = DateTime.Now,
                 register = "0002",
-                registerdesc = "李四"
+                registerdesc = "李四",
+                storagestatus = 0
             };
 
             POList.Add(po);
@@ -373,20 +389,20 @@ namespace MEMS.Client.MRP.Proxy
             {
                 Id = "ec45994f-be4e-49b5-a472-4ab8b64b4d9e",
                 PONo = po.pono,
-                Material = StdMatList[0],
                 Price = 10,
                 Quantity = 4,
-                Unit = UnitList[0].Code
+                Unit = UnitList[0].Code,
+                Material = StdMatList[0]
             };
 
             T_PurchaseOrderDetail poDetailsB = new T_PurchaseOrderDetail()
             {
                 Id = "c0704259-882f-496b-8ba5-e56b979bb71f",
                 PONo = po.pono,
-                Material = StdMatList[1],
                 Price = 20,
                 Quantity = 3,
-                Unit = UnitList[1].Code
+                Unit = UnitList[1].Code,
+                Material = StdMatList[1]
             };
 
             PODetailList.Add(poDetailsA);
@@ -423,6 +439,11 @@ namespace MEMS.Client.MRP.Proxy
         public List<T_PurchaseOrder> GetPOPayList(string startDate, string endDate, short poType, string saleNo, string applydept)
         {
             return GetPOList(startDate, endDate, poType, saleNo, applydept).Where(o => o.postatus == (int)POStatus.已审批通过 && (o.arrivalstatus == (int)ArrivalStatus.已到货 || o.arrivalstatus == (int)ArrivalStatus.部分到货)).ToList();
+        }
+
+        public List<T_PurchaseOrder> GetPOStorageList(string startDate, string endDate, short poType, string saleNo, string applydept)
+        {
+            return GetPOList(startDate, endDate, poType, saleNo, applydept).Where(o => o.postatus == (int)POStatus.已审批通过).ToList();
         }
 
         public List<T_PurchaseOrderDetail> GetPODetailList(string pono)
@@ -529,9 +550,249 @@ namespace MEMS.Client.MRP.Proxy
             }
             else
             {
-                return year + "0000";
+                return year + "00000";
             }
         }
         #endregion
+
+        #region StockCode库位编码
+        static List<T_StockCode> StockCodeList;
+        private void InitStockCodeList()
+        {
+            StockCodeList = new List<T_StockCode>();
+
+            T_StockCode codeA00 = new T_StockCode() { Code = "A00", Desc = "A区", ParentId = -1, Id = 0 };
+            T_StockCode codeA01 = new T_StockCode() { Code = "A01", Desc = "A区01", ParentId = 0, Id = 3 };
+            T_StockCode codeA02 = new T_StockCode() { Code = "A02", Desc = "A区02", ParentId = 0, Id = 4 };
+            T_StockCode codeA03 = new T_StockCode() { Code = "A03", Desc = "A区03", ParentId = 0, Id = 5 };
+            T_StockCode codeB00 = new T_StockCode() { Code = "B00", Desc = "B区", ParentId = -1, Id = 1 };
+            T_StockCode codeB01 = new T_StockCode() { Code = "B01", Desc = "B区01", ParentId = 1, Id = 6 };
+            T_StockCode codeC00 = new T_StockCode() { Code = "C00", Desc = "C区", ParentId = -1, Id = 2 };
+            T_StockCode codeC01 = new T_StockCode() { Code = "C01", Desc = "C区01", ParentId = 2, Id = 7 };
+
+            StockCodeList.Add(codeA00);
+            StockCodeList.Add(codeA01);
+            StockCodeList.Add(codeA02);
+            StockCodeList.Add(codeA03);
+            StockCodeList.Add(codeB00);
+            StockCodeList.Add(codeB01);
+            StockCodeList.Add(codeC00);
+            StockCodeList.Add(codeC01);
+        }
+
+        public List<T_StockCode> GetStockCodeTreeList()
+        {
+            return StockCodeList;
+        }
+
+        public List<T_StockCode> GetChildStockCodeList(int parentId)
+        {
+            return StockCodeList.Where(o => o.ParentId == parentId).ToList();
+        }
+
+        public List<T_StockCode> GetStockCodeList()
+        {
+            List<T_StockCode> result = new List<T_StockCode>();
+            foreach (T_StockCode stockCode in StockCodeList)
+            {
+                if (StockCodeList.Where(o => o.ParentId == stockCode.Id).Count() == 0)
+                {
+                    result.Add(stockCode);
+                }
+            }
+
+            return result;
+        }
+
+        public void AddStockCode(T_StockCode stockCode)
+        {
+            StockCodeList.Add(stockCode);
+        }
+
+        public void UpdateStockCode(T_StockCode stockCode)
+        {
+            StockCodeList.Remove(StockCodeList.Find(o => o.Id == stockCode.Id));
+            StockCodeList.Add(stockCode);
+        }
+
+        public void DeleteStockCode(int id)
+        {
+            IList<T_StockCode> removedList;
+
+            if (StockCodeList.Where(o => o.ParentId == id).Count() > 0)
+            {
+                removedList = StockCodeList.Where(o => o.ParentId == id).ToList();
+                foreach (T_StockCode codeType in removedList)
+                {
+                    DeleteStockCode(codeType.Id);
+                }
+            }
+            else
+            {
+                StockCodeList.Remove(StockCodeList.Find(o => o.Id == id));
+            }
+        }
+        #endregion
+
+        #region 库存物资
+        static List<T_StockMaterial> StockMaterialList;
+        private void InitStockMaterialList()
+        {
+            StockMaterialList = new List<T_StockMaterial>();
+        }
+
+        public List<T_StockMaterial> GetMergeStockMaterials()
+        {
+            List<T_StockMaterial> materialList = new List<T_StockMaterial>();
+
+            foreach (var item in StockMaterialList.GroupBy(o => new { o.MatCode, o.MatDesc, o.MatTypeCode, o.MatModeCode, o.Unit }).Select(g => new { g.Key.MatCode, g.Key.MatDesc, g.Key.MatTypeCode, g.Key.MatModeCode, g.Key.Unit, AvailableQuantity = g.Sum(t => t.AvailableQuantity) }))
+            {
+                T_StockMaterial material = new T_StockMaterial();
+                material.MatCode = item.MatCode;
+                material.MatDesc = item.MatDesc;
+                material.MatTypeCode = item.MatTypeCode;
+                material.MatModeCode = item.MatModeCode;
+                material.Unit = item.Unit;
+                material.AvailableQuantity = item.AvailableQuantity;
+
+                materialList.Add(material);
+            }
+
+            return materialList;
+        }
+
+        public List<T_StockMaterial> GetStockMaterials(string stockCode)
+        {
+            return StockMaterialList.Where(o => o.StockCode == stockCode).ToList();
+        }
+
+        public List<T_StockMaterial> GetStockMaterialsByPO(string poNo)
+        {
+            return StockMaterialList.Where(o => o.PONo == poNo).ToList();
+        }
+
+        public void AddStockMaterials(List<T_StockMaterial> stockMaterials)
+        {
+            StockMaterialList.AddRange(stockMaterials);
+        }
+
+        public void UpdateStockMaterial(T_StockMaterial stockMaterial)
+        {
+            StockMaterialList.Remove(StockMaterialList.Find(o => o.StockCode == stockMaterial.StockCode && o.MatCode == stockMaterial.MatCode));
+            StockMaterialList.Add(stockMaterial);
+        }
+
+        public void DeleteStockMaterial(string stockCode, string matCode)
+        {
+            StockMaterialList.Remove(StockMaterialList.Find(o => o.StockCode == stockCode && o.MatCode == matCode));
+        }
+        #endregion
+
+        #region 申领单
+        static List<T_ApplyUseOrder> ApplyUseOrderList;
+        static List<T_ApplyUseOrderDetail> ApplyUseOrderDetailList;
+
+        private void InitApplyUseOrderList()
+        {
+            ApplyUseOrderList = new List<T_ApplyUseOrder>();
+            ApplyUseOrderDetailList = new List<T_ApplyUseOrderDetail>();
+        }
+
+        public List<T_ApplyUseOrder> GetAllApplyUseOrders()
+        {
+            return ApplyUseOrderList;
+        }
+
+        public List<T_ApplyUseOrder> GetApplyUseOrders(string startDate, string endDate, string dept, short applyUseType, string saleNo, string productOrderNo, string applyUseNo)
+        {
+            List<T_ApplyUseOrder> resultList = ApplyUseOrderList.Where(o => string.Compare(o.ApplyUseDate, startDate) >= 0 && string.Compare(o.ApplyUseDate, endDate) <= 0 && o.ApplyUseType == applyUseType).ToList();
+
+            if (dept != "all")
+            {
+                resultList = resultList.Where(o => o.Dept == dept).ToList();
+            }
+
+            if (!string.IsNullOrEmpty(saleNo))
+            {
+                resultList = resultList.Where(o => o.SaleNo.Contains(saleNo)).ToList();
+            }
+
+            if (!string.IsNullOrEmpty(productOrderNo))
+            {
+                resultList = resultList.Where(o => o.ProductOrderNo.Contains(productOrderNo)).ToList();
+            }
+
+            if (!string.IsNullOrEmpty(applyUseNo))
+            {
+                resultList = resultList.Where(o => o.ApplyUseNo.Contains(applyUseNo)).ToList();
+            }
+
+            return resultList;
+        }
+
+        public void AddApplyUseOrder(T_ApplyUseOrder applyUseOrder)
+        {
+            applyUseOrder.ApplyUseDate = DateTime.Now.ToString("yyyy-MM-dd");
+            ApplyUseOrderList.Add(applyUseOrder);
+        }
+
+        public void UpdateAddApplyUseOrder(T_ApplyUseOrder applyUseOrder)
+        {
+            ApplyUseOrderList.Remove(ApplyUseOrderList.Find(o => o.ApplyUseNo == applyUseOrder.ApplyUseNo));
+            ApplyUseOrderList.Add(applyUseOrder);
+        }
+
+        public void DeleteApplyUseOrderList(string applyUseNo)
+        {
+            ApplyUseOrderList.Remove(ApplyUseOrderList.Find(o => o.ApplyUseNo == applyUseNo));
+        }
+
+        public string GetLatestApplyUseOrderIndex()
+        {
+            string applyUseNo = string.Format("SLD{0}", DateTime.Now.ToString("yyyyMM"));
+
+            if (ApplyUseOrderList.Where(o => o.ApplyUseNo.Substring(0, 9) == applyUseNo).Count() > 0)
+            {
+                return applyUseNo + (Convert.ToUInt32(ApplyUseOrderList.Where(o => o.ApplyUseNo.Substring(0, 9) == applyUseNo).Max(o => o.ApplyUseNo).Substring(9)) + 1).ToString("0000");
+            }
+            else
+            {
+                return applyUseNo + "0000";
+            }
+        }
+
+        public List<T_ApplyUseOrderDetail> GetApplyUserOrderDetails(string applyUseNo)
+        {
+            return ApplyUseOrderDetailList.Where(o => o.ApplyUseNo == applyUseNo).ToList();
+        }
+
+        public void AddApplyUserOrderDetail(T_ApplyUseOrderDetail detail)
+        {
+            T_StockMaterial stockMaterial = StockMaterialList.Find(o => o.MatCode == detail.MatCode && o.Unit == detail.Unit);
+
+            ApplyUseOrderDetailList.Add(detail);
+            
+            if (stockMaterial != null)
+            {
+                stockMaterial.AvailableQuantity -= detail.Quantity;
+            }
+        }
+
+        public void DeleteApplyUserOrderDetail(string id)
+        {
+            T_ApplyUseOrderDetail detail = ApplyUseOrderDetailList.Find(o => o.Id == id);
+            if (detail != null)
+            {
+                T_StockMaterial stockMaterial = StockMaterialList.Find(o => o.MatCode == detail.MatCode);
+                if (stockMaterial != null)
+                {
+                    stockMaterial.AvailableQuantity += detail.Quantity;
+                }
+
+                ApplyUseOrderDetailList.Remove(ApplyUseOrderDetailList.Find(o => o.Id == id));
+            }
+        }
+        #endregion
+
     }
 }

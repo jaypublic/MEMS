@@ -31,7 +31,7 @@
             this.gridView3 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.MatCodeTreeList = new DevExpress.XtraTreeList.TreeList();
+            this.StockCodeTreeList = new DevExpress.XtraTreeList.TreeList();
             this.CodeColumn = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             this.DescColumn = new DevExpress.XtraTreeList.Columns.TreeListColumn();
             ((System.ComponentModel.ISupportInitialize)(this.searchgroup)).BeginInit();
@@ -39,7 +39,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MatCodeTreeList)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StockCodeTreeList)).BeginInit();
             this.SuspendLayout();
             // 
             // ribboncontrol
@@ -73,19 +73,19 @@
             this.layoutControlGroup1.Text = "layoutControlGroup1";
             this.layoutControlGroup1.TextVisible = false;
             // 
-            // MatCodeTreeList
+            // StockCodeTreeList
             // 
-            this.MatCodeTreeList.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] {
+            this.StockCodeTreeList.Columns.AddRange(new DevExpress.XtraTreeList.Columns.TreeListColumn[] {
             this.CodeColumn,
             this.DescColumn});
-            this.MatCodeTreeList.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.MatCodeTreeList.KeyFieldName = "Id";
-            this.MatCodeTreeList.Location = new System.Drawing.Point(0, 225);
-            this.MatCodeTreeList.Name = "MatCodeTreeList";
-            this.MatCodeTreeList.OptionsSelection.EnableAppearanceFocusedCell = false;
-            this.MatCodeTreeList.ParentFieldName = "ParentId";
-            this.MatCodeTreeList.Size = new System.Drawing.Size(717, 166);
-            this.MatCodeTreeList.TabIndex = 3;
+            this.StockCodeTreeList.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.StockCodeTreeList.KeyFieldName = "Id";
+            this.StockCodeTreeList.Location = new System.Drawing.Point(0, 225);
+            this.StockCodeTreeList.Name = "StockCodeTreeList";
+            this.StockCodeTreeList.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.StockCodeTreeList.ParentFieldName = "ParentId";
+            this.StockCodeTreeList.Size = new System.Drawing.Size(717, 166);
+            this.StockCodeTreeList.TabIndex = 3;
             // 
             // CodeColumn
             // 
@@ -107,19 +107,19 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.ClientSize = new System.Drawing.Size(717, 391);
-            this.Controls.Add(this.MatCodeTreeList);
+            this.Controls.Add(this.StockCodeTreeList);
             this.IsComplexSearch = true;
             this.Name = "StockForm";
             this.Text = "库位管理";
             this.Controls.SetChildIndex(this.ribboncontrol, 0);
             this.Controls.SetChildIndex(this.searchgroup, 0);
-            this.Controls.SetChildIndex(this.MatCodeTreeList, 0);
+            this.Controls.SetChildIndex(this.StockCodeTreeList, 0);
             ((System.ComponentModel.ISupportInitialize)(this.searchgroup)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribboncontrol)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.MatCodeTreeList)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.StockCodeTreeList)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -129,7 +129,7 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView3;
         private DevExpress.XtraLayout.LayoutControl layoutControl1;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup1;
-        private DevExpress.XtraTreeList.TreeList MatCodeTreeList;
+        private DevExpress.XtraTreeList.TreeList StockCodeTreeList;
         private DevExpress.XtraTreeList.Columns.TreeListColumn CodeColumn;
         private DevExpress.XtraTreeList.Columns.TreeListColumn DescColumn;
 

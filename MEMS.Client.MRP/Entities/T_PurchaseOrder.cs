@@ -39,5 +39,6 @@ namespace MEMS.Client.MRP.Entities
         public string approvaldesc { get; set; }
         public string sendapprovaldate { get; set; }
         public string approvalremark { get; set; }
+        public short storagestatus { get; set; }
     }
 }

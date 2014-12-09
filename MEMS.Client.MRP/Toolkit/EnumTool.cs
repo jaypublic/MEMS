@@ -8,7 +8,6 @@ namespace MEMS.Client.MRP.Toolkit
 {
     public class EnumTool
     {
-
         public static DataTable GetDataSource(Type enumType)
         {
             DataTable dt = new DataTable();

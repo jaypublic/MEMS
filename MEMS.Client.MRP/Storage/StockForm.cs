@@ -27,47 +27,47 @@ namespace MEMS.Client.MRP
 
         protected override void SearchObject()
         {
-            this.MatCodeTreeList.DataSource = null;
-            this.MatCodeTreeList.DataSource = _Proxy.GetCodeTypeList();
-            this.MatCodeTreeList.RefreshDataSource();
+            this.StockCodeTreeList.DataSource = null;
+            this.StockCodeTreeList.DataSource = _Proxy.GetStockCodeTreeList();
+            this.StockCodeTreeList.RefreshDataSource();
         }
 
         protected override void AddObject()
         {
-            CodeEditWindow form = new CodeEditWindow(2, CharacterCasing.Upper, false);
+            CodeEditWindow form = new CodeEditWindow(3, CharacterCasing.Upper, false);
             form.FormClosed += (o, e) =>
             {
                 if (form.DialogResult == System.Windows.Forms.DialogResult.OK)
                 {
-                    T_CodeType codeType = new T_CodeType() { Code = form.Code, Desc = form.Desc };
+                    T_StockCode stockCode =new T_StockCode() { Code = form.Code, Desc = form.Desc };
 
-                    if (this.MatCodeTreeList.DataSource != null)
+                    if (this.StockCodeTreeList.DataSource != null)
                     {
-                        List<T_CodeType> codeList = this.MatCodeTreeList.DataSource as List<T_CodeType>;
-                        codeType.Id = codeList.Select(t => t.Id).Max() + 1;
+                        List<T_StockCode> codeList = this.StockCodeTreeList.DataSource as List<T_StockCode>;
+                        stockCode.Id = codeList.Select(t => t.Id).Max() + 1;
                     }
                     else
                     {
-                        codeType.Id = 0;
+                        stockCode.Id = 0;
                     }
 
-                    if (this.MatCodeTreeList.FocusedNode == null)
+                    if (this.StockCodeTreeList.FocusedNode == null)
                     {
-                        codeType.ParentId = -1;
+                        stockCode.ParentId = -1;
                     }
                     else
                     {
-                        codeType.ParentId = Convert.ToInt16(this.MatCodeTreeList.FocusedNode.GetValue("Id"));
+                        stockCode.ParentId = Convert.ToInt16(this.StockCodeTreeList.FocusedNode.GetValue("Id"));
                     }
 
-                    //_Proxy.AddCodeType(codeType);
+                    //_Proxy.AddStockCode(stockCode);
 
-                    this.MatCodeTreeList.BeginUnboundLoad();
-                    DevExpress.XtraTreeList.Nodes.TreeListNode node = this.MatCodeTreeList.AppendNode(codeType, this.MatCodeTreeList.FocusedNode);
-                    node.SetValue("Id", codeType.Id);
-                    node.SetValue("Code", codeType.Code);
-                    node.SetValue("Desc", codeType.Desc);
-                    this.MatCodeTreeList.EndUnboundLoad();
+                    this.StockCodeTreeList.BeginUnboundLoad();
+                    DevExpress.XtraTreeList.Nodes.TreeListNode node = this.StockCodeTreeList.AppendNode(stockCode, this.StockCodeTreeList.FocusedNode);
+                    node.SetValue("Id", stockCode.Id);
+                    node.SetValue("Code", stockCode.Code);
+                    node.SetValue("Desc", stockCode.Desc);
+                    this.StockCodeTreeList.EndUnboundLoad();
                 }
             };
 
@@ -76,26 +76,26 @@ namespace MEMS.Client.MRP
 
         protected override void EditObject()
         {
-            if (this.MatCodeTreeList.FocusedNode == null)
+            if (this.StockCodeTreeList.FocusedNode == null)
                 return;
 
             CodeEditWindow form = new CodeEditWindow(2, CharacterCasing.Upper, false);
-            form.Code = this.MatCodeTreeList.FocusedNode.GetValue("Code").ToString();
-            form.Desc = this.MatCodeTreeList.FocusedNode.GetValue("Desc").ToString();
+            form.Code = this.StockCodeTreeList.FocusedNode.GetValue("Code").ToString();
+            form.Desc = this.StockCodeTreeList.FocusedNode.GetValue("Desc").ToString();
             form.FormClosed += (o, e) =>
             {
                 T_CodeType codeType = new T_CodeType()
                 {
                     Code = form.Code,
                     Desc = form.Desc,
-                    Id = Convert.ToInt16(this.MatCodeTreeList.FocusedNode.GetValue("Id")),
-                    ParentId = Convert.ToInt16(this.MatCodeTreeList.FocusedNode.GetValue("ParentId"))
+                    Id = Convert.ToInt16(this.StockCodeTreeList.FocusedNode.GetValue("Id")),
+                    ParentId = Convert.ToInt16(this.StockCodeTreeList.FocusedNode.GetValue("ParentId"))
                 };
 
                 _Proxy.UpdateCodeType(codeType);
 
-                this.MatCodeTreeList.FocusedNode.SetValue("Code", codeType.Code);
-                this.MatCodeTreeList.FocusedNode.SetValue("Desc", codeType.Desc);
+                this.StockCodeTreeList.FocusedNode.SetValue("Code", codeType.Code);
+                this.StockCodeTreeList.FocusedNode.SetValue("Desc", codeType.Desc);
             };
 
             form.ShowDialog();
@@ -103,12 +103,12 @@ namespace MEMS.Client.MRP
 
         protected override void DeleteObject()
         {
-            if (this.MatCodeTreeList.FocusedNode == null)
+            if (this.StockCodeTreeList.FocusedNode == null)
                 return;
 
-            //_Proxy.DeleteCodeType(Convert.ToInt16(this.MatCodeTreeList.FocusedNode.GetValue("Id")));
+            //_Proxy.DeleteStockCode(Convert.ToInt16(this.MatCodeTreeList.FocusedNode.GetValue("Id")));
 
-            this.MatCodeTreeList.DeleteNode(this.MatCodeTreeList.FocusedNode);
+            this.StockCodeTreeList.DeleteNode(this.StockCodeTreeList.FocusedNode);
         }
     }
 }

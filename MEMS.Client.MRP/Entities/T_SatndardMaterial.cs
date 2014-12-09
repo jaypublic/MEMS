@@ -21,7 +21,7 @@ namespace MEMS.Client.MRP.Entities
         /// <summary>
         /// 描述
         /// </summary>
-        public string Desc { get; set; }
+        public string MatDesc { get; set; }
         /// <summary>
         /// 物资类型
         /// </summary>
