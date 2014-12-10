@@ -8,6 +8,8 @@ using System.Windows.Forms;
 using DevExpress.XtraEditors;
 using MEMS.Client.Common;
 using MEMS.Client.CRM.CRMService;
+using MEMS.DB.Models;
+using MEMS.DB.ExtModels;
 
 namespace MEMS.Client.CRM
 {
@@ -67,9 +69,9 @@ namespace MEMS.Client.CRM
             {
                 this.cmb_profession.Properties.Items.Add(prof.professionname);
             }
-            List<T_Customer_address> addresslst = new List<T_Customer_address>(client.getCustomerAddressList(m_cid));
+            List<T_Customer_address> addresslst = client.getCustomerAddressList(m_cid);
             this.gcaddress.DataSource = addresslst;
-            List<T_Customer_contacts> contactlst = new List<T_Customer_contacts>(client.getCustomerContactList(m_cid));
+            List<T_Customer_contacts> contactlst = client.getCustomerContactList(m_cid);
             this.gccontacts.DataSource = contactlst;
 
             //this.btn_addressdel.Visible = false;

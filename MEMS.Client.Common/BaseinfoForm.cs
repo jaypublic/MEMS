@@ -12,7 +12,7 @@ namespace MEMS.Client.Common
     public partial class BaseinfoForm : DevExpress.XtraBars.Ribbon.RibbonForm
     {
         /// <summary>
-        /// 窗体的模式，分为新增、修改、删除
+        /// 窗体的模式，分为新增、修改、删除、查看、自定义等
         /// </summary>
         protected frmmodetype formmode;
         public BaseinfoForm()
@@ -70,6 +70,13 @@ namespace MEMS.Client.Common
                 case frmmodetype.delete:
                     this.Text += "—删除";
                     this.okButton.Caption = "删除";
+                    break;
+                case frmmodetype.view:
+                    this.Text += "—查看";
+                    this.okButton.Caption="确定";
+                    break;
+                case frmmodetype.custom:
+                    this.okButton.Caption = "确定";
                     break;
             }
         }

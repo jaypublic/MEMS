@@ -8,6 +8,8 @@ using System.Windows.Forms;
 using MEMS.Client.Common;
 using MEMS.Client.CRM.CRMService;
 using DevExpress.XtraEditors;
+using MEMS.DB.Models;
+using MEMS.DB.ExtModels;
 
 namespace MEMS.Client.CRM
 {
@@ -42,14 +44,14 @@ namespace MEMS.Client.CRM
             {
                 m_product = m_client.getProductbyId(m_pid);
                 setData();
-                List<T_Crafts> craftlst = new List<T_Crafts>(m_client.getProductCraft(m_pid));
+                List<T_Crafts> craftlst = m_client.getProductCraft(m_pid);
                 gccraft.DataSource = craftlst;
             }
             else if (formmode == frmmodetype.delete)
             {
                 m_product = m_client.getProductbyId(m_pid);
                 setData();
-                List<T_Crafts> craftlst = new List<T_Crafts>(m_client.getProductCraft(m_pid));
+                List<T_Crafts> craftlst = m_client.getProductCraft(m_pid);
                 gccraft.DataSource = craftlst;
             }
             base.FormLoad();
@@ -63,7 +65,7 @@ namespace MEMS.Client.CRM
             txt_pcode.Text = m_product.procode;
             txt_spec.Text = m_product.prospecification;
             txt_unit.Text = m_product.prounit;
-            var cstlst = (T_Customer[])cmb_cst.Properties.Tag;
+            var cstlst = (List<T_Customer>)cmb_cst.Properties.Tag;
             foreach (var cst in cstlst)
             {
                 if (cst.id == m_product.customerid)
@@ -126,7 +128,7 @@ namespace MEMS.Client.CRM
                     throw new Exception("毛重请输入数字");
                 }
             }
-            var cstlst = (T_Customer[])cmb_cst.Properties.Tag;
+            var cstlst = (List<T_Customer>)cmb_cst.Properties.Tag;
             m_product.customerid = cstlst[cmb_cst.SelectedIndex].id;
         }
         protected override void DeleteObject()

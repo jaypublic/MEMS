@@ -7,6 +7,8 @@ using System.Text;
 using System.Windows.Forms;
 using MEMS.Client.Common;
 using MEMS.Client.CRM.CRMService;
+using MEMS.DB.Models;
+using MEMS.DB.ExtModels;
 
 namespace MEMS.Client.CRM
 {

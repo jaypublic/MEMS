@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
+//using System.Data;
 using System.Data.Objects;
 using System.Linq;
 using System.Web;
-using MEMSservice.DAL;
+
+using System.Data.Entity;
+using MEMS.DB.Models;
+using MEMS.DB.ExtModels;
 
 namespace MEMSservice.BLL
 {
@@ -12,7 +15,7 @@ namespace MEMSservice.BLL
     {
         public List<T_Suppliers> getSupplierList()
         {
-            using (var db = new MEMSEntities())
+            using (var db = new MEMSContext())
             {
                 var rst = from s in db.T_Suppliers
                           select s;
@@ -22,7 +25,7 @@ namespace MEMSservice.BLL
         }
         public List<T_Suppliers> getSupplierList(string sno,string sname)
         {
-            using (var db = new MEMSEntities())
+            using (var db = new MEMSContext())
             {
                 var rst = from s in db.T_Suppliers
                           where s.supplierno.Contains(sno) && s.suppliername.Contains(sname)
@@ -32,7 +35,7 @@ namespace MEMSservice.BLL
         }
         public T_Suppliers getSupplierbyId(int id)
         {
-            using (var db = new MEMSEntities())
+            using (var db = new MEMSContext())
             {
                 var rst = from s in db.T_Suppliers
                           where s.id == id
@@ -42,7 +45,7 @@ namespace MEMSservice.BLL
         }
         internal void addNewSupplier(T_Suppliers newsupplier)
         {
-            using (MEMSEntities db = new MEMSEntities())
+            using (MEMSContext db = new MEMSContext())
             {
                 db.T_Suppliers.Add(newsupplier);
                 db.SaveChanges();
@@ -51,15 +54,15 @@ namespace MEMSservice.BLL
 
         internal void updateSupplier(T_Suppliers supplier)
         {
-            using (MEMSEntities db = new MEMSEntities())
+            using (MEMSContext db = new MEMSContext())
             {
-                db.Entry(supplier).State = System.Data.EntityState.Modified;
+                db.Entry(supplier).State = EntityState.Modified;
                 db.SaveChanges();
             }
         }
         internal void delSupplier(T_Suppliers supplier)
         {
-            using (MEMSEntities db = new MEMSEntities())
+            using (MEMSContext db = new MEMSContext())
             {
                 //db.T_Customer.Remove(customer);
                 var entityentry = db.Entry(supplier);
@@ -69,7 +72,7 @@ namespace MEMSservice.BLL
         }
         internal List<T_Base_suppliertype> getSuptypLst()
         {
-            using (MEMSEntities db = new MEMSEntities())
+            using (MEMSContext db = new MEMSContext())
             {
                 var lst = from c in db.T_Base_suppliertype
                           select c;
@@ -78,7 +81,7 @@ namespace MEMSservice.BLL
         }
         internal List<T_Suppliers_contacts> getSupplierContacts(int supplierid)
         {
-            using (MEMSEntities db = new MEMSEntities())
+            using (MEMSContext db = new MEMSContext())
             {
                 var lst = from a in db.T_Suppliers_contacts
                           where a.supplierid == supplierid
@@ -88,7 +91,7 @@ namespace MEMSservice.BLL
         }
         internal void DelSupplierContacts(T_Suppliers_contacts contact)
         {
-            using (MEMSEntities db = new MEMSEntities())
+            using (MEMSContext db = new MEMSContext())
             {
                 db.Entry(contact).State = EntityState.Deleted;
                 db.SaveChanges();
@@ -96,7 +99,7 @@ namespace MEMSservice.BLL
         }
         internal void AddSupplierContacts(T_Suppliers_contacts contact)
         {
-            using (MEMSEntities db = new MEMSEntities())
+            using (MEMSContext db = new MEMSContext())
             {
                 db.T_Suppliers_contacts.Add(contact);
 
@@ -105,7 +108,7 @@ namespace MEMSservice.BLL
         }
         internal void UpdateSupplierContacts(T_Suppliers_contacts contact)
         {
-            using (MEMSEntities db = new MEMSEntities())
+            using (MEMSContext db = new MEMSContext())
             {
                 db.Entry(contact).State = EntityState.Modified;
                 db.SaveChanges();

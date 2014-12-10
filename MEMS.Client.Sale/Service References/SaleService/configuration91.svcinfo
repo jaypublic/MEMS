@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="2W8JUQ0oKNwrkdXLtd9KojFFL38=">
+<SavedWcfConfigurationInformation xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="9.1" CheckSum="gHK6sPb9zTTTvBEDQUHK88tvQ6g=">
   <bindingConfigurations>
     <bindingConfiguration bindingType="basicHttpBinding" name="BasicHttpBinding_ISaleService">
       <properties>
@@ -112,10 +112,10 @@
     </bindingConfiguration>
   </bindingConfigurations>
   <endpoints>
-    <endpoint name="BasicHttpBinding_ISaleService" contract="SaleService.ISaleService" bindingType="basicHttpBinding" address="http://localhost:55160/SaleService.svc" bindingConfiguration="BasicHttpBinding_ISaleService">
+    <endpoint name="BasicHttpBinding_ISaleService" contract="SaleService.ISaleService" bindingType="basicHttpBinding" address="http://localhost/mems/SaleService.svc" bindingConfiguration="BasicHttpBinding_ISaleService">
       <properties>
         <property path="/address" isComplexType="false" isExplicitlyDefined="true" clrType="System.Uri, System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-          <serializedValue>http://localhost:55160/SaleService.svc</serializedValue>
+          <serializedValue>http://localhost/mems/SaleService.svc</serializedValue>
         </property>
         <property path="/behaviorConfiguration" isComplexType="false" isExplicitlyDefined="false" clrType="System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
           <serializedValue />

@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using MEMS.Client.CRM.CRMService;
+using MEMS.DB.Models;
+using MEMS.DB.ExtModels;
 
 namespace MEMS.Client.CRM
 {
@@ -32,7 +34,7 @@ namespace MEMS.Client.CRM
         protected override void SearchObject()
         {
             var quno = this.txtQuNo.Text;
-            T_Customer[] customerlst=(T_Customer[])cmbCustomer.Tag;
+            var customerlst= (List<DB.Models.T_Customer>)cmbCustomer.Tag;
             int customerid = cmbCustomer.SelectedIndex == 0 ? 0 : customerlst[cmbCustomer.SelectedIndex - 1].id;
             DateTime aftdate = dateEdit1.EditValue != null ? dateEdit1.DateTime : new DateTime(2000, 1, 1);
             DateTime bfedate = dateEdit2.EditValue != null ? dateEdit2.DateTime : new DateTime(2100, 1, 1);

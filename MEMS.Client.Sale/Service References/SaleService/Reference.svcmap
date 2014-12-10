@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="f23c5a1c-fbba-415c-aa64-4a96c148d362" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="7c82463a-b258-413a-bd48-902e607faf75" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <EnableDataBinding>true</EnableDataBinding>
@@ -8,24 +8,29 @@
     <GenerateInternalTypes>false</GenerateInternalTypes>
     <GenerateMessageContracts>false</GenerateMessageContracts>
     <NamespaceMappings />
-    <CollectionMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.Generic.List`1" Category="List" />
+    </CollectionMappings>
     <GenerateSerializableTypes>true</GenerateSerializableTypes>
     <Serializer>Auto</Serializer>
     <UseSerializerForFaults>true</UseSerializerForFaults>
     <ReferenceAllAssemblies>false</ReferenceAllAssemblies>
-    <ReferencedAssemblies />
+    <ReferencedAssemblies>
+      <ReferencedAssembly AssemblyName="MEMS.DB" />
+    </ReferencedAssemblies>
     <ReferencedDataContractTypes />
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://localhost:55160/SaleService.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost/mems/SaleService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="SaleService.wsdl" MetadataType="Wsdl" ID="804f9d52-387f-42d6-8e0f-939c13bd0390" SourceId="1" SourceUrl="http://localhost:55160/SaleService.svc?wsdl" />
-    <MetadataFile FileName="SaleService.disco" MetadataType="Disco" ID="77fde400-ca52-4563-95af-51e8eb571c69" SourceId="1" SourceUrl="http://localhost:55160/SaleService.svc?disco" />
-    <MetadataFile FileName="SaleService.xsd" MetadataType="Schema" ID="7e588605-884f-4288-90c5-4c4b2ffa0b74" SourceId="1" SourceUrl="http://localhost:55160/SaleService.svc?xsd=xsd1" />
-    <MetadataFile FileName="SaleService1.xsd" MetadataType="Schema" ID="b20a32a0-1d49-48f6-9ce1-48d81a1bf5e9" SourceId="1" SourceUrl="http://localhost:55160/SaleService.svc?xsd=xsd2" />
-    <MetadataFile FileName="SaleService2.xsd" MetadataType="Schema" ID="0ec372ba-a55d-43ca-937c-4ea277fdc045" SourceId="1" SourceUrl="http://localhost:55160/SaleService.svc?xsd=xsd0" />
+    <MetadataFile FileName="SaleService4.xsd" MetadataType="Schema" ID="11b1d782-470d-47b0-9dfa-e4a152a8dec4" SourceId="1" SourceUrl="http://localhost/mems/SaleService.svc?xsd=xsd1" />
+    <MetadataFile FileName="SaleService41.xsd" MetadataType="Schema" ID="913ad9f8-88ab-4ea8-8f2e-89f88a38b08e" SourceId="1" SourceUrl="http://localhost/mems/SaleService.svc?xsd=xsd0" />
+    <MetadataFile FileName="SaleService42.xsd" MetadataType="Schema" ID="32f2892b-45f9-4f76-829c-7393ed57bb7e" SourceId="1" SourceUrl="http://localhost/mems/SaleService.svc?xsd=xsd3" />
+    <MetadataFile FileName="SaleService43.xsd" MetadataType="Schema" ID="6b6af335-8578-4b69-83c7-b5f3d6999493" SourceId="1" SourceUrl="http://localhost/mems/SaleService.svc?xsd=xsd2" />
+    <MetadataFile FileName="SaleService1.disco" MetadataType="Disco" ID="946dbe71-21ea-4a65-b974-076e74a57030" SourceId="1" SourceUrl="http://localhost/mems/SaleService.svc?disco" />
+    <MetadataFile FileName="SaleService1.wsdl" MetadataType="Wsdl" ID="b90c4b90-5c96-4a8f-bea3-82217c5e6b7c" SourceId="1" SourceUrl="http://localhost/mems/SaleService.svc?wsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -28,12 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.ribbonControl = new DevExpress.XtraBars.Ribbon.RibbonControl();
-            this.appMenu = new DevExpress.XtraBars.Ribbon.ApplicationMenu(this.components);
+            this.appMenu = new DevExpress.XtraBars.Ribbon.ApplicationMenu();
             this.iExit = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonImageCollection = new DevExpress.Utils.ImageCollection(this.components);
+            this.ribbonImageCollection = new DevExpress.Utils.ImageCollection();
             this.iHelp = new DevExpress.XtraBars.BarButtonItem();
             this.iAbout = new DevExpress.XtraBars.BarButtonItem();
             this.siStatus = new DevExpress.XtraBars.BarStaticItem();
@@ -63,14 +62,8 @@
             this.barBtnEnteringWarehouse = new DevExpress.XtraBars.BarButtonItem();
             this.barBtnUseApply = new DevExpress.XtraBars.BarButtonItem();
             this.barBtnStock = new DevExpress.XtraBars.BarButtonItem();
-            this.ribbonImageCollectionLarge = new DevExpress.Utils.ImageCollection(this.components);
+            this.ribbonImageCollectionLarge = new DevExpress.Utils.ImageCollection();
             this.selectPageCategory = new DevExpress.XtraBars.Ribbon.RibbonPageCategory();
-            this.POPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.StoragePage = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
-            this.BasicPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
-            this.MaterialPage = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.homeRibbonPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.fileRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonPageGroup1 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
@@ -78,8 +71,15 @@
             this.exitRibbonPageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.SalePage = new DevExpress.XtraBars.Ribbon.RibbonPage();
             this.salePageGroup = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.POPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup2 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.StoragePage = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.ribbonPageGroup3 = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
+            this.BasicPage = new DevExpress.XtraBars.Ribbon.RibbonPage();
+            this.MaterialPage = new DevExpress.XtraBars.Ribbon.RibbonPageGroup();
             this.ribbonStatusBar = new DevExpress.XtraBars.Ribbon.RibbonStatusBar();
-            this.myMDI = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
+            this.myMDI = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager();
+            this.saleRecieveItem = new DevExpress.XtraBars.BarButtonItem();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appMenu)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonImageCollection)).BeginInit();
@@ -124,10 +124,11 @@
             this.barBtnPOPay,
             this.barBtnEnteringWarehouse,
             this.barBtnUseApply,
-            this.barBtnStock});
+            this.barBtnStock,
+            this.saleRecieveItem});
             this.ribbonControl.LargeImages = this.ribbonImageCollectionLarge;
             this.ribbonControl.Location = new System.Drawing.Point(0, 0);
-            this.ribbonControl.MaxItemId = 78;
+            this.ribbonControl.MaxItemId = 79;
             this.ribbonControl.Name = "ribbonControl";
             this.ribbonControl.PageCategories.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageCategory[] {
             this.selectPageCategory});
@@ -457,51 +458,6 @@
             this.selectPageCategory.Name = "selectPageCategory";
             this.selectPageCategory.Text = "子窗体菜单";
             // 
-            // POPage
-            // 
-            this.POPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup2});
-            this.POPage.Name = "POPage";
-            this.POPage.Text = "采购管理";
-            // 
-            // ribbonPageGroup2
-            // 
-            this.ribbonPageGroup2.ItemLinks.Add(this.barBtnPO);
-            this.ribbonPageGroup2.ItemLinks.Add(this.barBtnPOApproval);
-            this.ribbonPageGroup2.ItemLinks.Add(this.barBtnPOPay);
-            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
-            // 
-            // StoragePage
-            // 
-            this.StoragePage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.ribbonPageGroup3});
-            this.StoragePage.Name = "StoragePage";
-            this.StoragePage.Text = "仓储管理";
-            // 
-            // ribbonPageGroup3
-            // 
-            this.ribbonPageGroup3.ItemLinks.Add(this.barBtnEnteringWarehouse);
-            this.ribbonPageGroup3.ItemLinks.Add(this.barBtnUseApply);
-            this.ribbonPageGroup3.ItemLinks.Add(this.barBtnStock);
-            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
-            // 
-            // BasicPage
-            // 
-            this.BasicPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
-            this.MaterialPage});
-            this.BasicPage.Name = "BasicPage";
-            this.BasicPage.Text = "基础管理";
-            // 
-            // MaterialPage
-            // 
-            this.MaterialPage.ItemLinks.Add(this.barBtnCodeType);
-            this.MaterialPage.ItemLinks.Add(this.barBtnUnit);
-            this.MaterialPage.ItemLinks.Add(this.barBtnMaterailType);
-            this.MaterialPage.ItemLinks.Add(this.barBtnMaterailMode);
-            this.MaterialPage.ItemLinks.Add(this.barBtnStandardMaterial);
-            this.MaterialPage.Name = "MaterialPage";
-            this.MaterialPage.Text = "物资";
-            // 
             // homeRibbonPage
             // 
             this.homeRibbonPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
@@ -553,9 +509,55 @@
             // salePageGroup
             // 
             this.salePageGroup.ItemLinks.Add(this.saleorderItem);
+            this.salePageGroup.ItemLinks.Add(this.saleRecieveItem);
             this.salePageGroup.Name = "salePageGroup";
             this.salePageGroup.ShowCaptionButton = false;
             this.salePageGroup.Text = "销售管理";
+            // 
+            // POPage
+            // 
+            this.POPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup2});
+            this.POPage.Name = "POPage";
+            this.POPage.Text = "采购管理";
+            // 
+            // ribbonPageGroup2
+            // 
+            this.ribbonPageGroup2.ItemLinks.Add(this.barBtnPO);
+            this.ribbonPageGroup2.ItemLinks.Add(this.barBtnPOApproval);
+            this.ribbonPageGroup2.ItemLinks.Add(this.barBtnPOPay);
+            this.ribbonPageGroup2.Name = "ribbonPageGroup2";
+            // 
+            // StoragePage
+            // 
+            this.StoragePage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.ribbonPageGroup3});
+            this.StoragePage.Name = "StoragePage";
+            this.StoragePage.Text = "仓储管理";
+            // 
+            // ribbonPageGroup3
+            // 
+            this.ribbonPageGroup3.ItemLinks.Add(this.barBtnEnteringWarehouse);
+            this.ribbonPageGroup3.ItemLinks.Add(this.barBtnUseApply);
+            this.ribbonPageGroup3.ItemLinks.Add(this.barBtnStock);
+            this.ribbonPageGroup3.Name = "ribbonPageGroup3";
+            // 
+            // BasicPage
+            // 
+            this.BasicPage.Groups.AddRange(new DevExpress.XtraBars.Ribbon.RibbonPageGroup[] {
+            this.MaterialPage});
+            this.BasicPage.Name = "BasicPage";
+            this.BasicPage.Text = "基础管理";
+            // 
+            // MaterialPage
+            // 
+            this.MaterialPage.ItemLinks.Add(this.barBtnCodeType);
+            this.MaterialPage.ItemLinks.Add(this.barBtnUnit);
+            this.MaterialPage.ItemLinks.Add(this.barBtnMaterailType);
+            this.MaterialPage.ItemLinks.Add(this.barBtnMaterailMode);
+            this.MaterialPage.ItemLinks.Add(this.barBtnStandardMaterial);
+            this.MaterialPage.Name = "MaterialPage";
+            this.MaterialPage.Text = "物资";
             // 
             // ribbonStatusBar
             // 
@@ -569,6 +571,15 @@
             // myMDI
             // 
             this.myMDI.MdiParent = this;
+            // 
+            // saleRecieveItem
+            // 
+            this.saleRecieveItem.Caption = "销售收款";
+            this.saleRecieveItem.Glyph = ((System.Drawing.Image)(resources.GetObject("saleRecieveItem.Glyph")));
+            this.saleRecieveItem.Id = 78;
+            this.saleRecieveItem.LargeGlyph = ((System.Drawing.Image)(resources.GetObject("saleRecieveItem.LargeGlyph")));
+            this.saleRecieveItem.Name = "saleRecieveItem";
+            this.saleRecieveItem.ItemClick += new DevExpress.XtraBars.ItemClickEventHandler(this.saleRecieveItem_ItemClick);
             // 
             // MainForm
             // 
@@ -647,6 +658,7 @@
         private DevExpress.XtraBars.BarButtonItem barBtnUseApply;
         private DevExpress.XtraBars.BarButtonItem barBtnStock;
         private DevExpress.XtraBars.Ribbon.RibbonPageGroup ribbonPageGroup3;
+        private DevExpress.XtraBars.BarButtonItem saleRecieveItem;
 
     }
 }

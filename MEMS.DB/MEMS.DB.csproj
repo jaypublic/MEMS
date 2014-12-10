@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E014D3C0-2CF7-4EF7-95EA-B017F6B98B0A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MEMS.DB</RootNamespace>
+    <AssemblyName>MEMS.DB</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Dlls\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer">
+      <HintPath>..\Dlls\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ExtModels\ProductList.cs" />
+    <Compile Include="ExtModels\QtProduct.cs" />
+    <Compile Include="ExtModels\SaleOrder.cs" />
+    <Compile Include="ExtModels\SaleProduct.cs" />
+    <Compile Include="Models\Mapping\T_Base_companytypeMap.cs" />
+    <Compile Include="Models\Mapping\T_Base_customertypeMap.cs" />
+    <Compile Include="Models\Mapping\T_Base_professionMap.cs" />
+    <Compile Include="Models\Mapping\T_Base_suppliertypeMap.cs" />
+    <Compile Include="Models\Mapping\T_CraftsMap.cs" />
+    <Compile Include="Models\Mapping\T_CraftsPriceMap.cs" />
+    <Compile Include="Models\Mapping\T_CustomerMap.cs" />
+    <Compile Include="Models\Mapping\T_Customer_addressMap.cs" />
+    <Compile Include="Models\Mapping\T_Customer_contactsMap.cs" />
+    <Compile Include="Models\Mapping\T_FileMgrMap.cs" />
+    <Compile Include="Models\Mapping\T_ProductbasicPriceMap.cs" />
+    <Compile Include="Models\Mapping\T_ProductDrawMap.cs" />
+    <Compile Include="Models\Mapping\T_ProductMap.cs" />
+    <Compile Include="Models\Mapping\T_ProductTypeMap.cs" />
+    <Compile Include="Models\Mapping\T_quotationMap.cs" />
+    <Compile Include="Models\Mapping\T_quotationpriceMap.cs" />
+    <Compile Include="Models\Mapping\T_saledetailMap.cs" />
+    <Compile Include="Models\Mapping\T_saleorderMap.cs" />
+    <Compile Include="Models\Mapping\T_SaleReceiveMap.cs" />
+    <Compile Include="Models\Mapping\T_SuppliersMap.cs" />
+    <Compile Include="Models\Mapping\T_Suppliers_contactsMap.cs" />
+    <Compile Include="Models\MEMSContext.cs" />
+    <Compile Include="Models\T_Base_companytype.cs" />
+    <Compile Include="Models\T_Base_customertype.cs" />
+    <Compile Include="Models\T_Base_profession.cs" />
+    <Compile Include="Models\T_Base_suppliertype.cs" />
+    <Compile Include="Models\T_Crafts.cs" />
+    <Compile Include="Models\T_CraftsPrice.cs" />
+    <Compile Include="Models\T_Customer.cs" />
+    <Compile Include="Models\T_Customer_address.cs" />
+    <Compile Include="Models\T_Customer_contacts.cs" />
+    <Compile Include="Models\T_FileMgr.cs" />
+    <Compile Include="Models\T_Product.cs" />
+    <Compile Include="Models\T_ProductbasicPrice.cs" />
+    <Compile Include="Models\T_ProductDraw.cs" />
+    <Compile Include="Models\T_ProductType.cs" />
+    <Compile Include="Models\T_quotation.cs" />
+    <Compile Include="Models\T_quotationprice.cs" />
+    <Compile Include="Models\T_saledetail.cs" />
+    <Compile Include="Models\T_saleorder.cs" />
+    <Compile Include="Models\T_SaleReceive.cs" />
+    <Compile Include="Models\T_Suppliers.cs" />
+    <Compile Include="Models\T_Suppliers_contacts.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

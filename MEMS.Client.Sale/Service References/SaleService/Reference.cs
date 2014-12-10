@@ -9,256 +9,38 @@
 //------------------------------------------------------------------------------
 
 namespace MEMS.Client.Sale.SaleService {
-    using System.Runtime.Serialization;
-    using System;
     
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="T_saleorder", Namespace="http://schemas.datacontract.org/2004/07/MEMSservice.DAL")]
-    [System.SerializableAttribute()]
-    public partial class T_saleorder : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
-        
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int idField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> orderstateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> quotationidField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<decimal> receiveamountField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> receiveperiodField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string receiveperiodtypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<decimal> receiveratioField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> receivestateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<int> receivetypeField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string saleattachmentsField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<System.DateTime> saledateField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string salenoField;
-        
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.Nullable<decimal> saletotalamountField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public int id {
-            get {
-                return this.idField;
-            }
-            set {
-                if ((this.idField.Equals(value) != true)) {
-                    this.idField = value;
-                    this.RaisePropertyChanged("id");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> orderstate {
-            get {
-                return this.orderstateField;
-            }
-            set {
-                if ((this.orderstateField.Equals(value) != true)) {
-                    this.orderstateField = value;
-                    this.RaisePropertyChanged("orderstate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> quotationid {
-            get {
-                return this.quotationidField;
-            }
-            set {
-                if ((this.quotationidField.Equals(value) != true)) {
-                    this.quotationidField = value;
-                    this.RaisePropertyChanged("quotationid");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<decimal> receiveamount {
-            get {
-                return this.receiveamountField;
-            }
-            set {
-                if ((this.receiveamountField.Equals(value) != true)) {
-                    this.receiveamountField = value;
-                    this.RaisePropertyChanged("receiveamount");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> receiveperiod {
-            get {
-                return this.receiveperiodField;
-            }
-            set {
-                if ((this.receiveperiodField.Equals(value) != true)) {
-                    this.receiveperiodField = value;
-                    this.RaisePropertyChanged("receiveperiod");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string receiveperiodtype {
-            get {
-                return this.receiveperiodtypeField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.receiveperiodtypeField, value) != true)) {
-                    this.receiveperiodtypeField = value;
-                    this.RaisePropertyChanged("receiveperiodtype");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<decimal> receiveratio {
-            get {
-                return this.receiveratioField;
-            }
-            set {
-                if ((this.receiveratioField.Equals(value) != true)) {
-                    this.receiveratioField = value;
-                    this.RaisePropertyChanged("receiveratio");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> receivestate {
-            get {
-                return this.receivestateField;
-            }
-            set {
-                if ((this.receivestateField.Equals(value) != true)) {
-                    this.receivestateField = value;
-                    this.RaisePropertyChanged("receivestate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<int> receivetype {
-            get {
-                return this.receivetypeField;
-            }
-            set {
-                if ((this.receivetypeField.Equals(value) != true)) {
-                    this.receivetypeField = value;
-                    this.RaisePropertyChanged("receivetype");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string saleattachments {
-            get {
-                return this.saleattachmentsField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.saleattachmentsField, value) != true)) {
-                    this.saleattachmentsField = value;
-                    this.RaisePropertyChanged("saleattachments");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<System.DateTime> saledate {
-            get {
-                return this.saledateField;
-            }
-            set {
-                if ((this.saledateField.Equals(value) != true)) {
-                    this.saledateField = value;
-                    this.RaisePropertyChanged("saledate");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public string saleno {
-            get {
-                return this.salenoField;
-            }
-            set {
-                if ((object.ReferenceEquals(this.salenoField, value) != true)) {
-                    this.salenoField = value;
-                    this.RaisePropertyChanged("saleno");
-                }
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.Nullable<decimal> saletotalamount {
-            get {
-                return this.saletotalamountField;
-            }
-            set {
-                if ((this.saletotalamountField.Equals(value) != true)) {
-                    this.saletotalamountField = value;
-                    this.RaisePropertyChanged("saletotalamount");
-                }
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="SaleService.ISaleService")]
     public interface ISaleService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISaleService/getAllSaleOrderList", ReplyAction="http://tempuri.org/ISaleService/getAllSaleOrderListResponse")]
-        MEMS.Client.Sale.SaleService.T_saleorder[] getAllSaleOrderList();
+        System.Collections.Generic.List<MEMS.DB.ExtModels.SaleOrder> getAllSaleOrderList();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISaleService/getSaleOrderbyId", ReplyAction="http://tempuri.org/ISaleService/getSaleOrderbyIdResponse")]
-        MEMS.Client.Sale.SaleService.T_saleorder getSaleOrderbyId(int saleorderid);
+        MEMS.DB.Models.T_saleorder getSaleOrderbyId(int saleorderid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISaleService/getSaleOrderList", ReplyAction="http://tempuri.org/ISaleService/getSaleOrderListResponse")]
+        System.Collections.Generic.List<MEMS.DB.ExtModels.SaleOrder> getSaleOrderList(string soNo, System.DateTime dtstart, System.DateTime dtend);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISaleService/AddNewSaleOrder", ReplyAction="http://tempuri.org/ISaleService/AddNewSaleOrderResponse")]
+        bool AddNewSaleOrder(MEMS.DB.Models.T_saleorder so);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISaleService/UpdateSaleOrder", ReplyAction="http://tempuri.org/ISaleService/UpdateSaleOrderResponse")]
+        bool UpdateSaleOrder(MEMS.DB.Models.T_saleorder so);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISaleService/DeleteSaleOrder", ReplyAction="http://tempuri.org/ISaleService/DeleteSaleOrderResponse")]
+        bool DeleteSaleOrder(MEMS.DB.Models.T_saleorder so);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISaleService/getSaleDetailbysoid", ReplyAction="http://tempuri.org/ISaleService/getSaleDetailbysoidResponse")]
+        System.Collections.Generic.List<MEMS.DB.Models.T_saledetail> getSaleDetailbysoid(int soid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISaleService/getSaleProductbysoid", ReplyAction="http://tempuri.org/ISaleService/getSaleProductbysoidResponse")]
+        System.Collections.Generic.List<MEMS.DB.ExtModels.SaleProduct> getSaleProductbysoid(int soid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISaleService/AddNewSoSd", ReplyAction="http://tempuri.org/ISaleService/AddNewSoSdResponse")]
+        bool AddNewSoSd(MEMS.DB.Models.T_saleorder so, System.Collections.Generic.List<MEMS.DB.Models.T_saledetail> sdlist);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -288,12 +70,40 @@ namespace MEMS.Client.Sale.SaleService {
                 base(binding, remoteAddress) {
         }
         
-        public MEMS.Client.Sale.SaleService.T_saleorder[] getAllSaleOrderList() {
+        public System.Collections.Generic.List<MEMS.DB.ExtModels.SaleOrder> getAllSaleOrderList() {
             return base.Channel.getAllSaleOrderList();
         }
         
-        public MEMS.Client.Sale.SaleService.T_saleorder getSaleOrderbyId(int saleorderid) {
+        public MEMS.DB.Models.T_saleorder getSaleOrderbyId(int saleorderid) {
             return base.Channel.getSaleOrderbyId(saleorderid);
+        }
+        
+        public System.Collections.Generic.List<MEMS.DB.ExtModels.SaleOrder> getSaleOrderList(string soNo, System.DateTime dtstart, System.DateTime dtend) {
+            return base.Channel.getSaleOrderList(soNo, dtstart, dtend);
+        }
+        
+        public bool AddNewSaleOrder(MEMS.DB.Models.T_saleorder so) {
+            return base.Channel.AddNewSaleOrder(so);
+        }
+        
+        public bool UpdateSaleOrder(MEMS.DB.Models.T_saleorder so) {
+            return base.Channel.UpdateSaleOrder(so);
+        }
+        
+        public bool DeleteSaleOrder(MEMS.DB.Models.T_saleorder so) {
+            return base.Channel.DeleteSaleOrder(so);
+        }
+        
+        public System.Collections.Generic.List<MEMS.DB.Models.T_saledetail> getSaleDetailbysoid(int soid) {
+            return base.Channel.getSaleDetailbysoid(soid);
+        }
+        
+        public System.Collections.Generic.List<MEMS.DB.ExtModels.SaleProduct> getSaleProductbysoid(int soid) {
+            return base.Channel.getSaleProductbysoid(soid);
+        }
+        
+        public bool AddNewSoSd(MEMS.DB.Models.T_saleorder so, System.Collections.Generic.List<MEMS.DB.Models.T_saledetail> sdlist) {
+            return base.Channel.AddNewSoSd(so, sdlist);
         }
     }
 }

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/MEMS.DB.Models" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/MEMS.DB.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:complexType name="T_saleorder">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="customerid" type="xs:int" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="orderstate" type="xs:int" />
+      <xs:element minOccurs="0" name="quotationid" type="xs:int" />
+      <xs:element minOccurs="0" name="receiveamount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="receiveperiod" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="receiveperiodtype" type="xs:int" />
+      <xs:element minOccurs="0" name="receiveratio" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="receivestate" type="xs:int" />
+      <xs:element minOccurs="0" name="receivetype" type="xs:int" />
+      <xs:element minOccurs="0" name="remarks" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="saledate" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="saleno" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="saletotalamount" nillable="true" type="xs:decimal" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="T_saleorder" nillable="true" type="tns:T_saleorder" />
+  <xs:complexType name="ArrayOfT_saledetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="T_saledetail" nillable="true" type="tns:T_saledetail" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfT_saledetail" nillable="true" type="tns:ArrayOfT_saledetail" />
+  <xs:complexType name="T_saledetail">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="actrualreceivedate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="actualdeliverydate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="plandeliverydate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="planreceivedate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="productid" type="xs:int" />
+      <xs:element minOccurs="0" name="productnumber" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="producttotalprice" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="receiveamount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="receivestate" nillable="true" type="xs:int" />
+      <xs:element minOccurs="0" name="soid" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="T_saledetail" nillable="true" type="tns:T_saledetail" />
+</xs:schema>

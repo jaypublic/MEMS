@@ -15,6 +15,16 @@
     </FileUpgradeFlags>
     <OldToolsVersion>2.0</OldToolsVersion>
     <UpgradeBackupLocation />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <TargetFrameworkProfile />
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
     <PublishUrl>发布\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -27,18 +37,8 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
-    <TargetFrameworkProfile />
-    <SccProjectName>
-    </SccProjectName>
-    <SccLocalPath>
-    </SccLocalPath>
-    <SccAuxPath>
-    </SccAuxPath>
-    <SccProvider>
-    </SccProvider>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -65,6 +65,9 @@
     <Reference Include="DevExpress.Data.v13.2, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
+    <Reference Include="DevExpress.Images.v13.2, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
     <Reference Include="DevExpress.Printing.v13.2.Core, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
@@ -84,6 +87,9 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="DevExpress.XtraLayout.v13.2, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DevExpress.XtraTreeList.v13.2, Version=13.2.5.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL">
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -110,91 +116,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service References\CRMService\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <Compile Include="Service References\SaleService\Reference.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Compile>
-    <None Include="Service References\CRMService\MEMS.Client.Main.CRMService.QtProduct.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\SaleService\MEMS.Client.Main.SaleService.T_saleorder.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\SaleService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <None Include="Service References\SaleService\configuration.svcinfo" />
-    <None Include="Service References\SaleService\configuration91.svcinfo" />
-    <None Include="Service References\SaleService\SaleService.disco" />
     <None Include="Properties\DataSources\MEMS.Client.CRM.CRMService.T_Customer.datasource" />
-    <None Include="Service References\CRMService\CRMService3.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\CRMService\MEMS.Client.Main.CRMService.ProductList.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\CRMService\MEMS.Client.Main.CRMService.T_Base_companytype.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\CRMService\MEMS.Client.Main.CRMService.T_Base_customertype.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\CRMService\MEMS.Client.Main.CRMService.T_Base_profession.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\CRMService\MEMS.Client.Main.CRMService.T_Base_suppliertype.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\CRMService\MEMS.Client.Main.CRMService.T_Crafts.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\CRMService\MEMS.Client.Main.CRMService.T_CraftsPrice.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\CRMService\MEMS.Client.Main.CRMService.T_Customer.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\CRMService\MEMS.Client.Main.CRMService.T_Customer_address.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\CRMService\MEMS.Client.Main.CRMService.T_Customer_contacts.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\CRMService\MEMS.Client.Main.CRMService.T_Product.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\CRMService\MEMS.Client.Main.CRMService.T_ProductbasicPrice.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\CRMService\MEMS.Client.Main.CRMService.T_ProductDraw.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\CRMService\MEMS.Client.Main.CRMService.T_ProductType.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\CRMService\MEMS.Client.Main.CRMService.T_quotation.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\CRMService\MEMS.Client.Main.CRMService.T_Suppliers.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\CRMService\MEMS.Client.Main.CRMService.T_Suppliers_contacts.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Service References\CRMService\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-    <None Include="Service References\CRMService\configuration.svcinfo" />
-    <None Include="Service References\CRMService\configuration91.svcinfo" />
-    <None Include="Service References\CRMService\CRMService.disco" />
     <EmbeddedResource Include="LogonForm.resx">
       <DependentUpon>LogonForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -224,26 +146,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Service References\CRMService\CRMService.wsdl" />
-    <None Include="Service References\CRMService\CRMService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\CRMService\CRMService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\CRMService\CRMService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\SaleService\SaleService.wsdl" />
-    <None Include="Service References\SaleService\SaleService.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\SaleService\SaleService1.xsd">
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\SaleService\SaleService2.xsd">
-      <SubType>Designer</SubType>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5">
@@ -264,10 +166,6 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadataStorage Include="Service References\CRMService\" />
-    <WCFMetadataStorage Include="Service References\SaleService\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\MEMS.Client.Common\MEMS.Client.Common.csproj">

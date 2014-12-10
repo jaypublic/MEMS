@@ -1,9 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
+//using System.Data;
 using System.Linq;
 using System.Web;
-using MEMSservice.DAL;
+
+using System.Data.Entity;
+using MEMS.DB.Models;
+using MEMS.DB.ExtModels;
 
 namespace MEMSservice.BLL
 {
@@ -11,7 +14,7 @@ namespace MEMSservice.BLL
     {
         public List<ProductList> getProductLst()
         {
-            using (MEMSEntities db = new MEMSEntities())
+            using (MEMSContext db = new MEMSContext())
             {
                 var rst = from p in db.T_Product
                           join c in db.T_Customer
@@ -22,7 +25,7 @@ namespace MEMSservice.BLL
         }
         public List<ProductList> getProductLstbyCdt(string code, string name, int[] cidlst)
         {
-            using (MEMSEntities db = new MEMSEntities())
+            using (MEMSContext db = new MEMSContext())
             {
                 var rst = from p in db.T_Product
                           join c in db.T_Customer
@@ -43,7 +46,7 @@ namespace MEMSservice.BLL
         }
         public List<T_ProductType> getPtypelst()
         {
-            using (MEMSEntities db = new MEMSEntities())
+            using (MEMSContext db = new MEMSContext())
             {
                 var rst = from t in db.T_ProductType
                           select t;
@@ -52,7 +55,7 @@ namespace MEMSservice.BLL
         }
         public T_Product getProductbyId(int pid)
         {
-            using (MEMSEntities db = new MEMSEntities())
+            using (MEMSContext db = new MEMSContext())
             {
                 var rst = from p in db.T_Product
                           where p.id == pid
@@ -62,7 +65,7 @@ namespace MEMSservice.BLL
         }
         public List<T_Product> getProductbyCid(int customerid)
         {
-            using (MEMSEntities db = new MEMSEntities())
+            using (MEMSContext db = new MEMSContext())
             {
                 var rst = from p in db.T_Product
                           where p.customerid == customerid
@@ -72,7 +75,7 @@ namespace MEMSservice.BLL
         }
         public bool AddNewProduct(T_Product product)
         {
-            using (MEMSEntities db = new MEMSEntities())
+            using (MEMSContext db = new MEMSContext())
             {
                 db.T_Product.Add(product);
                 return db.SaveChanges() > 0 ? true : false;
@@ -80,7 +83,7 @@ namespace MEMSservice.BLL
         }
         public bool UpdateProduct(T_Product product)
         {
-            using (MEMSEntities db = new MEMSEntities())
+            using (MEMSContext db = new MEMSContext())
             {
                 db.Entry(product).State = EntityState.Modified;
                 return db.SaveChanges() > 0 ? true : false;
@@ -88,7 +91,7 @@ namespace MEMSservice.BLL
         }
         public List<T_Crafts> getProCraft(int pid)
         {
-            using (MEMSEntities db = new MEMSEntities())
+            using (MEMSContext db = new MEMSContext())
             {
                 var rst = from c in db.T_Crafts
                           where c.pid == pid
@@ -99,7 +102,7 @@ namespace MEMSservice.BLL
         }
         public bool AddNewCraft(T_Crafts craft)
         {
-            using (MEMSEntities db = new MEMSEntities())
+            using (MEMSContext db = new MEMSContext())
             {
                 db.Entry(craft).State = EntityState.Added;
                 return db.SaveChanges() > 0 ? true : false;
@@ -107,7 +110,7 @@ namespace MEMSservice.BLL
         }
         public bool UpdateCraft(T_Crafts craft)
         {
-            using (MEMSEntities db = new MEMSEntities())
+            using (MEMSContext db = new MEMSContext())
             {
                 db.Entry(craft).State = EntityState.Modified;
                 return db.SaveChanges() > 0 ? true : false;
@@ -115,7 +118,7 @@ namespace MEMSservice.BLL
         }
         public bool DeleteCraft(T_Crafts craft)
         {
-            using (MEMSEntities db = new MEMSEntities())
+            using (MEMSContext db = new MEMSContext())
             {
                 db.Entry(craft).State = EntityState.Deleted;
                 return db.SaveChanges() > 0 ? true : false;
@@ -123,7 +126,7 @@ namespace MEMSservice.BLL
         }
         public List<T_ProductDraw> getProductDrawList(int pid)
         {
-            using (MEMSEntities db = new MEMSEntities())
+            using (MEMSContext db = new MEMSContext())
             {
                 var rst = from d in db.T_ProductDraw
                           where d.pid == pid
@@ -133,7 +136,7 @@ namespace MEMSservice.BLL
         }
         public List<T_ProductbasicPrice> getProductPriceList(int pid)
         {
-            using (MEMSEntities db = new MEMSEntities())
+            using (MEMSContext db = new MEMSContext())
             {
                 var rst = from p in db.T_ProductbasicPrice
                           where p.productid == pid
@@ -149,7 +152,7 @@ namespace MEMSservice.BLL
         /// <returns></returns>
         public int AddProductPrice(T_ProductbasicPrice price)
         {
-            using (MEMSEntities db = new MEMSEntities())
+            using (MEMSContext db = new MEMSContext())
             {
                 db.Entry(price).State = EntityState.Added;
                 var success = db.SaveChanges() > 0 ? true : false;
@@ -165,7 +168,7 @@ namespace MEMSservice.BLL
         }
         public List<T_CraftsPrice> getCraftPricelst(int pid)
         {
-            using (MEMSEntities db = new MEMSEntities())
+            using (MEMSContext db = new MEMSContext())
             {
                 var rst = from p in db.T_CraftsPrice
                           where p.pid == pid
@@ -175,7 +178,7 @@ namespace MEMSservice.BLL
         }
         public bool AddNewCraftPricelst(List<T_CraftsPrice> ncplst, int pbid)
         {
-            using (MEMSEntities db = new MEMSEntities())
+            using (MEMSContext db = new MEMSContext())
             {
                 foreach (var newcp in ncplst)
                 {
@@ -187,7 +190,7 @@ namespace MEMSservice.BLL
         }
         public string getPriceVersion(int pid)
         {
-            using (MEMSEntities db = new MEMSEntities())
+            using (MEMSContext db = new MEMSContext())
             {
                 var rst = from p in db.T_ProductbasicPrice
                           where p.productid == pid
@@ -216,7 +219,7 @@ namespace MEMSservice.BLL
         }
         public List<T_quotation> getQuotationList()
         {
-            using (MEMSEntities db = new MEMSEntities())
+            using (MEMSContext db = new MEMSContext())
             {
                 string quno = "";
                 var rst = from q in db.T_quotation
@@ -236,7 +239,7 @@ namespace MEMSservice.BLL
         /// <returns></returns>
         public List<T_quotation> getQuotationListbyP(string quno, int cid, DateTime aftdate, DateTime bfedate)
         {
-            using (MEMSEntities db = new MEMSEntities())
+            using (MEMSContext db = new MEMSContext())
             {
                 List<T_quotation> qlst;
                 if (cid > 0)
@@ -267,7 +270,7 @@ namespace MEMSservice.BLL
         /// <returns></returns>
         public T_quotation getQuotationbyId(int qid)
         {
-            using (MEMSEntities db = new MEMSEntities())
+            using (MEMSContext db = new MEMSContext())
             {
                 var rst = from q in db.T_quotation
                           where q.id == qid
@@ -282,7 +285,7 @@ namespace MEMSservice.BLL
         /// <returns></returns>
         public bool AddNewQuotation(T_quotation newqt)
         {
-            using (MEMSEntities db = new MEMSEntities())
+            using (MEMSContext db = new MEMSContext())
             {
                 db.Entry(newqt).State = EntityState.Added;
                 return db.SaveChanges() > 0 ? true : false;
@@ -295,7 +298,7 @@ namespace MEMSservice.BLL
         /// <returns></returns>
         public bool UpdateQuotation(T_quotation qt)
         {
-            using (MEMSEntities db = new MEMSEntities())
+            using (MEMSContext db = new MEMSContext())
             {
                 db.Entry(qt).State = EntityState.Modified;
                 return db.SaveChanges() > 0 ? true : false;
@@ -308,7 +311,7 @@ namespace MEMSservice.BLL
         /// <returns></returns>
         public bool DeleteQuotation(T_quotation qt)
         {
-            using (MEMSEntities db = new MEMSEntities())
+            using (MEMSContext db = new MEMSContext())
             {
                 db.Entry(qt).State = EntityState.Deleted;
                 return db.SaveChanges() > 0 ? true : false;
@@ -321,7 +324,7 @@ namespace MEMSservice.BLL
         /// <returns></returns>
         public List<QtProduct> getQtProduct(int Qtid)
         {
-            using (MEMSEntities db = new MEMSEntities())
+            using (MEMSContext db = new MEMSContext())
             {
                 var rst = from q in db.T_quotationprice
                           where q.quotationid == Qtid
@@ -342,7 +345,7 @@ namespace MEMSservice.BLL
         /// <param name="qtprice"></param>
         public bool AddNewQtPrice(QtProduct qtprice)
         {
-            using (MEMSEntities db = new MEMSEntities())
+            using (MEMSContext db = new MEMSContext())
             {
                 db.Entry<T_quotationprice>(qtprice.qp).State = EntityState.Added;
                 return db.SaveChanges() > 0 ? true : false;
@@ -356,7 +359,7 @@ namespace MEMSservice.BLL
         {
             try
             {
-                using (MEMSEntities db = new MEMSEntities())
+                using (MEMSContext db = new MEMSContext())
                 {
                     foreach (var qp in qtpricelst)
                     {
