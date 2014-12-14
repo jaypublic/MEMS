@@ -28,51 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UseApplyForm));
-            this.gcPO = new DevExpress.XtraGrid.GridControl();
-            this.gvPO = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gcApplyUseOrders = new DevExpress.XtraGrid.GridControl();
+            this.gvApplyUseOrders = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gvPOTypeEdit = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gvArrivalstatusEdit = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
+            this.gvApplyUseTypeEdit = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gvPOStatusEdit = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.gridColumn16 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gvPaymentStatusEdit = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn13 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn14 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn15 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
-            this.ribbonImageCollectionLarge = new DevExpress.Utils.ImageCollection();
+            this.ribbonImageCollectionLarge = new DevExpress.Utils.ImageCollection(this.components);
             this.ApplyStartDateEdit = new DevExpress.XtraEditors.DateEdit();
             this.ApplyEndDateEdit = new DevExpress.XtraEditors.DateEdit();
             this.label1 = new System.Windows.Forms.Label();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
-            this.POTypeComboBox = new System.Windows.Forms.ComboBox();
-            this.ApplyDeptComboBox = new System.Windows.Forms.ComboBox();
+            this.ApplyUseTypeComboBox = new System.Windows.Forms.ComboBox();
+            this.ApplyUseDeptComboBox = new System.Windows.Forms.ComboBox();
             this.SaleNoTextBox = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.ProductOrderTextBox = new System.Windows.Forms.TextBox();
+            this.ApplyUseNoTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.searchgroup)).BeginInit();
             this.searchgroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ribboncontrol)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcPO)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvPO)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvPOTypeEdit)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvArrivalstatusEdit)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvPOStatusEdit)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvPaymentStatusEdit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcApplyUseOrders)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvApplyUseOrders)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvApplyUseTypeEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonImageCollectionLarge)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ApplyStartDateEdit.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ApplyStartDateEdit.Properties)).BeginInit();
@@ -82,9 +72,13 @@
             // 
             // searchgroup
             // 
+            this.searchgroup.Controls.Add(this.ApplyUseNoTextBox);
+            this.searchgroup.Controls.Add(this.ProductOrderTextBox);
+            this.searchgroup.Controls.Add(this.label3);
+            this.searchgroup.Controls.Add(this.label2);
             this.searchgroup.Controls.Add(this.SaleNoTextBox);
-            this.searchgroup.Controls.Add(this.ApplyDeptComboBox);
-            this.searchgroup.Controls.Add(this.POTypeComboBox);
+            this.searchgroup.Controls.Add(this.ApplyUseDeptComboBox);
+            this.searchgroup.Controls.Add(this.ApplyUseTypeComboBox);
             this.searchgroup.Controls.Add(this.labelControl4);
             this.searchgroup.Controls.Add(this.label1);
             this.searchgroup.Controls.Add(this.ApplyEndDateEdit);
@@ -92,7 +86,7 @@
             this.searchgroup.Controls.Add(this.labelControl3);
             this.searchgroup.Controls.Add(this.labelControl2);
             this.searchgroup.Controls.Add(this.labelControl1);
-            this.searchgroup.Size = new System.Drawing.Size(717, 101);
+            this.searchgroup.Size = new System.Drawing.Size(838, 101);
             this.searchgroup.Controls.SetChildIndex(this.labelControl1, 0);
             this.searchgroup.Controls.SetChildIndex(this.labelControl2, 0);
             this.searchgroup.Controls.SetChildIndex(this.labelControl3, 0);
@@ -100,290 +94,166 @@
             this.searchgroup.Controls.SetChildIndex(this.ApplyEndDateEdit, 0);
             this.searchgroup.Controls.SetChildIndex(this.label1, 0);
             this.searchgroup.Controls.SetChildIndex(this.labelControl4, 0);
-            this.searchgroup.Controls.SetChildIndex(this.POTypeComboBox, 0);
-            this.searchgroup.Controls.SetChildIndex(this.ApplyDeptComboBox, 0);
+            this.searchgroup.Controls.SetChildIndex(this.ApplyUseTypeComboBox, 0);
+            this.searchgroup.Controls.SetChildIndex(this.ApplyUseDeptComboBox, 0);
             this.searchgroup.Controls.SetChildIndex(this.SaleNoTextBox, 0);
+            this.searchgroup.Controls.SetChildIndex(this.label2, 0);
+            this.searchgroup.Controls.SetChildIndex(this.label3, 0);
+            this.searchgroup.Controls.SetChildIndex(this.ProductOrderTextBox, 0);
+            this.searchgroup.Controls.SetChildIndex(this.ApplyUseNoTextBox, 0);
             // 
             // ribboncontrol
             // 
             this.ribboncontrol.ExpandCollapseItem.Id = 0;
             this.ribboncontrol.LargeImages = this.ribbonImageCollectionLarge;
-            this.ribboncontrol.Size = new System.Drawing.Size(717, 125);
+            this.ribboncontrol.Size = new System.Drawing.Size(838, 125);
             this.ribboncontrol.Toolbar.ShowCustomizeItem = false;
             // 
-            // gcPO
+            // gcApplyUseOrders
             // 
-            this.gcPO.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcPO.Location = new System.Drawing.Point(0, 226);
-            this.gcPO.MainView = this.gvPO;
-            this.gcPO.MenuManager = this.ribboncontrol;
-            this.gcPO.Name = "gcPO";
-            this.gcPO.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
-            this.gvArrivalstatusEdit,
-            this.gvPOTypeEdit,
-            this.gvPOStatusEdit,
-            this.gvPaymentStatusEdit});
-            this.gcPO.Size = new System.Drawing.Size(717, 165);
-            this.gcPO.TabIndex = 3;
-            this.gcPO.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gvPO});
+            this.gcApplyUseOrders.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gcApplyUseOrders.Location = new System.Drawing.Point(0, 125);
+            this.gcApplyUseOrders.MainView = this.gvApplyUseOrders;
+            this.gcApplyUseOrders.MenuManager = this.ribboncontrol;
+            this.gcApplyUseOrders.Name = "gcApplyUseOrders";
+            this.gcApplyUseOrders.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.gvApplyUseTypeEdit});
+            this.gcApplyUseOrders.Size = new System.Drawing.Size(838, 266);
+            this.gcApplyUseOrders.TabIndex = 3;
+            this.gcApplyUseOrders.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvApplyUseOrders});
             // 
-            // gvPO
+            // gvApplyUseOrders
             // 
-            this.gvPO.AppearancePrint.EvenRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.gvPO.AppearancePrint.EvenRow.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.gvPO.AppearancePrint.EvenRow.Options.UseBackColor = true;
-            this.gvPO.AppearancePrint.OddRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.gvPO.AppearancePrint.OddRow.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.gvPO.AppearancePrint.OddRow.Options.UseBackColor = true;
-            this.gvPO.AppearancePrint.Row.BackColor = System.Drawing.Color.Red;
-            this.gvPO.AppearancePrint.Row.BackColor2 = System.Drawing.Color.Red;
-            this.gvPO.AppearancePrint.Row.Options.UseBackColor = true;
-            this.gvPO.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.gvApplyUseOrders.AppearancePrint.EvenRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.gvApplyUseOrders.AppearancePrint.EvenRow.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.gvApplyUseOrders.AppearancePrint.EvenRow.Options.UseBackColor = true;
+            this.gvApplyUseOrders.AppearancePrint.OddRow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.gvApplyUseOrders.AppearancePrint.OddRow.BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.gvApplyUseOrders.AppearancePrint.OddRow.Options.UseBackColor = true;
+            this.gvApplyUseOrders.AppearancePrint.Row.BackColor = System.Drawing.Color.Red;
+            this.gvApplyUseOrders.AppearancePrint.Row.BackColor2 = System.Drawing.Color.Red;
+            this.gvApplyUseOrders.AppearancePrint.Row.Options.UseBackColor = true;
+            this.gvApplyUseOrders.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.gridColumn2,
             this.gridColumn3,
-            this.gridColumn4,
             this.gridColumn6,
             this.gridColumn5,
             this.gridColumn7,
             this.gridColumn8,
             this.gridColumn9,
-            this.gridColumn10,
-            this.gridColumn16,
-            this.gridColumn1,
-            this.gridColumn13,
             this.gridColumn14,
-            this.gridColumn15,
-            this.gridColumn17,
-            this.gridColumn11,
-            this.gridColumn12,
-            this.gridColumn18});
-            this.gvPO.GridControl = this.gcPO;
-            this.gvPO.Name = "gvPO";
-            this.gvPO.OptionsBehavior.Editable = false;
-            this.gvPO.OptionsView.ShowGroupPanel = false;
-            this.gvPO.OptionsView.ShowViewCaption = true;
-            this.gvPO.ViewCaption = "领用申请列表";
-            this.gvPO.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gvPO_FocusedRowChanged);
-            this.gvPO.DoubleClick += new System.EventHandler(this.gvproduct_DoubleClick);
+            this.gridColumn15});
+            this.gvApplyUseOrders.GridControl = this.gcApplyUseOrders;
+            this.gvApplyUseOrders.Name = "gvApplyUseOrders";
+            this.gvApplyUseOrders.OptionsBehavior.Editable = false;
+            this.gvApplyUseOrders.OptionsView.ShowGroupPanel = false;
+            this.gvApplyUseOrders.OptionsView.ShowViewCaption = true;
+            this.gvApplyUseOrders.ViewCaption = "领用申请列表";
+            this.gvApplyUseOrders.DoubleClick += new System.EventHandler(this.gvproduct_DoubleClick);
             // 
             // gridColumn2
             // 
-            this.gridColumn2.Caption = "采购单号";
-            this.gridColumn2.FieldName = "pono";
+            this.gridColumn2.Caption = "申领单号";
+            this.gridColumn2.FieldName = "ApplyUseNo";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 3;
+            this.gridColumn2.VisibleIndex = 2;
             // 
             // gridColumn3
             // 
-            this.gridColumn3.Caption = "采购申请日期";
-            this.gridColumn3.FieldName = "applydate";
+            this.gridColumn3.Caption = "申领部门";
+            this.gridColumn3.FieldName = "DeptDesc";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
             this.gridColumn3.VisibleIndex = 0;
             // 
-            // gridColumn4
-            // 
-            this.gridColumn4.Caption = "采购类型";
-            this.gridColumn4.ColumnEdit = this.gvPOTypeEdit;
-            this.gridColumn4.FieldName = "potype";
-            this.gridColumn4.Name = "gridColumn4";
-            this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 1;
-            // 
-            // gvPOTypeEdit
-            // 
-            this.gvPOTypeEdit.AutoHeight = false;
-            this.gvPOTypeEdit.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.gvPOTypeEdit.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Code", "编码"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Desc", "描述")});
-            this.gvPOTypeEdit.DisplayMember = "Desc";
-            this.gvPOTypeEdit.Name = "gvPOTypeEdit";
-            this.gvPOTypeEdit.ValueMember = "Code";
-            // 
             // gridColumn6
             // 
-            this.gridColumn6.Caption = "采购金额";
-            this.gridColumn6.FieldName = "amount";
+            this.gridColumn6.Caption = "申领日期";
+            this.gridColumn6.FieldName = "ApplyUseDate";
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 2;
+            this.gridColumn6.VisibleIndex = 1;
             // 
             // gridColumn5
             // 
-            this.gridColumn5.Caption = "到货状态";
-            this.gridColumn5.ColumnEdit = this.gvArrivalstatusEdit;
-            this.gridColumn5.FieldName = "arrivalstatus";
+            this.gridColumn5.Caption = "用途类型";
+            this.gridColumn5.ColumnEdit = this.gvApplyUseTypeEdit;
+            this.gridColumn5.FieldName = "ApplyUseType";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 4;
+            this.gridColumn5.VisibleIndex = 3;
             // 
-            // gvArrivalstatusEdit
+            // gvApplyUseTypeEdit
             // 
-            this.gvArrivalstatusEdit.AutoHeight = false;
-            this.gvArrivalstatusEdit.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.gvApplyUseTypeEdit.AutoHeight = false;
+            this.gvApplyUseTypeEdit.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.gvArrivalstatusEdit.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            this.gvApplyUseTypeEdit.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Code", "编码"),
             new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Desc", "描述")});
-            this.gvArrivalstatusEdit.DisplayMember = "Desc";
-            this.gvArrivalstatusEdit.Name = "gvArrivalstatusEdit";
-            this.gvArrivalstatusEdit.ValueMember = "Code";
+            this.gvApplyUseTypeEdit.DisplayMember = "Desc";
+            this.gvApplyUseTypeEdit.Name = "gvApplyUseTypeEdit";
+            this.gvApplyUseTypeEdit.ValueMember = "Code";
             // 
             // gridColumn7
             // 
-            this.gridColumn7.Caption = "采购员";
-            this.gridColumn7.FieldName = "buyerdesc";
+            this.gridColumn7.Caption = "领用人";
+            this.gridColumn7.FieldName = "Userdesc";
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 5;
+            this.gridColumn7.VisibleIndex = 4;
             // 
             // gridColumn8
             // 
-            this.gridColumn8.Caption = "要求到货日期";
-            this.gridColumn8.FieldName = "demandarrivaldate";
+            this.gridColumn8.Caption = "销售订单号";
+            this.gridColumn8.FieldName = "SaleNo";
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 6;
+            this.gridColumn8.VisibleIndex = 5;
             // 
             // gridColumn9
             // 
-            this.gridColumn9.Caption = "实际到货日期";
-            this.gridColumn9.FieldName = "actualarrivaldate";
+            this.gridColumn9.Caption = "生产指令单号";
+            this.gridColumn9.FieldName = "ProductOrderNo";
             this.gridColumn9.Name = "gridColumn9";
             this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 7;
-            // 
-            // gridColumn10
-            // 
-            this.gridColumn10.Caption = "采购单状态";
-            this.gridColumn10.ColumnEdit = this.gvPOStatusEdit;
-            this.gridColumn10.FieldName = "postatus";
-            this.gridColumn10.Name = "gridColumn10";
-            this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 8;
-            // 
-            // gvPOStatusEdit
-            // 
-            this.gvPOStatusEdit.AutoHeight = false;
-            this.gvPOStatusEdit.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.gvPOStatusEdit.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Code", "编码"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Desc", "描述")});
-            this.gvPOStatusEdit.DisplayMember = "Desc";
-            this.gvPOStatusEdit.Name = "gvPOStatusEdit";
-            this.gvPOStatusEdit.ValueMember = "Code";
-            // 
-            // gridColumn16
-            // 
-            this.gridColumn16.Caption = "付款状态";
-            this.gridColumn16.ColumnEdit = this.gvPaymentStatusEdit;
-            this.gridColumn16.FieldName = "paymentstatus";
-            this.gridColumn16.Name = "gridColumn16";
-            this.gridColumn16.Visible = true;
-            this.gridColumn16.VisibleIndex = 9;
-            // 
-            // gvPaymentStatusEdit
-            // 
-            this.gvPaymentStatusEdit.AutoHeight = false;
-            this.gvPaymentStatusEdit.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.gvPaymentStatusEdit.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Code", "编码"),
-            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Desc", "描述")});
-            this.gvPaymentStatusEdit.DisplayMember = "Desc";
-            this.gvPaymentStatusEdit.Name = "gvPaymentStatusEdit";
-            this.gvPaymentStatusEdit.ValueMember = "Code";
-            // 
-            // gridColumn1
-            // 
-            this.gridColumn1.Caption = "销售单号";
-            this.gridColumn1.FieldName = "saleno";
-            this.gridColumn1.Name = "gridColumn1";
-            this.gridColumn1.OptionsColumn.AllowEdit = false;
-            this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 14;
-            // 
-            // gridColumn13
-            // 
-            this.gridColumn13.Caption = "申请部门";
-            this.gridColumn13.FieldName = "applydeptdesc";
-            this.gridColumn13.Name = "gridColumn13";
-            this.gridColumn13.OptionsColumn.AllowEdit = false;
-            this.gridColumn13.Visible = true;
-            this.gridColumn13.VisibleIndex = 12;
+            this.gridColumn9.VisibleIndex = 6;
             // 
             // gridColumn14
             // 
             this.gridColumn14.Caption = "申请人";
-            this.gridColumn14.FieldName = "applicantdesc";
+            this.gridColumn14.FieldName = "ApplicantDesc";
             this.gridColumn14.Name = "gridColumn14";
             this.gridColumn14.OptionsColumn.AllowEdit = false;
             this.gridColumn14.Visible = true;
-            this.gridColumn14.VisibleIndex = 13;
+            this.gridColumn14.VisibleIndex = 7;
             // 
             // gridColumn15
             // 
             this.gridColumn15.Caption = "填报人";
-            this.gridColumn15.FieldName = "registerdesc";
+            this.gridColumn15.FieldName = "RegisterDesc";
             this.gridColumn15.Name = "gridColumn15";
             this.gridColumn15.OptionsColumn.AllowEdit = false;
             this.gridColumn15.Visible = true;
-            this.gridColumn15.VisibleIndex = 15;
-            // 
-            // gridColumn17
-            // 
-            this.gridColumn17.Caption = "提交审批日期";
-            this.gridColumn17.FieldName = "sendapprovaldate";
-            this.gridColumn17.Name = "gridColumn17";
-            this.gridColumn17.Visible = true;
-            this.gridColumn17.VisibleIndex = 16;
-            // 
-            // gridColumn11
-            // 
-            this.gridColumn11.Caption = "审批人";
-            this.gridColumn11.FieldName = "approvaldesc";
-            this.gridColumn11.Name = "gridColumn11";
-            this.gridColumn11.OptionsColumn.AllowEdit = false;
-            this.gridColumn11.Visible = true;
-            this.gridColumn11.VisibleIndex = 10;
-            // 
-            // gridColumn12
-            // 
-            this.gridColumn12.Caption = "审批日期";
-            this.gridColumn12.FieldName = "approvaldate";
-            this.gridColumn12.Name = "gridColumn12";
-            this.gridColumn12.OptionsColumn.AllowEdit = false;
-            this.gridColumn12.Visible = true;
-            this.gridColumn12.VisibleIndex = 11;
-            // 
-            // gridColumn18
-            // 
-            this.gridColumn18.Caption = "审批备注";
-            this.gridColumn18.FieldName = "approvalremark";
-            this.gridColumn18.Name = "gridColumn18";
-            this.gridColumn18.Visible = true;
-            this.gridColumn18.VisibleIndex = 17;
+            this.gridColumn15.VisibleIndex = 8;
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(91, 32);
+            this.labelControl1.Location = new System.Drawing.Point(99, 32);
             this.labelControl1.Name = "labelControl1";
-            this.labelControl1.Size = new System.Drawing.Size(72, 14);
+            this.labelControl1.Size = new System.Drawing.Size(48, 14);
             this.labelControl1.TabIndex = 1;
-            this.labelControl1.Text = "采购申请日期";
+            this.labelControl1.Text = "申领日期";
             // 
             // labelControl2
             // 
-            this.labelControl2.Location = new System.Drawing.Point(418, 32);
+            this.labelControl2.Location = new System.Drawing.Point(651, 32);
             this.labelControl2.Name = "labelControl2";
             this.labelControl2.Size = new System.Drawing.Size(48, 14);
             this.labelControl2.TabIndex = 3;
-            this.labelControl2.Text = "采购类型";
+            this.labelControl2.Text = "用途类型";
             // 
             // labelControl3
             // 
@@ -445,7 +315,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(96, 65);
+            this.label1.Location = new System.Drawing.Point(96, 70);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 14);
             this.label1.TabIndex = 12;
@@ -453,59 +323,88 @@
             // 
             // labelControl4
             // 
-            this.labelControl4.Location = new System.Drawing.Point(418, 65);
+            this.labelControl4.Location = new System.Drawing.Point(415, 32);
             this.labelControl4.Name = "labelControl4";
             this.labelControl4.Size = new System.Drawing.Size(48, 14);
             this.labelControl4.TabIndex = 14;
-            this.labelControl4.Text = "申请部门";
+            this.labelControl4.Text = "申领部门";
             // 
-            // POTypeComboBox
+            // ApplyUseTypeComboBox
             // 
-            this.POTypeComboBox.DisplayMember = "Desc";
-            this.POTypeComboBox.FormattingEnabled = true;
-            this.POTypeComboBox.Location = new System.Drawing.Point(472, 29);
-            this.POTypeComboBox.Name = "POTypeComboBox";
-            this.POTypeComboBox.Size = new System.Drawing.Size(121, 22);
-            this.POTypeComboBox.TabIndex = 15;
-            this.POTypeComboBox.ValueMember = "Code";
+            this.ApplyUseTypeComboBox.DisplayMember = "Desc";
+            this.ApplyUseTypeComboBox.FormattingEnabled = true;
+            this.ApplyUseTypeComboBox.Location = new System.Drawing.Point(705, 29);
+            this.ApplyUseTypeComboBox.Name = "ApplyUseTypeComboBox";
+            this.ApplyUseTypeComboBox.Size = new System.Drawing.Size(121, 22);
+            this.ApplyUseTypeComboBox.TabIndex = 15;
+            this.ApplyUseTypeComboBox.ValueMember = "Code";
             // 
-            // ApplyDeptComboBox
+            // ApplyUseDeptComboBox
             // 
-            this.ApplyDeptComboBox.DisplayMember = "Desc";
-            this.ApplyDeptComboBox.FormattingEnabled = true;
-            this.ApplyDeptComboBox.Location = new System.Drawing.Point(472, 62);
-            this.ApplyDeptComboBox.Name = "ApplyDeptComboBox";
-            this.ApplyDeptComboBox.Size = new System.Drawing.Size(121, 22);
-            this.ApplyDeptComboBox.TabIndex = 16;
-            this.ApplyDeptComboBox.ValueMember = "Code";
+            this.ApplyUseDeptComboBox.DisplayMember = "Desc";
+            this.ApplyUseDeptComboBox.FormattingEnabled = true;
+            this.ApplyUseDeptComboBox.Location = new System.Drawing.Point(501, 29);
+            this.ApplyUseDeptComboBox.Name = "ApplyUseDeptComboBox";
+            this.ApplyUseDeptComboBox.Size = new System.Drawing.Size(121, 22);
+            this.ApplyUseDeptComboBox.TabIndex = 16;
+            this.ApplyUseDeptComboBox.ValueMember = "Code";
             // 
             // SaleNoTextBox
             // 
-            this.SaleNoTextBox.Location = new System.Drawing.Point(169, 62);
+            this.SaleNoTextBox.Location = new System.Drawing.Point(169, 67);
             this.SaleNoTextBox.Name = "SaleNoTextBox";
             this.SaleNoTextBox.Size = new System.Drawing.Size(224, 22);
             this.SaleNoTextBox.TabIndex = 17;
             // 
-            // OutOfWarehouseForm
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(412, 70);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(79, 14);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "生产指令单号";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(648, 70);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(55, 14);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "申领单号";
+            // 
+            // ProductOrderTextBox
+            // 
+            this.ProductOrderTextBox.Location = new System.Drawing.Point(501, 67);
+            this.ProductOrderTextBox.Name = "ProductOrderTextBox";
+            this.ProductOrderTextBox.Size = new System.Drawing.Size(121, 22);
+            this.ProductOrderTextBox.TabIndex = 20;
+            // 
+            // ApplyUseNoTextBox
+            // 
+            this.ApplyUseNoTextBox.Location = new System.Drawing.Point(705, 67);
+            this.ApplyUseNoTextBox.Name = "ApplyUseNoTextBox";
+            this.ApplyUseNoTextBox.Size = new System.Drawing.Size(121, 22);
+            this.ApplyUseNoTextBox.TabIndex = 21;
+            // 
+            // UseApplyForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
-            this.ClientSize = new System.Drawing.Size(717, 391);
-            this.Controls.Add(this.gcPO);
-            this.Name = "OutOfWarehouseForm";
+            this.ClientSize = new System.Drawing.Size(838, 391);
+            this.Controls.Add(this.gcApplyUseOrders);
+            this.Name = "UseApplyForm";
             this.Text = "领用申请";
             this.Controls.SetChildIndex(this.ribboncontrol, 0);
+            this.Controls.SetChildIndex(this.gcApplyUseOrders, 0);
             this.Controls.SetChildIndex(this.searchgroup, 0);
-            this.Controls.SetChildIndex(this.gcPO, 0);
             ((System.ComponentModel.ISupportInitialize)(this.searchgroup)).EndInit();
             this.searchgroup.ResumeLayout(false);
             this.searchgroup.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ribboncontrol)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gcPO)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvPO)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvPOTypeEdit)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvArrivalstatusEdit)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvPOStatusEdit)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gvPaymentStatusEdit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcApplyUseOrders)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvApplyUseOrders)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvApplyUseTypeEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonImageCollectionLarge)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ApplyStartDateEdit.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ApplyStartDateEdit.Properties)).EndInit();
@@ -517,11 +416,10 @@
 
         #endregion
 
-        private DevExpress.XtraGrid.GridControl gcPO;
-        private DevExpress.XtraGrid.Views.Grid.GridView gvPO;
+        private DevExpress.XtraGrid.GridControl gcApplyUseOrders;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvApplyUseOrders;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn4;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn6;
         private DevExpress.XtraEditors.LabelControl labelControl3;
         private DevExpress.XtraEditors.LabelControl labelControl2;
@@ -531,26 +429,19 @@
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn7;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn8;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn9;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn10;
         private System.Windows.Forms.Label label1;
         private DevExpress.XtraEditors.DateEdit ApplyEndDateEdit;
         private DevExpress.XtraEditors.DateEdit ApplyStartDateEdit;
         private DevExpress.XtraEditors.LabelControl labelControl4;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn11;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn12;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn13;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn14;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn15;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn16;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
-        private System.Windows.Forms.ComboBox ApplyDeptComboBox;
-        private System.Windows.Forms.ComboBox POTypeComboBox;
-        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit gvArrivalstatusEdit;
-        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit gvPOTypeEdit;
-        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit gvPOStatusEdit;
-        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit gvPaymentStatusEdit;
+        private System.Windows.Forms.ComboBox ApplyUseDeptComboBox;
+        private System.Windows.Forms.ComboBox ApplyUseTypeComboBox;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit gvApplyUseTypeEdit;
         private System.Windows.Forms.TextBox SaleNoTextBox;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn17;
-        private DevExpress.XtraGrid.Columns.GridColumn gridColumn18;
+        private System.Windows.Forms.TextBox ApplyUseNoTextBox;
+        private System.Windows.Forms.TextBox ProductOrderTextBox;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
     }
 }

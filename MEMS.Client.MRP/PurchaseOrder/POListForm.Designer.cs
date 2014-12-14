@@ -37,9 +37,11 @@
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gvPOTypeEdit = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn19 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gvStorageStatusEdit = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gvArrivalstatusEdit = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
-            this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn10 = new DevExpress.XtraGrid.Columns.GridColumn();
@@ -53,6 +55,7 @@
             this.gridColumn17 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn11 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn12 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.labelControl3 = new DevExpress.XtraEditors.LabelControl();
@@ -64,13 +67,13 @@
             this.POTypeComboBox = new System.Windows.Forms.ComboBox();
             this.ApplyDeptComboBox = new System.Windows.Forms.ComboBox();
             this.SaleNoTextBox = new System.Windows.Forms.TextBox();
-            this.gridColumn18 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.searchgroup)).BeginInit();
             this.searchgroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ribboncontrol)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcPO)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvPO)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvPOTypeEdit)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvStorageStatusEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvArrivalstatusEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvPOStatusEdit)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvPaymentStatusEdit)).BeginInit();
@@ -93,7 +96,6 @@
             this.searchgroup.Controls.Add(this.labelControl3);
             this.searchgroup.Controls.Add(this.labelControl2);
             this.searchgroup.Controls.Add(this.labelControl1);
-            this.searchgroup.Location = new System.Drawing.Point(0, 125);
             this.searchgroup.Size = new System.Drawing.Size(717, 101);
             this.searchgroup.Controls.SetChildIndex(this.labelControl1, 0);
             this.searchgroup.Controls.SetChildIndex(this.labelControl2, 0);
@@ -124,7 +126,8 @@
             this.gvArrivalstatusEdit,
             this.gvPOTypeEdit,
             this.gvPOStatusEdit,
-            this.gvPaymentStatusEdit});
+            this.gvPaymentStatusEdit,
+            this.gvStorageStatusEdit});
             this.gcPO.Size = new System.Drawing.Size(717, 165);
             this.gcPO.TabIndex = 3;
             this.gcPO.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -146,8 +149,9 @@
             this.gridColumn3,
             this.gridColumn4,
             this.gridColumn6,
-            this.gridColumn5,
             this.gridColumn7,
+            this.gridColumn19,
+            this.gridColumn5,
             this.gridColumn8,
             this.gridColumn9,
             this.gridColumn10,
@@ -175,7 +179,7 @@
             this.gridColumn2.FieldName = "pono";
             this.gridColumn2.Name = "gridColumn2";
             this.gridColumn2.Visible = true;
-            this.gridColumn2.VisibleIndex = 3;
+            this.gridColumn2.VisibleIndex = 0;
             // 
             // gridColumn3
             // 
@@ -183,7 +187,7 @@
             this.gridColumn3.FieldName = "applydate";
             this.gridColumn3.Name = "gridColumn3";
             this.gridColumn3.Visible = true;
-            this.gridColumn3.VisibleIndex = 0;
+            this.gridColumn3.VisibleIndex = 1;
             // 
             // gridColumn4
             // 
@@ -192,7 +196,7 @@
             this.gridColumn4.FieldName = "potype";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
-            this.gridColumn4.VisibleIndex = 1;
+            this.gridColumn4.VisibleIndex = 2;
             // 
             // gvPOTypeEdit
             // 
@@ -212,7 +216,36 @@
             this.gridColumn6.FieldName = "amount";
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 2;
+            this.gridColumn6.VisibleIndex = 3;
+            // 
+            // gridColumn7
+            // 
+            this.gridColumn7.Caption = "采购员";
+            this.gridColumn7.FieldName = "buyerdesc";
+            this.gridColumn7.Name = "gridColumn7";
+            this.gridColumn7.Visible = true;
+            this.gridColumn7.VisibleIndex = 4;
+            // 
+            // gridColumn19
+            // 
+            this.gridColumn19.Caption = "入库状态";
+            this.gridColumn19.ColumnEdit = this.gvStorageStatusEdit;
+            this.gridColumn19.FieldName = "storagestatus";
+            this.gridColumn19.Name = "gridColumn19";
+            this.gridColumn19.Visible = true;
+            this.gridColumn19.VisibleIndex = 5;
+            // 
+            // gvStorageStatusEdit
+            // 
+            this.gvStorageStatusEdit.AutoHeight = false;
+            this.gvStorageStatusEdit.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.gvStorageStatusEdit.Columns.AddRange(new DevExpress.XtraEditors.Controls.LookUpColumnInfo[] {
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Code", "编码"),
+            new DevExpress.XtraEditors.Controls.LookUpColumnInfo("Desc", "描述")});
+            this.gvStorageStatusEdit.DisplayMember = "Desc";
+            this.gvStorageStatusEdit.Name = "gvStorageStatusEdit";
+            this.gvStorageStatusEdit.ValueMember = "Code";
             // 
             // gridColumn5
             // 
@@ -221,7 +254,7 @@
             this.gridColumn5.FieldName = "arrivalstatus";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
-            this.gridColumn5.VisibleIndex = 4;
+            this.gridColumn5.VisibleIndex = 6;
             // 
             // gvArrivalstatusEdit
             // 
@@ -235,21 +268,13 @@
             this.gvArrivalstatusEdit.Name = "gvArrivalstatusEdit";
             this.gvArrivalstatusEdit.ValueMember = "Code";
             // 
-            // gridColumn7
-            // 
-            this.gridColumn7.Caption = "采购员";
-            this.gridColumn7.FieldName = "buyerdesc";
-            this.gridColumn7.Name = "gridColumn7";
-            this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 5;
-            // 
             // gridColumn8
             // 
             this.gridColumn8.Caption = "要求到货日期";
             this.gridColumn8.FieldName = "demandarrivaldate";
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 6;
+            this.gridColumn8.VisibleIndex = 7;
             // 
             // gridColumn9
             // 
@@ -257,7 +282,7 @@
             this.gridColumn9.FieldName = "actualarrivaldate";
             this.gridColumn9.Name = "gridColumn9";
             this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 7;
+            this.gridColumn9.VisibleIndex = 8;
             // 
             // gridColumn10
             // 
@@ -266,7 +291,7 @@
             this.gridColumn10.FieldName = "postatus";
             this.gridColumn10.Name = "gridColumn10";
             this.gridColumn10.Visible = true;
-            this.gridColumn10.VisibleIndex = 8;
+            this.gridColumn10.VisibleIndex = 9;
             // 
             // gvPOStatusEdit
             // 
@@ -287,7 +312,7 @@
             this.gridColumn16.FieldName = "paymentstatus";
             this.gridColumn16.Name = "gridColumn16";
             this.gridColumn16.Visible = true;
-            this.gridColumn16.VisibleIndex = 9;
+            this.gridColumn16.VisibleIndex = 10;
             // 
             // gvPaymentStatusEdit
             // 
@@ -308,7 +333,7 @@
             this.gridColumn1.Name = "gridColumn1";
             this.gridColumn1.OptionsColumn.AllowEdit = false;
             this.gridColumn1.Visible = true;
-            this.gridColumn1.VisibleIndex = 14;
+            this.gridColumn1.VisibleIndex = 11;
             // 
             // gridColumn13
             // 
@@ -335,7 +360,7 @@
             this.gridColumn15.Name = "gridColumn15";
             this.gridColumn15.OptionsColumn.AllowEdit = false;
             this.gridColumn15.Visible = true;
-            this.gridColumn15.VisibleIndex = 15;
+            this.gridColumn15.VisibleIndex = 14;
             // 
             // gridColumn17
             // 
@@ -343,7 +368,7 @@
             this.gridColumn17.FieldName = "sendapprovaldate";
             this.gridColumn17.Name = "gridColumn17";
             this.gridColumn17.Visible = true;
-            this.gridColumn17.VisibleIndex = 16;
+            this.gridColumn17.VisibleIndex = 15;
             // 
             // gridColumn11
             // 
@@ -352,7 +377,7 @@
             this.gridColumn11.Name = "gridColumn11";
             this.gridColumn11.OptionsColumn.AllowEdit = false;
             this.gridColumn11.Visible = true;
-            this.gridColumn11.VisibleIndex = 10;
+            this.gridColumn11.VisibleIndex = 16;
             // 
             // gridColumn12
             // 
@@ -361,7 +386,15 @@
             this.gridColumn12.Name = "gridColumn12";
             this.gridColumn12.OptionsColumn.AllowEdit = false;
             this.gridColumn12.Visible = true;
-            this.gridColumn12.VisibleIndex = 11;
+            this.gridColumn12.VisibleIndex = 17;
+            // 
+            // gridColumn18
+            // 
+            this.gridColumn18.Caption = "审批备注";
+            this.gridColumn18.FieldName = "approvalremark";
+            this.gridColumn18.Name = "gridColumn18";
+            this.gridColumn18.Visible = true;
+            this.gridColumn18.VisibleIndex = 18;
             // 
             // labelControl1
             // 
@@ -480,14 +513,6 @@
             this.SaleNoTextBox.Size = new System.Drawing.Size(224, 22);
             this.SaleNoTextBox.TabIndex = 17;
             // 
-            // gridColumn18
-            // 
-            this.gridColumn18.Caption = "审批备注";
-            this.gridColumn18.FieldName = "approvalremark";
-            this.gridColumn18.Name = "gridColumn18";
-            this.gridColumn18.Visible = true;
-            this.gridColumn18.VisibleIndex = 17;
-            // 
             // POListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -505,6 +530,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.gcPO)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvPO)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvPOTypeEdit)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvStorageStatusEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvArrivalstatusEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvPOStatusEdit)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvPaymentStatusEdit)).EndInit();
@@ -554,5 +580,7 @@
         private System.Windows.Forms.TextBox SaleNoTextBox;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn17;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn18;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn19;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit gvStorageStatusEdit;
     }
 }

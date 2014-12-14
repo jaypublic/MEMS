@@ -105,7 +105,7 @@
             // gridColumn11
             // 
             this.gridColumn11.Caption = "描述";
-            this.gridColumn11.FieldName = "Desc";
+            this.gridColumn11.FieldName = "MatDesc";
             this.gridColumn11.Name = "gridColumn11";
             this.gridColumn11.OptionsColumn.AllowEdit = false;
             this.gridColumn11.Visible = true;

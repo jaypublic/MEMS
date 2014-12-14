@@ -11,25 +11,32 @@ namespace MEMS.Client.MRP.Entities
 {
     using System;
     using System.Collections.Generic;
-    
-    public partial class T_StandardMaterial
+
+    public partial class T_ApplyUseOrderDetail : T_StandardMaterial
     {
         /// <summary>
-        /// 物资编码
+        /// guid
         /// </summary>
-        public string MatCode { get; set; }
+        public string Id { get; set; }
         /// <summary>
-        /// 描述
+        /// 申领单号
         /// </summary>
-        public string MatDesc { get; set; }
+        public string ApplyUseNo { get; set; }
         /// <summary>
-        /// 物资类型
+        /// 数量
         /// </summary>
-        public string MatTypeCode { get; set; }
-        //public decimal Price { get; set; }
+        public decimal Quantity { get; set; }
         /// <summary>
-        /// 物资型号
+        /// 单位
         /// </summary>
-        public string MatModeCode { get; set; }
+        public string Unit { get; set; }
+        /// <summary>
+        /// 备注
+        /// </summary>
+        public string Remark { get; set; }
+        /// <summary>
+        /// 可用数量(注：不在数据库生成)
+        /// </summary>
+        public decimal AvailableQuantity { get; set; }
     }
 }

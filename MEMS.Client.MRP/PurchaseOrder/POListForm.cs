@@ -168,6 +168,7 @@ namespace MEMS.Client.MRP
             #endregion
 
             this.gvPOTypeEdit.DataSource = EnumTool.GetDataSource(typeof(POTypes));
+            this.gvStorageStatusEdit.DataSource = EnumTool.GetDataSource(typeof(StorageStatus));
             this.gvArrivalstatusEdit.DataSource = EnumTool.GetDataSource(typeof(ArrivalStatus));
             this.gvPOStatusEdit.DataSource = EnumTool.GetDataSource(typeof(POStatus));
             this.gvPaymentStatusEdit.DataSource = EnumTool.GetDataSource(typeof(PaymentStatus));
@@ -221,7 +222,16 @@ namespace MEMS.Client.MRP
                         this.barEdit.Enabled = false;
                         this.barDelete.Enabled = false;
                         this.barbtn1.Enabled = false;
-                        this.barbtn2.Enabled = true;
+
+                        if (po.storagestatus == (int)StorageStatus.已入库)
+                        {
+                            this.barbtn2.Enabled = true;
+                        }
+                        else
+                        {
+                            this.barbtn2.Enabled = false;
+                        }
+                        
                         break;
 
                     default:

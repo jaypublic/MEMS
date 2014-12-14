@@ -90,7 +90,7 @@ namespace MEMS.Client.MRP
                 this.MatCode = StandardMaterail.MatCode;
                 this.MatTypeComboBox.Text = StandardMaterail.MatTypeCode;
                 this.MatModeComboBox.Text = StandardMaterail.MatModeCode;
-                this.DescTextBox.Text = StandardMaterail.Desc;
+                this.DescTextBox.Text = StandardMaterail.MatDesc;
 
                 this.BigComboBox.Enabled = false;
                 this.MidComboBox.Enabled = false;
@@ -118,7 +118,7 @@ namespace MEMS.Client.MRP
                 MatCode = this.MatCode,
                 MatTypeCode = this.MatTypeComboBox.SelectedValue.ToString(),
                 MatModeCode = this.MatModeComboBox.SelectedValue.ToString(),
-                Desc = this.DescTextBox.Text
+                MatDesc = this.DescTextBox.Text
             };
 
             _Proxy.AddStdMat(item);
@@ -130,7 +130,7 @@ namespace MEMS.Client.MRP
         {
             StandardMaterail.MatTypeCode = this.MatTypeComboBox.Text;
             StandardMaterail.MatModeCode = this.MatModeComboBox.Text;
-            StandardMaterail.Desc = this.DescTextBox.Text;
+            StandardMaterail.MatDesc = this.DescTextBox.Text;
 
             _Proxy.UpdateStdMat(StandardMaterail);
             //base.EditObject();

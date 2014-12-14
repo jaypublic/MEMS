@@ -47,7 +47,7 @@ namespace MEMS.Client.MRP.UserWindows
             }
             else
             {
-                this.gcMaterialCode.DataSource = this._MaterailModeList.Where(o => o.MatCode.Contains(searchString) || o.Desc.Contains(searchString) || o.MatModeCode.Contains(searchString) || o.MatTypeCode.Contains(searchString)).ToList();
+                this.gcMaterialCode.DataSource = this._MaterailModeList.Where(o => o.MatCode.Contains(searchString) || o.MatDesc.Contains(searchString) || o.MatModeCode.Contains(searchString) || o.MatTypeCode.Contains(searchString)).ToList();
             }
         }
 
