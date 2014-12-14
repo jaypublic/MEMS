@@ -50,6 +50,7 @@
     <Compile Include="ExtModels\QtProduct.cs" />
     <Compile Include="ExtModels\SaleOrder.cs" />
     <Compile Include="ExtModels\SaleProduct.cs" />
+    <Compile Include="ExtModels\SaleRev.cs" />
     <Compile Include="Models\Mapping\T_Base_companytypeMap.cs" />
     <Compile Include="Models\Mapping\T_Base_customertypeMap.cs" />
     <Compile Include="Models\Mapping\T_Base_professionMap.cs" />
@@ -97,6 +98,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

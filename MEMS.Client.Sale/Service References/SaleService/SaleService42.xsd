@@ -41,4 +41,22 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="T_saledetail" nillable="true" type="tns:T_saledetail" />
+  <xs:complexType name="ArrayOfT_SaleReceive">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="T_SaleReceive" nillable="true" type="tns:T_SaleReceive" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfT_SaleReceive" nillable="true" type="tns:ArrayOfT_SaleReceive" />
+  <xs:complexType name="T_SaleReceive">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int" />
+      <xs:element minOccurs="0" name="invoicecode" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="remarks" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="revamount" nillable="true" type="xs:decimal" />
+      <xs:element minOccurs="0" name="revdate" nillable="true" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="revmanid" type="xs:int" />
+      <xs:element minOccurs="0" name="soid" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="T_SaleReceive" nillable="true" type="tns:T_SaleReceive" />
 </xs:schema>

@@ -159,5 +159,47 @@ namespace MEMSservice.BLL
                 return rs.ToList();
             }
         }
+
+        public List<T_SaleReceive> getSaleRecievebysoid(int soid)
+        {
+            using (MEMSContext db = new MEMSContext())
+            {
+                var rs = from r in db.T_SaleReceive
+                         where r.soid == soid
+                         select r;
+                return rs.ToList();
+            }
+        }
+        //public List<SaleRev> getSaleRevList(int soid)
+        //{
+        //    using (MEMSContext db = new MEMSContext())
+        //    {
+        //        var rs=from r in db.T_SaleReceive
+        //               join u in db.t_
+        //    }
+        //}
+        public bool AddNewSaleRev(List<T_SaleReceive> revlst)
+        {
+            using (MEMSContext db = new MEMSContext())
+            {
+                foreach (var r in revlst)
+                {
+                    db.Entry<T_SaleReceive>(r).State = EntityState.Added;
+                }
+                return db.SaveChanges() > 0 ? true : false;
+            }
+        }
+        public bool UpdateSaleDetail(List<T_saledetail> sdlst)
+        {
+            using (MEMSContext db = new MEMSContext())
+            {
+                foreach (var d in sdlst)
+                {
+                    db.Entry(d).State = EntityState.Modified;
+
+                }
+                return db.SaveChanges() > 0 ? true : false;
+            }
+        }
     }
 }

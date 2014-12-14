@@ -39,8 +39,12 @@ namespace MEMS.Client.Sale
         {
             base.FormLoad();
             InitCustomerCmb();
-            DisPlayEnum.getEnumDS(lkpPeriodUnit, typeof(periodUnit));
-            DisPlayEnum.getEnumDS(lkpRevType, typeof(receiveType));
+            //DisPlayEnum.ExtGetEnumDS(lkpPeriodUnit, typeof(periodUnit));
+            var pUds = DisPlayEnum.getEnumDS(typeof(periodUnit));
+            lkpPeriodUnit.ExtBindingDataSource(pUds, "key", "value");
+            //DisPlayEnum.ExtGetEnumDS(lkpRevType, typeof(receiveType));
+            var rtds = DisPlayEnum.getEnumDS(typeof(receiveType));
+            lkpRevType.ExtBindingDataSource(rtds, "key", "value");
             this.barbtn1.Visibility = BarItemVisibility.Always;
             this.barbtn1.LargeImageIndex = 8;
             gcSaledetail.DataSource = m_saleProducts;
@@ -89,9 +93,12 @@ namespace MEMS.Client.Sale
             }
             
             //txtRevAmt.Text = saleOrder.receiveamount.HasValue ? saleOrder.receiveamount.Value.ToString() : "";
-            txtRevRatio.Text = (saleOrder.receiveratio.HasValue ? saleOrder.receiveratio.Value.ToString() : "0") + "%";
-            txtRevStatus.Text = DisPlayEnum.getEnumName(typeof(receiveState), saleOrder.receivestate);
-            txtOrderStatus.Text = DisPlayEnum.getEnumName(typeof(orderState), saleOrder.orderstate);
+            //txtRevRatio.Text = (saleOrder.receiveratio.HasValue ? saleOrder.receiveratio.Value.ToString() : "0") + "%";
+            txtRevRatio.Text = saleOrder.receiveratio;
+            //txtRevStatus.Text = DisPlayEnum.getEnumName(typeof(receiveState), saleOrder.receivestate);
+            txtRevStatus.Text = ((receiveState)saleOrder.receivestate).ToString();
+            //txtOrderStatus.Text = DisPlayEnum.getEnumName(typeof(orderState), saleOrder.orderstate);
+            txtOrderStatus.Text = ((orderState)saleOrder.orderstate).ToString();
             dateSaleOrder.DateTime = saleOrder.saledate;
             lkpPeriodUnit.EditValue = saleOrder.receiveperiodtype;
                         
@@ -106,18 +113,19 @@ namespace MEMS.Client.Sale
         private void InitCustomerCmb()
         {
             var customerlst = m_crmclient.getCustomerList();
-            lkpcustomer.Properties.DataSource = customerlst;
-            lkpcustomer.Properties.DisplayMember = "customername";
-            lkpcustomer.Properties.ValueMember = "id";
-            lkpcustomer.Properties.ShowFooter = false;
-            lkpcustomer.Properties.ShowHeader = false;
-            lkpcustomer.Properties.NullText = "";
-            lkpcustomer.Properties.DropDownRows = customerlst.Count;
-            var keycol = new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "id");
-            lkpcustomer.Properties.Columns.Add(keycol);
-            var textcol = new DevExpress.XtraEditors.Controls.LookUpColumnInfo("customername", "name");
-            lkpcustomer.Properties.Columns.Add(textcol);
-            keycol.Visible = false;
+            lkpcustomer.ExtBindingDataSource<T_Customer>(customerlst, "id", "customername");
+            //lkpcustomer.Properties.DataSource = customerlst;
+            //lkpcustomer.Properties.DisplayMember = "customername";
+            //lkpcustomer.Properties.ValueMember = "id";
+            //lkpcustomer.Properties.ShowFooter = false;
+            //lkpcustomer.Properties.ShowHeader = false;
+            //lkpcustomer.Properties.NullText = "";
+            //lkpcustomer.Properties.DropDownRows = customerlst.Count;
+            //var keycol = new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "id");
+            //lkpcustomer.Properties.Columns.Add(keycol);
+            //var textcol = new DevExpress.XtraEditors.Controls.LookUpColumnInfo("customername", "name");
+            //lkpcustomer.Properties.Columns.Add(textcol);
+            //keycol.Visible = false;
         }
 
         private void lkpcustomer_Properties_EditValueChanged(object sender, EventArgs e)
@@ -132,18 +140,19 @@ namespace MEMS.Client.Sale
         {
             lkpqtno.Properties.Columns.Clear();
             var qtlst = m_crmclient.getQuotationListbyP("", customerid, new DateTime(2000, 1, 1), new DateTime(2100, 1, 1));
-            lkpqtno.Properties.DataSource = qtlst;
-            lkpqtno.Properties.DisplayMember = "qutationno";
-            lkpqtno.Properties.ValueMember = "id";
-            lkpqtno.Properties.ShowFooter = false;
-            lkpqtno.Properties.ShowHeader = false;
-            lkpqtno.Properties.NullText = "";
-            lkpqtno.Properties.DropDownRows = qtlst.Count;
-            var keycol = new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "id");
-            lkpqtno.Properties.Columns.Add(keycol);
-            var textcol = new DevExpress.XtraEditors.Controls.LookUpColumnInfo("qutationno", "name");
-            lkpqtno.Properties.Columns.Add(textcol);
-            keycol.Visible = false;
+            lkpqtno.ExtBindingDataSource<T_quotation>(qtlst, "id", "qutationno");
+            //lkpqtno.Properties.DataSource = qtlst;
+            //lkpqtno.Properties.DisplayMember = "qutationno";
+            //lkpqtno.Properties.ValueMember = "id";
+            //lkpqtno.Properties.ShowFooter = false;
+            //lkpqtno.Properties.ShowHeader = false;
+            //lkpqtno.Properties.NullText = "";
+            //lkpqtno.Properties.DropDownRows = qtlst.Count;
+            //var keycol = new DevExpress.XtraEditors.Controls.LookUpColumnInfo("id", "id");
+            //lkpqtno.Properties.Columns.Add(keycol);
+            //var textcol = new DevExpress.XtraEditors.Controls.LookUpColumnInfo("qutationno", "name");
+            //lkpqtno.Properties.Columns.Add(textcol);
+            //keycol.Visible = false;
         }
 
         private void getData(T_saleorder saleOrder)

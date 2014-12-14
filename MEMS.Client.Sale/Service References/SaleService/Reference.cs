@@ -41,6 +41,15 @@ namespace MEMS.Client.Sale.SaleService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISaleService/AddNewSoSd", ReplyAction="http://tempuri.org/ISaleService/AddNewSoSdResponse")]
         bool AddNewSoSd(MEMS.DB.Models.T_saleorder so, System.Collections.Generic.List<MEMS.DB.Models.T_saledetail> sdlist);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISaleService/getSaleRevbySoid", ReplyAction="http://tempuri.org/ISaleService/getSaleRevbySoidResponse")]
+        System.Collections.Generic.List<MEMS.DB.Models.T_SaleReceive> getSaleRevbySoid(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISaleService/AddNewSaleRev", ReplyAction="http://tempuri.org/ISaleService/AddNewSaleRevResponse")]
+        bool AddNewSaleRev(System.Collections.Generic.List<MEMS.DB.Models.T_SaleReceive> revlst);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ISaleService/UpdateSaleDetail", ReplyAction="http://tempuri.org/ISaleService/UpdateSaleDetailResponse")]
+        bool UpdateSaleDetail(System.Collections.Generic.List<MEMS.DB.Models.T_saledetail> sdlst);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -104,6 +113,18 @@ namespace MEMS.Client.Sale.SaleService {
         
         public bool AddNewSoSd(MEMS.DB.Models.T_saleorder so, System.Collections.Generic.List<MEMS.DB.Models.T_saledetail> sdlist) {
             return base.Channel.AddNewSoSd(so, sdlist);
+        }
+        
+        public System.Collections.Generic.List<MEMS.DB.Models.T_SaleReceive> getSaleRevbySoid(int id) {
+            return base.Channel.getSaleRevbySoid(id);
+        }
+        
+        public bool AddNewSaleRev(System.Collections.Generic.List<MEMS.DB.Models.T_SaleReceive> revlst) {
+            return base.Channel.AddNewSaleRev(revlst);
+        }
+        
+        public bool UpdateSaleDetail(System.Collections.Generic.List<MEMS.DB.Models.T_saledetail> sdlst) {
+            return base.Channel.UpdateSaleDetail(sdlst);
         }
     }
 }

@@ -31,13 +31,28 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SaleRecieveinfoForm));
             this.layoutControl1 = new DevExpress.XtraLayout.LayoutControl();
-            this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
-            this.pageOrder = new DevExpress.XtraTab.XtraTabPage();
-            this.gcSaleRev = new DevExpress.XtraGrid.GridControl();
+            this.gcRecieve = new DevExpress.XtraGrid.GridControl();
             this.gvSaleRev = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.pageProduct = new DevExpress.XtraTab.XtraTabPage();
-            this.gcSaledetail = new DevExpress.XtraGrid.GridControl();
+            this.colsrid = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colsoid = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colrevamt = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colrevdate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.coluid = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colinvcode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colremark = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gvSaledetail = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colpid = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colpcode = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colpname = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colpspec = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colpunitprice = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colpmodelprice = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colpcount = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colptotalprice = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colpdate = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn2 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.txtremarks = new DevExpress.XtraEditors.MemoEdit();
             this.txtOrderStatus = new DevExpress.XtraEditors.TextEdit();
             this.txtRevStatus = new DevExpress.XtraEditors.TextEdit();
@@ -67,29 +82,14 @@
             this.layoutControlItem9 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlItem13 = new DevExpress.XtraLayout.LayoutControlItem();
             this.layoutControlGroup3 = new DevExpress.XtraLayout.LayoutControlGroup();
-            this.layoutControlItem14 = new DevExpress.XtraLayout.LayoutControlItem();
+            this.layoutControlItem15 = new DevExpress.XtraLayout.LayoutControlItem();
             this.selectProImage = new DevExpress.Utils.ImageCollection(this.components);
-            this.colId = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colpid = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colpcode = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colpname = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colpspec = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colpunitprice = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colpmodelprice = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colpcount = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colptotalprice = new DevExpress.XtraGrid.Columns.GridColumn();
-            this.colpdate = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn1 = new DevExpress.XtraGrid.Columns.GridColumn();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).BeginInit();
             this.layoutControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
-            this.xtraTabControl1.SuspendLayout();
-            this.pageOrder.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gcSaleRev)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcRecieve)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvSaleRev)).BeginInit();
-            this.pageProduct.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gcSaledetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvSaledetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtremarks.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOrderStatus.Properties)).BeginInit();
@@ -121,17 +121,18 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.selectProImage)).BeginInit();
             this.SuspendLayout();
             // 
             // ribbonControl1
             // 
             this.ribbonControl1.ExpandCollapseItem.Id = 0;
+            this.ribbonControl1.LargeImages = this.selectProImage;
             // 
             // layoutControl1
             // 
-            this.layoutControl1.Controls.Add(this.xtraTabControl1);
+            this.layoutControl1.Controls.Add(this.gcRecieve);
             this.layoutControl1.Controls.Add(this.txtremarks);
             this.layoutControl1.Controls.Add(this.txtOrderStatus);
             this.layoutControl1.Controls.Add(this.txtRevStatus);
@@ -153,39 +154,95 @@
             this.layoutControl1.TabIndex = 0;
             this.layoutControl1.Text = "layoutControl1";
             // 
-            // xtraTabControl1
+            // gcRecieve
             // 
-            this.xtraTabControl1.Location = new System.Drawing.Point(24, 202);
-            this.xtraTabControl1.Name = "xtraTabControl1";
-            this.xtraTabControl1.SelectedTabPage = this.pageOrder;
-            this.xtraTabControl1.Size = new System.Drawing.Size(777, 144);
-            this.xtraTabControl1.TabIndex = 2;
-            this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
-            this.pageOrder,
-            this.pageProduct});
-            // 
-            // pageOrder
-            // 
-            this.pageOrder.Controls.Add(this.gcSaleRev);
-            this.pageOrder.Name = "pageOrder";
-            this.pageOrder.Size = new System.Drawing.Size(771, 115);
-            this.pageOrder.Text = "按订单收款";
-            // 
-            // gcSaleRev
-            // 
-            this.gcSaleRev.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcSaleRev.Location = new System.Drawing.Point(0, 0);
-            this.gcSaleRev.MainView = this.gvSaleRev;
-            this.gcSaleRev.MenuManager = this.ribbonControl1;
-            this.gcSaleRev.Name = "gcSaleRev";
-            this.gcSaleRev.Size = new System.Drawing.Size(771, 115);
-            this.gcSaleRev.TabIndex = 1;
-            this.gcSaleRev.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gvSaleRev});
+            this.gcRecieve.Location = new System.Drawing.Point(24, 202);
+            this.gcRecieve.MainView = this.gvSaleRev;
+            this.gcRecieve.MenuManager = this.ribbonControl1;
+            this.gcRecieve.Name = "gcRecieve";
+            this.gcRecieve.Size = new System.Drawing.Size(777, 144);
+            this.gcRecieve.TabIndex = 1;
+            this.gcRecieve.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gvSaleRev,
+            this.gvSaledetail});
             // 
             // gvSaleRev
             // 
             this.gvSaleRev.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
+            this.colsrid,
+            this.colsoid,
+            this.colrevamt,
+            this.colrevdate,
+            this.coluid,
+            this.colinvcode,
+            this.colremark});
+            this.gvSaleRev.GridControl = this.gcRecieve;
+            this.gvSaleRev.Name = "gvSaleRev";
+            this.gvSaleRev.OptionsView.ShowGroupPanel = false;
+            this.gvSaleRev.OptionsView.ShowViewCaption = true;
+            this.gvSaleRev.ViewCaption = "按订单收款";
+            this.gvSaleRev.FocusedRowChanged += new DevExpress.XtraGrid.Views.Base.FocusedRowChangedEventHandler(this.gvSaleRev_FocusedRowChanged);
+            this.gvSaleRev.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gvSaleRev_CellValueChanged);
+            // 
+            // colsrid
+            // 
+            this.colsrid.Caption = "id";
+            this.colsrid.FieldName = "id";
+            this.colsrid.Name = "colsrid";
+            this.colsrid.Visible = true;
+            this.colsrid.VisibleIndex = 0;
+            // 
+            // colsoid
+            // 
+            this.colsoid.Caption = "soid";
+            this.colsoid.FieldName = "soid";
+            this.colsoid.Name = "colsoid";
+            this.colsoid.Visible = true;
+            this.colsoid.VisibleIndex = 1;
+            // 
+            // colrevamt
+            // 
+            this.colrevamt.Caption = "收款金额";
+            this.colrevamt.FieldName = "revamount";
+            this.colrevamt.Name = "colrevamt";
+            this.colrevamt.Visible = true;
+            this.colrevamt.VisibleIndex = 2;
+            // 
+            // colrevdate
+            // 
+            this.colrevdate.Caption = "收款日期";
+            this.colrevdate.FieldName = "revdate";
+            this.colrevdate.Name = "colrevdate";
+            this.colrevdate.Visible = true;
+            this.colrevdate.VisibleIndex = 3;
+            // 
+            // coluid
+            // 
+            this.coluid.Caption = "收款人";
+            this.coluid.FieldName = "revmanid";
+            this.coluid.Name = "coluid";
+            this.coluid.Visible = true;
+            this.coluid.VisibleIndex = 4;
+            // 
+            // colinvcode
+            // 
+            this.colinvcode.Caption = "发票号";
+            this.colinvcode.FieldName = "invoicecode";
+            this.colinvcode.Name = "colinvcode";
+            this.colinvcode.Visible = true;
+            this.colinvcode.VisibleIndex = 5;
+            // 
+            // colremark
+            // 
+            this.colremark.Caption = "备注";
+            this.colremark.FieldName = "remarks";
+            this.colremark.Name = "colremark";
+            this.colremark.Visible = true;
+            this.colremark.VisibleIndex = 6;
+            // 
+            // gvSaledetail
+            // 
+            this.gvSaledetail.Columns.AddRange(new DevExpress.XtraGrid.Columns.GridColumn[] {
             this.colId,
             this.colpid,
             this.colpcode,
@@ -195,35 +252,101 @@
             this.colpmodelprice,
             this.colpcount,
             this.colptotalprice,
-            this.colpdate});
-            this.gvSaleRev.GridControl = this.gcSaleRev;
-            this.gvSaleRev.Name = "gvSaleRev";
-            this.gvSaleRev.OptionsView.ShowGroupPanel = false;
-            // 
-            // pageProduct
-            // 
-            this.pageProduct.Controls.Add(this.gcSaledetail);
-            this.pageProduct.Name = "pageProduct";
-            this.pageProduct.Size = new System.Drawing.Size(771, 115);
-            this.pageProduct.Text = "按产品明细收款";
-            // 
-            // gcSaledetail
-            // 
-            this.gcSaledetail.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gcSaledetail.Location = new System.Drawing.Point(0, 0);
-            this.gcSaledetail.MainView = this.gvSaledetail;
-            this.gcSaledetail.MenuManager = this.ribbonControl1;
-            this.gcSaledetail.Name = "gcSaledetail";
-            this.gcSaledetail.Size = new System.Drawing.Size(771, 115);
-            this.gcSaledetail.TabIndex = 0;
-            this.gcSaledetail.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gvSaledetail});
-            // 
-            // gvSaledetail
-            // 
-            this.gvSaledetail.GridControl = this.gcSaledetail;
+            this.colpdate,
+            this.gridColumn2,
+            this.gridColumn3});
+            this.gvSaledetail.GridControl = this.gcRecieve;
             this.gvSaledetail.Name = "gvSaledetail";
             this.gvSaledetail.OptionsView.ShowGroupPanel = false;
+            this.gvSaledetail.OptionsView.ShowViewCaption = true;
+            this.gvSaledetail.ViewCaption = "按产品详细收款";
+            this.gvSaledetail.CellValueChanged += new DevExpress.XtraGrid.Views.Base.CellValueChangedEventHandler(this.gvSaledetail_CellValueChanged);
+            // 
+            // colId
+            // 
+            this.colId.Caption = "id";
+            this.colId.FieldName = "sd.id";
+            this.colId.Name = "colId";
+            // 
+            // colpid
+            // 
+            this.colpid.Caption = "pid";
+            this.colpid.FieldName = "sd.productid";
+            this.colpid.Name = "colpid";
+            // 
+            // colpcode
+            // 
+            this.colpcode.Caption = "产品编码";
+            this.colpcode.FieldName = "productCode";
+            this.colpcode.Name = "colpcode";
+            this.colpcode.Visible = true;
+            this.colpcode.VisibleIndex = 0;
+            // 
+            // colpname
+            // 
+            this.colpname.Caption = "产品名称";
+            this.colpname.FieldName = "productName";
+            this.colpname.Name = "colpname";
+            this.colpname.Visible = true;
+            this.colpname.VisibleIndex = 1;
+            // 
+            // colpspec
+            // 
+            this.colpspec.Caption = "产品规格";
+            this.colpspec.FieldName = "productSpec";
+            this.colpspec.Name = "colpspec";
+            this.colpspec.Visible = true;
+            this.colpspec.VisibleIndex = 2;
+            // 
+            // colpunitprice
+            // 
+            this.colpunitprice.Caption = "产品单价";
+            this.colpunitprice.FieldName = "pUnitPrice";
+            this.colpunitprice.Name = "colpunitprice";
+            // 
+            // colpmodelprice
+            // 
+            this.colpmodelprice.Caption = "产品模具费";
+            this.colpmodelprice.FieldName = "pModelPrice";
+            this.colpmodelprice.Name = "colpmodelprice";
+            // 
+            // colpcount
+            // 
+            this.colpcount.Caption = "产品数量";
+            this.colpcount.FieldName = "sd.productnumber";
+            this.colpcount.Name = "colpcount";
+            this.colpcount.Visible = true;
+            this.colpcount.VisibleIndex = 3;
+            // 
+            // colptotalprice
+            // 
+            this.colptotalprice.Caption = "产品总价";
+            this.colptotalprice.FieldName = "sd.producttotalprice";
+            this.colptotalprice.Name = "colptotalprice";
+            this.colptotalprice.Visible = true;
+            this.colptotalprice.VisibleIndex = 4;
+            // 
+            // colpdate
+            // 
+            this.colpdate.Caption = "计划发货日期";
+            this.colpdate.FieldName = "sd.plandeliverydate";
+            this.colpdate.Name = "colpdate";
+            // 
+            // gridColumn2
+            // 
+            this.gridColumn2.Caption = "收款金额";
+            this.gridColumn2.FieldName = "sd.receiveamount";
+            this.gridColumn2.Name = "gridColumn2";
+            this.gridColumn2.Visible = true;
+            this.gridColumn2.VisibleIndex = 5;
+            // 
+            // gridColumn3
+            // 
+            this.gridColumn3.Caption = "收款日期";
+            this.gridColumn3.FieldName = "sd.actrualreceivedate";
+            this.gridColumn3.Name = "gridColumn3";
+            this.gridColumn3.Visible = true;
+            this.gridColumn3.VisibleIndex = 6;
             // 
             // txtremarks
             // 
@@ -526,23 +649,23 @@
             // 
             this.layoutControlGroup3.CustomizationFormText = "收款信息";
             this.layoutControlGroup3.Items.AddRange(new DevExpress.XtraLayout.BaseLayoutItem[] {
-            this.layoutControlItem14});
+            this.layoutControlItem15});
             this.layoutControlGroup3.Location = new System.Drawing.Point(0, 158);
             this.layoutControlGroup3.Name = "layoutControlGroup3";
             this.layoutControlGroup3.Size = new System.Drawing.Size(805, 192);
             this.layoutControlGroup3.Text = "收款信息";
             // 
-            // layoutControlItem14
+            // layoutControlItem15
             // 
-            this.layoutControlItem14.Control = this.xtraTabControl1;
-            this.layoutControlItem14.CustomizationFormText = "layoutControlItem14";
-            this.layoutControlItem14.Location = new System.Drawing.Point(0, 0);
-            this.layoutControlItem14.Name = "layoutControlItem14";
-            this.layoutControlItem14.Size = new System.Drawing.Size(781, 148);
-            this.layoutControlItem14.Text = "layoutControlItem14";
-            this.layoutControlItem14.TextSize = new System.Drawing.Size(0, 0);
-            this.layoutControlItem14.TextToControlDistance = 0;
-            this.layoutControlItem14.TextVisible = false;
+            this.layoutControlItem15.Control = this.gcRecieve;
+            this.layoutControlItem15.CustomizationFormText = "layoutControlItem15";
+            this.layoutControlItem15.Location = new System.Drawing.Point(0, 0);
+            this.layoutControlItem15.Name = "layoutControlItem15";
+            this.layoutControlItem15.Size = new System.Drawing.Size(781, 148);
+            this.layoutControlItem15.Text = "layoutControlItem15";
+            this.layoutControlItem15.TextSize = new System.Drawing.Size(0, 0);
+            this.layoutControlItem15.TextToControlDistance = 0;
+            this.layoutControlItem15.TextVisible = false;
             // 
             // selectProImage
             // 
@@ -556,84 +679,8 @@
             this.selectProImage.Images.SetKeyName(5, "Ribbon_SaveAs_32x32.png");
             this.selectProImage.Images.SetKeyName(6, "Ribbon_Exit_32x32.png");
             this.selectProImage.Images.SetKeyName(7, "ButtonForward.png");
-            this.selectProImage.InsertGalleryImage("insert_32x32.png", "images/actions/insert_32x32.png", DevExpress.Images.ImageResourceCache.Default.GetImage("images/actions/insert_32x32.png"), 8);
-            this.selectProImage.Images.SetKeyName(8, "insert_32x32.png");
-            // 
-            // colId
-            // 
-            this.colId.Caption = "id";
-            this.colId.FieldName = "sd.id";
-            this.colId.Name = "colId";
-            // 
-            // colpid
-            // 
-            this.colpid.Caption = "pid";
-            this.colpid.FieldName = "sd.productid";
-            this.colpid.Name = "colpid";
-            // 
-            // colpcode
-            // 
-            this.colpcode.Caption = "产品编码";
-            this.colpcode.FieldName = "productCode";
-            this.colpcode.Name = "colpcode";
-            this.colpcode.Visible = true;
-            this.colpcode.VisibleIndex = 2;
-            // 
-            // colpname
-            // 
-            this.colpname.Caption = "产品名称";
-            this.colpname.FieldName = "productName";
-            this.colpname.Name = "colpname";
-            this.colpname.Visible = true;
-            this.colpname.VisibleIndex = 3;
-            // 
-            // colpspec
-            // 
-            this.colpspec.Caption = "产品规格";
-            this.colpspec.FieldName = "productSpec";
-            this.colpspec.Name = "colpspec";
-            this.colpspec.Visible = true;
-            this.colpspec.VisibleIndex = 4;
-            // 
-            // colpunitprice
-            // 
-            this.colpunitprice.Caption = "产品单价";
-            this.colpunitprice.FieldName = "pUnitPrice";
-            this.colpunitprice.Name = "colpunitprice";
-            this.colpunitprice.Visible = true;
-            this.colpunitprice.VisibleIndex = 5;
-            // 
-            // colpmodelprice
-            // 
-            this.colpmodelprice.Caption = "产品模具费";
-            this.colpmodelprice.FieldName = "pModelPrice";
-            this.colpmodelprice.Name = "colpmodelprice";
-            this.colpmodelprice.Visible = true;
-            this.colpmodelprice.VisibleIndex = 6;
-            // 
-            // colpcount
-            // 
-            this.colpcount.Caption = "产品数量";
-            this.colpcount.FieldName = "sd.productnumber";
-            this.colpcount.Name = "colpcount";
-            this.colpcount.Visible = true;
-            this.colpcount.VisibleIndex = 7;
-            // 
-            // colptotalprice
-            // 
-            this.colptotalprice.Caption = "产品总价";
-            this.colptotalprice.FieldName = "sd.producttotalprice";
-            this.colptotalprice.Name = "colptotalprice";
-            this.colptotalprice.Visible = true;
-            this.colptotalprice.VisibleIndex = 8;
-            // 
-            // colpdate
-            // 
-            this.colpdate.Caption = "计划发货日期";
-            this.colpdate.FieldName = "sd.plandeliverydate";
-            this.colpdate.Name = "colpdate";
-            this.colpdate.Visible = true;
-            this.colpdate.VisibleIndex = 9;
+            this.selectProImage.InsertGalleryImage("currency_32x32.png", "images/miscellaneous/currency_32x32.png", DevExpress.Images.ImageResourceCache.Default.GetImage("images/miscellaneous/currency_32x32.png"), 8);
+            this.selectProImage.Images.SetKeyName(8, "currency_32x32.png");
             // 
             // gridColumn1
             // 
@@ -655,13 +702,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribbonControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControl1)).EndInit();
             this.layoutControl1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
-            this.xtraTabControl1.ResumeLayout(false);
-            this.pageOrder.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gcSaleRev)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gcRecieve)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvSaleRev)).EndInit();
-            this.pageProduct.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gcSaledetail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvSaledetail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtremarks.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOrderStatus.Properties)).EndInit();
@@ -693,7 +735,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem14)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem15)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.selectProImage)).EndInit();
             this.ResumeLayout(false);
 
@@ -729,15 +771,9 @@
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem12;
         private DevExpress.XtraEditors.MemoEdit txtremarks;
         private DevExpress.XtraLayout.LayoutControlItem layoutControlItem13;
-        private DevExpress.XtraTab.XtraTabControl xtraTabControl1;
-        private DevExpress.XtraTab.XtraTabPage pageOrder;
-        private DevExpress.XtraTab.XtraTabPage pageProduct;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup2;
         private DevExpress.XtraLayout.LayoutControlGroup layoutControlGroup3;
-        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem14;
-        private DevExpress.XtraGrid.GridControl gcSaleRev;
-        private DevExpress.XtraGrid.Views.Grid.GridView gvSaleRev;
-        private DevExpress.XtraGrid.GridControl gcSaledetail;
+        private DevExpress.XtraGrid.GridControl gcRecieve;
         private DevExpress.XtraGrid.Views.Grid.GridView gvSaledetail;
         internal DevExpress.Utils.ImageCollection selectProImage;
         private DevExpress.XtraGrid.Columns.GridColumn colId;
@@ -751,6 +787,17 @@
         private DevExpress.XtraGrid.Columns.GridColumn colptotalprice;
         private DevExpress.XtraGrid.Columns.GridColumn colpdate;
         private DevExpress.XtraGrid.Columns.GridColumn gridColumn1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gvSaleRev;
+        private DevExpress.XtraGrid.Columns.GridColumn colsrid;
+        private DevExpress.XtraGrid.Columns.GridColumn colsoid;
+        private DevExpress.XtraGrid.Columns.GridColumn colrevamt;
+        private DevExpress.XtraGrid.Columns.GridColumn colrevdate;
+        private DevExpress.XtraGrid.Columns.GridColumn coluid;
+        private DevExpress.XtraGrid.Columns.GridColumn colinvcode;
+        private DevExpress.XtraGrid.Columns.GridColumn colremark;
+        private DevExpress.XtraLayout.LayoutControlItem layoutControlItem15;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn2;
+        private DevExpress.XtraGrid.Columns.GridColumn gridColumn3;
 
     }
 }

@@ -128,5 +128,44 @@ namespace MEMSservice
                 throw;
             }
         }
+        public List<T_SaleReceive> getSaleRevbySoid(int id)
+        {
+            try
+            {
+                m_sh = new SaleHelper();
+                return m_sh.getSaleRecievebysoid(id);
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+        }
+        public bool AddNewSaleRev(List<T_SaleReceive> revlst)
+        {
+            try
+            {
+                m_sh = new SaleHelper();
+                return m_sh.AddNewSaleRev(revlst);
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+        }
+        public bool UpdateSaleDetail(List<T_saledetail> sdlst)
+        {
+            try
+            {
+                m_sh = new SaleHelper();
+                return m_sh.UpdateSaleDetail(sdlst);
+            }
+            catch (Exception)
+            {
+                
+                throw;
+            }
+        }
     }
 }

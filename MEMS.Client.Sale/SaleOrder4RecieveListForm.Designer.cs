@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(SaleOrder4RecieveListForm));
             this.gcSaleOrder = new DevExpress.XtraGrid.GridControl();
             this.gvSaleOrder = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -36,28 +37,33 @@
             this.gridColumn3 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn4 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn5 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.colrevtype = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn7 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn6 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn8 = new DevExpress.XtraGrid.Columns.GridColumn();
             this.gridColumn9 = new DevExpress.XtraGrid.Columns.GridColumn();
+            this.lkpRevState = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             this.labelControl4 = new DevExpress.XtraEditors.LabelControl();
             this.dateEdit2 = new DevExpress.XtraEditors.DateEdit();
             this.dateEdit1 = new DevExpress.XtraEditors.DateEdit();
             this.labelControl2 = new DevExpress.XtraEditors.LabelControl();
             this.txtSaleNo = new DevExpress.XtraEditors.TextEdit();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
-            this.ribbonImageCollectionLarge = new DevExpress.Utils.ImageCollection();
+            this.ribbonImageCollectionLarge = new DevExpress.Utils.ImageCollection(this.components);
+            this.lkpRevType = new DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit();
             ((System.ComponentModel.ISupportInitialize)(this.searchgroup)).BeginInit();
             this.searchgroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ribboncontrol)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcSaleOrder)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvSaleOrder)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lkpRevState)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSaleNo.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonImageCollectionLarge)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lkpRevType)).BeginInit();
             this.SuspendLayout();
             // 
             // searchgroup
@@ -88,6 +94,9 @@
             this.gcSaleOrder.MainView = this.gvSaleOrder;
             this.gcSaleOrder.MenuManager = this.ribboncontrol;
             this.gcSaleOrder.Name = "gcSaleOrder";
+            this.gcSaleOrder.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
+            this.lkpRevState,
+            this.lkpRevType});
             this.gcSaleOrder.Size = new System.Drawing.Size(673, 200);
             this.gcSaleOrder.TabIndex = 3;
             this.gcSaleOrder.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
@@ -101,6 +110,7 @@
             this.gridColumn3,
             this.gridColumn4,
             this.gridColumn5,
+            this.colrevtype,
             this.gridColumn7,
             this.gridColumn6,
             this.gridColumn8,
@@ -134,6 +144,7 @@
             // gridColumn4
             // 
             this.gridColumn4.Caption = "销售日期";
+            this.gridColumn4.FieldName = "so.saledate";
             this.gridColumn4.Name = "gridColumn4";
             this.gridColumn4.Visible = true;
             this.gridColumn4.VisibleIndex = 1;
@@ -141,16 +152,27 @@
             // gridColumn5
             // 
             this.gridColumn5.Caption = "客户名称";
+            this.gridColumn5.FieldName = "customername";
             this.gridColumn5.Name = "gridColumn5";
             this.gridColumn5.Visible = true;
             this.gridColumn5.VisibleIndex = 2;
             // 
+            // colrevtype
+            // 
+            this.colrevtype.Caption = "收款类型";
+            this.colrevtype.ColumnEdit = this.lkpRevType;
+            this.colrevtype.FieldName = "so.receivetype";
+            this.colrevtype.Name = "colrevtype";
+            this.colrevtype.Visible = true;
+            this.colrevtype.VisibleIndex = 3;
+            // 
             // gridColumn7
             // 
             this.gridColumn7.Caption = "订单金额";
+            this.gridColumn7.FieldName = "so.saletotalamount";
             this.gridColumn7.Name = "gridColumn7";
             this.gridColumn7.Visible = true;
-            this.gridColumn7.VisibleIndex = 3;
+            this.gridColumn7.VisibleIndex = 4;
             // 
             // gridColumn6
             // 
@@ -158,7 +180,7 @@
             this.gridColumn6.FieldName = "so.receiveamount";
             this.gridColumn6.Name = "gridColumn6";
             this.gridColumn6.Visible = true;
-            this.gridColumn6.VisibleIndex = 4;
+            this.gridColumn6.VisibleIndex = 5;
             // 
             // gridColumn8
             // 
@@ -166,15 +188,23 @@
             this.gridColumn8.FieldName = "so.receiveratio";
             this.gridColumn8.Name = "gridColumn8";
             this.gridColumn8.Visible = true;
-            this.gridColumn8.VisibleIndex = 5;
+            this.gridColumn8.VisibleIndex = 6;
             // 
             // gridColumn9
             // 
             this.gridColumn9.Caption = "收款状态";
+            this.gridColumn9.ColumnEdit = this.lkpRevState;
             this.gridColumn9.FieldName = "so.receivestate";
             this.gridColumn9.Name = "gridColumn9";
             this.gridColumn9.Visible = true;
-            this.gridColumn9.VisibleIndex = 6;
+            this.gridColumn9.VisibleIndex = 7;
+            // 
+            // lkpRevState
+            // 
+            this.lkpRevState.AutoHeight = false;
+            this.lkpRevState.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lkpRevState.Name = "lkpRevState";
             // 
             // labelControl4
             // 
@@ -262,6 +292,13 @@
             this.ribbonImageCollectionLarge.InsertGalleryImage("currency_32x32.png", "images/miscellaneous/currency_32x32.png", DevExpress.Images.ImageResourceCache.Default.GetImage("images/miscellaneous/currency_32x32.png"), 17);
             this.ribbonImageCollectionLarge.Images.SetKeyName(17, "currency_32x32.png");
             // 
+            // lkpRevType
+            // 
+            this.lkpRevType.AutoHeight = false;
+            this.lkpRevType.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.lkpRevType.Name = "lkpRevType";
+            // 
             // SaleOrder4RecieveListForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
@@ -278,12 +315,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.ribboncontrol)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gcSaleOrder)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gvSaleOrder)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lkpRevState)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtSaleNo.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ribbonImageCollectionLarge)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lkpRevType)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -308,5 +347,8 @@
         private DevExpress.XtraEditors.TextEdit txtSaleNo;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         internal DevExpress.Utils.ImageCollection ribbonImageCollectionLarge;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit lkpRevState;
+        private DevExpress.XtraGrid.Columns.GridColumn colrevtype;
+        private DevExpress.XtraEditors.Repository.RepositoryItemLookUpEdit lkpRevType;
     }
 }

@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Drawing;
 
 namespace MEMS.Client.Sale
 {
@@ -56,7 +57,7 @@ namespace MEMS.Client.Sale
         /// </summary>
         /// <param name="lkupedit"></param>
         /// <param name="enumtype"></param>
-        public static void getEnumDS(RepositoryItemLookUpEdit lkupedit, Type enumtype)
+        public static void BindEnumDS(RepositoryItemLookUpEdit lkupedit, Type enumtype)
         {
             List<DisPlayEnum> ds = new List<DisPlayEnum>();
             var enumNames = Enum.GetNames(enumtype);
@@ -74,35 +75,37 @@ namespace MEMS.Client.Sale
             lkupedit.ShowHeader = false;
         }
 
-        /// <summary>
-        /// 获得枚举类型的数据源绑定,并绑定至lookupEdit
-        /// </summary>
-        /// <param name="lkupedit"></param>
-        /// <param name="enumtype"></param>
-        public static void getEnumDS(DevExpress.XtraEditors.LookUpEdit lkupedit, Type enumtype)
-        {
-            List<DisPlayEnum> ds = new List<DisPlayEnum>();
-            var enumNames = Enum.GetNames(enumtype);
-            for (int i = 0; i < enumNames.Length; i++)
-            {
-                DisPlayEnum t = new DisPlayEnum();
-                t.key = i;
-                t.value = enumNames[i];
-                ds.Add(t);
-            }
-            lkupedit.Properties.DataSource = ds;
-            lkupedit.Properties.ValueMember = "key";
-            lkupedit.Properties.DisplayMember = "value";
-            lkupedit.Properties.ShowFooter = false;
-            lkupedit.Properties.ShowHeader = false;
-            lkupedit.Properties.NullText = "";
-            lkupedit.Properties.DropDownRows = enumNames.Length;
-            var keycol = new DevExpress.XtraEditors.Controls.LookUpColumnInfo("key", "key");
-            var valuecol = new DevExpress.XtraEditors.Controls.LookUpColumnInfo("value", "value");
-            lkupedit.Properties.Columns.Add(keycol);
-            lkupedit.Properties.Columns.Add(valuecol);
-            keycol.Visible = false;
-        }
+        ///// <summary>
+        ///// 获得枚举类型的数据源绑定,并绑定至lookupEdit
+        ///// </summary>
+        ///// <param name="lkupedit"></param>
+        ///// <param name="enumtype"></param>
+        //public static void ExtGetEnumDS(LookUpEdit lkupedit, Type enumtype)
+        //{
+        //    List<DisPlayEnum> ds = new List<DisPlayEnum>();
+        //    var enumNames = Enum.GetNames(enumtype);
+        //    for (int i = 0; i < enumNames.Length; i++)
+        //    {
+        //        DisPlayEnum t = new DisPlayEnum();
+        //        t.key = i;
+        //        t.value = enumNames[i];
+        //        ds.Add(t);
+        //    }
+        //    lkupedit.Properties.DataSource = ds;
+        //    lkupedit.Properties.ValueMember = "key";
+        //    lkupedit.Properties.DisplayMember = "value";
+        //    lkupedit.Properties.ShowFooter = false;
+        //    lkupedit.Properties.ShowHeader = false;
+        //    lkupedit.Properties.NullText = "";
+        //    lkupedit.Properties.DropDownRows = enumNames.Length;
+        //    var keycol = new DevExpress.XtraEditors.Controls.LookUpColumnInfo("key", "key");
+        //    var valuecol = new DevExpress.XtraEditors.Controls.LookUpColumnInfo("value", "value");
+        //    lkupedit.Properties.Columns.Add(keycol);
+        //    lkupedit.Properties.Columns.Add(valuecol);
+        //    keycol.Visible = false;
+        //    lkupedit.Properties.PopupFormMinSize = new Size(50, 10);
+        //    lkupedit.Properties.PopupWidth = lkupedit.Width - 2;
+        //}
     }
     /// <summary>
     /// 账期单位

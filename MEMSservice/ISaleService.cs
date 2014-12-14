@@ -32,5 +32,11 @@ namespace MEMSservice
         List<SaleProduct> getSaleProductbysoid(int soid);
         [OperationContract]
         bool AddNewSoSd(T_saleorder so, List<T_saledetail> sdlist);
+        [OperationContract]
+        List<T_SaleReceive> getSaleRevbySoid(int id);
+        [OperationContract]
+        bool AddNewSaleRev(List<T_SaleReceive> revlst);
+        [OperationContract]
+        bool UpdateSaleDetail(List<T_saledetail> sdlst);
     }
 }

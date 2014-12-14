@@ -17,7 +17,7 @@ namespace MEMS.DB.Models
         public int orderstate { get; set; }
         public Nullable<decimal> saletotalamount { get; set; }
         public Nullable<decimal> receiveamount { get; set; }
-        public Nullable<decimal> receiveratio { get; set; }
+        public string receiveratio { get; set; }
         public string remarks { get; set; }
     }
 }

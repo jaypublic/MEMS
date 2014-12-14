@@ -52,7 +52,7 @@ namespace MEMS.Client.Sale
         }
         protected override void FormLoad()
         {
-            DisPlayEnum.getEnumDS(lkupOrderState, typeof(orderState));
+            DisPlayEnum.BindEnumDS(lkupOrderState, typeof(orderState));
             base.FormLoad();
         }
 

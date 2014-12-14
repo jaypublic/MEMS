@@ -117,6 +117,12 @@ namespace MEMS.Client.Common
                     case frmmodetype.delete:
                         DeleteObject();
                         break;
+                    case frmmodetype.view:
+                        this.DialogResult = DialogResult.OK;
+                        break;
+                    case frmmodetype.custom:
+                        EditObject();
+                        break;
                 }
 
             }

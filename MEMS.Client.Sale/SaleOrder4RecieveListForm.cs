@@ -25,12 +25,15 @@ namespace MEMS.Client.Sale
         {
             base.FormLoad();
             gcSaleOrder.Dock = DockStyle.Fill;
+            gvSaleOrder.OptionsBehavior.Editable = false;
             barAdd.Visibility = BarItemVisibility.Never;
             barEdit.Visibility = BarItemVisibility.Never;
             barDelete.Visibility = BarItemVisibility.Never;
             barbtn1.Visibility = BarItemVisibility.Always;
             barbtn1.LargeImageIndex = 17;
             barbtn1.Caption = "收款";
+            DisPlayEnum.BindEnumDS(lkpRevState, typeof(receiveState));
+            DisPlayEnum.BindEnumDS(lkpRevType, typeof(receiveType));
         }
         protected override void SearchObject()
         {
@@ -46,7 +49,7 @@ namespace MEMS.Client.Sale
             {
                 int soid = (int)gvSaleOrder.GetFocusedRowCellValue("so.id");
                 var frm = new SaleRecieveinfoForm(frmmodetype.custom, soid);
-                frm.ShowDialog();
+                refreshFormData(frm);
             }
         }
     }
