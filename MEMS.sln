@@ -24,6 +24,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MEMS.Client.Sale", "MEMS.Cl
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MEMS.DB", "MEMS.DB\MEMS.DB.csproj", "{E014D3C0-2CF7-4EF7-95EA-B017F6B98B0A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MEMS.Client.Produce", "MEMS.Client.Produce\MEMS.Client.Produce.csproj", "{F7B7EF3B-EE07-4B4B-A529-BC4A236634C0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -58,6 +60,10 @@ Global
 		{E014D3C0-2CF7-4EF7-95EA-B017F6B98B0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E014D3C0-2CF7-4EF7-95EA-B017F6B98B0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E014D3C0-2CF7-4EF7-95EA-B017F6B98B0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7B7EF3B-EE07-4B4B-A529-BC4A236634C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7B7EF3B-EE07-4B4B-A529-BC4A236634C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7B7EF3B-EE07-4B4B-A529-BC4A236634C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7B7EF3B-EE07-4B4B-A529-BC4A236634C0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
