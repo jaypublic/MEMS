@@ -181,6 +181,10 @@
       <Project>{dd247e21-b1de-48ad-ad5c-6c1fac69d377}</Project>
       <Name>MEMS.Client.MRP</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MEMS.Client.Produce\MEMS.Client.Produce.csproj">
+      <Project>{f7b7ef3b-ee07-4b4b-a529-bc4a236634c0}</Project>
+      <Name>MEMS.Client.Produce</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MEMS.Client.Sale\MEMS.Client.Sale.csproj">
       <Project>{8b9dc3dd-79c2-4939-8995-fd0f059ec7cb}</Project>
       <Name>MEMS.Client.Sale</Name>
