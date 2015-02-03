@@ -14,6 +14,9 @@ namespace MEMS.DB.Models.Mapping
             this.Property(t => t.saleno)
                 .HasMaxLength(50);
 
+            this.Property(t => t.receiveratio)
+                .HasMaxLength(50);
+
             this.Property(t => t.remarks)
                 .HasMaxLength(500);
 
